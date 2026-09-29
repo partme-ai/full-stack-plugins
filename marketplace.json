@@ -48,17 +48,17 @@
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/stitch-design-plugin",
-        "ref": "v0.8.6"
+        "ref": "v0.9.0"
       },
       "description": "Create and edit Google Stitch screens, design systems, and frontend code through the remote Stitch MCP server.",
-      "version": "0.8.6",
+      "version": "0.9.0",
       "category": "Design Tools",
       "tags": [
         "stitch",
         "design",
         "design-to-code"
       ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/stitch-design-plugin@v0.8.6/assets/official-logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/stitch-design-plugin@v0.9.0/assets/official-logo.png",
       "strict": true
     },
     {

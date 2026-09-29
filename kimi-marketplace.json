@@ -17,8 +17,8 @@
     {
       "id": "stitch-design",
       "displayName": "Google Stitch Design",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/stitch-design-plugin@v0.8.6/assets/official-logo.png",
-      "source": "https://github.com/full-stack-plugins/stitch-design-plugin/releases/tag/v0.8.6"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/stitch-design-plugin@v0.9.0/assets/official-logo.png",
+      "source": "https://github.com/full-stack-plugins/stitch-design-plugin/releases/tag/v0.9.0"
     },
     {
       "id": "processon-design",

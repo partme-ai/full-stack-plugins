@@ -46,7 +46,7 @@
       "displayName": "Google Stitch Design",
       "repository": "full-stack-plugins/stitch-design-plugin",
       "localDirectory": "stitch-design-plugin",
-      "version": "0.8.6",
+      "version": "0.9.0",
       "description": "Create and edit Google Stitch screens, design systems, and frontend code through the remote Stitch MCP server.",
       "shortDescription": "Design and build with Google Stitch",
       "category": "Design Tools",
