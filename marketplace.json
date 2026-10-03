@@ -1,8 +1,27 @@
 {
   "name": "full-stack-plugins",
-  "displayName": "Full Stack 插件",
+  "displayName": "Full Stack Plugins",
   "description": "Full Stack plugin marketplace for Codex, ZCode, and Kimi Code: AI design, diagramming, executable code checks, semantic review, workflow governance, and server operations.",
   "plugins": [
+    {
+      "name": "bt-linux-panel",
+      "source": {
+        "source": "github",
+        "repo": "full-stack-plugins/bt-linux-panel-plugin",
+        "ref": "v1.0.6"
+      },
+      "description": "Operate Baota Linux panel through MCP to manage services, diagnose sites and databases, and audit server security.",
+      "version": "1.0.6",
+      "category": "Productivity",
+      "tags": [
+        "baota",
+        "bt-panel",
+        "linux-ops",
+        "mcp"
+      ],
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/bt-linux-panel-plugin@v1.0.6/assets/official-logo.png",
+      "strict": true
+    },
     {
       "name": "codegraph",
       "source": {
@@ -24,6 +43,32 @@
       "strict": true
     },
     {
+      "name": "codeguard",
+      "source": {
+        "source": "github",
+        "repo": "full-stack-plugins/codeguard-plugin",
+        "ref": "v0.18.3"
+      },
+      "description": "Evidence-backed code checks and Git content gates for AI assistants, with Maven/Gradle module impact analysis. Save hooks provide feedback; unverified checks are explicit.",
+      "version": "0.18.3",
+      "category": "Developer Tools",
+      "tags": [
+        "lint",
+        "code-style",
+        "javadoc",
+        "checkstyle",
+        "clippy",
+        "golangci-lint",
+        "detekt",
+        "swiftlint",
+        "eslint",
+        "ruff",
+        "pre-commit"
+      ],
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@v0.18.3/assets/official-logo.png",
+      "strict": true
+    },
+    {
       "name": "codereview-plugin",
       "source": {
         "source": "github",
@@ -41,6 +86,30 @@
         "ocr"
       ],
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@v0.3.0/assets/official-logo.png",
+      "strict": true
+    },
+    {
+      "name": "flowguard",
+      "source": {
+        "source": "github",
+        "repo": "full-stack-plugins/flowguard-plugin",
+        "ref": "v0.4.2"
+      },
+      "description": "Agent-driven SDD governance for Codex, ZCode, Kimi and Claude: native Spec Kit/OpenSpec/Superpowers discovery, session-worktree task binding, evidence freshness and deterministic code/commit/release gates.",
+      "version": "0.4.2",
+      "category": "Developer Tools",
+      "tags": [
+        "sdlc",
+        "sdd",
+        "agent-governance",
+        "workflow",
+        "requirements",
+        "testing",
+        "code-review",
+        "release",
+        "gate"
+      ],
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/flowguard-plugin@v0.4.2/assets/official-logo.png",
       "strict": true
     },
     {
@@ -77,75 +146,6 @@
         "mind-map"
       ],
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.2.12/assets/official-logo.png",
-      "strict": true
-    },
-    {
-      "name": "codeguard",
-      "source": {
-        "source": "github",
-        "repo": "full-stack-plugins/codeguard-plugin",
-        "ref": "v0.18.2"
-      },
-      "description": "Evidence-backed code checks and Git content gates for AI assistants, with Maven/Gradle module impact analysis. Save hooks provide feedback; unverified checks are explicit.",
-      "version": "0.18.2",
-      "category": "Developer Tools",
-      "tags": [
-        "lint",
-        "code-style",
-        "javadoc",
-        "checkstyle",
-        "clippy",
-        "golangci-lint",
-        "detekt",
-        "swiftlint",
-        "eslint",
-        "ruff",
-        "pre-commit"
-      ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@v0.18.2/assets/official-logo.png",
-      "strict": true
-    },
-    {
-      "name": "bt-linux-panel",
-      "source": {
-        "source": "github",
-        "repo": "full-stack-plugins/bt-linux-panel-plugin",
-        "ref": "v1.0.5"
-      },
-      "description": "Operate Baota Linux panel through MCP to manage services, diagnose sites and databases, and audit server security.",
-      "version": "1.0.5",
-      "category": "Productivity",
-      "tags": [
-        "baota",
-        "bt-panel",
-        "linux-ops",
-        "mcp"
-      ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/bt-linux-panel-plugin@v1.0.5/assets/official-logo.png",
-      "strict": true
-    },
-    {
-      "name": "flowguard",
-      "source": {
-        "source": "github",
-        "repo": "full-stack-plugins/flowguard-plugin",
-        "ref": "v0.4.1"
-      },
-      "description": "Agent-driven SDD governance for Codex, ZCode, Kimi and Claude: native Spec Kit/OpenSpec/Superpowers discovery, session-worktree task binding, evidence freshness and deterministic code/commit/release gates.",
-      "version": "0.4.1",
-      "category": "Developer Tools",
-      "tags": [
-        "sdlc",
-        "sdd",
-        "agent-governance",
-        "workflow",
-        "requirements",
-        "testing",
-        "code-review",
-        "release",
-        "gate"
-      ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/flowguard-plugin@v0.4.1/assets/official-logo.png",
       "strict": true
     }
   ]

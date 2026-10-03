@@ -1,7 +1,13 @@
 {
   "version": "2",
-  "displayName": "Full Stack 插件",
+  "displayName": "Full Stack Plugins",
   "plugins": [
+    {
+      "id": "bt-linux-panel",
+      "displayName": "BaoTa Linux Panel",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/bt-linux-panel-plugin@v1.0.6/assets/official-logo.png",
+      "source": "https://github.com/full-stack-plugins/bt-linux-panel-plugin/releases/tag/v1.0.6"
+    },
     {
       "id": "codegraph",
       "displayName": "CodeGraph",
@@ -9,10 +15,22 @@
       "source": "https://github.com/full-stack-plugins/codegraph-plugin/releases/tag/v0.1.6"
     },
     {
+      "id": "codeguard",
+      "displayName": "CodeGuard",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@v0.18.3/assets/official-logo.png",
+      "source": "https://github.com/full-stack-plugins/codeguard-plugin/releases/tag/v0.18.3"
+    },
+    {
       "id": "codereview-plugin",
       "displayName": "CodeReview",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@v0.3.0/assets/official-logo.png",
       "source": "https://github.com/full-stack-plugins/codereview-plugin/releases/tag/v0.3.0"
+    },
+    {
+      "id": "flowguard",
+      "displayName": "FlowGuard",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/flowguard-plugin@v0.4.2/assets/official-logo.png",
+      "source": "https://github.com/full-stack-plugins/flowguard-plugin/releases/tag/v0.4.2"
     },
     {
       "id": "stitch-design",
@@ -25,24 +43,6 @@
       "displayName": "ProcessOn Design",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.2.12/assets/official-logo.png",
       "source": "https://github.com/full-stack-plugins/processon-design-plugin/releases/tag/v0.2.12"
-    },
-    {
-      "id": "codeguard",
-      "displayName": "代码规范守卫",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@v0.18.2/assets/official-logo.png",
-      "source": "https://github.com/full-stack-plugins/codeguard-plugin/releases/tag/v0.18.2"
-    },
-    {
-      "id": "bt-linux-panel",
-      "displayName": "宝塔 Linux 面板",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/bt-linux-panel-plugin@v1.0.5/assets/official-logo.png",
-      "source": "https://github.com/full-stack-plugins/bt-linux-panel-plugin/releases/tag/v1.0.5"
-    },
-    {
-      "id": "flowguard",
-      "displayName": "研发流程门禁",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/flowguard-plugin@v0.4.1/assets/official-logo.png",
-      "source": "https://github.com/full-stack-plugins/flowguard-plugin/releases/tag/v0.4.1"
     }
   ]
 }
