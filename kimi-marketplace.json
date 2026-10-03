@@ -3,6 +3,12 @@
   "displayName": "Full Stack Plugins",
   "plugins": [
     {
+      "id": "1panel",
+      "displayName": "1Panel",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.1.1/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/1panel-plugin/releases/tag/v0.1.1"
+    },
+    {
       "id": "bt-linux-panel",
       "displayName": "BaoTa Linux Panel",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/bt-linux-panel-plugin@v1.0.6/assets/official-logo.png",
@@ -43,6 +49,12 @@
       "displayName": "ProcessOn Design",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.2.12/assets/official-logo.png",
       "source": "https://github.com/full-stack-plugins/processon-design-plugin/releases/tag/v0.2.12"
+    },
+    {
+      "id": "ui-design",
+      "displayName": "UI Design",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.1.1/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/ui-design-plugin/releases/tag/v0.1.1"
     }
   ]
 }

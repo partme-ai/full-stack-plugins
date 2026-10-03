@@ -2,13 +2,13 @@
 
 # Full Stack Plugins
 
-**6 plugins. The full development process. One unified ecosystem.**
+**9 plugins. The full development process. One unified ecosystem.**
 
 *AI design tooling · Diagramming · Code checks · Workflow governance · Server operations — independently installable on Codex / ZCode / Kimi.*
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-green)](LICENSE)
 [![Platforms](https://img.shields.io/badge/hosts-Codex%20%C2%B7%20ZCode%20%C2%B7%20Kimi-blue)](#install)
-[![Plugins](https://img.shields.io/badge/plugins-6-green)](#plugin-catalog)
+[![Plugins](https://img.shields.io/badge/plugins-9-green)](#plugin-catalog)
 
 [简体中文](./README.md)
 
@@ -56,6 +56,8 @@ codex plugin add codereview-plugin@full-stack-plugins
 codex plugin add flowguard@full-stack-plugins
 codex plugin add processon-design@full-stack-plugins
 codex plugin add stitch-design@full-stack-plugins
+codex plugin add ui-design@full-stack-plugins
+codex plugin add 1panel@full-stack-plugins
 ```
 
 ### ZCode
@@ -73,13 +75,16 @@ Open Settings → Plugins → Create → Add plugin marketplace, enter `partme-a
 ## Plugin Catalog
 
 | Plugin | ID | Version | Focus | Repository |
-|--------|----|:-------:|-------|------------|
-| 🛡️ **Baota Linux Panel** | `bt-linux-panel` | 1.0.5 | Operate the Baota Linux panel via MCP | [bt-linux-panel-plugin](https://github.com/full-stack-plugins/bt-linux-panel-plugin) |
-| 🔍 **CodeGuard** | `codeguard` | 0.15.5 | Run style, static, build, and test checks | [codeguard-plugin](https://github.com/full-stack-plugins/codeguard-plugin) |
-| 🧭 **CodeReview** | `codereview-plugin` | 0.2.1 | Provide consent-based semantic risk advice for staged commits | [codereview-plugin](https://github.com/full-stack-plugins/codereview-plugin) |
-| 🧱 **FlowGuard** | `flowguard` | 0.3.0 | Agent-driven ten-stage SDD docs and evidence gates | [flowguard-plugin](https://github.com/full-stack-plugins/flowguard-plugin) |
-| 📊 **ProcessOn Diagrams** | `processon-design` | 0.2.5 | Design editable diagrams and mind maps | [processon-design-plugin](https://github.com/full-stack-plugins/processon-design-plugin) |
-| 🎨 **Google Stitch Design** | `stitch-design` | 0.8.2 | Design and build with Google Stitch | [stitch-design-plugin](https://github.com/full-stack-plugins/stitch-design-plugin) |
+|------|----|:----:|------|------|
+| **1Panel** | `1panel` | 0.1.1 | Scoped 1Panel operations via official MCP | [1panel-plugin](https://github.com/full-stack-plugins/1panel-plugin) |
+| **BaoTa Linux Panel** | `bt-linux-panel` | 1.0.6 | Operate Baota Linux panel via MCP | [bt-linux-panel-plugin](https://github.com/full-stack-plugins/bt-linux-panel-plugin) |
+| **CodeGraph** | `codegraph` | 0.1.6 | Discoverable codegraph — official prompt + all CLI commands | [codegraph-plugin](https://github.com/full-stack-plugins/codegraph-plugin) |
+| **CodeGuard** | `codeguard` | 0.18.3 | Trustworthy code checks and Java impact analysis | [codeguard-plugin](https://github.com/full-stack-plugins/codeguard-plugin) |
+| **CodeReview** | `codereview-plugin` | 0.3.0 | Review staged commits with explicit consent | [codereview-plugin](https://github.com/full-stack-plugins/codereview-plugin) |
+| **FlowGuard** | `flowguard` | 0.4.2 | 智能体 SDD 治理：原生规格、证据与提交门禁 | [flowguard-plugin](https://github.com/full-stack-plugins/flowguard-plugin) |
+| **Google Stitch Design** | `stitch-design` | 0.9.0 | Design and build with Google Stitch | [stitch-design-plugin](https://github.com/full-stack-plugins/stitch-design-plugin) |
+| **ProcessOn Design** | `processon-design` | 0.2.12 | Design polished, editable ProcessOn diagrams | [processon-design-plugin](https://github.com/full-stack-plugins/processon-design-plugin) |
+| **UI Design** | `ui-design` | 0.1.1 | Model-native frontend design and image assets | [ui-design-plugin](https://github.com/full-stack-plugins/ui-design-plugin) |
 
 CodeReview v0.2.1 distributes 8 skills (2 upstream OCR, 5 independent `codereview-skills`, and the plugin-local `codereview-harness`) and has passed offline tests. Real OCR model execution and installation/loading in Codex, ZCode, and Kimi are still **UNVERIFIED**. Its findings are advisory and do not replace CodeGuard checks or FlowGuard decisions.
 
@@ -159,3 +164,7 @@ Apache 2.0 — see [LICENSE](LICENSE).
 Made with ❤️ by PartMe.AI Team
 
 </div>
+
+## Skill sources and new plugins
+
+UI Design distributes 11 skills from design-skills v1.15.1; 1Panel distributes 8 from 1panel-skills v0.1.1. Skills are maintained in source repositories and vendored as complete tag/commit/digest-pinned snapshots. Both plugins are v0.1.1. Ordinary UI Design needs no MCP; 1Panel requires an official executable and private panel connection configuration.

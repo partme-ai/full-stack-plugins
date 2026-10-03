@@ -1,0 +1,5 @@
+# Generated marketplace JSON must compare identically on Windows and Linux.
+*.json text eol=lf
+*.mjs text eol=lf
+*.md text eol=lf
+*.yaml text eol=lf

@@ -4,6 +4,25 @@
   "description": "Full Stack plugin marketplace for Codex, ZCode, and Kimi Code: AI design, diagramming, executable code checks, semantic review, workflow governance, and server operations.",
   "plugins": [
     {
+      "name": "1panel",
+      "source": {
+        "source": "github",
+        "repo": "full-stack-plugins/1panel-plugin",
+        "ref": "v0.1.1"
+      },
+      "description": "Inspect and operate 1Panel through the pinned official MCP with private configuration and explicit access levels.",
+      "version": "0.1.1",
+      "category": "Productivity",
+      "tags": [
+        "1panel",
+        "linux",
+        "mcp",
+        "operations"
+      ],
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.1.1/assets/logo.png",
+      "strict": true
+    },
+    {
       "name": "bt-linux-panel",
       "source": {
         "source": "github",
@@ -146,6 +165,25 @@
         "mind-map"
       ],
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.2.12/assets/official-logo.png",
+      "strict": true
+    },
+    {
+      "name": "ui-design",
+      "source": {
+        "source": "github",
+        "repo": "full-stack-plugins/ui-design-plugin",
+        "ref": "v0.1.1"
+      },
+      "description": "Design frontend specifications, editable prototypes, scoped image assets and evidence-backed previews using model-native capabilities.",
+      "version": "0.1.1",
+      "category": "Design Tools",
+      "tags": [
+        "frontend",
+        "design",
+        "imagegen",
+        "agent-skills"
+      ],
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.1.1/assets/logo.png",
       "strict": true
     }
   ]

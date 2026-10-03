@@ -6,6 +6,24 @@
   "planningRepositories": [],
   "plugins": [
     {
+      "id": "1panel",
+      "displayName": "1Panel",
+      "repository": "full-stack-plugins/1panel-plugin",
+      "localDirectory": "1panel-plugin",
+      "version": "0.1.1",
+      "description": "Inspect and operate 1Panel through the pinned official MCP with private configuration and explicit access levels.",
+      "shortDescription": "Scoped 1Panel operations via official MCP",
+      "category": "Productivity",
+      "codexCategory": "Productivity",
+      "logo": "assets/logo.png",
+      "tags": [
+        "1panel",
+        "linux",
+        "mcp",
+        "operations"
+      ]
+    },
+    {
       "id": "bt-linux-panel",
       "displayName": "BaoTa Linux Panel",
       "repository": "full-stack-plugins/bt-linux-panel-plugin",
@@ -136,6 +154,24 @@
         "processon",
         "diagram",
         "mind-map"
+      ]
+    },
+    {
+      "id": "ui-design",
+      "displayName": "UI Design",
+      "repository": "full-stack-plugins/ui-design-plugin",
+      "localDirectory": "ui-design-plugin",
+      "version": "0.1.1",
+      "description": "Design frontend specifications, editable prototypes, scoped image assets and evidence-backed previews using model-native capabilities.",
+      "shortDescription": "Model-native frontend design and image assets",
+      "category": "Design Tools",
+      "codexCategory": "Creativity",
+      "logo": "assets/logo.png",
+      "tags": [
+        "frontend",
+        "design",
+        "imagegen",
+        "agent-skills"
       ]
     }
   ]
