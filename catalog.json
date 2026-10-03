@@ -10,7 +10,7 @@
       "displayName": "CodeGraph",
       "repository": "full-stack-plugins/codegraph-plugin",
       "localDirectory": "codegraph-plugin",
-      "version": "0.1.5",
+      "version": "0.1.6",
       "description": "Inject the official CodeGraph prompt at session start (only when a `.codegraph/` directory exists) and expose all 20 codegraph CLI commands as slash commands for Codex/ZCode/Kimi/Claude Code. Pure Python stdlib.",
       "shortDescription": "Discoverable codegraph — official prompt + all CLI commands",
       "category": "Developer Tools",

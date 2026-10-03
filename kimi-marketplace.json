@@ -5,8 +5,8 @@
     {
       "id": "codegraph",
       "displayName": "CodeGraph",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.1.5/assets/official-logo.png",
-      "source": "https://github.com/full-stack-plugins/codegraph-plugin/releases/tag/v0.1.5"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.1.6/assets/official-logo.png",
+      "source": "https://github.com/full-stack-plugins/codegraph-plugin/releases/tag/v0.1.6"
     },
     {
       "id": "codereview-plugin",

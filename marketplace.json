@@ -8,10 +8,10 @@
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/codegraph-plugin",
-        "ref": "v0.1.5"
+        "ref": "v0.1.6"
       },
       "description": "Inject the official CodeGraph prompt at session start (only when a `.codegraph/` directory exists) and expose all 20 codegraph CLI commands as slash commands for Codex/ZCode/Kimi/Claude Code. Pure Python stdlib.",
-      "version": "0.1.5",
+      "version": "0.1.6",
       "category": "Developer Tools",
       "tags": [
         "code-intelligence",
@@ -20,7 +20,7 @@
         "mcp",
         "code-search"
       ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.1.5/assets/official-logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.1.6/assets/official-logo.png",
       "strict": true
     },
     {
