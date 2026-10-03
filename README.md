@@ -2,13 +2,13 @@
 
 # Full Stack Plugins
 
-**6 个插件。研发全流程。一个统一生态。**
+**9 个插件。研发全流程。一个统一生态。**
 
 *AI 设计工具 · 图表绘制 · 代码质量 · 流程治理 · 服务器运维 — 面向 Codex / ZCode / Kimi 独立安装。*
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-green)](LICENSE)
 [![Platforms](https://img.shields.io/badge/hosts-Codex%20%C2%B7%20ZCode%20%C2%B7%20Kimi-blue)](#-安装)
-[![Plugins](https://img.shields.io/badge/plugins-6-green)](#-插件目录)
+[![Plugins](https://img.shields.io/badge/plugins-9-green)](#-插件目录)
 
 [English](./README.en.md)
 
@@ -56,6 +56,8 @@ codex plugin add codereview-plugin@full-stack-plugins
 codex plugin add flowguard@full-stack-plugins
 codex plugin add processon-design@full-stack-plugins
 codex plugin add stitch-design@full-stack-plugins
+codex plugin add ui-design@full-stack-plugins
+codex plugin add 1panel@full-stack-plugins
 ```
 
 ### ZCode
@@ -74,13 +76,15 @@ codex plugin add stitch-design@full-stack-plugins
 
 | 插件 | ID | 版本 | 定位 | 仓库 |
 |------|----|:----:|------|------|
-| 🧠 **CodeGraph 代码知识图谱** | `codegraph` | 0.1.5 | 会话启动注入官方 CodeGraph 提示，20 个 CLI 命令成斜杠命令 | [codegraph-plugin](https://github.com/full-stack-plugins/codegraph-plugin) |
-| 🛡️ **宝塔 Linux 面板** | `bt-linux-panel` | 1.0.5 | 通过 MCP 运维宝塔 Linux 面板 | [bt-linux-panel-plugin](https://github.com/full-stack-plugins/bt-linux-panel-plugin) |
-| 🔍 **代码规范守卫** | `codeguard` | 0.18.2 | 规范、静态分析、编译与测试检查 | [codeguard-plugin](https://github.com/full-stack-plugins/codeguard-plugin) |
-| 🧭 **CodeReview** | `codereview-plugin` | 0.3.0 | 用户授权后对暂存候选提交给出语义风险建议 | [codereview-plugin](https://github.com/full-stack-plugins/codereview-plugin) |
-| 🧱 **研发流程门禁** | `flowguard` | 0.4.1 | 智能体推进的十阶段 SDD 文档与证据门禁 | [flowguard-plugin](https://github.com/full-stack-plugins/flowguard-plugin) |
-| 📊 **ProcessOn 图表** | `processon-design` | 0.2.12 | 生成可编辑的 ProcessOn 图表和思维导图 | [processon-design-plugin](https://github.com/full-stack-plugins/processon-design-plugin) |
-| 🎨 **Google Stitch 设计** | `stitch-design` | 0.9.0 | 基于 Google Stitch 的设计与前端搭建 | [stitch-design-plugin](https://github.com/full-stack-plugins/stitch-design-plugin) |
+| **1Panel** | `1panel` | 0.1.1 | Scoped 1Panel operations via official MCP | [1panel-plugin](https://github.com/full-stack-plugins/1panel-plugin) |
+| **BaoTa Linux Panel** | `bt-linux-panel` | 1.0.6 | Operate Baota Linux panel via MCP | [bt-linux-panel-plugin](https://github.com/full-stack-plugins/bt-linux-panel-plugin) |
+| **CodeGraph** | `codegraph` | 0.1.6 | Discoverable codegraph — official prompt + all CLI commands | [codegraph-plugin](https://github.com/full-stack-plugins/codegraph-plugin) |
+| **CodeGuard** | `codeguard` | 0.18.3 | Trustworthy code checks and Java impact analysis | [codeguard-plugin](https://github.com/full-stack-plugins/codeguard-plugin) |
+| **CodeReview** | `codereview-plugin` | 0.3.0 | Review staged commits with explicit consent | [codereview-plugin](https://github.com/full-stack-plugins/codereview-plugin) |
+| **FlowGuard** | `flowguard` | 0.4.2 | 智能体 SDD 治理：原生规格、证据与提交门禁 | [flowguard-plugin](https://github.com/full-stack-plugins/flowguard-plugin) |
+| **Google Stitch Design** | `stitch-design` | 0.9.0 | Design and build with Google Stitch | [stitch-design-plugin](https://github.com/full-stack-plugins/stitch-design-plugin) |
+| **ProcessOn Design** | `processon-design` | 0.2.12 | Design polished, editable ProcessOn diagrams | [processon-design-plugin](https://github.com/full-stack-plugins/processon-design-plugin) |
+| **UI Design** | `ui-design` | 0.1.1 | Model-native frontend design and image assets | [ui-design-plugin](https://github.com/full-stack-plugins/ui-design-plugin) |
 
 CodeReview v0.2.1 分发 8 个技能（官方 OCR 2 个、独立 `codereview-skills` 5 个、插件专属 `codereview-harness` 1 个），已通过离线测试；真实 OCR 模型调用和 Codex、ZCode、Kimi 安装加载仍为 **UNVERIFIED**。它的报告是建议，不替代 CodeGuard 检查或 FlowGuard 裁决。
 
@@ -160,3 +164,7 @@ Apache 2.0 — 详见 [LICENSE](LICENSE)。
 Made with ❤️ by PartMe.AI Team
 
 </div>
+
+## 技能源与新插件
+
+UI Design 的 11 个技能由 design-skills v1.15.1 维护；1Panel 的 8 个技能由 1panel-skills v0.1.1 维护。插件保存完整分发快照，通过版本 tag、commit 和内容摘要锁定来源，不在插件仓库直接维护技能。两个插件均为 v0.1.1。UI Design 普通设计无需 MCP；1Panel 使用前须配置官方 MCP 可执行文件和私有面板连接。

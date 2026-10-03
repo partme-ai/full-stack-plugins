@@ -1,16 +1,51 @@
 {
   "name": "full-stack-plugins",
-  "displayName": "Full Stack 插件",
+  "displayName": "Full Stack Plugins",
   "description": "Full Stack plugin marketplace for Codex, ZCode, and Kimi Code: AI design, diagramming, executable code checks, semantic review, workflow governance, and server operations.",
   "descriptionZhCn": "Full Stack 插件市场：面向 Codex、ZCode 与 Kimi Code，覆盖 AI 设计、图表绘制、代码检查、语义审查、流程治理与服务器运维。",
   "planningRepositories": [],
   "plugins": [
     {
+      "id": "1panel",
+      "displayName": "1Panel",
+      "repository": "full-stack-plugins/1panel-plugin",
+      "localDirectory": "1panel-plugin",
+      "version": "0.1.1",
+      "description": "Inspect and operate 1Panel through the pinned official MCP with private configuration and explicit access levels.",
+      "shortDescription": "Scoped 1Panel operations via official MCP",
+      "category": "Productivity",
+      "codexCategory": "Productivity",
+      "logo": "assets/logo.png",
+      "tags": [
+        "1panel",
+        "linux",
+        "mcp",
+        "operations"
+      ]
+    },
+    {
+      "id": "bt-linux-panel",
+      "displayName": "BaoTa Linux Panel",
+      "repository": "full-stack-plugins/bt-linux-panel-plugin",
+      "localDirectory": "bt-linux-panel-plugin",
+      "version": "1.0.6",
+      "description": "Operate Baota Linux panel through MCP to manage services, diagnose sites and databases, and audit server security.",
+      "shortDescription": "Operate Baota Linux panel via MCP",
+      "category": "Productivity",
+      "logo": "assets/official-logo.png",
+      "tags": [
+        "baota",
+        "bt-panel",
+        "linux-ops",
+        "mcp"
+      ]
+    },
+    {
       "id": "codegraph",
       "displayName": "CodeGraph",
       "repository": "full-stack-plugins/codegraph-plugin",
       "localDirectory": "codegraph-plugin",
-      "version": "0.1.5",
+      "version": "0.1.6",
       "description": "Inject the official CodeGraph prompt at session start (only when a `.codegraph/` directory exists) and expose all 20 codegraph CLI commands as slash commands for Codex/ZCode/Kimi/Claude Code. Pure Python stdlib.",
       "shortDescription": "Discoverable codegraph — official prompt + all CLI commands",
       "category": "Developer Tools",
@@ -21,6 +56,30 @@
         "codegraph",
         "mcp",
         "code-search"
+      ]
+    },
+    {
+      "id": "codeguard",
+      "displayName": "CodeGuard",
+      "repository": "full-stack-plugins/codeguard-plugin",
+      "localDirectory": "codeguard-plugin",
+      "version": "0.19.0",
+      "description": "Evidence-backed code checks and Git content gates for AI assistants, with Maven/Gradle module impact analysis. Save hooks provide feedback; unverified checks are explicit.",
+      "shortDescription": "Trustworthy code checks and Java impact analysis",
+      "category": "Developer Tools",
+      "logo": "assets/official-logo.png",
+      "tags": [
+        "lint",
+        "code-style",
+        "javadoc",
+        "checkstyle",
+        "clippy",
+        "golangci-lint",
+        "detekt",
+        "swiftlint",
+        "eslint",
+        "ruff",
+        "pre-commit"
       ]
     },
     {
@@ -39,6 +98,28 @@
         "git-commit",
         "consent",
         "ocr"
+      ]
+    },
+    {
+      "id": "flowguard",
+      "displayName": "FlowGuard",
+      "repository": "full-stack-plugins/flowguard-plugin",
+      "localDirectory": "flowguard-plugin",
+      "version": "0.4.2",
+      "description": "Agent-driven SDD governance for Codex, ZCode, Kimi and Claude: native Spec Kit/OpenSpec/Superpowers discovery, session-worktree task binding, evidence freshness and deterministic code/commit/release gates.",
+      "shortDescription": "智能体 SDD 治理：原生规格、证据与提交门禁",
+      "category": "Developer Tools",
+      "logo": "assets/official-logo.png",
+      "tags": [
+        "sdlc",
+        "sdd",
+        "agent-governance",
+        "workflow",
+        "requirements",
+        "testing",
+        "code-review",
+        "release",
+        "gate"
       ]
     },
     {
@@ -76,66 +157,21 @@
       ]
     },
     {
-      "id": "codeguard",
-      "displayName": "代码规范守卫",
-      "repository": "full-stack-plugins/codeguard-plugin",
-      "localDirectory": "codeguard-plugin",
-      "version": "0.19.0",
-      "description": "Evidence-backed code checks and Git content gates for AI assistants, with Maven/Gradle module impact analysis. Save hooks provide feedback; unverified checks are explicit.",
-      "shortDescription": "Trustworthy code checks and Java impact analysis",
-      "category": "Developer Tools",
-      "logo": "assets/official-logo.png",
+      "id": "ui-design",
+      "displayName": "UI Design",
+      "repository": "full-stack-plugins/ui-design-plugin",
+      "localDirectory": "ui-design-plugin",
+      "version": "0.1.1",
+      "description": "Design frontend specifications, editable prototypes, scoped image assets and evidence-backed previews using model-native capabilities.",
+      "shortDescription": "Model-native frontend design and image assets",
+      "category": "Design Tools",
+      "codexCategory": "Creativity",
+      "logo": "assets/logo.png",
       "tags": [
-        "lint",
-        "code-style",
-        "javadoc",
-        "checkstyle",
-        "clippy",
-        "golangci-lint",
-        "detekt",
-        "swiftlint",
-        "eslint",
-        "ruff",
-        "pre-commit"
-      ]
-    },
-    {
-      "id": "bt-linux-panel",
-      "displayName": "宝塔 Linux 面板",
-      "repository": "full-stack-plugins/bt-linux-panel-plugin",
-      "localDirectory": "bt-linux-panel-plugin",
-      "version": "1.0.5",
-      "description": "Operate Baota Linux panel through MCP to manage services, diagnose sites and databases, and audit server security.",
-      "shortDescription": "Operate Baota Linux panel via MCP",
-      "category": "Productivity",
-      "logo": "assets/official-logo.png",
-      "tags": [
-        "baota",
-        "bt-panel",
-        "linux-ops",
-        "mcp"
-      ]
-    },
-    {
-      "id": "flowguard",
-      "displayName": "研发流程门禁",
-      "repository": "full-stack-plugins/flowguard-plugin",
-      "localDirectory": "flowguard-plugin",
-      "version": "0.4.1",
-      "description": "Agent-driven SDD governance for Codex, ZCode, Kimi and Claude: native Spec Kit/OpenSpec/Superpowers discovery, session-worktree task binding, evidence freshness and deterministic code/commit/release gates.",
-      "shortDescription": "智能体 SDD 治理：原生规格、证据与提交门禁",
-      "category": "Developer Tools",
-      "logo": "assets/official-logo.png",
-      "tags": [
-        "sdlc",
-        "sdd",
-        "agent-governance",
-        "workflow",
-        "requirements",
-        "testing",
-        "code-review",
-        "release",
-        "gate"
+        "frontend",
+        "design",
+        "imagegen",
+        "agent-skills"
       ]
     }
   ]

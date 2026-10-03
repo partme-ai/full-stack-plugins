@@ -106,6 +106,11 @@ if (remotePluginIds.size > 0) {
     current.plugins = current.plugins.map((entry) =>
       replacements.get(entry[identityKey]) ?? entry
     );
+    for (const [id, entry] of replacements) {
+      if (!current.plugins.some((existing) => existing[identityKey] === id)) current.plugins.push(entry);
+    }
+    const positions = new Map(catalog.plugins.map((plugin, index) => [plugin.id, index]));
+    current.plugins.sort((a, b) => positions.get(a[identityKey]) - positions.get(b[identityKey]));
     outputs.set(file, current);
   }
 }
@@ -144,7 +149,14 @@ const validateRemoteRelease = (plugin) => {
       errors.push(`${plugin.id}: GitHub Release tag ${publishedTag || "<missing>"} differs from ${ref}`);
     }
   } catch (error) {
-    errors.push(`${plugin.id}: missing published GitHub Release for ${ref}: ${error.message}`);
+    // Public repositories can be verified without installing GitHub CLI.
+    try {
+      const probe = "const r=await fetch(process.argv[1],{headers:{'User-Agent':'full-stack-marketplace'}});if(!r.ok)throw new Error('GitHub HTTP '+r.status);const d=await r.json();if(d.draft||d.prerelease)throw new Error('Release is not final');process.stdout.write(d.tag_name);";
+      const publishedTag = execFileSync(process.execPath, ["--input-type=module", "-e", probe, `https://api.github.com/repos/${plugin.repository}/releases/tags/${ref}`], { encoding: "utf8", timeout: 30000 }).trim();
+      if (publishedTag !== ref) errors.push(`${plugin.id}: published Release tag differs from ${ref}`);
+    } catch (fallbackError) {
+      errors.push(`${plugin.id}: missing published GitHub Release for ${ref}: ${fallbackError.message}`);
+    }
   }
 };
 
@@ -165,7 +177,7 @@ const validateSkills = (plugin, repo) => {
       errors.push(`${plugin.id}: missing skills/${skillName}/SKILL.md`);
       continue;
     }
-    const text = fs.readFileSync(skillPath, "utf8");
+    const text = fs.readFileSync(skillPath, "utf8").replace(/\r\n/g, "\n");
     const frontmatter = text.match(/^---\n([\s\S]*?)\n---\n/);
     if (!frontmatter) {
       errors.push(`${plugin.id}: invalid frontmatter in skills/${skillName}/SKILL.md`);

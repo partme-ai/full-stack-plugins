@@ -8,8 +8,13 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const workspace = path.resolve(root, "..", "full-stack-plugins-repositories");
 const catalog = JSON.parse(fs.readFileSync(path.join(root, "catalog.json"), "utf8"));
 const format = (value) => `${JSON.stringify(value, null, 2)}\n`;
+const selectedIds = new Set(process.argv.filter((argument) => argument.startsWith("--plugin=")).map((argument) => argument.slice(9)));
+for (const id of selectedIds) {
+  if (!catalog.plugins.some((plugin) => plugin.id === id)) throw new Error(`Unknown plugin: ${id}`);
+}
 
 for (const plugin of catalog.plugins) {
+  if (selectedIds.size && !selectedIds.has(plugin.id)) continue;
   const repo = path.join(workspace, plugin.localDirectory);
   const files = {
     marketplace: path.join(repo, ".agents/plugins/marketplace.json"),
@@ -37,7 +42,7 @@ for (const plugin of catalog.plugins) {
     ref: releaseRef
   };
   entry.policy = { installation: "AVAILABLE", authentication: "ON_USE" };
-  entry.category = plugin.category;
+  entry.category = plugin.codexCategory ?? plugin.category;
   entry.version = plugin.version;
   entry.description = plugin.description;
   entry.icon = logoUrl;
@@ -48,6 +53,7 @@ for (const plugin of catalog.plugins) {
 
   const codex = JSON.parse(fs.readFileSync(files.codex, "utf8"));
   codex.name = plugin.id;
+  codex.version = plugin.version;
   codex.description = plugin.description;
   codex.interface ??= {};
   codex.interface.displayName = plugin.displayName;
@@ -74,6 +80,18 @@ for (const plugin of catalog.plugins) {
     const value = { marketplace, codex, zcode, kimi }[kind];
     fs.writeFileSync(file, format(value));
   }
+  for (const relative of ["plugin.json", ".claude-plugin/plugin.json"]) {
+    const file = path.join(repo, relative);
+    if (!fs.existsSync(file)) continue;
+    const value = JSON.parse(fs.readFileSync(file, "utf8"));
+    value.version = plugin.version;
+    if (relative === "plugin.json") {
+      value.extensions ??= {};
+      value.extensions["com.openai"] ??= {};
+      value.extensions["com.openai"].interface = codex.interface;
+    }
+    fs.writeFileSync(file, format(value));
+  }
 }
 
-console.log(`Synchronized and formatted ${catalog.plugins.length * 4} plugin configuration files.`);
+console.log(`Synchronized and formatted ${(selectedIds.size || catalog.plugins.length) * 4} plugin configuration files.`);
