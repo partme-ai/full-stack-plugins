@@ -13,4 +13,6 @@ Both plugins passed Windows/Linux CI: [UI Design](https://github.com/full-stack-
 
 Final [UI Design release](https://github.com/full-stack-plugins/ui-design-plugin/releases/tag/v0.1.1) and [1Panel release](https://github.com/full-stack-plugins/1panel-plugin/releases/tag/v0.1.1) include ZIP archives and SHA256 sidecars. The remote marketplace validator confirmed both published Releases and tags. All nine catalog entries passed local consistency checks; three generator regressions cover selected-entry insertion, Windows frontmatter and mismatched-version rejection.
 
+The [marketplace Windows/Linux CI](https://github.com/partme-ai/full-stack-plugins/actions/runs/37142678466) passed against published plugin tags at market commit 35494dee92585c4c01e53a3bfd497e84223d514b. It independently checked release-based installation sources, remote Release identity and generator regressions.
+
 No native image-generation request or production server operation was executed. UI Design ordinary design requires no MCP. 1Panel requires a separately installed official executable and private connection/API configuration; readonly is the default. Native-client loading and variable expansion remain subject to actual user installation verification.

@@ -8,4 +8,4 @@
 
 ## 3. Aggregate marketplace
 - [x] 3.1 Add catalog entries, generate three-platform markets and update bilingual documentation.
-- [ ] 3.2 Validate remote version/tag/Release identities, commit and push the market repository and verify its CI. Synchronization and archival follow completed verification.
+- [x] 3.2 Validate remote version/tag/Release identities, commit and push the market repository and verify its CI. Synchronization and archival follow completed verification.
