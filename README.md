@@ -21,6 +21,15 @@
 
 </div>
 
+## 插件市场导航
+
+两个市场按用途分类，各自的插件仓库链接见对应市场的插件目录。
+
+| 分类 | 插件市场入口 | 用途 |
+| --- | --- | --- |
+| 全栈开发 | [Full Stack Plugins](https://github.com/partme-ai/full-stack-plugins) | 架构与 UI 设计、代码理解、质量检查、代码审查、流程治理与服务器运维 |
+| AIGC 内容创作 | [Full AIGC Plugins](https://github.com/partme-ai/full-aigc-plugins) | 图像、视频、音频、音乐、3D 与多模态内容创作 |
+
 ---
 
 ## 简介
@@ -74,17 +83,19 @@ codex plugin add 1panel@full-stack-plugins
 
 ## 插件目录
 
+以下为 **全栈开发** 插件；点击插件名称或仓库链接查看各插件文档，另一分类请使用上方市场入口。
+
 | 插件 | ID | 版本 | 定位 | 仓库 |
 |------|----|:----:|------|------|
-| **1Panel** | `1panel` | 0.1.1 | Scoped 1Panel operations via official MCP | [1panel-plugin](https://github.com/full-stack-plugins/1panel-plugin) |
-| **BaoTa Linux Panel** | `bt-linux-panel` | 1.0.6 | Operate Baota Linux panel via MCP | [bt-linux-panel-plugin](https://github.com/full-stack-plugins/bt-linux-panel-plugin) |
-| **CodeGraph** | `codegraph` | 0.1.6 | Discoverable codegraph — official prompt + all CLI commands | [codegraph-plugin](https://github.com/full-stack-plugins/codegraph-plugin) |
-| **CodeGuard** | `codeguard` | 0.18.3 | Trustworthy code checks and Java impact analysis | [codeguard-plugin](https://github.com/full-stack-plugins/codeguard-plugin) |
-| **CodeReview** | `codereview-plugin` | 0.3.0 | Review staged commits with explicit consent | [codereview-plugin](https://github.com/full-stack-plugins/codereview-plugin) |
-| **FlowGuard** | `flowguard` | 0.4.2 | 智能体 SDD 治理：原生规格、证据与提交门禁 | [flowguard-plugin](https://github.com/full-stack-plugins/flowguard-plugin) |
-| **Google Stitch Design** | `stitch-design` | 0.9.0 | Design and build with Google Stitch | [stitch-design-plugin](https://github.com/full-stack-plugins/stitch-design-plugin) |
-| **ProcessOn Design** | `processon-design` | 0.2.12 | Design polished, editable ProcessOn diagrams | [processon-design-plugin](https://github.com/full-stack-plugins/processon-design-plugin) |
-| **UI Design** | `ui-design` | 0.1.1 | Model-native frontend design and image assets | [ui-design-plugin](https://github.com/full-stack-plugins/ui-design-plugin) |
+| [**1Panel**](https://github.com/full-stack-plugins/1panel-plugin) | `1panel` | 0.1.1 | Scoped 1Panel operations via official MCP | [1panel-plugin](https://github.com/full-stack-plugins/1panel-plugin) |
+| [**BaoTa Linux Panel**](https://github.com/full-stack-plugins/bt-linux-panel-plugin) | `bt-linux-panel` | 1.0.6 | Operate Baota Linux panel via MCP | [bt-linux-panel-plugin](https://github.com/full-stack-plugins/bt-linux-panel-plugin) |
+| [**CodeGraph**](https://github.com/full-stack-plugins/codegraph-plugin) | `codegraph` | 0.1.6 | Discoverable codegraph — official prompt + all CLI commands | [codegraph-plugin](https://github.com/full-stack-plugins/codegraph-plugin) |
+| [**CodeGuard**](https://github.com/full-stack-plugins/codeguard-plugin) | `codeguard` | 0.18.3 | Trustworthy code checks and Java impact analysis | [codeguard-plugin](https://github.com/full-stack-plugins/codeguard-plugin) |
+| [**CodeReview**](https://github.com/full-stack-plugins/codereview-plugin) | `codereview-plugin` | 0.3.0 | Review staged commits with explicit consent | [codereview-plugin](https://github.com/full-stack-plugins/codereview-plugin) |
+| [**FlowGuard**](https://github.com/full-stack-plugins/flowguard-plugin) | `flowguard` | 0.4.2 | 智能体 SDD 治理：原生规格、证据与提交门禁 | [flowguard-plugin](https://github.com/full-stack-plugins/flowguard-plugin) |
+| [**Google Stitch Design**](https://github.com/full-stack-plugins/stitch-design-plugin) | `stitch-design` | 0.9.0 | Design and build with Google Stitch | [stitch-design-plugin](https://github.com/full-stack-plugins/stitch-design-plugin) |
+| [**ProcessOn Design**](https://github.com/full-stack-plugins/processon-design-plugin) | `processon-design` | 0.2.12 | Design polished, editable ProcessOn diagrams | [processon-design-plugin](https://github.com/full-stack-plugins/processon-design-plugin) |
+| [**UI Design**](https://github.com/full-stack-plugins/ui-design-plugin) | `ui-design` | 0.1.1 | Model-native frontend design and image assets | [ui-design-plugin](https://github.com/full-stack-plugins/ui-design-plugin) |
 
 CodeReview v0.2.1 分发 8 个技能（官方 OCR 2 个、独立 `codereview-skills` 5 个、插件专属 `codereview-harness` 1 个），已通过离线测试；真实 OCR 模型调用和 Codex、ZCode、Kimi 安装加载仍为 **UNVERIFIED**。它的报告是建议，不替代 CodeGuard 检查或 FlowGuard 裁决。
 
@@ -123,7 +134,7 @@ full-stack-plugins/
 |------|------|
 | **技能侧导航（全栈）** | [partme-ai/full-stack-skills](https://github.com/partme-ai/full-stack-skills) |
 | **技能包组织（全栈）** | [github.com/full-stack-skills](https://github.com/full-stack-skills) |
-| **AIGC 侧插件市场** | [github.com/full-aigc-plugins](https://github.com/full-aigc-plugins) |
+| **AIGC 侧插件市场** | [github.com/full-aigc-plugins](https://github.com/partme-ai/full-aigc-plugins) |
 | **AIGC 侧技能导航** | [partme-ai/full-aigc-skills](https://github.com/partme-ai/full-aigc-skills) |
 | **Agent Skills 规范** | [agentskills.io](https://agentskills.io) |
 | **Skills CLI** | [github.com/vercel-labs/skills](https://github.com/vercel-labs/skills) |
