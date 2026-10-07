@@ -13,8 +13,8 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '24'
-      - run: node scripts/checkout-release-plugins.mjs --plugin=ui-design --plugin=1panel
-      - run: node scripts/sync-marketplaces.mjs --remote --plugin=ui-design --plugin=1panel
+      - run: node scripts/checkout-release-plugins.mjs --plugin=ui-design --plugin=1panel --plugin=gitflow
+      - run: node scripts/sync-marketplaces.mjs --remote --plugin=ui-design --plugin=1panel --plugin=gitflow
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: node --test scripts/tests/sync-marketplaces.test.mjs

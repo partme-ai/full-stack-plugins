@@ -132,6 +132,27 @@
       "strict": true
     },
     {
+      "name": "gitflow",
+      "source": {
+        "source": "github",
+        "repo": "full-stack-plugins/gitflow-plugin",
+        "ref": "v0.1.1"
+      },
+      "description": "按项目约定治理 Git 分支、提交与流转，九技能加确定性门禁",
+      "version": "0.1.1",
+      "category": "Developer Tools",
+      "tags": [
+        "git",
+        "gitflow",
+        "branch",
+        "workflow",
+        "release",
+        "governance"
+      ],
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitflow-plugin@v0.1.1/assets/logo.png",
+      "strict": true
+    },
+    {
       "name": "stitch-design",
       "source": {
         "source": "github",

@@ -2,13 +2,13 @@
 
 # Full Stack Plugins
 
-**9 plugins. The full development process. One unified ecosystem.**
+**10 plugins. The full development process. One unified ecosystem.**
 
 *AI design tooling · Diagramming · Code checks · Workflow governance · Server operations — independently installable on Codex / ZCode / Kimi.*
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-green)](LICENSE)
 [![Platforms](https://img.shields.io/badge/hosts-Codex%20%C2%B7%20ZCode%20%C2%B7%20Kimi-blue)](#install)
-[![Plugins](https://img.shields.io/badge/plugins-9-green)](#plugin-catalog)
+[![Plugins](https://img.shields.io/badge/plugins-10-green)](#plugin-catalog)
 
 [简体中文](./README.md)
 
@@ -40,6 +40,7 @@ This repository is the plugin-side counterpart of [Full Stack Skills](https://gi
 | **Executable code checks** | Style, static analysis, builds, and tests | codeguard |
 | **Semantic code review** | Review staged changes for logic and security risks with user consent | codereview-plugin |
 | **Workflow governance** | SDD stages, evidence, and final commit gates | flowguard |
+| **Git workflow governance** | Branch names, creation bases, commit rules, and release backports | gitflow |
 | **Server operations** | Baota panel sites / databases / cron jobs | bt-linux-panel |
 
 ---
@@ -77,6 +78,7 @@ codex plugin add bt-linux-panel@full-stack-plugins
 codex plugin add codeguard@full-stack-plugins
 codex plugin add codereview-plugin@full-stack-plugins
 codex plugin add flowguard@full-stack-plugins
+codex plugin add gitflow@full-stack-plugins
 codex plugin add processon-design@full-stack-plugins
 codex plugin add stitch-design@full-stack-plugins
 codex plugin add ui-design@full-stack-plugins
@@ -107,9 +109,12 @@ The plugins below belong to **Full-stack development**. Open a plugin name or re
 | [**CodeGuard**](https://github.com/full-stack-plugins/codeguard-plugin) | `codeguard` | 0.18.3 | Trustworthy code checks and Java impact analysis | [codeguard-plugin](https://github.com/full-stack-plugins/codeguard-plugin) |
 | [**CodeReview**](https://github.com/full-stack-plugins/codereview-plugin) | `codereview-plugin` | 0.3.0 | Review staged commits with explicit consent | [codereview-plugin](https://github.com/full-stack-plugins/codereview-plugin) |
 | [**FlowGuard**](https://github.com/full-stack-plugins/flowguard-plugin) | `flowguard` | 0.4.2 | 智能体 SDD 治理：原生规格、证据与提交门禁 | [flowguard-plugin](https://github.com/full-stack-plugins/flowguard-plugin) |
+| [**GitFlow**](https://github.com/full-stack-plugins/gitflow-plugin) | `gitflow` | 0.1.1 | Project Git branch, commit, sync, and release governance | [gitflow-plugin](https://github.com/full-stack-plugins/gitflow-plugin) |
 | [**Google Stitch Design**](https://github.com/full-stack-plugins/stitch-design-plugin) | `stitch-design` | 0.9.0 | Design and build with Google Stitch | [stitch-design-plugin](https://github.com/full-stack-plugins/stitch-design-plugin) |
 | [**ProcessOn Design**](https://github.com/full-stack-plugins/processon-design-plugin) | `processon-design` | 0.2.12 | Design polished, editable ProcessOn diagrams | [processon-design-plugin](https://github.com/full-stack-plugins/processon-design-plugin) |
 | [**UI Design**](https://github.com/full-stack-plugins/ui-design-plugin) | `ui-design` | 0.1.2 | Frontend design via the ui-design-use entry skill | [ui-design-plugin](https://github.com/full-stack-plugins/ui-design-plugin) |
+
+GitFlow v0.1.1 distributes nine locked skills from `git-skills` with project policies and deterministic Git gates, plus a logo derived from the official Git mark. Marketplace metadata is aligned across three hosts; actual host installation/loading remains unverified.
 
 CodeReview v0.2.1 distributes 8 skills (2 upstream OCR, 5 independent `codereview-skills`, and the plugin-local `codereview-harness`) and has passed offline tests. Real OCR model execution and installation/loading in Codex, ZCode, and Kimi are still **UNVERIFIED**. Its findings are advisory and do not replace CodeGuard checks or FlowGuard decisions.
 
