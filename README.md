@@ -2,13 +2,13 @@
 
 # Full Stack Plugins
 
-**9 个插件。研发全流程。一个统一生态。**
+**10 个插件。研发全流程。一个统一生态。**
 
 *AI 设计工具 · 图表绘制 · 代码质量 · 流程治理 · 服务器运维 — 面向 Codex / ZCode / Kimi 独立安装。*
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-green)](LICENSE)
 [![Platforms](https://img.shields.io/badge/hosts-Codex%20%C2%B7%20ZCode%20%C2%B7%20Kimi-blue)](#-安装)
-[![Plugins](https://img.shields.io/badge/plugins-9-green)](#-插件目录)
+[![Plugins](https://img.shields.io/badge/plugins-10-green)](#-插件目录)
 
 [English](./README.en.md)
 
@@ -40,6 +40,7 @@
 | **可执行代码检查** | 规范、静态分析、编译与测试证据 | codeguard |
 | **语义代码审查** | 用户授权后审查候选提交的逻辑与安全风险 | codereview-plugin |
 | **研发流程治理** | SDD 阶段、证据与提交门禁裁决 | flowguard |
+| **Git 工作流治理** | 分支命名、创建基线、提交与发布回灌规范 | gitflow |
 | **服务器运维** | 宝塔面板站点 / 数据库 / 计划任务 | bt-linux-panel |
 
 ---
@@ -54,6 +55,7 @@ codex plugin add bt-linux-panel@full-stack-plugins
 codex plugin add codeguard@full-stack-plugins
 codex plugin add codereview-plugin@full-stack-plugins
 codex plugin add flowguard@full-stack-plugins
+codex plugin add gitflow@full-stack-plugins
 codex plugin add processon-design@full-stack-plugins
 codex plugin add stitch-design@full-stack-plugins
 codex plugin add ui-design@full-stack-plugins
@@ -82,9 +84,12 @@ codex plugin add 1panel@full-stack-plugins
 | **CodeGuard** | `codeguard` | 0.18.3 | Trustworthy code checks and Java impact analysis | [codeguard-plugin](https://github.com/full-stack-plugins/codeguard-plugin) |
 | **CodeReview** | `codereview-plugin` | 0.3.0 | Review staged commits with explicit consent | [codereview-plugin](https://github.com/full-stack-plugins/codereview-plugin) |
 | **FlowGuard** | `flowguard` | 0.4.2 | 智能体 SDD 治理：原生规格、证据与提交门禁 | [flowguard-plugin](https://github.com/full-stack-plugins/flowguard-plugin) |
+| **GitFlow** | `gitflow` | 0.1.1 | 项目 Git 分支、提交、同步与发布规范治理 | [gitflow-plugin](https://github.com/full-stack-plugins/gitflow-plugin) |
 | **Google Stitch Design** | `stitch-design` | 0.9.0 | Design and build with Google Stitch | [stitch-design-plugin](https://github.com/full-stack-plugins/stitch-design-plugin) |
 | **ProcessOn Design** | `processon-design` | 0.2.12 | Design polished, editable ProcessOn diagrams | [processon-design-plugin](https://github.com/full-stack-plugins/processon-design-plugin) |
 | **UI Design** | `ui-design` | 0.1.1 | Model-native frontend design and image assets | [ui-design-plugin](https://github.com/full-stack-plugins/ui-design-plugin) |
+
+GitFlow v0.1.1 分发独立 `git-skills` 的九技能快照，使用项目规则与确定性 Git 门禁；附带 Git 官方标志衍生 logo。三端市场元数据已对齐，实际宿主安装加载仍未验证。
 
 CodeReview v0.2.1 分发 8 个技能（官方 OCR 2 个、独立 `codereview-skills` 5 个、插件专属 `codereview-harness` 1 个），已通过离线测试；真实 OCR 模型调用和 Codex、ZCode、Kimi 安装加载仍为 **UNVERIFIED**。它的报告是建议，不替代 CodeGuard 检查或 FlowGuard 裁决。
 

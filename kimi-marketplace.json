@@ -39,6 +39,12 @@
       "source": "https://github.com/full-stack-plugins/flowguard-plugin/releases/tag/v0.4.2"
     },
     {
+      "id": "gitflow",
+      "displayName": "GitFlow",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitflow-plugin@v0.1.1/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/gitflow-plugin/releases/tag/v0.1.1"
+    },
+    {
       "id": "stitch-design",
       "displayName": "Google Stitch Design",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/stitch-design-plugin@v0.9.0/assets/official-logo.png",
