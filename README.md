@@ -7,17 +7,17 @@
 *AI 设计工具 · 图表绘制 · 代码质量 · 流程治理 · 服务器运维 — 面向 Codex / ZCode / Kimi 独立安装。*
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-green)](LICENSE)
-[![Platforms](https://img.shields.io/badge/hosts-Codex%20%C2%B7%20ZCode%20%C2%B7%20Kimi-blue)](#-安装)
-[![Plugins](https://img.shields.io/badge/plugins-10-green)](#-插件目录)
+[![Platforms](https://img.shields.io/badge/hosts-Codex%20%C2%B7%20ZCode%20%C2%B7%20Kimi-blue)](#安装)
+[![Plugins](https://img.shields.io/badge/plugins-10-green)](#插件目录)
 
 [English](./README.en.md)
 
-[简介](#-简介) ·
-[安装](#-安装) ·
-[插件目录](#-插件目录) ·
-[架构](#-架构) ·
-[生态](#-生态) ·
-[贡献](#-贡献指南)
+[简介](#简介) ·
+[生态](#生态) ·
+[安装](#安装) ·
+[插件目录](#插件目录) ·
+[架构](#架构) ·
+[贡献](#贡献指南)
 
 </div>
 
@@ -42,6 +42,29 @@
 | **研发流程治理** | SDD 阶段、证据与提交门禁裁决 | flowguard |
 | **Git 工作流治理** | 分支命名、创建基线、提交与发布回灌规范 | gitflow |
 | **服务器运维** | 宝塔面板站点 / 数据库 / 计划任务 | bt-linux-panel |
+
+---
+
+## 生态
+
+<!-- ecosystem-navigation:start -->
+
+| 方向 | 适用任务 | 目录与安装 | 组织 |
+| --- | --- | --- | --- |
+| Full Stack Skills | 软件开发、架构设计、测试与运维 | [PartMe.AI / full-stack-skills](https://github.com/partme-ai/full-stack-skills) | [full-stack-skills](https://github.com/full-stack-skills) |
+| Full AIGC Skills | 图像、视频、音频等内容创作 | [PartMe.AI / full-aigc-skills](https://github.com/partme-ai/full-aigc-skills) | [full-aigc-skills](https://github.com/full-aigc-skills) |
+| Full Stack Plugins | 研发与运维的工具集成和工作流 | [PartMe.AI / full-stack-plugins](https://github.com/partme-ai/full-stack-plugins) | [full-stack-plugins](https://github.com/full-stack-plugins) |
+| Full AIGC Plugins | 内容制作的工具集成和生成工作流 | [PartMe.AI / full-aigc-plugins](https://github.com/partme-ai/full-aigc-plugins) | [full-aigc-plugins](https://github.com/full-aigc-plugins) |
+
+<!-- ecosystem-navigation:end -->
+
+### 相关资源
+
+| 资源 | 链接 |
+|------|------|
+| **Agent Skills 规范** | [agentskills.io](https://agentskills.io) |
+| **Skills CLI** | [github.com/vercel-labs/skills](https://github.com/vercel-labs/skills) |
+| **PartMe.AI** | [github.com/partme-ai](https://github.com/partme-ai) |
 
 ---
 
@@ -76,18 +99,20 @@ codex plugin add 1panel@full-stack-plugins
 
 ## 插件目录
 
+以下为 **全栈开发** 插件；点击插件名称或仓库链接查看各插件文档，另一分类请使用上方市场入口。
+
 | 插件 | ID | 版本 | 定位 | 仓库 |
 |------|----|:----:|------|------|
-| **1Panel** | `1panel` | 0.1.1 | Scoped 1Panel operations via official MCP | [1panel-plugin](https://github.com/full-stack-plugins/1panel-plugin) |
-| **BaoTa Linux Panel** | `bt-linux-panel` | 1.0.6 | Operate Baota Linux panel via MCP | [bt-linux-panel-plugin](https://github.com/full-stack-plugins/bt-linux-panel-plugin) |
-| **CodeGraph** | `codegraph` | 0.1.6 | Discoverable codegraph — official prompt + all CLI commands | [codegraph-plugin](https://github.com/full-stack-plugins/codegraph-plugin) |
-| **CodeGuard** | `codeguard` | 0.18.3 | Trustworthy code checks and Java impact analysis | [codeguard-plugin](https://github.com/full-stack-plugins/codeguard-plugin) |
-| **CodeReview** | `codereview-plugin` | 0.3.0 | Review staged commits with explicit consent | [codereview-plugin](https://github.com/full-stack-plugins/codereview-plugin) |
-| **FlowGuard** | `flowguard` | 0.4.2 | 智能体 SDD 治理：原生规格、证据与提交门禁 | [flowguard-plugin](https://github.com/full-stack-plugins/flowguard-plugin) |
-| **GitFlow** | `gitflow` | 0.1.1 | 项目 Git 分支、提交、同步与发布规范治理 | [gitflow-plugin](https://github.com/full-stack-plugins/gitflow-plugin) |
-| **Google Stitch Design** | `stitch-design` | 0.9.0 | Design and build with Google Stitch | [stitch-design-plugin](https://github.com/full-stack-plugins/stitch-design-plugin) |
-| **ProcessOn Design** | `processon-design` | 0.2.12 | Design polished, editable ProcessOn diagrams | [processon-design-plugin](https://github.com/full-stack-plugins/processon-design-plugin) |
-| **UI Design** | `ui-design` | 0.1.1 | Model-native frontend design and image assets | [ui-design-plugin](https://github.com/full-stack-plugins/ui-design-plugin) |
+| [**1Panel**](https://github.com/full-stack-plugins/1panel-plugin) | `1panel` | 0.1.1 | Scoped 1Panel operations via official MCP | [1panel-plugin](https://github.com/full-stack-plugins/1panel-plugin) |
+| [**BaoTa Linux Panel**](https://github.com/full-stack-plugins/bt-linux-panel-plugin) | `bt-linux-panel` | 1.0.6 | Operate Baota Linux panel via MCP | [bt-linux-panel-plugin](https://github.com/full-stack-plugins/bt-linux-panel-plugin) |
+| [**CodeGraph**](https://github.com/full-stack-plugins/codegraph-plugin) | `codegraph` | 0.1.6 | Discoverable codegraph — official prompt + all CLI commands | [codegraph-plugin](https://github.com/full-stack-plugins/codegraph-plugin) |
+| [**CodeGuard**](https://github.com/full-stack-plugins/codeguard-plugin) | `codeguard` | 0.18.3 | Trustworthy code checks and Java impact analysis | [codeguard-plugin](https://github.com/full-stack-plugins/codeguard-plugin) |
+| [**CodeReview**](https://github.com/full-stack-plugins/codereview-plugin) | `codereview-plugin` | 0.3.0 | Review staged commits with explicit consent | [codereview-plugin](https://github.com/full-stack-plugins/codereview-plugin) |
+| [**FlowGuard**](https://github.com/full-stack-plugins/flowguard-plugin) | `flowguard` | 0.4.2 | 智能体 SDD 治理：原生规格、证据与提交门禁 | [flowguard-plugin](https://github.com/full-stack-plugins/flowguard-plugin) |
+| [**GitFlow**](https://github.com/full-stack-plugins/gitflow-plugin) | `gitflow` | 0.1.1 | 项目 Git 分支、提交、同步与发布规范治理 | [gitflow-plugin](https://github.com/full-stack-plugins/gitflow-plugin) |
+| [**Google Stitch Design**](https://github.com/full-stack-plugins/stitch-design-plugin) | `stitch-design` | 0.9.0 | Design and build with Google Stitch | [stitch-design-plugin](https://github.com/full-stack-plugins/stitch-design-plugin) |
+| [**ProcessOn Design**](https://github.com/full-stack-plugins/processon-design-plugin) | `processon-design` | 0.2.12 | Design polished, editable ProcessOn diagrams | [processon-design-plugin](https://github.com/full-stack-plugins/processon-design-plugin) |
+| [**UI Design**](https://github.com/full-stack-plugins/ui-design-plugin) | `ui-design` | 0.1.2 | Frontend design via the ui-design-use entry skill | [ui-design-plugin](https://github.com/full-stack-plugins/ui-design-plugin) |
 
 GitFlow v0.1.1 分发独立 `git-skills` 的九技能快照，使用项目规则与确定性 Git 门禁；附带 Git 官方标志衍生 logo。三端市场元数据已对齐，实际宿主安装加载仍未验证。
 
@@ -119,20 +144,6 @@ full-stack-plugins/
 1. **启动时**：仅加载技能名称和描述（最小上下文）
 2. **按需**：当智能体识别到相关任务时加载完整的 `SKILL.md`
 3. **深入**：仅在明确需要时读取参考文件
-
----
-
-## 生态
-
-| 资源 | 链接 |
-|------|------|
-| **技能侧导航（全栈）** | [partme-ai/full-stack-skills](https://github.com/partme-ai/full-stack-skills) |
-| **技能包组织（全栈）** | [github.com/full-stack-skills](https://github.com/full-stack-skills) |
-| **AIGC 侧插件市场** | [github.com/full-aigc-plugins](https://github.com/full-aigc-plugins) |
-| **AIGC 侧技能导航** | [partme-ai/full-aigc-skills](https://github.com/partme-ai/full-aigc-skills) |
-| **Agent Skills 规范** | [agentskills.io](https://agentskills.io) |
-| **Skills CLI** | [github.com/vercel-labs/skills](https://github.com/vercel-labs/skills) |
-| **PartMe.AI** | [github.com/partme-ai](https://github.com/partme-ai) |
 
 ---
 

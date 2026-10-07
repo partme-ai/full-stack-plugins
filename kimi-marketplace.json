@@ -59,8 +59,8 @@
     {
       "id": "ui-design",
       "displayName": "UI Design",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.1.1/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/ui-design-plugin/releases/tag/v0.1.1"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.1.2/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/ui-design-plugin/releases/tag/v0.1.2"
     }
   ]
 }

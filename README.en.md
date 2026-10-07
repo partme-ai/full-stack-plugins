@@ -13,10 +13,10 @@
 [简体中文](./README.md)
 
 [About](#about) ·
+[Ecosystem](#ecosystem) ·
 [Install](#install) ·
 [Plugin Catalog](#plugin-catalog) ·
 [Architecture](#architecture) ·
-[Ecosystem](#ecosystem) ·
 [Contributing](#contributing)
 
 </div>
@@ -42,6 +42,29 @@ This repository is the plugin-side counterpart of [Full Stack Skills](https://gi
 | **Workflow governance** | SDD stages, evidence, and final commit gates | flowguard |
 | **Git workflow governance** | Branch names, creation bases, commit rules, and release backports | gitflow |
 | **Server operations** | Baota panel sites / databases / cron jobs | bt-linux-panel |
+
+---
+
+## Ecosystem
+
+<!-- ecosystem-navigation:start -->
+
+| Area | Use it for | Catalog / installation | Organization |
+| --- | --- | --- | --- |
+| Full Stack Skills | Software development, architecture, testing, and operations | [PartMe.AI / full-stack-skills](https://github.com/partme-ai/full-stack-skills) | [full-stack-skills](https://github.com/full-stack-skills) |
+| Full AIGC Skills | Image, video, audio, and other content creation | [PartMe.AI / full-aigc-skills](https://github.com/partme-ai/full-aigc-skills) | [full-aigc-skills](https://github.com/full-aigc-skills) |
+| Full Stack Plugins | Tools and workflows for development and operations | [PartMe.AI / full-stack-plugins](https://github.com/partme-ai/full-stack-plugins) | [full-stack-plugins](https://github.com/full-stack-plugins) |
+| Full AIGC Plugins | Tools and workflows for content production | [PartMe.AI / full-aigc-plugins](https://github.com/partme-ai/full-aigc-plugins) | [full-aigc-plugins](https://github.com/full-aigc-plugins) |
+
+<!-- ecosystem-navigation:end -->
+
+### Related resources
+
+| Resource | Link |
+|----------|------|
+| **Agent Skills specification** | [agentskills.io](https://agentskills.io) |
+| **Skills CLI** | [github.com/vercel-labs/skills](https://github.com/vercel-labs/skills) |
+| **PartMe.AI** | [github.com/partme-ai](https://github.com/partme-ai) |
 
 ---
 
@@ -76,18 +99,20 @@ Open Settings → Plugins → Create → Add plugin marketplace, enter `partme-a
 
 ## Plugin Catalog
 
+The plugins below belong to **Full-stack development**. Open a plugin name or repository link for its documentation; use the marketplace links above for the other category.
+
 | Plugin | ID | Version | Focus | Repository |
 |------|----|:----:|------|------|
-| **1Panel** | `1panel` | 0.1.1 | Scoped 1Panel operations via official MCP | [1panel-plugin](https://github.com/full-stack-plugins/1panel-plugin) |
-| **BaoTa Linux Panel** | `bt-linux-panel` | 1.0.6 | Operate Baota Linux panel via MCP | [bt-linux-panel-plugin](https://github.com/full-stack-plugins/bt-linux-panel-plugin) |
-| **CodeGraph** | `codegraph` | 0.1.6 | Discoverable codegraph — official prompt + all CLI commands | [codegraph-plugin](https://github.com/full-stack-plugins/codegraph-plugin) |
-| **CodeGuard** | `codeguard` | 0.18.3 | Trustworthy code checks and Java impact analysis | [codeguard-plugin](https://github.com/full-stack-plugins/codeguard-plugin) |
-| **CodeReview** | `codereview-plugin` | 0.3.0 | Review staged commits with explicit consent | [codereview-plugin](https://github.com/full-stack-plugins/codereview-plugin) |
-| **FlowGuard** | `flowguard` | 0.4.2 | 智能体 SDD 治理：原生规格、证据与提交门禁 | [flowguard-plugin](https://github.com/full-stack-plugins/flowguard-plugin) |
-| **GitFlow** | `gitflow` | 0.1.1 | Project Git branch, commit, sync, and release governance | [gitflow-plugin](https://github.com/full-stack-plugins/gitflow-plugin) |
-| **Google Stitch Design** | `stitch-design` | 0.9.0 | Design and build with Google Stitch | [stitch-design-plugin](https://github.com/full-stack-plugins/stitch-design-plugin) |
-| **ProcessOn Design** | `processon-design` | 0.2.12 | Design polished, editable ProcessOn diagrams | [processon-design-plugin](https://github.com/full-stack-plugins/processon-design-plugin) |
-| **UI Design** | `ui-design` | 0.1.1 | Model-native frontend design and image assets | [ui-design-plugin](https://github.com/full-stack-plugins/ui-design-plugin) |
+| [**1Panel**](https://github.com/full-stack-plugins/1panel-plugin) | `1panel` | 0.1.1 | Scoped 1Panel operations via official MCP | [1panel-plugin](https://github.com/full-stack-plugins/1panel-plugin) |
+| [**BaoTa Linux Panel**](https://github.com/full-stack-plugins/bt-linux-panel-plugin) | `bt-linux-panel` | 1.0.6 | Operate Baota Linux panel via MCP | [bt-linux-panel-plugin](https://github.com/full-stack-plugins/bt-linux-panel-plugin) |
+| [**CodeGraph**](https://github.com/full-stack-plugins/codegraph-plugin) | `codegraph` | 0.1.6 | Discoverable codegraph — official prompt + all CLI commands | [codegraph-plugin](https://github.com/full-stack-plugins/codegraph-plugin) |
+| [**CodeGuard**](https://github.com/full-stack-plugins/codeguard-plugin) | `codeguard` | 0.18.3 | Trustworthy code checks and Java impact analysis | [codeguard-plugin](https://github.com/full-stack-plugins/codeguard-plugin) |
+| [**CodeReview**](https://github.com/full-stack-plugins/codereview-plugin) | `codereview-plugin` | 0.3.0 | Review staged commits with explicit consent | [codereview-plugin](https://github.com/full-stack-plugins/codereview-plugin) |
+| [**FlowGuard**](https://github.com/full-stack-plugins/flowguard-plugin) | `flowguard` | 0.4.2 | 智能体 SDD 治理：原生规格、证据与提交门禁 | [flowguard-plugin](https://github.com/full-stack-plugins/flowguard-plugin) |
+| [**GitFlow**](https://github.com/full-stack-plugins/gitflow-plugin) | `gitflow` | 0.1.1 | Project Git branch, commit, sync, and release governance | [gitflow-plugin](https://github.com/full-stack-plugins/gitflow-plugin) |
+| [**Google Stitch Design**](https://github.com/full-stack-plugins/stitch-design-plugin) | `stitch-design` | 0.9.0 | Design and build with Google Stitch | [stitch-design-plugin](https://github.com/full-stack-plugins/stitch-design-plugin) |
+| [**ProcessOn Design**](https://github.com/full-stack-plugins/processon-design-plugin) | `processon-design` | 0.2.12 | Design polished, editable ProcessOn diagrams | [processon-design-plugin](https://github.com/full-stack-plugins/processon-design-plugin) |
+| [**UI Design**](https://github.com/full-stack-plugins/ui-design-plugin) | `ui-design` | 0.1.2 | Frontend design via the ui-design-use entry skill | [ui-design-plugin](https://github.com/full-stack-plugins/ui-design-plugin) |
 
 GitFlow v0.1.1 distributes nine locked skills from `git-skills` with project policies and deterministic Git gates, plus a logo derived from the official Git mark. Marketplace metadata is aligned across three hosts; actual host installation/loading remains unverified.
 
@@ -119,20 +144,6 @@ Skills inside plugins follow the [Agent Skills specification](https://agentskill
 1. **At startup**: only skill names and descriptions are loaded (minimal context)
 2. **On demand**: the full `SKILL.md` loads when the agent recognizes a relevant task
 3. **In depth**: reference files are read only when explicitly needed
-
----
-
-## Ecosystem
-
-| Resource | Link |
-|----------|------|
-| **Skills hub (full stack)** | [partme-ai/full-stack-skills](https://github.com/partme-ai/full-stack-skills) |
-| **Skill packages org (full stack)** | [github.com/full-stack-skills](https://github.com/full-stack-skills) |
-| **AIGC-side plugin marketplace** | [github.com/full-aigc-plugins](https://github.com/full-aigc-plugins) |
-| **Skills hub (AIGC)** | [partme-ai/full-aigc-skills](https://github.com/partme-ai/full-aigc-skills) |
-| **Agent Skills specification** | [agentskills.io](https://agentskills.io) |
-| **Skills CLI** | [github.com/vercel-labs/skills](https://github.com/vercel-labs/skills) |
-| **PartMe.AI** | [github.com/partme-ai](https://github.com/partme-ai) |
 
 ---
 

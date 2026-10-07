@@ -193,10 +193,10 @@
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/ui-design-plugin",
-        "ref": "v0.1.1"
+        "ref": "v0.1.2"
       },
-      "description": "Design frontend specifications, editable prototypes, scoped image assets and evidence-backed previews using model-native capabilities.",
-      "version": "0.1.1",
+      "description": "Use the ui-design-use entry skill for complete frontend design packages, editable prototypes, image assets and verified previews. ui-design is the plugin ID, not a skill name.",
+      "version": "0.1.2",
       "category": "Design Tools",
       "tags": [
         "frontend",
@@ -204,7 +204,7 @@
         "imagegen",
         "agent-skills"
       ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.1.1/assets/logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.1.2/assets/logo.png",
       "strict": true
     }
   ]
