@@ -41,8 +41,8 @@
     {
       "id": "gitflow",
       "displayName": "GitFlow",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitflow-plugin@v0.1.5/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/gitflow-plugin/releases/tag/v0.1.5"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitflow-plugin@v0.2.0/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/gitflow-plugin/releases/tag/v0.2.0"
     },
     {
       "id": "stitch-design",
