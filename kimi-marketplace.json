@@ -17,14 +17,14 @@
     {
       "id": "codegraph",
       "displayName": "CodeGraph",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.1.6/assets/official-logo.png",
-      "source": "https://github.com/full-stack-plugins/codegraph-plugin/releases/tag/v0.1.6"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.1.7/assets/official-logo.png",
+      "source": "https://github.com/full-stack-plugins/codegraph-plugin/releases/tag/v0.1.7"
     },
     {
       "id": "codeguard",
       "displayName": "CodeGuard",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@v0.19.0/assets/official-logo.png",
-      "source": "https://github.com/full-stack-plugins/codeguard-plugin/releases/tag/v0.19.0"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@v0.20.0/assets/official-logo.png",
+      "source": "https://github.com/full-stack-plugins/codeguard-plugin/releases/tag/v0.20.0"
     },
     {
       "id": "codereview-plugin",

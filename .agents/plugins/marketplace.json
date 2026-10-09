@@ -53,20 +53,20 @@
       "source": {
         "source": "url",
         "url": "https://github.com/full-stack-plugins/codegraph-plugin.git",
-        "ref": "v0.1.6"
+        "ref": "v0.1.7"
       },
       "policy": {
         "installation": "AVAILABLE",
         "authentication": "ON_USE"
       },
       "category": "Developer Tools",
-      "version": "0.1.6",
-      "description": "Inject the official CodeGraph prompt at session start (only when a `.codegraph/` directory exists) and expose all 20 codegraph CLI commands as slash commands for Codex/ZCode/Kimi/Claude Code. Pure Python stdlib.",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.1.6/assets/official-logo.png",
+      "version": "0.1.7",
+      "description": "Inject the official CodeGraph prompt at session start (only when a `.codegraph/` directory exists) and expose 21 of codegraph's 23 CLI commands as slash commands for Codex/ZCode/Kimi/Claude Code. Pure Python stdlib.",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.1.7/assets/official-logo.png",
       "interface": {
         "displayName": "CodeGraph",
-        "shortDescription": "Discoverable codegraph — official prompt + all CLI commands",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.1.6/assets/official-logo.png"
+        "shortDescription": "Discoverable codegraph — official prompt + 21 CLI commands",
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.1.7/assets/official-logo.png"
       }
     },
     {
@@ -74,20 +74,20 @@
       "source": {
         "source": "url",
         "url": "https://github.com/full-stack-plugins/codeguard-plugin.git",
-        "ref": "v0.19.0"
+        "ref": "v0.20.0"
       },
       "policy": {
         "installation": "AVAILABLE",
         "authentication": "ON_USE"
       },
       "category": "Developer Tools",
-      "version": "0.19.0",
+      "version": "0.20.0",
       "description": "Evidence-backed code checks and Git content gates for AI assistants, with Maven/Gradle module impact analysis. Save hooks provide feedback; unverified checks are explicit.",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@v0.19.0/assets/official-logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@v0.20.0/assets/official-logo.png",
       "interface": {
         "displayName": "CodeGuard",
         "shortDescription": "Trustworthy code checks and Java impact analysis",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@v0.19.0/assets/official-logo.png"
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@v0.20.0/assets/official-logo.png"
       }
     },
     {
