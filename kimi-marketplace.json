@@ -17,8 +17,8 @@
     {
       "id": "codegraph",
       "displayName": "CodeGraph",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.1.7/assets/official-logo.png",
-      "source": "https://github.com/full-stack-plugins/codegraph-plugin/releases/tag/v0.1.7"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.2.0/assets/official-logo.png",
+      "source": "https://github.com/full-stack-plugins/codegraph-plugin/releases/tag/v0.2.0"
     },
     {
       "id": "codeguard",
