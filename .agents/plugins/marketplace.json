@@ -24,7 +24,7 @@
       "interface": {
         "displayName": "1Panel",
         "shortDescription": "Scoped 1Panel operations via official MCP",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.1.1/assets/logo.png"
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.0/assets/logo.png"
       }
     },
     {
@@ -45,7 +45,7 @@
       "interface": {
         "displayName": "BaoTa Linux Panel",
         "shortDescription": "Operate Baota Linux panel via MCP",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/bt-linux-panel-plugin@v1.0.6/assets/official-logo.png"
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/bt-linux-panel-plugin@v1.1.0/assets/official-logo.png"
       }
     },
     {
@@ -66,7 +66,7 @@
       "interface": {
         "displayName": "CodeGraph",
         "shortDescription": "Discoverable codegraph — official prompt + 21 CLI commands",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.2.0/assets/official-logo.png"
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.3.0/assets/official-logo.png"
       }
     },
     {
@@ -87,7 +87,7 @@
       "interface": {
         "displayName": "CodeGuard",
         "shortDescription": "Trustworthy code checks and Java impact analysis",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@v0.20.0/assets/official-logo.png"
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@v0.21.0/assets/official-logo.png"
       }
     },
     {
@@ -108,7 +108,7 @@
       "interface": {
         "displayName": "CodeReview",
         "shortDescription": "Review staged commits with explicit consent",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@v0.3.0/assets/official-logo.png"
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@v0.4.0/assets/official-logo.png"
       }
     },
     {
@@ -129,7 +129,7 @@
       "interface": {
         "displayName": "FlowGuard",
         "shortDescription": "智能体 SDD 治理：原生规格、证据与提交门禁",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/flowguard-plugin@v0.4.2/assets/official-logo.png"
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/flowguard-plugin@v0.5.0/assets/official-logo.png"
       }
     },
     {
@@ -150,7 +150,7 @@
       "interface": {
         "displayName": "GitFlow",
         "shortDescription": "项目 Git 分支规范治理",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitflow-plugin@v0.2.0/assets/logo.png"
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitflow-plugin@v0.3.0/assets/logo.png"
       }
     },
     {
@@ -171,7 +171,7 @@
       "interface": {
         "displayName": "Google Stitch Design",
         "shortDescription": "Design and build with Google Stitch",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/stitch-design-plugin@v0.9.0/assets/official-logo.png"
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/stitch-design-plugin@v0.10.0/assets/official-logo.png"
       }
     },
     {
@@ -192,7 +192,7 @@
       "interface": {
         "displayName": "ProcessOn Design",
         "shortDescription": "Design polished, editable ProcessOn diagrams",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.2.12/assets/official-logo.png"
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.3.0/assets/official-logo.png"
       }
     },
     {
@@ -213,7 +213,7 @@
       "interface": {
         "displayName": "UI Design",
         "shortDescription": "Frontend design via the ui-design-use entry skill",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.1.2/assets/logo.png"
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.0/assets/logo.png"
       }
     }
   ],
