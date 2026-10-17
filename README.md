@@ -157,7 +157,7 @@ full-stack-plugins/
 node scripts/bump-plugin.mjs <plugin-id> <major|minor|patch>
 ```
 
-该命令会同步更新 catalog 版本、插件仓四个 manifest，并重新生成三平台清单。
+该命令会先核对 catalog 与现有清单的版本，再同步插件仓清单并重新生成三平台清单。存在时也会同步 Claude 顶层插件清单、Claude 市场嵌套条目及 `pyproject.toml` 的静态 `[project].version`；缺失的可选清单不会创建。版本漂移在任何写入前拒绝，`--dry-run` 同样执行核对但不写文件。命令仅准备本地元数据，提交、推送与正式发布仍需后续执行。
 
 ### 新增插件
 
