@@ -8,10 +8,10 @@
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/1panel-plugin",
-        "ref": "v0.1.1"
+        "ref": "v0.2.0"
       },
       "description": "Inspect and operate 1Panel through the pinned official MCP with private configuration and explicit access levels.",
-      "version": "0.1.1",
+      "version": "0.2.0",
       "category": "Productivity",
       "tags": [
         "1panel",
@@ -19,7 +19,7 @@
         "mcp",
         "operations"
       ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.1.1/assets/logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.0/assets/logo.png",
       "strict": true
     },
     {
@@ -27,10 +27,10 @@
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/bt-linux-panel-plugin",
-        "ref": "v1.0.6"
+        "ref": "v1.1.0"
       },
       "description": "Operate Baota Linux panel through MCP to manage services, diagnose sites and databases, and audit server security.",
-      "version": "1.0.6",
+      "version": "1.1.0",
       "category": "Productivity",
       "tags": [
         "baota",
@@ -38,7 +38,7 @@
         "linux-ops",
         "mcp"
       ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/bt-linux-panel-plugin@v1.0.6/assets/official-logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/bt-linux-panel-plugin@v1.1.0/assets/official-logo.png",
       "strict": true
     },
     {
@@ -46,10 +46,10 @@
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/codegraph-plugin",
-        "ref": "v0.2.0"
+        "ref": "v0.3.0"
       },
       "description": "Inject the official CodeGraph prompt at session start (only when a `.codegraph/` directory exists) and expose 21 of codegraph's 23 CLI commands as slash commands for Codex/ZCode/Kimi/Claude Code. Pure Python stdlib.",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "category": "Developer Tools",
       "tags": [
         "code-intelligence",
@@ -58,7 +58,7 @@
         "mcp",
         "code-search"
       ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.2.0/assets/official-logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.3.0/assets/official-logo.png",
       "strict": true
     },
     {
@@ -66,10 +66,10 @@
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/codeguard-plugin",
-        "ref": "v0.20.0"
+        "ref": "v0.21.0"
       },
       "description": "Evidence-backed code checks and Git content gates for AI assistants, with Maven/Gradle module impact analysis. Save hooks provide feedback; unverified checks are explicit.",
-      "version": "0.20.0",
+      "version": "0.21.0",
       "category": "Developer Tools",
       "tags": [
         "lint",
@@ -84,7 +84,7 @@
         "ruff",
         "pre-commit"
       ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@v0.20.0/assets/official-logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@v0.21.0/assets/official-logo.png",
       "strict": true
     },
     {
@@ -92,10 +92,10 @@
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/codereview-plugin",
-        "ref": "v0.3.0"
+        "ref": "v0.4.0"
       },
       "description": "Consent-based semantic review of staged commits using Open Code Review delegation or a configured OCR model; findings remain advisory.",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "category": "Developer Tools",
       "tags": [
         "code-review",
@@ -104,7 +104,7 @@
         "consent",
         "ocr"
       ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@v0.3.0/assets/official-logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@v0.4.0/assets/official-logo.png",
       "strict": true
     },
     {
@@ -112,10 +112,10 @@
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/flowguard-plugin",
-        "ref": "v0.4.2"
+        "ref": "v0.5.0"
       },
       "description": "Agent-driven SDD governance for Codex, ZCode, Kimi and Claude: native Spec Kit/OpenSpec/Superpowers discovery, session-worktree task binding, evidence freshness and deterministic code/commit/release gates.",
-      "version": "0.4.2",
+      "version": "0.5.0",
       "category": "Developer Tools",
       "tags": [
         "sdlc",
@@ -128,7 +128,7 @@
         "release",
         "gate"
       ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/flowguard-plugin@v0.4.2/assets/official-logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/flowguard-plugin@v0.5.0/assets/official-logo.png",
       "strict": true
     },
     {
@@ -136,10 +136,10 @@
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/gitflow-plugin",
-        "ref": "v0.2.0"
+        "ref": "v0.3.0"
       },
       "description": "按项目约定治理 Git 分支、提交与流转，九技能加确定性门禁",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "category": "Developer Tools",
       "tags": [
         "git",
@@ -149,7 +149,7 @@
         "release",
         "governance"
       ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitflow-plugin@v0.2.0/assets/logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitflow-plugin@v0.3.0/assets/logo.png",
       "strict": true
     },
     {
@@ -157,17 +157,17 @@
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/stitch-design-plugin",
-        "ref": "v0.9.0"
+        "ref": "v0.10.0"
       },
       "description": "Create and edit Google Stitch screens, design systems, and frontend code through the remote Stitch MCP server.",
-      "version": "0.9.0",
+      "version": "0.10.0",
       "category": "Design Tools",
       "tags": [
         "stitch",
         "design",
         "design-to-code"
       ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/stitch-design-plugin@v0.9.0/assets/official-logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/stitch-design-plugin@v0.10.0/assets/official-logo.png",
       "strict": true
     },
     {
@@ -175,17 +175,17 @@
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/processon-design-plugin",
-        "ref": "v0.2.12"
+        "ref": "v0.3.0"
       },
       "description": "Create and review editable ProcessOn diagrams, mind maps, and infographics.",
-      "version": "0.2.12",
+      "version": "0.3.0",
       "category": "Design Tools",
       "tags": [
         "processon",
         "diagram",
         "mind-map"
       ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.2.12/assets/official-logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.3.0/assets/official-logo.png",
       "strict": true
     },
     {
@@ -193,10 +193,10 @@
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/ui-design-plugin",
-        "ref": "v0.1.2"
+        "ref": "v0.2.0"
       },
       "description": "Use the ui-design-use entry skill for complete frontend design packages, editable prototypes, image assets and verified previews. ui-design is the plugin ID, not a skill name.",
-      "version": "0.1.2",
+      "version": "0.2.0",
       "category": "Design Tools",
       "tags": [
         "frontend",
@@ -204,7 +204,7 @@
         "imagegen",
         "agent-skills"
       ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.1.2/assets/logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.0/assets/logo.png",
       "strict": true
     }
   ]
