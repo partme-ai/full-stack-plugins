@@ -15,11 +15,11 @@
       "versions": [
         {
           "version": "0.2.0",
-          "publishTimestamp": 1792318146,
+          "publishTimestamp": 1792329510,
           "source": {
             "type": "git",
             "url": "https://github.com/full-stack-plugins/1panel-plugin",
-            "commit": "87feea62636caa2bf2a2af545ebe0b94a7e5c19c",
+            "commit": "2b4b11d1f99567d7638f199866ac4ed224e43b26",
             "path": "dsh"
           }
         }
@@ -36,11 +36,11 @@
       "versions": [
         {
           "version": "1.1.0",
-          "publishTimestamp": 1792318149,
+          "publishTimestamp": 1792329512,
           "source": {
             "type": "git",
             "url": "https://github.com/full-stack-plugins/bt-linux-panel-plugin",
-            "commit": "4b72743d9c92a390a1f6d0070ab4298f7eb42929",
+            "commit": "fd89ad619cb54281fd2d6a958fb6c2ffdebaa99d",
             "path": "dsh"
           }
         }
@@ -57,11 +57,11 @@
       "versions": [
         {
           "version": "0.3.0",
-          "publishTimestamp": 1792318151,
+          "publishTimestamp": 1792329515,
           "source": {
             "type": "git",
             "url": "https://github.com/full-stack-plugins/codegraph-plugin",
-            "commit": "9ec9a8e22f426cbb5174f4de223e3fb54b99cb8a",
+            "commit": "c0d28f9c3aeda9e9589f84042c47a39b52d96e98",
             "path": "dsh"
           }
         }
@@ -78,11 +78,11 @@
       "versions": [
         {
           "version": "0.21.0",
-          "publishTimestamp": 1792329331,
+          "publishTimestamp": 1792329688,
           "source": {
             "type": "git",
             "url": "https://github.com/full-stack-plugins/codeguard-plugin",
-            "commit": "ceeebb69ad0275897eb75afcc6de86972a23c90e",
+            "commit": "ef929f04b75e33f4d6aca495ebb1d2ae884dc136",
             "path": "dsh"
           }
         }
@@ -99,11 +99,11 @@
       "versions": [
         {
           "version": "0.4.0",
-          "publishTimestamp": 1792318154,
+          "publishTimestamp": 1792329518,
           "source": {
             "type": "git",
             "url": "https://github.com/full-stack-plugins/codereview-plugin",
-            "commit": "086d87913b66261cb6431ef63017deb38d5049c4",
+            "commit": "d7bedf96b8250b71b6fffd2ee146a36c59544180",
             "path": "dsh"
           }
         }
@@ -120,11 +120,11 @@
       "versions": [
         {
           "version": "0.5.0",
-          "publishTimestamp": 1792318156,
+          "publishTimestamp": 1792329520,
           "source": {
             "type": "git",
             "url": "https://github.com/full-stack-plugins/flowguard-plugin",
-            "commit": "d8d811ad6d84b40802c7970e0d3af72c325ec29a",
+            "commit": "6b40681f8a20f15931ce4adf0afc2e40dab4a156",
             "path": "dsh"
           }
         }
@@ -141,11 +141,11 @@
       "versions": [
         {
           "version": "0.3.0",
-          "publishTimestamp": 1792318159,
+          "publishTimestamp": 1792329523,
           "source": {
             "type": "git",
             "url": "https://github.com/full-stack-plugins/gitflow-plugin",
-            "commit": "f07117f9c0fd0e38db43861c5b0e99d3f00542ce",
+            "commit": "cf86ea1e01816e6384b54f2eec7435232a26f815",
             "path": "dsh"
           }
         }
@@ -162,11 +162,11 @@
       "versions": [
         {
           "version": "0.10.0",
-          "publishTimestamp": 1792318164,
+          "publishTimestamp": 1792329528,
           "source": {
             "type": "git",
             "url": "https://github.com/full-stack-plugins/stitch-design-plugin",
-            "commit": "677eabaca3391236c944372016793d936003a214",
+            "commit": "6f596c3f0ddac13c2aad47095be362b3311d4e37",
             "path": "dsh"
           }
         }
@@ -183,11 +183,11 @@
       "versions": [
         {
           "version": "0.3.0",
-          "publishTimestamp": 1792318161,
+          "publishTimestamp": 1792329526,
           "source": {
             "type": "git",
             "url": "https://github.com/full-stack-plugins/processon-design-plugin",
-            "commit": "a2ef9f68ba7d4a11900d28c0f9f63f0b5424cee9",
+            "commit": "e3ec5b391a0d695a1645be72bcad711b79a2dafc",
             "path": "dsh"
           }
         }
@@ -204,11 +204,11 @@
       "versions": [
         {
           "version": "0.2.0",
-          "publishTimestamp": 1792318167,
+          "publishTimestamp": 1792329531,
           "source": {
             "type": "git",
             "url": "https://github.com/full-stack-plugins/ui-design-plugin",
-            "commit": "324f2dd092af04a1bf53336ab6d8d4e5a006d7fc",
+            "commit": "4bf21c3ef3350a3eaa1e7e7c75d2a0c9a2629235",
             "path": "dsh"
           }
         }
