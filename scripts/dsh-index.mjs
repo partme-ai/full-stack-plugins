@@ -13,8 +13,8 @@ import path from 'node:path'
 import { execFileSync } from 'node:child_process'
 
 const root = path.resolve(import.meta.dirname, '..')
-const repos = path.resolve(root, '..', `${path.basename(root)}-repositories`)
 const catalog = JSON.parse(fs.readFileSync(path.join(root, 'catalog.json'), 'utf8'))
+const repos = path.resolve(root, '..', `${catalog.name}-repositories`)
 const entries = [...(catalog.plugins ?? []), ...(catalog.candidatePlugins ?? [])]
 const plugins = []
 for (const entry of entries) {
