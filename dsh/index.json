@@ -1,0 +1,218 @@
+{
+  "format": 1,
+  "title": "Full Stack Plugins",
+  "description": "Full Stack plugin marketplace for Codex, ZCode, and Kimi Code: AI design, diagramming, executable code checks, semantic review, workflow governance, and server operations.",
+  "metadata": {},
+  "plugins": [
+    {
+      "name": "@partme-dsh/1panel",
+      "title": "1Panel",
+      "description": "Inspect and operate 1Panel through the pinned official MCP with private configuration and explicit access levels.",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@86bef82b20b110730c18a57f911645e3aec00479/assets/logo.png",
+      "repository": {
+        "url": "https://github.com/full-stack-plugins/1panel-plugin"
+      },
+      "versions": [
+        {
+          "version": "0.2.0",
+          "publishTimestamp": 1792261974,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/full-stack-plugins/1panel-plugin",
+            "commit": "86bef82b20b110730c18a57f911645e3aec00479",
+            "path": "dsh"
+          }
+        }
+      ]
+    },
+    {
+      "name": "@partme-dsh/bt-linux-panel",
+      "title": "BaoTa Linux Panel",
+      "description": "Operate Baota Linux panel through MCP to manage services, diagnose sites and databases, and audit server security.",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/bt-linux-panel-plugin@01d0d5251ee2d523acce10edbc5e34e6d3f747f3/assets/official-logo.png",
+      "repository": {
+        "url": "https://github.com/full-stack-plugins/bt-linux-panel-plugin"
+      },
+      "versions": [
+        {
+          "version": "1.1.0",
+          "publishTimestamp": 1792261976,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/full-stack-plugins/bt-linux-panel-plugin",
+            "commit": "01d0d5251ee2d523acce10edbc5e34e6d3f747f3",
+            "path": "dsh"
+          }
+        }
+      ]
+    },
+    {
+      "name": "@partme-dsh/codegraph",
+      "title": "CodeGraph",
+      "description": "Inject the official CodeGraph prompt at session start (only when a `.codegraph/` directory exists) and expose 21 of codegraph's 23 CLI commands as slash commands for Codex/ZCode/Kimi/Claude Code. Pure Python stdlib.",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@c0d9b8ca474c50224f28a6b335ba1b3f66f8e441/assets/official-logo.png",
+      "repository": {
+        "url": "https://github.com/full-stack-plugins/codegraph-plugin"
+      },
+      "versions": [
+        {
+          "version": "0.3.0",
+          "publishTimestamp": 1792261979,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/full-stack-plugins/codegraph-plugin",
+            "commit": "c0d9b8ca474c50224f28a6b335ba1b3f66f8e441",
+            "path": "dsh"
+          }
+        }
+      ]
+    },
+    {
+      "name": "@partme-dsh/codeguard",
+      "title": "CodeGuard",
+      "description": "Evidence-backed code checks and Git content gates for AI assistants, with Maven/Gradle module impact analysis. Save hooks provide feedback; unverified checks are explicit.",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@f04e94df6c6ed39b0baf868c48b305051d07161f/assets/official-logo.png",
+      "repository": {
+        "url": "https://github.com/full-stack-plugins/codeguard-plugin"
+      },
+      "versions": [
+        {
+          "version": "0.21.0",
+          "publishTimestamp": 1792262230,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/full-stack-plugins/codeguard-plugin",
+            "commit": "f04e94df6c6ed39b0baf868c48b305051d07161f",
+            "path": "dsh"
+          }
+        }
+      ]
+    },
+    {
+      "name": "@partme-dsh/codereview-plugin",
+      "title": "CodeReview",
+      "description": "Consent-based semantic review of staged commits using Open Code Review delegation or a configured OCR model; findings remain advisory.",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@bb6763b73c588ec3355cef328baf2af95a06276c/assets/official-logo.png",
+      "repository": {
+        "url": "https://github.com/full-stack-plugins/codereview-plugin"
+      },
+      "versions": [
+        {
+          "version": "0.4.0",
+          "publishTimestamp": 1792261988,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/full-stack-plugins/codereview-plugin",
+            "commit": "bb6763b73c588ec3355cef328baf2af95a06276c",
+            "path": "dsh"
+          }
+        }
+      ]
+    },
+    {
+      "name": "@partme-dsh/flowguard",
+      "title": "FlowGuard",
+      "description": "Agent-driven SDD governance for Codex, ZCode, Kimi and Claude: native Spec Kit/OpenSpec/Superpowers discovery, session-worktree task binding, evidence freshness and deterministic code/commit/release gates.",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/flowguard-plugin@f772f2ca9ff403e7fab50025317e9bdef8e70d5e/assets/official-logo.png",
+      "repository": {
+        "url": "https://github.com/full-stack-plugins/flowguard-plugin"
+      },
+      "versions": [
+        {
+          "version": "0.5.0",
+          "publishTimestamp": 1792261990,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/full-stack-plugins/flowguard-plugin",
+            "commit": "f772f2ca9ff403e7fab50025317e9bdef8e70d5e",
+            "path": "dsh"
+          }
+        }
+      ]
+    },
+    {
+      "name": "@partme-dsh/gitflow",
+      "title": "GitFlow",
+      "description": "按项目约定治理 Git 分支、提交与流转，九技能加确定性门禁",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitflow-plugin@332d1c8519f2f1b40bb90e8d4f0865d0fc1e46b2/assets/logo.png",
+      "repository": {
+        "url": "https://github.com/full-stack-plugins/gitflow-plugin"
+      },
+      "versions": [
+        {
+          "version": "0.3.0",
+          "publishTimestamp": 1792261993,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/full-stack-plugins/gitflow-plugin",
+            "commit": "332d1c8519f2f1b40bb90e8d4f0865d0fc1e46b2",
+            "path": "dsh"
+          }
+        }
+      ]
+    },
+    {
+      "name": "@partme-dsh/stitch-design",
+      "title": "Google Stitch Design",
+      "description": "Create and edit Google Stitch screens, design systems, and frontend code through the remote Stitch MCP server.",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/stitch-design-plugin@02c089480fee76f9335ba620a979c6d1230b8016/assets/official-logo.png",
+      "repository": {
+        "url": "https://github.com/full-stack-plugins/stitch-design-plugin"
+      },
+      "versions": [
+        {
+          "version": "0.10.0",
+          "publishTimestamp": 1792261998,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/full-stack-plugins/stitch-design-plugin",
+            "commit": "02c089480fee76f9335ba620a979c6d1230b8016",
+            "path": "dsh"
+          }
+        }
+      ]
+    },
+    {
+      "name": "@partme-dsh/processon-design",
+      "title": "ProcessOn Design",
+      "description": "Create and review editable ProcessOn diagrams, mind maps, and infographics.",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@8b6f323d5c3d0116ae0f32e9ab0002c24698d9a0/assets/official-logo.png",
+      "repository": {
+        "url": "https://github.com/full-stack-plugins/processon-design-plugin"
+      },
+      "versions": [
+        {
+          "version": "0.3.0",
+          "publishTimestamp": 1792261995,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/full-stack-plugins/processon-design-plugin",
+            "commit": "8b6f323d5c3d0116ae0f32e9ab0002c24698d9a0",
+            "path": "dsh"
+          }
+        }
+      ]
+    },
+    {
+      "name": "@partme-dsh/ui-design",
+      "title": "UI Design",
+      "description": "Use the ui-design-use entry skill for complete frontend design packages, editable prototypes, image assets and verified previews. ui-design is the plugin ID, not a skill name.",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@52992da8efaf90a19560280b7b1d162b510b3003/assets/logo.png",
+      "repository": {
+        "url": "https://github.com/full-stack-plugins/ui-design-plugin"
+      },
+      "versions": [
+        {
+          "version": "0.2.0",
+          "publishTimestamp": 1792262001,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/full-stack-plugins/ui-design-plugin",
+            "commit": "52992da8efaf90a19560280b7b1d162b510b3003",
+            "path": "dsh"
+          }
+        }
+      ]
+    }
+  ]
+}
