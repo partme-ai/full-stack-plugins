@@ -48,11 +48,11 @@ const codex = {
     line: plugin.line,
     ...(plugin.componentTypes ? { componentTypes: plugin.componentTypes } : {}),
     version: plugin.version,
-    description: plugin.description,
+    description: localized(plugin, "description"),
     icon: rawLogo(plugin),
     interface: {
-      displayName: plugin.displayName,
-      shortDescription: plugin.shortDescription,
+      displayName: localized(plugin, "displayName"),
+      shortDescription: localized(plugin, "shortDescription"),
       logo: rawLogo(plugin)
     }
   })),
@@ -67,8 +67,8 @@ const zcode = {
     name: plugin.id,
     source: { source: "github", repo: plugin.repository, ref: releaseRef(plugin) },
     // ZCode 列表以 displayName 为准；缺失时会退化成插件 id，因此每条都必须写。
-    displayName: plugin.displayName,
-    description: plugin.description,
+    displayName: localized(plugin, "displayName"),
+    description: localized(plugin, "description"),
     version: plugin.version,
     category: plugin.category,
     line: plugin.line,
@@ -258,16 +258,16 @@ for (let index = 0; index < catalog.plugins.length; index += 1) {
       errors.push(`${plugin.id}: repository marketplace must contain exactly one plugin`);
     } else {
       if (entry.name !== plugin.id) errors.push(`${plugin.id}: repository marketplace name is ${entry.name}`);
-      if (entry.description !== plugin.description) errors.push(`${plugin.id}: repository marketplace description differs`);
+      if (entry.description !== localized(plugin, "description")) errors.push(`${plugin.id}: repository marketplace description differs`);
       if (entry.version !== plugin.version) errors.push(`${plugin.id}: repository marketplace version differs`);
       if (entry.source?.ref !== `v${plugin.version}`) errors.push(`${plugin.id}: repository marketplace source is not pinned to v${plugin.version}`);
       const immutableLogoPrefix = `https://cdn.jsdelivr.net/gh/${plugin.repository}@v${plugin.version}/`;
       if (!entry.icon?.startsWith(immutableLogoPrefix)) errors.push(`${plugin.id}: repository marketplace icon is not release-pinned`);
       if (!entry.interface?.logo?.startsWith(immutableLogoPrefix)) errors.push(`${plugin.id}: repository marketplace logo is not release-pinned`);
       if (entry.category !== (plugin.codexCategory ?? plugin.category)) errors.push(`${plugin.id}: repository marketplace category is ${entry.category}`);
-      if (entry.interface?.displayName !== plugin.displayName) errors.push(`${plugin.id}: repository marketplace displayName differs`);
-      if (entry.interface?.shortDescription !== plugin.shortDescription) errors.push(`${plugin.id}: repository marketplace shortDescription differs`);
-      if (repositoryMarketplace.interface?.displayName !== plugin.displayName) errors.push(`${plugin.id}: marketplace displayName differs`);
+      if (entry.interface?.displayName !== localized(plugin, "displayName")) errors.push(`${plugin.id}: repository marketplace displayName differs`);
+      if (entry.interface?.shortDescription !== localized(plugin, "shortDescription")) errors.push(`${plugin.id}: repository marketplace shortDescription differs`);
+      if (repositoryMarketplace.interface?.displayName !== localized(plugin, "displayName")) errors.push(`${plugin.id}: marketplace displayName differs`);
     }
   }
 

@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: '24'
       - run: node scripts/checkout-release-plugins.mjs --plugin=ui-design --plugin=1panel --plugin=gitflow
-      - run: node scripts/sync-marketplaces.mjs --remote --plugin=ui-design --plugin=1panel --plugin=gitflow
+      - run: node scripts/sync-marketplaces.mjs --remote --locale=zh-CN --plugin=ui-design --plugin=1panel --plugin=gitflow
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: node --test scripts/tests/sync-marketplaces.test.mjs
