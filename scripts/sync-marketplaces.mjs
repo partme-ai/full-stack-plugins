@@ -45,6 +45,8 @@ const codex = {
     },
     policy: { installation: "AVAILABLE", authentication: "ON_USE" },
     category: plugin.codexCategory ?? plugin.category,
+    line: plugin.line,
+    ...(plugin.componentTypes ? { componentTypes: plugin.componentTypes } : {}),
     version: plugin.version,
     description: plugin.description,
     icon: rawLogo(plugin),
@@ -69,6 +71,8 @@ const zcode = {
     description: plugin.description,
     version: plugin.version,
     category: plugin.category,
+    line: plugin.line,
+    ...(plugin.componentTypes ? { componentTypes: plugin.componentTypes } : {}),
     tags: plugin.tags,
     icon: rawLogo(plugin),
     strict: true

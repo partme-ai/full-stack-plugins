@@ -45,6 +45,8 @@ const codex = {
     source: { source: "url", url: gitUrl(plugin), ref: ref(plugin) },
     policy: { installation: "AVAILABLE", authentication: "ON_USE" },
     category: plugin.category,
+    line: plugin.line,
+    ...(plugin.componentTypes ? { componentTypes: plugin.componentTypes } : {}),
     version: plugin.version,
     description: localized(plugin, "description"),
     icon: assetUrl(plugin),
@@ -68,6 +70,8 @@ const zcode = {
     description: localized(plugin, "description"),
     version: plugin.version,
     category: plugin.category,
+    line: plugin.line,
+    ...(plugin.componentTypes ? { componentTypes: plugin.componentTypes } : {}),
     tags: plugin.tags,
     icon: assetUrl(plugin),
     strict: true

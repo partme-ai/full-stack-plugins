@@ -84,6 +84,8 @@ for (const plugin of pool) {
   }
   entry.policy = { installation: "AVAILABLE", authentication: "ON_USE" };
   entry.category = plugin.codexCategory ?? plugin.category;
+  entry.line = plugin.line;
+  if (plugin.componentTypes) entry.componentTypes = plugin.componentTypes;
   entry.description = description;
   entry.interface ??= {};
   entry.interface.displayName = displayName;

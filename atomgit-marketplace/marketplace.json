@@ -14,6 +14,11 @@
       "description": "通过钉死版本的官方 MCP 检查与操作 1Panel；访问级别显式分级，凭据保持私有。",
       "version": "0.2.0",
       "category": "Productivity",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "1panel",
         "linux",
@@ -34,6 +39,11 @@
       "description": "通过 MCP 操作宝塔面板：服务管理、站点与数据库诊断、防火墙审计与入侵排查。",
       "version": "1.1.0",
       "category": "Productivity",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "baota",
         "bt-panel",
@@ -54,6 +64,11 @@
       "description": "存在 .codegraph 时注入官方提示词，并把 21 条 CLI 命令暴露为斜杠命令；纯 Python 标准库。",
       "version": "0.3.0",
       "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "code-intelligence",
         "knowledge-graph",
@@ -75,6 +90,11 @@
       "description": "证据化 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析；结论区分通过、失败、无法验证与计划中。",
       "version": "0.21.0",
       "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "lint",
         "code-style",
@@ -102,6 +122,11 @@
       "description": "经显式授权，对暂存提交做语义审查（OCR 委托或自配模型）；结论仅作建议，不替代静态检查。",
       "version": "0.4.0",
       "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "code-review",
         "semantic-review",
@@ -123,6 +148,11 @@
       "description": "智能体 SDD 治理：识别 Spec Kit/OpenSpec/Superpowers 原生产物，绑定任务，校验证据新鲜度并执行提交/发布门禁。",
       "version": "0.5.0",
       "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "sdlc",
         "sdd",
@@ -148,6 +178,11 @@
       "description": "九项 Git 技能加确定性门禁：初始化、分支角色、提交策略、同步、发布回灌、恢复与审计。",
       "version": "0.3.0",
       "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "git",
         "gitflow",
@@ -170,6 +205,11 @@
       "description": "可编辑的 ProcessOn 图表：生成前构造提示词，生成后做语义与一致性评审。",
       "version": "0.3.0",
       "category": "Design Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "processon",
         "diagram",
@@ -189,6 +229,11 @@
       "description": "通过远程 Stitch MCP 创建与编辑页面、设计系统与前端代码，可落地 React、Vue、uni-app 与多种组件库。",
       "version": "0.10.0",
       "category": "Design Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "stitch",
         "design",
@@ -208,6 +253,11 @@
       "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览与视觉评审。",
       "version": "0.2.0",
       "category": "Design Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "frontend",
         "design",

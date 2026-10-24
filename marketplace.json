@@ -14,6 +14,11 @@
       "description": "Inspect and operate 1Panel through the pinned official MCP. Access levels are explicit and credentials stay private.",
       "version": "0.2.0",
       "category": "Productivity",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "1panel",
         "linux",
@@ -34,6 +39,11 @@
       "description": "Operate the Baota Linux panel through MCP: services, site and database diagnosis, firewall review and intrusion checks.",
       "version": "1.1.0",
       "category": "Productivity",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "baota",
         "bt-panel",
@@ -54,6 +64,11 @@
       "description": "Injects the official CodeGraph prompt when a .codegraph directory exists and exposes 21 CLI commands as slash commands. Pure Python stdlib.",
       "version": "0.3.0",
       "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "code-intelligence",
         "knowledge-graph",
@@ -75,6 +90,11 @@
       "description": "Evidence-backed lint, CVE scanning, guided fixes and Maven/Gradle impact analysis. Results distinguish pass, fail, unverified and planned.",
       "version": "0.21.0",
       "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "lint",
         "code-style",
@@ -102,6 +122,11 @@
       "description": "Consent-based semantic review of staged commits through Open Code Review delegation or a configured model. Findings remain advisory.",
       "version": "0.4.0",
       "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "code-review",
         "semantic-review",
@@ -123,6 +148,11 @@
       "description": "Agent-driven SDD governance: native Spec Kit/OpenSpec/Superpowers discovery, task binding, evidence freshness and deterministic code/commit/release gates.",
       "version": "0.5.0",
       "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "sdlc",
         "sdd",
@@ -148,6 +178,11 @@
       "description": "Nine Git skills plus deterministic gates: initialization, branch roles, commit policy, sync, release backports, recovery and audit.",
       "version": "0.3.0",
       "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "git",
         "gitflow",
@@ -170,6 +205,11 @@
       "description": "Editable ProcessOn diagrams with prompt construction and consistency review before and after generation.",
       "version": "0.3.0",
       "category": "Design Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "processon",
         "diagram",
@@ -189,6 +229,11 @@
       "description": "Create and edit Google Stitch screens, design systems and frontend code, then hand off to React, Vue, uni-app and component libraries.",
       "version": "0.10.0",
       "category": "Design Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "stitch",
         "design",
@@ -208,6 +253,11 @@
       "description": "Complete frontend design packages from login to feature pages: navigation, page contracts, themes, previews and visual review.",
       "version": "0.2.0",
       "category": "Design Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "frontend",
         "design",
