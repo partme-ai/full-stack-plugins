@@ -98,7 +98,7 @@
       "displayName": "CodeGuard (Code Quality)",
       "repository": "full-stack-plugins/codeguard-plugin",
       "localDirectory": "codeguard-plugin",
-      "version": "0.21.0",
+      "version": "0.21.1",
       "description": "Evidence-backed lint, CVE scanning, guided fixes and Maven/Gradle impact analysis. Results distinguish pass, fail, unverified and planned.",
       "shortDescription": "Lint, CVE and guided fixes for 60+ languages, commit gates",
       "category": "Developer Tools",
