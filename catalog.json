@@ -35,6 +35,34 @@
       ]
     },
     {
+      "id": "archguard",
+      "displayName": "ArchGuard (Architecture Boundary)",
+      "repository": "full-stack-plugins/archguard-plugin",
+      "localDirectory": "archguard-plugin",
+      "version": "0.1.0",
+      "description": "Architecture boundary guard: extract module dependency facts, validate architecture contracts and emit violation evidence; design-only until the CLI is available.",
+      "shortDescription": "Module dependencies, layers and boundary contracts",
+      "category": "Developer Tools",
+      "logo": "assets/logo.png",
+      "tags": [
+        "architecture",
+        "dependency",
+        "boundary",
+        "guard"
+      ],
+      "localizations": {
+        "zh-CN": {
+          "displayName": "ArchGuard（架构边界防护）",
+          "shortDescription": "模块依赖、分层与边界契约",
+          "description": "架构边界防护：提取模块依赖事实、校验架构契约并输出违规证据；CLI 未就绪时明确 DESIGN_ONLY。"
+        }
+      },
+      "line": "full-stack",
+      "componentTypes": [
+        "skills"
+      ]
+    },
+    {
       "id": "bt-linux-panel",
       "displayName": "BaoTa Panel (Server Operations)",
       "repository": "full-stack-plugins/bt-linux-panel-plugin",
@@ -254,6 +282,35 @@
       ]
     },
     {
+      "id": "specguard",
+      "displayName": "SpecGuard (Requirements Baseline)",
+      "repository": "full-stack-plugins/specguard-plugin",
+      "localDirectory": "specguard-plugin",
+      "version": "0.1.0",
+      "description": "Requirements and acceptance baseline guard: validate traceability, approved baselines and coverage gaps; ambiguous intent goes to human review.",
+      "shortDescription": "Requirements, acceptance and traceability baselines",
+      "category": "Developer Tools",
+      "logo": "assets/logo.png",
+      "tags": [
+        "spec",
+        "requirements",
+        "acceptance",
+        "traceability",
+        "guard"
+      ],
+      "localizations": {
+        "zh-CN": {
+          "displayName": "SpecGuard（需求规格防护）",
+          "shortDescription": "需求、验收与追踪基线",
+          "description": "需求规格防护：校验规格基线、追踪关系与覆盖缺口；语义歧义交人工复核。"
+        }
+      },
+      "line": "full-stack",
+      "componentTypes": [
+        "skills"
+      ]
+    },
+    {
       "id": "stitch-design",
       "displayName": "Stitch (UI Generation)",
       "repository": "full-stack-plugins/stitch-design-plugin",
@@ -280,6 +337,35 @@
       "componentTypes": [
         "skills",
         "mcp"
+      ]
+    },
+    {
+      "id": "testguard",
+      "displayName": "TestGuard (Acceptance Test Evidence)",
+      "repository": "full-stack-plugins/testguard-plugin",
+      "localDirectory": "testguard-plugin",
+      "version": "0.1.0",
+      "description": "Acceptance test guard: freeze the required test plan, normalize native execution evidence and detect missing, skipped or reduced tests.",
+      "shortDescription": "Frozen test plan, execution evidence and coverage gaps",
+      "category": "Developer Tools",
+      "logo": "assets/logo.png",
+      "tags": [
+        "testing",
+        "acceptance",
+        "coverage",
+        "evidence",
+        "guard"
+      ],
+      "localizations": {
+        "zh-CN": {
+          "displayName": "TestGuard（验收测试防护）",
+          "shortDescription": "冻结测试计划、执行证据与覆盖缺口",
+          "description": "验收测试防护：冻结测试计划、归一化原生执行证据，识别删测、跳测与覆盖缺口。"
+        }
+      },
+      "line": "full-stack",
+      "componentTypes": [
+        "skills"
       ]
     },
     {

@@ -9,6 +9,12 @@
       "source": "https://github.com/full-stack-plugins/1panel-plugin/releases/tag/v0.2.1"
     },
     {
+      "id": "archguard",
+      "displayName": "ArchGuard (Architecture Boundary)",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.0/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/archguard-plugin/releases/tag/v0.1.0"
+    },
+    {
       "id": "bt-linux-panel",
       "displayName": "BaoTa Panel (Server Operations)",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/bt-linux-panel-plugin@v1.1.1/assets/official-logo.png",
@@ -51,10 +57,22 @@
       "source": "https://github.com/full-stack-plugins/processon-design-plugin/releases/tag/v0.3.1"
     },
     {
+      "id": "specguard",
+      "displayName": "SpecGuard (Requirements Baseline)",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.0/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/specguard-plugin/releases/tag/v0.1.0"
+    },
+    {
       "id": "stitch-design",
       "displayName": "Stitch (UI Generation)",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/stitch-design-plugin@v0.10.1/assets/official-logo.png",
       "source": "https://github.com/full-stack-plugins/stitch-design-plugin/releases/tag/v0.10.1"
+    },
+    {
+      "id": "testguard",
+      "displayName": "TestGuard (Acceptance Test Evidence)",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.0/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/testguard-plugin/releases/tag/v0.1.0"
     },
     {
       "id": "ui-design",

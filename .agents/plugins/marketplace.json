@@ -33,6 +33,31 @@
       }
     },
     {
+      "name": "archguard",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/full-stack-plugins/archguard-plugin.git",
+        "ref": "v0.1.0"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills"
+      ],
+      "version": "0.1.0",
+      "description": "架构边界防护：提取模块依赖事实、校验架构契约并输出违规证据；CLI 未就绪时明确 DESIGN_ONLY。",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.0/assets/logo.png",
+      "interface": {
+        "displayName": "ArchGuard（架构边界防护）",
+        "shortDescription": "模块依赖、分层与边界契约",
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.0/assets/logo.png"
+      }
+    },
+    {
       "name": "bt-linux-panel",
       "source": {
         "source": "url",
@@ -215,6 +240,31 @@
       }
     },
     {
+      "name": "specguard",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/full-stack-plugins/specguard-plugin.git",
+        "ref": "v0.1.0"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills"
+      ],
+      "version": "0.1.0",
+      "description": "需求规格防护：校验规格基线、追踪关系与覆盖缺口；语义歧义交人工复核。",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.0/assets/logo.png",
+      "interface": {
+        "displayName": "SpecGuard（需求规格防护）",
+        "shortDescription": "需求、验收与追踪基线",
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.0/assets/logo.png"
+      }
+    },
+    {
       "name": "stitch-design",
       "source": {
         "source": "url",
@@ -238,6 +288,31 @@
         "displayName": "Stitch（界面生成）",
         "shortDescription": "页面与设计系统生成，多框架代码落地",
         "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/stitch-design-plugin@v0.10.1/assets/official-logo.png"
+      }
+    },
+    {
+      "name": "testguard",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/full-stack-plugins/testguard-plugin.git",
+        "ref": "v0.1.0"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills"
+      ],
+      "version": "0.1.0",
+      "description": "验收测试防护：冻结测试计划、归一化原生执行证据，识别删测、跳测与覆盖缺口。",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.0/assets/logo.png",
+      "interface": {
+        "displayName": "TestGuard（验收测试防护）",
+        "shortDescription": "冻结测试计划、执行证据与覆盖缺口",
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.0/assets/logo.png"
       }
     },
     {
