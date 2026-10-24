@@ -76,6 +76,14 @@ test("display names follow '<product> · <domain>' with no Use/RC/benchmark suff
   }
 });
 
+test("every plugin declares the full-stack line and component types", () => {
+  for (const plugin of plugins) {
+    assert.equal(plugin.line, "full-stack", `${plugin.id}: invalid line`);
+    assert.ok(Array.isArray(plugin.componentTypes) && plugin.componentTypes.length > 0, `${plugin.id}: missing componentTypes`);
+    assert.ok(!plugin.componentTypes.includes("ui"), `${plugin.id}: unexpected UI component type`);
+  }
+});
+
 test("global and cn marketplaces stay in sync", () => {
   execFileSync(process.execPath, [path.join(root, "scripts/verify-channel-parity.mjs")], { encoding: "utf8", stdio: "pipe" });
 });
