@@ -118,7 +118,7 @@
       ],
       "localizations": {
         "zh-CN": {
-          "displayName": "CodeGuard（代码质量检查）",
+          "displayName": "CodeGuard（代码质量防护）",
           "shortDescription": "60+ 语言 lint、CVE 与受控修复，提交门禁",
           "description": "证据化 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析；结论区分通过、失败、无法验证与计划中。"
         }
@@ -148,7 +148,7 @@
       ],
       "localizations": {
         "zh-CN": {
-          "displayName": "CodeReview（提交语义审查）",
+          "displayName": "CodeReview（代码变更审查）",
           "shortDescription": "暂存提交的逻辑与安全审查，需显式授权",
           "description": "经显式授权，对暂存提交做语义审查（OCR 委托或自配模型）；结论仅作建议，不替代静态检查。"
         }
@@ -182,7 +182,7 @@
       ],
       "localizations": {
         "zh-CN": {
-          "displayName": "FlowGuard（研发流程治理）",
+          "displayName": "FlowGuard（研发流程防护）",
           "shortDescription": "十阶段 SDD、证据新鲜度与发布裁决",
           "description": "智能体 SDD 治理：识别 Spec Kit/OpenSpec/Superpowers 原生产物，绑定任务，校验证据新鲜度并执行提交/发布门禁。"
         }
@@ -194,12 +194,12 @@
       ]
     },
     {
-      "id": "gitflow",
-      "displayName": "GitFlow (Git Branch Governance)",
-      "repository": "full-stack-plugins/gitflow-plugin",
-      "localDirectory": "gitflow-plugin",
-      "version": "0.3.1",
-      "description": "Nine Git skills plus deterministic gates: initialization, branch roles, commit policy, sync, release backports, recovery and audit.",
+      "id": "gitguard",
+      "displayName": "GitGuard (Git Branch Governance)",
+      "repository": "full-stack-plugins/gitguard-plugin",
+      "localDirectory": "gitguard-plugin",
+      "version": "0.4.0",
+      "description": "Git branch, change scope, sync, release backports, recovery and merge-candidate guard with real Git evidence and rollback paths.",
       "shortDescription": "Branch naming, creation, commits, sync and release backports",
       "category": "Developer Tools",
       "logo": "assets/logo.png",
@@ -213,9 +213,9 @@
       ],
       "localizations": {
         "zh-CN": {
-          "displayName": "GitFlow（Git 分支治理）",
+          "displayName": "GitGuard（分支规范防护）",
           "shortDescription": "分支命名、创建、提交、同步与发布回灌",
-          "description": "九项 Git 技能加确定性门禁：初始化、分支角色、提交策略、同步、发布回灌、恢复与审计。"
+          "description": "Git 分支、变更范围、同步、发布回灌、恢复与合并候选防护；保留真实 Git 事实与回退路径。"
         }
       },
       "line": "full-stack",

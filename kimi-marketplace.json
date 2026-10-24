@@ -39,10 +39,10 @@
       "source": "https://github.com/full-stack-plugins/flowguard-plugin/releases/tag/v0.5.1"
     },
     {
-      "id": "gitflow",
-      "displayName": "GitFlow (Git Branch Governance)",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitflow-plugin@v0.3.1/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/gitflow-plugin/releases/tag/v0.3.1"
+      "id": "gitguard",
+      "displayName": "GitGuard (Git Branch Governance)",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitguard-plugin@v0.4.0/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/gitguard-plugin/releases/tag/v0.4.0"
     },
     {
       "id": "processon-design",
