@@ -6,12 +6,12 @@
   "plugins": [
     {
       "id": "1panel",
-      "displayName": "1Panel (Panel Operations)",
+      "displayName": "1Panel（面板运维）",
       "repository": "full-stack-plugins/1panel-plugin",
       "localDirectory": "1panel-plugin",
       "version": "0.2.1",
-      "description": "Inspect and operate 1Panel through the pinned official MCP. Access levels are explicit and credentials stay private.",
-      "shortDescription": "Apps, sites, certificates, databases and security audit",
+      "description": "把服务器面板接进对话：查站点、证书、数据库与安全审计，变更前先给影响和回退路径。",
+      "shortDescription": "把服务器面板接进对话：查站点、证书、数据库与安全审计，变更前先给影响和回退路径。",
       "category": "Productivity",
       "codexCategory": "Productivity",
       "logo": "assets/logo.png",
@@ -24,8 +24,8 @@
       "localizations": {
         "zh-CN": {
           "displayName": "1Panel（面板运维）",
-          "shortDescription": "应用、网站、证书、数据库与安全审计",
-          "description": "通过钉死版本的官方 MCP 检查与操作 1Panel；访问级别显式分级，凭据保持私有。"
+          "shortDescription": "把服务器面板接进对话：查站点、证书、数据库与安全审计，变更前先给影响和回退路径。",
+          "description": "把服务器面板接进对话：查站点、证书、数据库与安全审计，变更前先给影响和回退路径。"
         }
       },
       "line": "full-stack",
@@ -36,12 +36,12 @@
     },
     {
       "id": "archguard",
-      "displayName": "ArchGuard (Architecture Boundary)",
+      "displayName": "ArchGuard（架构边界防护）",
       "repository": "full-stack-plugins/archguard-plugin",
       "localDirectory": "archguard-plugin",
       "version": "0.1.1",
-      "description": "Architecture boundary guard: extract module dependency facts, validate architecture contracts and emit violation evidence; design-only until the CLI is available.",
-      "shortDescription": "Module dependencies, layers and boundary contracts",
+      "description": "给架构边界装上检查器：提取模块依赖、校验契约、列出违规证据，CLI 缺失时明确 DESIGN_ONLY。",
+      "shortDescription": "给架构边界装上检查器：提取模块依赖、校验契约、列出违规证据，CLI 缺失时明确 DESIGN_ONLY。",
       "category": "Developer Tools",
       "logo": "assets/logo.png",
       "tags": [
@@ -53,8 +53,8 @@
       "localizations": {
         "zh-CN": {
           "displayName": "ArchGuard（架构边界防护）",
-          "shortDescription": "模块依赖、分层与边界契约",
-          "description": "架构边界防护：提取模块依赖事实、校验架构契约并输出违规证据；CLI 未就绪时明确 DESIGN_ONLY。"
+          "shortDescription": "给架构边界装上检查器：提取模块依赖、校验契约、列出违规证据，CLI 缺失时明确 DESIGN_ONLY。",
+          "description": "给架构边界装上检查器：提取模块依赖、校验契约、列出违规证据，CLI 缺失时明确 DESIGN_ONLY。"
         }
       },
       "line": "full-stack",
@@ -64,12 +64,12 @@
     },
     {
       "id": "bt-linux-panel",
-      "displayName": "BaoTa Panel (Server Operations)",
+      "displayName": "BaoTa Panel（服务器运维）",
       "repository": "full-stack-plugins/bt-linux-panel-plugin",
       "localDirectory": "bt-linux-panel-plugin",
       "version": "1.1.1",
-      "description": "Operate the Baota Linux panel through MCP: services, site and database diagnosis, firewall review and intrusion checks.",
-      "shortDescription": "Site diagnosis, databases, firewall and intrusion checks",
+      "description": "宝塔面板的 AI 运维入口：站点 502、数据库连接、防火墙与入侵痕迹，一次排查给出证据。",
+      "shortDescription": "宝塔面板的 AI 运维入口：站点 502、数据库连接、防火墙与入侵痕迹，一次排查给出证据。",
       "category": "Productivity",
       "logo": "assets/official-logo.png",
       "tags": [
@@ -81,8 +81,8 @@
       "localizations": {
         "zh-CN": {
           "displayName": "BaoTa Panel（服务器运维）",
-          "shortDescription": "站点诊断、数据库、防火墙与入侵排查",
-          "description": "通过 MCP 操作宝塔面板：服务管理、站点与数据库诊断、防火墙审计与入侵排查。"
+          "shortDescription": "宝塔面板的 AI 运维入口：站点 502、数据库连接、防火墙与入侵痕迹，一次排查给出证据。",
+          "description": "宝塔面板的 AI 运维入口：站点 502、数据库连接、防火墙与入侵痕迹，一次排查给出证据。"
         }
       },
       "line": "full-stack",
@@ -93,12 +93,12 @@
     },
     {
       "id": "codegraph",
-      "displayName": "CodeGraph (Code Graph Search)",
+      "displayName": "CodeGraph（代码图谱检索）",
       "repository": "full-stack-plugins/codegraph-plugin",
       "localDirectory": "codegraph-plugin",
       "version": "0.3.1",
-      "description": "Injects the official CodeGraph prompt when a .codegraph directory exists and exposes 21 CLI commands as slash commands. Pure Python stdlib.",
-      "shortDescription": "Symbols, call chains and impact queries on a local index",
+      "description": "改代码前先问图：符号在哪、谁在调用、改动影响哪些模块，本地索引不出网。",
+      "shortDescription": "改代码前先问图：符号在哪、谁在调用、改动影响哪些模块，本地索引不出网。",
       "category": "Developer Tools",
       "logo": "assets/official-logo.png",
       "tags": [
@@ -111,8 +111,8 @@
       "localizations": {
         "zh-CN": {
           "displayName": "CodeGraph（代码图谱检索）",
-          "shortDescription": "符号、调用链与影响面查询，本地索引",
-          "description": "存在 .codegraph 时注入官方提示词，并把 21 条 CLI 命令暴露为斜杠命令；纯 Python 标准库。"
+          "shortDescription": "改代码前先问图：符号在哪、谁在调用、改动影响哪些模块，本地索引不出网。",
+          "description": "改代码前先问图：符号在哪、谁在调用、改动影响哪些模块，本地索引不出网。"
         }
       },
       "line": "full-stack",
@@ -123,12 +123,12 @@
     },
     {
       "id": "codeguard",
-      "displayName": "CodeGuard (Code Quality)",
+      "displayName": "CodeGuard（代码质量防护）",
       "repository": "full-stack-plugins/codeguard-plugin",
       "localDirectory": "codeguard-plugin",
       "version": "0.21.2",
-      "description": "Evidence-backed lint, CVE scanning, guided fixes and Maven/Gradle impact analysis. Results distinguish pass, fail, unverified and planned.",
-      "shortDescription": "Lint, CVE and guided fixes for 60+ languages, commit gates",
+      "description": "提交前跑真实门禁：60+ 语言 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析，结论可复核。",
+      "shortDescription": "提交前跑真实门禁：60+ 语言 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析，结论可复核。",
       "category": "Developer Tools",
       "logo": "assets/official-logo.png",
       "tags": [
@@ -147,8 +147,8 @@
       "localizations": {
         "zh-CN": {
           "displayName": "CodeGuard（代码质量防护）",
-          "shortDescription": "60+ 语言 lint、CVE 与受控修复，提交门禁",
-          "description": "证据化 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析；结论区分通过、失败、无法验证与计划中。"
+          "shortDescription": "提交前跑真实门禁：60+ 语言 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析，结论可复核。",
+          "description": "提交前跑真实门禁：60+ 语言 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析，结论可复核。"
         }
       },
       "line": "full-stack",
@@ -159,12 +159,12 @@
     },
     {
       "id": "codereview-plugin",
-      "displayName": "CodeReview (Commit Review)",
+      "displayName": "CodeReview（代码变更审查）",
       "repository": "full-stack-plugins/codereview-plugin",
       "localDirectory": "codereview-plugin",
       "version": "0.4.2",
-      "description": "Consent-based semantic review of staged commits through Open Code Review delegation or a configured model. Findings remain advisory.",
-      "shortDescription": "Logic and security review of staged commits, with consent",
+      "description": "提交前做一次语义审查：只读暂存内容，逐行指出逻辑和安全风险，需你显式授权。",
+      "shortDescription": "提交前做一次语义审查：只读暂存内容，逐行指出逻辑和安全风险，需你显式授权。",
       "category": "Developer Tools",
       "logo": "assets/official-logo.png",
       "tags": [
@@ -177,8 +177,8 @@
       "localizations": {
         "zh-CN": {
           "displayName": "CodeReview（代码变更审查）",
-          "shortDescription": "暂存提交的逻辑与安全审查，需显式授权",
-          "description": "经显式授权，对暂存提交做语义审查（OCR 委托或自配模型）；结论仅作建议，不替代静态检查。"
+          "shortDescription": "提交前做一次语义审查：只读暂存内容，逐行指出逻辑和安全风险，需你显式授权。",
+          "description": "提交前做一次语义审查：只读暂存内容，逐行指出逻辑和安全风险，需你显式授权。"
         }
       },
       "line": "full-stack",
@@ -189,12 +189,12 @@
     },
     {
       "id": "flowguard",
-      "displayName": "FlowGuard (SDD Governance)",
+      "displayName": "FlowGuard（研发流程防护）",
       "repository": "full-stack-plugins/flowguard-plugin",
       "localDirectory": "flowguard-plugin",
       "version": "0.5.2",
-      "description": "Agent-driven SDD governance: native Spec Kit/OpenSpec/Superpowers discovery, task binding, evidence freshness and deterministic code/commit/release gates.",
-      "shortDescription": "Ten-stage SDD, evidence freshness and release gates",
+      "description": "把 Spec Kit/OpenSpec 接到十阶段流程：任务绑定、证据新鲜度和提交/发布门禁，不再靠聊天记录推进。",
+      "shortDescription": "把 Spec Kit/OpenSpec 接到十阶段流程：任务绑定、证据新鲜度和提交/发布门禁，不再靠聊天记录推进。",
       "category": "Developer Tools",
       "logo": "assets/official-logo.png",
       "tags": [
@@ -211,8 +211,8 @@
       "localizations": {
         "zh-CN": {
           "displayName": "FlowGuard（研发流程防护）",
-          "shortDescription": "十阶段 SDD、证据新鲜度与发布裁决",
-          "description": "智能体 SDD 治理：识别 Spec Kit/OpenSpec/Superpowers 原生产物，绑定任务，校验证据新鲜度并执行提交/发布门禁。"
+          "shortDescription": "把 Spec Kit/OpenSpec 接到十阶段流程：任务绑定、证据新鲜度和提交/发布门禁，不再靠聊天记录推进。",
+          "description": "把 Spec Kit/OpenSpec 接到十阶段流程：任务绑定、证据新鲜度和提交/发布门禁，不再靠聊天记录推进。"
         }
       },
       "line": "full-stack",
@@ -223,12 +223,12 @@
     },
     {
       "id": "gitguard",
-      "displayName": "GitGuard (Git Branch Governance)",
+      "displayName": "GitGuard（分支规范防护）",
       "repository": "full-stack-plugins/gitguard-plugin",
       "localDirectory": "gitguard-plugin",
       "version": "0.4.0",
-      "description": "Git branch, change scope, sync, release backports, recovery and merge-candidate guard with real Git evidence and rollback paths.",
-      "shortDescription": "Branch naming, creation, commits, sync and release backports",
+      "description": "分支、提交、合并、发布都有规则：先识别仓库工作流，再拦截错误流向，保留回退路径。",
+      "shortDescription": "分支、提交、合并、发布都有规则：先识别仓库工作流，再拦截错误流向，保留回退路径。",
       "category": "Developer Tools",
       "logo": "assets/logo.png",
       "tags": [
@@ -242,8 +242,8 @@
       "localizations": {
         "zh-CN": {
           "displayName": "GitGuard（分支规范防护）",
-          "shortDescription": "分支命名、创建、提交、同步与发布回灌",
-          "description": "Git 分支、变更范围、同步、发布回灌、恢复与合并候选防护；保留真实 Git 事实与回退路径。"
+          "shortDescription": "分支、提交、合并、发布都有规则：先识别仓库工作流，再拦截错误流向，保留回退路径。",
+          "description": "分支、提交、合并、发布都有规则：先识别仓库工作流，再拦截错误流向，保留回退路径。"
         }
       },
       "line": "full-stack",
@@ -254,12 +254,12 @@
     },
     {
       "id": "processon-design",
-      "displayName": "ProcessOn (Diagramming)",
+      "displayName": "ProcessOn（图表绘制）",
       "repository": "full-stack-plugins/processon-design-plugin",
       "localDirectory": "processon-design-plugin",
       "version": "0.3.1",
-      "description": "Editable ProcessOn diagrams with prompt construction and consistency review before and after generation.",
-      "shortDescription": "Flowcharts, architecture diagrams, mind maps and infographics",
+      "description": "把流程图、架构图和思维导图变成可编辑的 ProcessOn 文件，生成前定结构，生成后做一致性评审。",
+      "shortDescription": "把流程图、架构图和思维导图变成可编辑的 ProcessOn 文件，生成前定结构，生成后做一致性评审。",
       "category": "Design Tools",
       "codexCategory": "Creativity",
       "logo": "assets/official-logo.png",
@@ -271,8 +271,8 @@
       "localizations": {
         "zh-CN": {
           "displayName": "ProcessOn（图表绘制）",
-          "shortDescription": "流程图、架构图、思维导图与信息图",
-          "description": "可编辑的 ProcessOn 图表：生成前构造提示词，生成后做语义与一致性评审。"
+          "shortDescription": "把流程图、架构图和思维导图变成可编辑的 ProcessOn 文件，生成前定结构，生成后做一致性评审。",
+          "description": "把流程图、架构图和思维导图变成可编辑的 ProcessOn 文件，生成前定结构，生成后做一致性评审。"
         }
       },
       "line": "full-stack",
@@ -283,12 +283,12 @@
     },
     {
       "id": "specguard",
-      "displayName": "SpecGuard (Requirements Baseline)",
+      "displayName": "SpecGuard（需求规格防护）",
       "repository": "full-stack-plugins/specguard-plugin",
       "localDirectory": "specguard-plugin",
       "version": "0.1.1",
-      "description": "Requirements and acceptance baseline guard: validate traceability, approved baselines and coverage gaps; ambiguous intent goes to human review.",
-      "shortDescription": "Requirements, acceptance and traceability baselines",
+      "description": "需求、验收、设计和测试义务对齐：追踪每条需求的覆盖缺口，语义歧义交给人。",
+      "shortDescription": "需求、验收、设计和测试义务对齐：追踪每条需求的覆盖缺口，语义歧义交给人。",
       "category": "Developer Tools",
       "logo": "assets/logo.png",
       "tags": [
@@ -301,8 +301,8 @@
       "localizations": {
         "zh-CN": {
           "displayName": "SpecGuard（需求规格防护）",
-          "shortDescription": "需求、验收与追踪基线",
-          "description": "需求规格防护：校验规格基线、追踪关系与覆盖缺口；语义歧义交人工复核。"
+          "shortDescription": "需求、验收、设计和测试义务对齐：追踪每条需求的覆盖缺口，语义歧义交给人。",
+          "description": "需求、验收、设计和测试义务对齐：追踪每条需求的覆盖缺口，语义歧义交给人。"
         }
       },
       "line": "full-stack",
@@ -312,12 +312,12 @@
     },
     {
       "id": "stitch-design",
-      "displayName": "Stitch (UI Generation)",
+      "displayName": "Stitch（界面生成）",
       "repository": "full-stack-plugins/stitch-design-plugin",
       "localDirectory": "stitch-design-plugin",
       "version": "0.10.1",
-      "description": "Create and edit Google Stitch screens, design systems and frontend code, then hand off to React, Vue, uni-app and component libraries.",
-      "shortDescription": "Page and design-system generation with multi-framework handoff",
+      "description": "从一句需求生成可编辑页面和设计系统，直接落地 React、Vue、uni-app 代码。",
+      "shortDescription": "从一句需求生成可编辑页面和设计系统，直接落地 React、Vue、uni-app 代码。",
       "category": "Design Tools",
       "codexCategory": "Creativity",
       "logo": "assets/official-logo.png",
@@ -329,8 +329,8 @@
       "localizations": {
         "zh-CN": {
           "displayName": "Stitch（界面生成）",
-          "shortDescription": "页面与设计系统生成，多框架代码落地",
-          "description": "通过远程 Stitch MCP 创建与编辑页面、设计系统与前端代码，可落地 React、Vue、uni-app 与多种组件库。"
+          "shortDescription": "从一句需求生成可编辑页面和设计系统，直接落地 React、Vue、uni-app 代码。",
+          "description": "从一句需求生成可编辑页面和设计系统，直接落地 React、Vue、uni-app 代码。"
         }
       },
       "line": "full-stack",
@@ -341,12 +341,12 @@
     },
     {
       "id": "testguard",
-      "displayName": "TestGuard (Acceptance Test Evidence)",
+      "displayName": "TestGuard（验收测试防护）",
       "repository": "full-stack-plugins/testguard-plugin",
       "localDirectory": "testguard-plugin",
       "version": "0.1.1",
-      "description": "Acceptance test guard: freeze the required test plan, normalize native execution evidence and detect missing, skipped or reduced tests.",
-      "shortDescription": "Frozen test plan, execution evidence and coverage gaps",
+      "description": "验收测试不能只看退出码：冻结测试计划、核对原生执行证据，识别删测、跳测和覆盖缺口。",
+      "shortDescription": "验收测试不能只看退出码：冻结测试计划、核对原生执行证据，识别删测、跳测和覆盖缺口。",
       "category": "Developer Tools",
       "logo": "assets/logo.png",
       "tags": [
@@ -359,8 +359,8 @@
       "localizations": {
         "zh-CN": {
           "displayName": "TestGuard（验收测试防护）",
-          "shortDescription": "冻结测试计划、执行证据与覆盖缺口",
-          "description": "验收测试防护：冻结测试计划、归一化原生执行证据，识别删测、跳测与覆盖缺口。"
+          "shortDescription": "验收测试不能只看退出码：冻结测试计划、核对原生执行证据，识别删测、跳测和覆盖缺口。",
+          "description": "验收测试不能只看退出码：冻结测试计划、核对原生执行证据，识别删测、跳测和覆盖缺口。"
         }
       },
       "line": "full-stack",
@@ -370,12 +370,12 @@
     },
     {
       "id": "ui-design",
-      "displayName": "UI (Frontend UI Design)",
+      "displayName": "UI（前端界面设计）",
       "repository": "full-stack-plugins/ui-design-plugin",
       "localDirectory": "ui-design-plugin",
       "version": "0.2.1",
-      "description": "Complete frontend design packages from login to feature pages: navigation, page contracts, themes, previews and visual review.",
-      "shortDescription": "Feature contracts, pages, themes, previews and visual review",
+      "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览和视觉评审。",
+      "shortDescription": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览和视觉评审。",
       "category": "Design Tools",
       "codexCategory": "Creativity",
       "logo": "assets/logo.png",
@@ -388,8 +388,8 @@
       "localizations": {
         "zh-CN": {
           "displayName": "UI（前端界面设计）",
-          "shortDescription": "功能契约、页面、主题、预览与视觉评审",
-          "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览与视觉评审。"
+          "shortDescription": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览和视觉评审。",
+          "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览和视觉评审。"
         }
       },
       "line": "full-stack",

@@ -4,37 +4,37 @@
   "plugins": [
     {
       "id": "1panel",
-      "displayName": "面板运维 · 1Panel",
+      "displayName": "1Panel（面板运维）",
       "icon": "https://gitee.com/full-stack-plugins/1panel-plugin/raw/v0.2.0/assets/logo.png",
       "source": "https://gitee.com/full-stack-plugins/1panel-plugin/releases/tag/v0.2.0"
     },
     {
       "id": "bt-linux-panel",
-      "displayName": "服务器运维 · BaoTa Panel",
+      "displayName": "BaoTa Panel（服务器运维）",
       "icon": "https://gitee.com/full-stack-plugins/bt-linux-panel-plugin/raw/v1.1.0/assets/official-logo.png",
       "source": "https://gitee.com/full-stack-plugins/bt-linux-panel-plugin/releases/tag/v1.1.0"
     },
     {
       "id": "codegraph",
-      "displayName": "代码图谱检索 · CodeGraph",
+      "displayName": "CodeGraph（代码图谱检索）",
       "icon": "https://gitee.com/full-stack-plugins/codegraph-plugin/raw/v0.3.0/assets/official-logo.png",
       "source": "https://gitee.com/full-stack-plugins/codegraph-plugin/releases/tag/v0.3.0"
     },
     {
       "id": "codeguard",
-      "displayName": "代码质量检查 · CodeGuard",
+      "displayName": "CodeGuard（代码质量防护）",
       "icon": "https://gitee.com/full-stack-plugins/codeguard-plugin/raw/v0.21.0/assets/official-logo.png",
       "source": "https://gitee.com/full-stack-plugins/codeguard-plugin/releases/tag/v0.21.0"
     },
     {
       "id": "codereview-plugin",
-      "displayName": "提交语义审查 · CodeReview",
+      "displayName": "CodeReview（代码变更审查）",
       "icon": "https://gitee.com/full-stack-plugins/codereview-plugin/raw/v0.4.0/assets/official-logo.png",
       "source": "https://gitee.com/full-stack-plugins/codereview-plugin/releases/tag/v0.4.0"
     },
     {
       "id": "flowguard",
-      "displayName": "研发流程治理 · FlowGuard",
+      "displayName": "FlowGuard（研发流程防护）",
       "icon": "https://gitee.com/full-stack-plugins/flowguard-plugin/raw/v0.5.0/assets/official-logo.png",
       "source": "https://gitee.com/full-stack-plugins/flowguard-plugin/releases/tag/v0.5.0"
     },
@@ -46,19 +46,19 @@
     },
     {
       "id": "processon-design",
-      "displayName": "图表绘制 · ProcessOn Design",
+      "displayName": "ProcessOn（图表绘制）",
       "icon": "https://gitee.com/full-stack-plugins/processon-design-plugin/raw/v0.3.0/assets/official-logo.png",
       "source": "https://gitee.com/full-stack-plugins/processon-design-plugin/releases/tag/v0.3.0"
     },
     {
       "id": "stitch-design",
-      "displayName": "界面生成 · Stitch Design",
+      "displayName": "Stitch（界面生成）",
       "icon": "https://gitee.com/full-stack-plugins/stitch-design-plugin/raw/v0.10.0/assets/official-logo.png",
       "source": "https://gitee.com/full-stack-plugins/stitch-design-plugin/releases/tag/v0.10.0"
     },
     {
       "id": "ui-design",
-      "displayName": "前端界面设计 · UI Design",
+      "displayName": "UI（前端界面设计）",
       "icon": "https://gitee.com/full-stack-plugins/ui-design-plugin/raw/v0.2.0/assets/logo.png",
       "source": "https://gitee.com/full-stack-plugins/ui-design-plugin/releases/tag/v0.2.0"
     }

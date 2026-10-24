@@ -10,8 +10,8 @@
         "url": "https://gitee.com/full-stack-plugins/1panel-plugin.git",
         "ref": "v0.2.0"
       },
-      "displayName": "面板运维 · 1Panel",
-      "description": "通过钉死版本的官方 MCP 检查与操作 1Panel；访问级别显式分级，凭据保持私有。",
+      "displayName": "1Panel（面板运维）",
+      "description": "把服务器面板接进对话：查站点、证书、数据库与安全审计，变更前先给影响和回退路径。",
       "version": "0.2.0",
       "category": "Productivity",
       "tags": [
@@ -30,8 +30,8 @@
         "url": "https://gitee.com/full-stack-plugins/bt-linux-panel-plugin.git",
         "ref": "v1.1.0"
       },
-      "displayName": "服务器运维 · BaoTa Panel",
-      "description": "通过 MCP 操作宝塔面板：服务管理、站点与数据库诊断、防火墙审计与入侵排查。",
+      "displayName": "BaoTa Panel（服务器运维）",
+      "description": "宝塔面板的 AI 运维入口：站点 502、数据库连接、防火墙与入侵痕迹，一次排查给出证据。",
       "version": "1.1.0",
       "category": "Productivity",
       "tags": [
@@ -50,8 +50,8 @@
         "url": "https://gitee.com/full-stack-plugins/codegraph-plugin.git",
         "ref": "v0.3.0"
       },
-      "displayName": "代码图谱检索 · CodeGraph",
-      "description": "存在 .codegraph 时注入官方提示词，并把 21 条 CLI 命令暴露为斜杠命令；纯 Python 标准库。",
+      "displayName": "CodeGraph（代码图谱检索）",
+      "description": "改代码前先问图：符号在哪、谁在调用、改动影响哪些模块，本地索引不出网。",
       "version": "0.3.0",
       "category": "Developer Tools",
       "tags": [
@@ -71,8 +71,8 @@
         "url": "https://gitee.com/full-stack-plugins/codeguard-plugin.git",
         "ref": "v0.21.0"
       },
-      "displayName": "代码质量检查 · CodeGuard",
-      "description": "证据化 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析；结论区分通过、失败、无法验证与计划中。",
+      "displayName": "CodeGuard（代码质量防护）",
+      "description": "提交前跑真实门禁：60+ 语言 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析，结论可复核。",
       "version": "0.21.0",
       "category": "Developer Tools",
       "tags": [
@@ -98,8 +98,8 @@
         "url": "https://gitee.com/full-stack-plugins/codereview-plugin.git",
         "ref": "v0.4.0"
       },
-      "displayName": "提交语义审查 · CodeReview",
-      "description": "经显式授权，对暂存提交做语义审查（OCR 委托或自配模型）；结论仅作建议，不替代静态检查。",
+      "displayName": "CodeReview（代码变更审查）",
+      "description": "提交前做一次语义审查：只读暂存内容，逐行指出逻辑和安全风险，需你显式授权。",
       "version": "0.4.0",
       "category": "Developer Tools",
       "tags": [
@@ -119,8 +119,8 @@
         "url": "https://gitee.com/full-stack-plugins/flowguard-plugin.git",
         "ref": "v0.5.0"
       },
-      "displayName": "研发流程治理 · FlowGuard",
-      "description": "智能体 SDD 治理：识别 Spec Kit/OpenSpec/Superpowers 原生产物，绑定任务，校验证据新鲜度并执行提交/发布门禁。",
+      "displayName": "FlowGuard（研发流程防护）",
+      "description": "把 Spec Kit/OpenSpec 接到十阶段流程：任务绑定、证据新鲜度和提交/发布门禁，不再靠聊天记录推进。",
       "version": "0.5.0",
       "category": "Developer Tools",
       "tags": [
@@ -166,8 +166,8 @@
         "url": "https://gitee.com/full-stack-plugins/processon-design-plugin.git",
         "ref": "v0.3.0"
       },
-      "displayName": "图表绘制 · ProcessOn Design",
-      "description": "可编辑的 ProcessOn 图表：生成前构造提示词，生成后做语义与一致性评审。",
+      "displayName": "ProcessOn（图表绘制）",
+      "description": "把流程图、架构图和思维导图变成可编辑的 ProcessOn 文件，生成前定结构，生成后做一致性评审。",
       "version": "0.3.0",
       "category": "Design Tools",
       "tags": [
@@ -185,8 +185,8 @@
         "url": "https://gitee.com/full-stack-plugins/stitch-design-plugin.git",
         "ref": "v0.10.0"
       },
-      "displayName": "界面生成 · Stitch Design",
-      "description": "通过远程 Stitch MCP 创建与编辑页面、设计系统与前端代码，可落地 React、Vue、uni-app 与多种组件库。",
+      "displayName": "Stitch（界面生成）",
+      "description": "从一句需求生成可编辑页面和设计系统，直接落地 React、Vue、uni-app 代码。",
       "version": "0.10.0",
       "category": "Design Tools",
       "tags": [
@@ -204,8 +204,8 @@
         "url": "https://gitee.com/full-stack-plugins/ui-design-plugin.git",
         "ref": "v0.2.0"
       },
-      "displayName": "前端界面设计 · UI Design",
-      "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览与视觉评审。",
+      "displayName": "UI（前端界面设计）",
+      "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览和视觉评审。",
       "version": "0.2.0",
       "category": "Design Tools",
       "tags": [
