@@ -258,7 +258,7 @@ for (let index = 0; index < catalog.plugins.length; index += 1) {
       errors.push(`${plugin.id}: repository marketplace must contain exactly one plugin`);
     } else {
       if (entry.name !== plugin.id) errors.push(`${plugin.id}: repository marketplace name is ${entry.name}`);
-      if (entry.description !== plugin.description) errors.push(`${plugin.id}: repository marketplace description differs`);
+      if (entry.description !== localized(plugin, "description")) errors.push(`${plugin.id}: repository marketplace description differs`);
       if (entry.version !== plugin.version) errors.push(`${plugin.id}: repository marketplace version differs`);
       if (entry.source?.ref !== `v${plugin.version}`) errors.push(`${plugin.id}: repository marketplace source is not pinned to v${plugin.version}`);
       const immutableLogoPrefix = `https://cdn.jsdelivr.net/gh/${plugin.repository}@v${plugin.version}/`;
