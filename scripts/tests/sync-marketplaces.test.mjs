@@ -30,7 +30,7 @@ function fixture() {
     fs.copyFileSync(source, output);
   }
   return { temporary, market, plugin,
-    run: () => execFileSync(process.execPath, [path.join(market, 'scripts/sync-marketplaces.mjs'), '--write', '--plugin=ui-design'], { encoding: 'utf8', stdio: 'pipe' }) };
+    run: () => execFileSync(process.execPath, [path.join(market, 'scripts/sync-marketplaces.mjs'), '--write', '--locale=zh-CN', '--plugin=ui-design'], { encoding: 'utf8', stdio: 'pipe' }) };
 }
 
 test('selected new plugins are added to all marketplaces', () => {
