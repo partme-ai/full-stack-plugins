@@ -24,11 +24,11 @@
         "mcp"
       ],
       "version": "0.2.1",
-      "description": "通过钉死版本的官方 MCP 检查与操作 1Panel；访问级别显式分级，凭据保持私有。",
+      "description": "把服务器面板接进对话：查站点、证书、数据库与安全审计，变更前先给影响和回退路径。",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.1/assets/logo.png",
       "interface": {
         "displayName": "1Panel（面板运维）",
-        "shortDescription": "应用、网站、证书、数据库与安全审计",
+        "shortDescription": "把服务器面板接进对话：查站点、证书、数据库与安全审计，变更前先给影响和回退路径。",
         "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.1/assets/logo.png"
       }
     },
@@ -37,7 +37,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/full-stack-plugins/archguard-plugin.git",
-        "ref": "v0.1.0"
+        "ref": "v0.1.1"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -48,13 +48,13 @@
       "componentTypes": [
         "skills"
       ],
-      "version": "0.1.0",
-      "description": "架构边界防护：提取模块依赖事实、校验架构契约并输出违规证据；CLI 未就绪时明确 DESIGN_ONLY。",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.0/assets/logo.png",
+      "version": "0.1.1",
+      "description": "给架构边界装上检查器：提取模块依赖、校验契约、列出违规证据，CLI 缺失时明确 DESIGN_ONLY。",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.1/assets/logo.png",
       "interface": {
         "displayName": "ArchGuard（架构边界防护）",
-        "shortDescription": "模块依赖、分层与边界契约",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.0/assets/logo.png"
+        "shortDescription": "给架构边界装上检查器：提取模块依赖、校验契约、列出违规证据，CLI 缺失时明确 DESIGN_ONLY。",
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.1/assets/logo.png"
       }
     },
     {
@@ -75,11 +75,11 @@
         "mcp"
       ],
       "version": "1.1.1",
-      "description": "通过 MCP 操作宝塔面板：服务管理、站点与数据库诊断、防火墙审计与入侵排查。",
+      "description": "宝塔面板的 AI 运维入口：站点 502、数据库连接、防火墙与入侵痕迹，一次排查给出证据。",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/bt-linux-panel-plugin@v1.1.1/assets/official-logo.png",
       "interface": {
         "displayName": "BaoTa Panel（服务器运维）",
-        "shortDescription": "站点诊断、数据库、防火墙与入侵排查",
+        "shortDescription": "宝塔面板的 AI 运维入口：站点 502、数据库连接、防火墙与入侵痕迹，一次排查给出证据。",
         "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/bt-linux-panel-plugin@v1.1.1/assets/official-logo.png"
       }
     },
@@ -101,11 +101,11 @@
         "mcp"
       ],
       "version": "0.3.1",
-      "description": "存在 .codegraph 时注入官方提示词，并把 21 条 CLI 命令暴露为斜杠命令；纯 Python 标准库。",
+      "description": "改代码前先问图：符号在哪、谁在调用、改动影响哪些模块，本地索引不出网。",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.3.1/assets/official-logo.png",
       "interface": {
         "displayName": "CodeGraph（代码图谱检索）",
-        "shortDescription": "符号、调用链与影响面查询，本地索引",
+        "shortDescription": "改代码前先问图：符号在哪、谁在调用、改动影响哪些模块，本地索引不出网。",
         "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.3.1/assets/official-logo.png"
       }
     },
@@ -127,11 +127,11 @@
         "mcp"
       ],
       "version": "0.21.2",
-      "description": "证据化 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析；结论区分通过、失败、无法验证与计划中。",
+      "description": "提交前跑真实门禁：60+ 语言 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析，结论可复核。",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@v0.21.2/assets/official-logo.png",
       "interface": {
         "displayName": "CodeGuard（代码质量防护）",
-        "shortDescription": "60+ 语言 lint、CVE 与受控修复，提交门禁",
+        "shortDescription": "提交前跑真实门禁：60+ 语言 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析，结论可复核。",
         "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@v0.21.2/assets/official-logo.png"
       }
     },
@@ -153,11 +153,11 @@
         "mcp"
       ],
       "version": "0.4.2",
-      "description": "经显式授权，对暂存提交做语义审查（OCR 委托或自配模型）；结论仅作建议，不替代静态检查。",
+      "description": "提交前做一次语义审查：只读暂存内容，逐行指出逻辑和安全风险，需你显式授权。",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@v0.4.2/assets/official-logo.png",
       "interface": {
         "displayName": "CodeReview（代码变更审查）",
-        "shortDescription": "暂存提交的逻辑与安全审查，需显式授权",
+        "shortDescription": "提交前做一次语义审查：只读暂存内容，逐行指出逻辑和安全风险，需你显式授权。",
         "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@v0.4.2/assets/official-logo.png"
       }
     },
@@ -179,11 +179,11 @@
         "mcp"
       ],
       "version": "0.5.2",
-      "description": "智能体 SDD 治理：识别 Spec Kit/OpenSpec/Superpowers 原生产物，绑定任务，校验证据新鲜度并执行提交/发布门禁。",
+      "description": "把 Spec Kit/OpenSpec 接到十阶段流程：任务绑定、证据新鲜度和提交/发布门禁，不再靠聊天记录推进。",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/flowguard-plugin@v0.5.2/assets/official-logo.png",
       "interface": {
         "displayName": "FlowGuard（研发流程防护）",
-        "shortDescription": "十阶段 SDD、证据新鲜度与发布裁决",
+        "shortDescription": "把 Spec Kit/OpenSpec 接到十阶段流程：任务绑定、证据新鲜度和提交/发布门禁，不再靠聊天记录推进。",
         "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/flowguard-plugin@v0.5.2/assets/official-logo.png"
       }
     },
@@ -205,11 +205,11 @@
         "mcp"
       ],
       "version": "0.4.0",
-      "description": "Git 分支、变更范围、同步、发布回灌、恢复与合并候选防护；保留真实 Git 事实与回退路径。",
+      "description": "分支、提交、合并、发布都有规则：先识别仓库工作流，再拦截错误流向，保留回退路径。",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitguard-plugin@v0.4.0/assets/logo.png",
       "interface": {
         "displayName": "GitGuard（分支规范防护）",
-        "shortDescription": "分支命名、创建、提交、同步与发布回灌",
+        "shortDescription": "分支、提交、合并、发布都有规则：先识别仓库工作流，再拦截错误流向，保留回退路径。",
         "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitguard-plugin@v0.4.0/assets/logo.png"
       }
     },
@@ -231,11 +231,11 @@
         "mcp"
       ],
       "version": "0.3.1",
-      "description": "可编辑的 ProcessOn 图表：生成前构造提示词，生成后做语义与一致性评审。",
+      "description": "把流程图、架构图和思维导图变成可编辑的 ProcessOn 文件，生成前定结构，生成后做一致性评审。",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.3.1/assets/official-logo.png",
       "interface": {
         "displayName": "ProcessOn（图表绘制）",
-        "shortDescription": "流程图、架构图、思维导图与信息图",
+        "shortDescription": "把流程图、架构图和思维导图变成可编辑的 ProcessOn 文件，生成前定结构，生成后做一致性评审。",
         "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.3.1/assets/official-logo.png"
       }
     },
@@ -244,7 +244,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/full-stack-plugins/specguard-plugin.git",
-        "ref": "v0.1.0"
+        "ref": "v0.1.1"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -255,13 +255,13 @@
       "componentTypes": [
         "skills"
       ],
-      "version": "0.1.0",
-      "description": "需求规格防护：校验规格基线、追踪关系与覆盖缺口；语义歧义交人工复核。",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.0/assets/logo.png",
+      "version": "0.1.1",
+      "description": "需求、验收、设计和测试义务对齐：追踪每条需求的覆盖缺口，语义歧义交给人。",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.1/assets/logo.png",
       "interface": {
         "displayName": "SpecGuard（需求规格防护）",
-        "shortDescription": "需求、验收与追踪基线",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.0/assets/logo.png"
+        "shortDescription": "需求、验收、设计和测试义务对齐：追踪每条需求的覆盖缺口，语义歧义交给人。",
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.1/assets/logo.png"
       }
     },
     {
@@ -282,11 +282,11 @@
         "mcp"
       ],
       "version": "0.10.1",
-      "description": "通过远程 Stitch MCP 创建与编辑页面、设计系统与前端代码，可落地 React、Vue、uni-app 与多种组件库。",
+      "description": "从一句需求生成可编辑页面和设计系统，直接落地 React、Vue、uni-app 代码。",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/stitch-design-plugin@v0.10.1/assets/official-logo.png",
       "interface": {
         "displayName": "Stitch（界面生成）",
-        "shortDescription": "页面与设计系统生成，多框架代码落地",
+        "shortDescription": "从一句需求生成可编辑页面和设计系统，直接落地 React、Vue、uni-app 代码。",
         "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/stitch-design-plugin@v0.10.1/assets/official-logo.png"
       }
     },
@@ -295,7 +295,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/full-stack-plugins/testguard-plugin.git",
-        "ref": "v0.1.0"
+        "ref": "v0.1.1"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -306,13 +306,13 @@
       "componentTypes": [
         "skills"
       ],
-      "version": "0.1.0",
-      "description": "验收测试防护：冻结测试计划、归一化原生执行证据，识别删测、跳测与覆盖缺口。",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.0/assets/logo.png",
+      "version": "0.1.1",
+      "description": "验收测试不能只看退出码：冻结测试计划、核对原生执行证据，识别删测、跳测和覆盖缺口。",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.1/assets/logo.png",
       "interface": {
         "displayName": "TestGuard（验收测试防护）",
-        "shortDescription": "冻结测试计划、执行证据与覆盖缺口",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.0/assets/logo.png"
+        "shortDescription": "验收测试不能只看退出码：冻结测试计划、核对原生执行证据，识别删测、跳测和覆盖缺口。",
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.1/assets/logo.png"
       }
     },
     {
@@ -333,11 +333,11 @@
         "mcp"
       ],
       "version": "0.2.1",
-      "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览与视觉评审。",
+      "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览和视觉评审。",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.1/assets/logo.png",
       "interface": {
         "displayName": "UI（前端界面设计）",
-        "shortDescription": "功能契约、页面、主题、预览与视觉评审",
+        "shortDescription": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览和视觉评审。",
         "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.1/assets/logo.png"
       }
     }

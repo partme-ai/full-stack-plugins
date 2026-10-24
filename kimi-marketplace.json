@@ -4,79 +4,79 @@
   "plugins": [
     {
       "id": "1panel",
-      "displayName": "1Panel (Panel Operations)",
+      "displayName": "1Panel（面板运维）",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.1/assets/logo.png",
       "source": "https://github.com/full-stack-plugins/1panel-plugin/releases/tag/v0.2.1"
     },
     {
       "id": "archguard",
-      "displayName": "ArchGuard (Architecture Boundary)",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.0/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/archguard-plugin/releases/tag/v0.1.0"
+      "displayName": "ArchGuard（架构边界防护）",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.1/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/archguard-plugin/releases/tag/v0.1.1"
     },
     {
       "id": "bt-linux-panel",
-      "displayName": "BaoTa Panel (Server Operations)",
+      "displayName": "BaoTa Panel（服务器运维）",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/bt-linux-panel-plugin@v1.1.1/assets/official-logo.png",
       "source": "https://github.com/full-stack-plugins/bt-linux-panel-plugin/releases/tag/v1.1.1"
     },
     {
       "id": "codegraph",
-      "displayName": "CodeGraph (Code Graph Search)",
+      "displayName": "CodeGraph（代码图谱检索）",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.3.1/assets/official-logo.png",
       "source": "https://github.com/full-stack-plugins/codegraph-plugin/releases/tag/v0.3.1"
     },
     {
       "id": "codeguard",
-      "displayName": "CodeGuard (Code Quality)",
+      "displayName": "CodeGuard（代码质量防护）",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@v0.21.2/assets/official-logo.png",
       "source": "https://github.com/full-stack-plugins/codeguard-plugin/releases/tag/v0.21.2"
     },
     {
       "id": "codereview-plugin",
-      "displayName": "CodeReview (Commit Review)",
+      "displayName": "CodeReview（代码变更审查）",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@v0.4.2/assets/official-logo.png",
       "source": "https://github.com/full-stack-plugins/codereview-plugin/releases/tag/v0.4.2"
     },
     {
       "id": "flowguard",
-      "displayName": "FlowGuard (SDD Governance)",
+      "displayName": "FlowGuard（研发流程防护）",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/flowguard-plugin@v0.5.2/assets/official-logo.png",
       "source": "https://github.com/full-stack-plugins/flowguard-plugin/releases/tag/v0.5.2"
     },
     {
       "id": "gitguard",
-      "displayName": "GitGuard (Git Branch Governance)",
+      "displayName": "GitGuard（分支规范防护）",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitguard-plugin@v0.4.0/assets/logo.png",
       "source": "https://github.com/full-stack-plugins/gitguard-plugin/releases/tag/v0.4.0"
     },
     {
       "id": "processon-design",
-      "displayName": "ProcessOn (Diagramming)",
+      "displayName": "ProcessOn（图表绘制）",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.3.1/assets/official-logo.png",
       "source": "https://github.com/full-stack-plugins/processon-design-plugin/releases/tag/v0.3.1"
     },
     {
       "id": "specguard",
-      "displayName": "SpecGuard (Requirements Baseline)",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.0/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/specguard-plugin/releases/tag/v0.1.0"
+      "displayName": "SpecGuard（需求规格防护）",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.1/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/specguard-plugin/releases/tag/v0.1.1"
     },
     {
       "id": "stitch-design",
-      "displayName": "Stitch (UI Generation)",
+      "displayName": "Stitch（界面生成）",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/stitch-design-plugin@v0.10.1/assets/official-logo.png",
       "source": "https://github.com/full-stack-plugins/stitch-design-plugin/releases/tag/v0.10.1"
     },
     {
       "id": "testguard",
-      "displayName": "TestGuard (Acceptance Test Evidence)",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.0/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/testguard-plugin/releases/tag/v0.1.0"
+      "displayName": "TestGuard（验收测试防护）",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.1/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/testguard-plugin/releases/tag/v0.1.1"
     },
     {
       "id": "ui-design",
-      "displayName": "UI (Frontend UI Design)",
+      "displayName": "UI（前端界面设计）",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.1/assets/logo.png",
       "source": "https://github.com/full-stack-plugins/ui-design-plugin/releases/tag/v0.2.1"
     }
