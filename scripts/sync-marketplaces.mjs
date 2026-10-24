@@ -265,9 +265,9 @@ for (let index = 0; index < catalog.plugins.length; index += 1) {
       if (!entry.icon?.startsWith(immutableLogoPrefix)) errors.push(`${plugin.id}: repository marketplace icon is not release-pinned`);
       if (!entry.interface?.logo?.startsWith(immutableLogoPrefix)) errors.push(`${plugin.id}: repository marketplace logo is not release-pinned`);
       if (entry.category !== (plugin.codexCategory ?? plugin.category)) errors.push(`${plugin.id}: repository marketplace category is ${entry.category}`);
-      if (entry.interface?.displayName !== plugin.displayName) errors.push(`${plugin.id}: repository marketplace displayName differs`);
-      if (entry.interface?.shortDescription !== plugin.shortDescription) errors.push(`${plugin.id}: repository marketplace shortDescription differs`);
-      if (repositoryMarketplace.interface?.displayName !== plugin.displayName) errors.push(`${plugin.id}: marketplace displayName differs`);
+      if (entry.interface?.displayName !== localized(plugin, "displayName")) errors.push(`${plugin.id}: repository marketplace displayName differs`);
+      if (entry.interface?.shortDescription !== localized(plugin, "shortDescription")) errors.push(`${plugin.id}: repository marketplace shortDescription differs`);
+      if (repositoryMarketplace.interface?.displayName !== localized(plugin, "displayName")) errors.push(`${plugin.id}: marketplace displayName differs`);
     }
   }
 
