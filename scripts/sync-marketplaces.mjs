@@ -48,11 +48,11 @@ const codex = {
     line: plugin.line,
     ...(plugin.componentTypes ? { componentTypes: plugin.componentTypes } : {}),
     version: plugin.version,
-    description: plugin.description,
+    description: localized(plugin, "description"),
     icon: rawLogo(plugin),
     interface: {
-      displayName: plugin.displayName,
-      shortDescription: plugin.shortDescription,
+      displayName: localized(plugin, "displayName"),
+      shortDescription: localized(plugin, "shortDescription"),
       logo: rawLogo(plugin)
     }
   })),
@@ -67,8 +67,8 @@ const zcode = {
     name: plugin.id,
     source: { source: "github", repo: plugin.repository, ref: releaseRef(plugin) },
     // ZCode 列表以 displayName 为准；缺失时会退化成插件 id，因此每条都必须写。
-    displayName: plugin.displayName,
-    description: plugin.description,
+    displayName: localized(plugin, "displayName"),
+    description: localized(plugin, "description"),
     version: plugin.version,
     category: plugin.category,
     line: plugin.line,

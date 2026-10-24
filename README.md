@@ -103,16 +103,16 @@ codex plugin add 1panel@full-stack-plugins
 
 | 插件 | ID | 版本 | 定位 | 仓库 |
 |------|----|:----:|------|------|
-| [**1Panel**](https://github.com/full-stack-plugins/1panel-plugin) | `1panel` | 0.1.1 | Scoped 1Panel operations via official MCP | [1panel-plugin](https://github.com/full-stack-plugins/1panel-plugin) |
-| [**BaoTa Linux Panel**](https://github.com/full-stack-plugins/bt-linux-panel-plugin) | `bt-linux-panel` | 1.0.6 | Operate Baota Linux panel via MCP | [bt-linux-panel-plugin](https://github.com/full-stack-plugins/bt-linux-panel-plugin) |
-| [**CodeGraph**](https://github.com/full-stack-plugins/codegraph-plugin) | `codegraph` | 0.1.6 | Discoverable codegraph — official prompt + all CLI commands | [codegraph-plugin](https://github.com/full-stack-plugins/codegraph-plugin) |
-| [**CodeGuard**](https://github.com/full-stack-plugins/codeguard-plugin) | `codeguard` | 0.18.3 | Trustworthy code checks and Java impact analysis | [codeguard-plugin](https://github.com/full-stack-plugins/codeguard-plugin) |
-| [**CodeReview**](https://github.com/full-stack-plugins/codereview-plugin) | `codereview-plugin` | 0.3.0 | Review staged commits with explicit consent | [codereview-plugin](https://github.com/full-stack-plugins/codereview-plugin) |
-| [**FlowGuard**](https://github.com/full-stack-plugins/flowguard-plugin) | `flowguard` | 0.4.2 | 智能体 SDD 治理：原生规格、证据与提交门禁 | [flowguard-plugin](https://github.com/full-stack-plugins/flowguard-plugin) |
-| [**GitFlow**](https://github.com/full-stack-plugins/gitflow-plugin) | `gitflow` | 0.2.0 | 项目 Git 分支、提交、同步与发布规范治理 | [gitflow-plugin](https://github.com/full-stack-plugins/gitflow-plugin) |
-| [**Google Stitch Design**](https://github.com/full-stack-plugins/stitch-design-plugin) | `stitch-design` | 0.9.0 | Design and build with Google Stitch | [stitch-design-plugin](https://github.com/full-stack-plugins/stitch-design-plugin) |
-| [**ProcessOn Design**](https://github.com/full-stack-plugins/processon-design-plugin) | `processon-design` | 0.2.12 | Design polished, editable ProcessOn diagrams | [processon-design-plugin](https://github.com/full-stack-plugins/processon-design-plugin) |
-| [**UI Design**](https://github.com/full-stack-plugins/ui-design-plugin) | `ui-design` | 0.1.2 | Frontend design via the ui-design-use entry skill | [ui-design-plugin](https://github.com/full-stack-plugins/ui-design-plugin) |
+| [**面板运维 · 1Panel**](https://github.com/full-stack-plugins/1panel-plugin) | `1panel` | 0.2.0 | 应用、网站、证书、数据库与安全审计 | [1panel-plugin](https://github.com/full-stack-plugins/1panel-plugin) |
+| [**服务器运维 · BaoTa Panel**](https://github.com/full-stack-plugins/bt-linux-panel-plugin) | `bt-linux-panel` | 1.1.0 | 站点诊断、数据库、防火墙与入侵排查 | [bt-linux-panel-plugin](https://github.com/full-stack-plugins/bt-linux-panel-plugin) |
+| [**代码图谱检索 · CodeGraph**](https://github.com/full-stack-plugins/codegraph-plugin) | `codegraph` | 0.3.0 | 符号、调用链与影响面查询，本地索引 | [codegraph-plugin](https://github.com/full-stack-plugins/codegraph-plugin) |
+| [**代码质量检查 · CodeGuard**](https://github.com/full-stack-plugins/codeguard-plugin) | `codeguard` | 0.21.0 | 60+ 语言 lint、CVE 与受控修复，提交门禁 | [codeguard-plugin](https://github.com/full-stack-plugins/codeguard-plugin) |
+| [**提交语义审查 · CodeReview**](https://github.com/full-stack-plugins/codereview-plugin) | `codereview-plugin` | 0.4.0 | 暂存提交的逻辑与安全审查，需显式授权 | [codereview-plugin](https://github.com/full-stack-plugins/codereview-plugin) |
+| [**研发流程治理 · FlowGuard**](https://github.com/full-stack-plugins/flowguard-plugin) | `flowguard` | 0.5.0 | 十阶段 SDD、证据新鲜度与发布裁决 | [flowguard-plugin](https://github.com/full-stack-plugins/flowguard-plugin) |
+| [**Git 分支治理 · GitFlow**](https://github.com/full-stack-plugins/gitflow-plugin) | `gitflow` | 0.3.0 | 分支命名、创建、提交、同步与发布回灌 | [gitflow-plugin](https://github.com/full-stack-plugins/gitflow-plugin) |
+| [**图表绘制 · ProcessOn Design**](https://github.com/full-stack-plugins/processon-design-plugin) | `processon-design` | 0.3.0 | 流程图、架构图、思维导图与信息图 | [processon-design-plugin](https://github.com/full-stack-plugins/processon-design-plugin) |
+| [**界面生成 · Stitch Design**](https://github.com/full-stack-plugins/stitch-design-plugin) | `stitch-design` | 0.10.0 | 页面与设计系统生成，多框架代码落地 | [stitch-design-plugin](https://github.com/full-stack-plugins/stitch-design-plugin) |
+| [**前端界面设计 · UI Design**](https://github.com/full-stack-plugins/ui-design-plugin) | `ui-design` | 0.2.0 | 功能契约、页面、主题、预览与视觉评审 | [ui-design-plugin](https://github.com/full-stack-plugins/ui-design-plugin) |
 
 GitFlow v0.1.5 分发独立 `git-skills` 的九技能快照，使用项目规则与确定性 Git 门禁；附带 Git 官方标志衍生 logo。三端市场元数据已对齐，实际宿主安装加载仍未验证。
 
