@@ -1,0 +1,14 @@
+{
+  "id": "global",
+  "locale": "en",
+  "marketplaceName": "full-stack-plugins",
+  "displayName": "Full Stack Plugins",
+  "description": "Full Stack plugin marketplace for Codex, ZCode, and Kimi Code: AI design, diagramming, executable code checks, semantic review, workflow governance, and server operations.",
+  "provider": "github",
+  "codeHost": "https://github.com",
+  "releaseTagPath": "/releases/tag/",
+  "assetBase": "https://cdn.jsdelivr.net/gh",
+  "assetStyle": "jsdelivr",
+  "repositoryOrg": "full-stack-plugins",
+  "output": "."
+}

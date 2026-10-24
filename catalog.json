@@ -2,17 +2,16 @@
   "name": "full-stack-plugins",
   "displayName": "Full Stack Plugins",
   "description": "Full Stack plugin marketplace for Codex, ZCode, and Kimi Code: AI design, diagramming, executable code checks, semantic review, workflow governance, and server operations.",
-  "descriptionZhCn": "Full Stack 插件市场：面向 Codex、ZCode 与 Kimi Code，覆盖 AI 设计、图表绘制、代码检查、语义审查、流程治理与服务器运维。",
   "planningRepositories": [],
   "plugins": [
     {
       "id": "1panel",
-      "displayName": "1Panel",
+      "displayName": "1Panel · Panel Operations",
       "repository": "full-stack-plugins/1panel-plugin",
       "localDirectory": "1panel-plugin",
       "version": "0.2.0",
-      "description": "Inspect and operate 1Panel through the pinned official MCP with private configuration and explicit access levels.",
-      "shortDescription": "Scoped 1Panel operations via official MCP",
+      "description": "Inspect and operate 1Panel through the pinned official MCP. Access levels are explicit and credentials stay private.",
+      "shortDescription": "Apps, sites, certificates, databases and security audit",
       "category": "Productivity",
       "codexCategory": "Productivity",
       "logo": "assets/logo.png",
@@ -21,16 +20,23 @@
         "linux",
         "mcp",
         "operations"
-      ]
+      ],
+      "localizations": {
+        "zh-CN": {
+          "displayName": "1Panel · 面板运维",
+          "shortDescription": "应用、网站、证书、数据库与安全审计",
+          "description": "通过钉死版本的官方 MCP 检查与操作 1Panel；访问级别显式分级，凭据保持私有。"
+        }
+      }
     },
     {
       "id": "bt-linux-panel",
-      "displayName": "BaoTa Linux Panel",
+      "displayName": "BaoTa Panel · Server Operations",
       "repository": "full-stack-plugins/bt-linux-panel-plugin",
       "localDirectory": "bt-linux-panel-plugin",
       "version": "1.1.0",
-      "description": "Operate Baota Linux panel through MCP to manage services, diagnose sites and databases, and audit server security.",
-      "shortDescription": "Operate Baota Linux panel via MCP",
+      "description": "Operate the Baota Linux panel through MCP: services, site and database diagnosis, firewall review and intrusion checks.",
+      "shortDescription": "Site diagnosis, databases, firewall and intrusion checks",
       "category": "Productivity",
       "logo": "assets/official-logo.png",
       "tags": [
@@ -38,16 +44,23 @@
         "bt-panel",
         "linux-ops",
         "mcp"
-      ]
+      ],
+      "localizations": {
+        "zh-CN": {
+          "displayName": "BaoTa Panel · 服务器运维",
+          "shortDescription": "站点诊断、数据库、防火墙与入侵排查",
+          "description": "通过 MCP 操作宝塔面板：服务管理、站点与数据库诊断、防火墙审计与入侵排查。"
+        }
+      }
     },
     {
       "id": "codegraph",
-      "displayName": "CodeGraph",
+      "displayName": "CodeGraph · Code Graph Search",
       "repository": "full-stack-plugins/codegraph-plugin",
       "localDirectory": "codegraph-plugin",
       "version": "0.3.0",
-      "description": "Inject the official CodeGraph prompt at session start (only when a `.codegraph/` directory exists) and expose 21 of codegraph's 23 CLI commands as slash commands for Codex/ZCode/Kimi/Claude Code. Pure Python stdlib.",
-      "shortDescription": "Discoverable codegraph — official prompt + 21 CLI commands",
+      "description": "Injects the official CodeGraph prompt when a .codegraph directory exists and exposes 21 CLI commands as slash commands. Pure Python stdlib.",
+      "shortDescription": "Symbols, call chains and impact queries on a local index",
       "category": "Developer Tools",
       "logo": "assets/official-logo.png",
       "tags": [
@@ -56,16 +69,23 @@
         "codegraph",
         "mcp",
         "code-search"
-      ]
+      ],
+      "localizations": {
+        "zh-CN": {
+          "displayName": "CodeGraph · 代码图谱检索",
+          "shortDescription": "符号、调用链与影响面查询，本地索引",
+          "description": "存在 .codegraph 时注入官方提示词，并把 21 条 CLI 命令暴露为斜杠命令；纯 Python 标准库。"
+        }
+      }
     },
     {
       "id": "codeguard",
-      "displayName": "CodeGuard",
+      "displayName": "CodeGuard · Code Quality",
       "repository": "full-stack-plugins/codeguard-plugin",
       "localDirectory": "codeguard-plugin",
       "version": "0.21.0",
-      "description": "Evidence-backed code checks and Git content gates for AI assistants, with Maven/Gradle module impact analysis. Save hooks provide feedback; unverified checks are explicit.",
-      "shortDescription": "Trustworthy code checks and Java impact analysis",
+      "description": "Evidence-backed lint, CVE scanning, guided fixes and Maven/Gradle impact analysis. Results distinguish pass, fail, unverified and planned.",
+      "shortDescription": "Lint, CVE and guided fixes for 60+ languages, commit gates",
       "category": "Developer Tools",
       "logo": "assets/official-logo.png",
       "tags": [
@@ -80,16 +100,23 @@
         "eslint",
         "ruff",
         "pre-commit"
-      ]
+      ],
+      "localizations": {
+        "zh-CN": {
+          "displayName": "CodeGuard · 代码质量检查",
+          "shortDescription": "60+ 语言 lint、CVE 与受控修复，提交门禁",
+          "description": "证据化 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析；结论区分通过、失败、无法验证与计划中。"
+        }
+      }
     },
     {
       "id": "codereview-plugin",
-      "displayName": "CodeReview",
+      "displayName": "CodeReview · Commit Review",
       "repository": "full-stack-plugins/codereview-plugin",
       "localDirectory": "codereview-plugin",
       "version": "0.4.0",
-      "description": "Consent-based semantic review of staged commits using Open Code Review delegation or a configured OCR model; findings remain advisory.",
-      "shortDescription": "Review staged commits with explicit consent",
+      "description": "Consent-based semantic review of staged commits through Open Code Review delegation or a configured model. Findings remain advisory.",
+      "shortDescription": "Logic and security review of staged commits, with consent",
       "category": "Developer Tools",
       "logo": "assets/official-logo.png",
       "tags": [
@@ -98,16 +125,23 @@
         "git-commit",
         "consent",
         "ocr"
-      ]
+      ],
+      "localizations": {
+        "zh-CN": {
+          "displayName": "CodeReview · 提交语义审查",
+          "shortDescription": "暂存提交的逻辑与安全审查，需显式授权",
+          "description": "经显式授权，对暂存提交做语义审查（OCR 委托或自配模型）；结论仅作建议，不替代静态检查。"
+        }
+      }
     },
     {
       "id": "flowguard",
-      "displayName": "FlowGuard",
+      "displayName": "FlowGuard · SDD Governance",
       "repository": "full-stack-plugins/flowguard-plugin",
       "localDirectory": "flowguard-plugin",
       "version": "0.5.0",
-      "description": "Agent-driven SDD governance for Codex, ZCode, Kimi and Claude: native Spec Kit/OpenSpec/Superpowers discovery, session-worktree task binding, evidence freshness and deterministic code/commit/release gates.",
-      "shortDescription": "智能体 SDD 治理：原生规格、证据与提交门禁",
+      "description": "Agent-driven SDD governance: native Spec Kit/OpenSpec/Superpowers discovery, task binding, evidence freshness and deterministic code/commit/release gates.",
+      "shortDescription": "Ten-stage SDD, evidence freshness and release gates",
       "category": "Developer Tools",
       "logo": "assets/official-logo.png",
       "tags": [
@@ -120,16 +154,23 @@
         "code-review",
         "release",
         "gate"
-      ]
+      ],
+      "localizations": {
+        "zh-CN": {
+          "displayName": "FlowGuard · 研发流程治理",
+          "shortDescription": "十阶段 SDD、证据新鲜度与发布裁决",
+          "description": "智能体 SDD 治理：识别 Spec Kit/OpenSpec/Superpowers 原生产物，绑定任务，校验证据新鲜度并执行提交/发布门禁。"
+        }
+      }
     },
     {
       "id": "gitflow",
-      "displayName": "GitFlow",
+      "displayName": "GitFlow · Git Branch Governance",
       "repository": "full-stack-plugins/gitflow-plugin",
       "localDirectory": "gitflow-plugin",
       "version": "0.3.0",
-      "description": "按项目约定治理 Git 分支、提交与流转，九技能加确定性门禁",
-      "shortDescription": "项目 Git 分支规范治理",
+      "description": "Nine Git skills plus deterministic gates: initialization, branch roles, commit policy, sync, release backports, recovery and audit.",
+      "shortDescription": "Branch naming, creation, commits, sync and release backports",
       "category": "Developer Tools",
       "logo": "assets/logo.png",
       "tags": [
@@ -139,33 +180,23 @@
         "workflow",
         "release",
         "governance"
-      ]
-    },
-    {
-      "id": "stitch-design",
-      "displayName": "Google Stitch Design",
-      "repository": "full-stack-plugins/stitch-design-plugin",
-      "localDirectory": "stitch-design-plugin",
-      "version": "0.10.0",
-      "description": "Create and edit Google Stitch screens, design systems, and frontend code through the remote Stitch MCP server.",
-      "shortDescription": "Design and build with Google Stitch",
-      "category": "Design Tools",
-      "codexCategory": "Creativity",
-      "logo": "assets/official-logo.png",
-      "tags": [
-        "stitch",
-        "design",
-        "design-to-code"
-      ]
+      ],
+      "localizations": {
+        "zh-CN": {
+          "displayName": "GitFlow · Git 分支治理",
+          "shortDescription": "分支命名、创建、提交、同步与发布回灌",
+          "description": "九项 Git 技能加确定性门禁：初始化、分支角色、提交策略、同步、发布回灌、恢复与审计。"
+        }
+      }
     },
     {
       "id": "processon-design",
-      "displayName": "ProcessOn Design",
+      "displayName": "ProcessOn Design · Diagramming",
       "repository": "full-stack-plugins/processon-design-plugin",
       "localDirectory": "processon-design-plugin",
       "version": "0.3.0",
-      "description": "Create and review editable ProcessOn diagrams, mind maps, and infographics.",
-      "shortDescription": "Design polished, editable ProcessOn diagrams",
+      "description": "Editable ProcessOn diagrams with prompt construction and consistency review before and after generation.",
+      "shortDescription": "Flowcharts, architecture diagrams, mind maps and infographics",
       "category": "Design Tools",
       "codexCategory": "Creativity",
       "logo": "assets/official-logo.png",
@@ -173,16 +204,47 @@
         "processon",
         "diagram",
         "mind-map"
-      ]
+      ],
+      "localizations": {
+        "zh-CN": {
+          "displayName": "ProcessOn Design · 图表绘制",
+          "shortDescription": "流程图、架构图、思维导图与信息图",
+          "description": "可编辑的 ProcessOn 图表：生成前构造提示词，生成后做语义与一致性评审。"
+        }
+      }
+    },
+    {
+      "id": "stitch-design",
+      "displayName": "Stitch Design · UI Generation",
+      "repository": "full-stack-plugins/stitch-design-plugin",
+      "localDirectory": "stitch-design-plugin",
+      "version": "0.10.0",
+      "description": "Create and edit Google Stitch screens, design systems and frontend code, then hand off to React, Vue, uni-app and component libraries.",
+      "shortDescription": "Page and design-system generation with multi-framework handoff",
+      "category": "Design Tools",
+      "codexCategory": "Creativity",
+      "logo": "assets/official-logo.png",
+      "tags": [
+        "stitch",
+        "design",
+        "design-to-code"
+      ],
+      "localizations": {
+        "zh-CN": {
+          "displayName": "Stitch Design · 界面生成",
+          "shortDescription": "页面与设计系统生成，多框架代码落地",
+          "description": "通过远程 Stitch MCP 创建与编辑页面、设计系统与前端代码，可落地 React、Vue、uni-app 与多种组件库。"
+        }
+      }
     },
     {
       "id": "ui-design",
-      "displayName": "UI Design",
+      "displayName": "UI Design · Frontend UI Design",
       "repository": "full-stack-plugins/ui-design-plugin",
       "localDirectory": "ui-design-plugin",
       "version": "0.2.0",
-      "description": "Use the ui-design-use entry skill for complete frontend design packages, editable prototypes, image assets and verified previews. ui-design is the plugin ID, not a skill name.",
-      "shortDescription": "Frontend design via the ui-design-use entry skill",
+      "description": "Complete frontend design packages from login to feature pages: navigation, page contracts, themes, previews and visual review.",
+      "shortDescription": "Feature contracts, pages, themes, previews and visual review",
       "category": "Design Tools",
       "codexCategory": "Creativity",
       "logo": "assets/logo.png",
@@ -191,7 +253,20 @@
         "design",
         "imagegen",
         "agent-skills"
-      ]
+      ],
+      "localizations": {
+        "zh-CN": {
+          "displayName": "UI Design · 前端界面设计",
+          "shortDescription": "功能契约、页面、主题、预览与视觉评审",
+          "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览与视觉评审。"
+        }
+      }
     }
-  ]
+  ],
+  "localizations": {
+    "zh-CN": {
+      "displayName": "Full Stack 插件",
+      "description": "Full Stack 插件市场：面向 Codex、ZCode 与 Kimi Code，覆盖 AI 设计、图表绘制、代码检查、语义审查、流程治理与服务器运维。"
+    }
+  }
 }

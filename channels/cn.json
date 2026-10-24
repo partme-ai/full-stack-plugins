@@ -1,0 +1,14 @@
+{
+  "id": "cn",
+  "locale": "zh-CN",
+  "marketplaceName": "full-stack-plugins-cn",
+  "displayName": "Full Stack 插件（Gitee 镜像）",
+  "description": "Full Stack 插件市场（Gitee 镜像）：面向 Codex、ZCode 与 Kimi Code，覆盖 AI 设计、图表绘制、代码检查、语义审查、流程治理与服务器运维。",
+  "provider": "gitee",
+  "codeHost": "https://gitee.com",
+  "releaseTagPath": "/releases/tag/",
+  "assetBase": "https://gitee.com",
+  "assetStyle": "gitee-raw",
+  "repositoryOrg": "full-stack-plugins",
+  "output": "cn-marketplace"
+}

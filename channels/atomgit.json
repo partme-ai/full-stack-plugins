@@ -1,0 +1,17 @@
+{
+  "id": "atomgit",
+  "locale": "zh-CN",
+  "marketplaceName": "full-stack-plugins",
+  "displayName": "Full Stack 插件",
+  "description": "Full Stack 插件市场（AtomGit 镜像）：面向 AI Coding Agent 的研发过程插件，覆盖代码质量、Git 治理、前端设计、测试与运维。",
+  "provider": "atomgit",
+  "codeHost": "https://atomgit.com",
+  "releaseTagPath": "/releases/tag/",
+  "assetBase": "https://raw.atomgit.com",
+  "orgMap": {
+    "easy-4-java": "easy4j",
+    "easy-4-rust": "easy4r",
+    "ddd-4-java": "rbatis-plus"
+  },
+  "output": "atomgit-marketplace"
+}

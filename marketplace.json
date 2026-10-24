@@ -10,7 +10,8 @@
         "repo": "full-stack-plugins/1panel-plugin",
         "ref": "v0.2.0"
       },
-      "description": "Inspect and operate 1Panel through the pinned official MCP with private configuration and explicit access levels.",
+      "displayName": "1Panel · Panel Operations",
+      "description": "Inspect and operate 1Panel through the pinned official MCP. Access levels are explicit and credentials stay private.",
       "version": "0.2.0",
       "category": "Productivity",
       "tags": [
@@ -29,7 +30,8 @@
         "repo": "full-stack-plugins/bt-linux-panel-plugin",
         "ref": "v1.1.0"
       },
-      "description": "Operate Baota Linux panel through MCP to manage services, diagnose sites and databases, and audit server security.",
+      "displayName": "BaoTa Panel · Server Operations",
+      "description": "Operate the Baota Linux panel through MCP: services, site and database diagnosis, firewall review and intrusion checks.",
       "version": "1.1.0",
       "category": "Productivity",
       "tags": [
@@ -48,7 +50,8 @@
         "repo": "full-stack-plugins/codegraph-plugin",
         "ref": "v0.3.0"
       },
-      "description": "Inject the official CodeGraph prompt at session start (only when a `.codegraph/` directory exists) and expose 21 of codegraph's 23 CLI commands as slash commands for Codex/ZCode/Kimi/Claude Code. Pure Python stdlib.",
+      "displayName": "CodeGraph · Code Graph Search",
+      "description": "Injects the official CodeGraph prompt when a .codegraph directory exists and exposes 21 CLI commands as slash commands. Pure Python stdlib.",
       "version": "0.3.0",
       "category": "Developer Tools",
       "tags": [
@@ -68,7 +71,8 @@
         "repo": "full-stack-plugins/codeguard-plugin",
         "ref": "v0.21.0"
       },
-      "description": "Evidence-backed code checks and Git content gates for AI assistants, with Maven/Gradle module impact analysis. Save hooks provide feedback; unverified checks are explicit.",
+      "displayName": "CodeGuard · Code Quality",
+      "description": "Evidence-backed lint, CVE scanning, guided fixes and Maven/Gradle impact analysis. Results distinguish pass, fail, unverified and planned.",
       "version": "0.21.0",
       "category": "Developer Tools",
       "tags": [
@@ -94,7 +98,8 @@
         "repo": "full-stack-plugins/codereview-plugin",
         "ref": "v0.4.0"
       },
-      "description": "Consent-based semantic review of staged commits using Open Code Review delegation or a configured OCR model; findings remain advisory.",
+      "displayName": "CodeReview · Commit Review",
+      "description": "Consent-based semantic review of staged commits through Open Code Review delegation or a configured model. Findings remain advisory.",
       "version": "0.4.0",
       "category": "Developer Tools",
       "tags": [
@@ -114,7 +119,8 @@
         "repo": "full-stack-plugins/flowguard-plugin",
         "ref": "v0.5.0"
       },
-      "description": "Agent-driven SDD governance for Codex, ZCode, Kimi and Claude: native Spec Kit/OpenSpec/Superpowers discovery, session-worktree task binding, evidence freshness and deterministic code/commit/release gates.",
+      "displayName": "FlowGuard · SDD Governance",
+      "description": "Agent-driven SDD governance: native Spec Kit/OpenSpec/Superpowers discovery, task binding, evidence freshness and deterministic code/commit/release gates.",
       "version": "0.5.0",
       "category": "Developer Tools",
       "tags": [
@@ -138,7 +144,8 @@
         "repo": "full-stack-plugins/gitflow-plugin",
         "ref": "v0.3.0"
       },
-      "description": "按项目约定治理 Git 分支、提交与流转，九技能加确定性门禁",
+      "displayName": "GitFlow · Git Branch Governance",
+      "description": "Nine Git skills plus deterministic gates: initialization, branch roles, commit policy, sync, release backports, recovery and audit.",
       "version": "0.3.0",
       "category": "Developer Tools",
       "tags": [
@@ -153,31 +160,14 @@
       "strict": true
     },
     {
-      "name": "stitch-design",
-      "source": {
-        "source": "github",
-        "repo": "full-stack-plugins/stitch-design-plugin",
-        "ref": "v0.10.0"
-      },
-      "description": "Create and edit Google Stitch screens, design systems, and frontend code through the remote Stitch MCP server.",
-      "version": "0.10.0",
-      "category": "Design Tools",
-      "tags": [
-        "stitch",
-        "design",
-        "design-to-code"
-      ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/stitch-design-plugin@v0.10.0/assets/official-logo.png",
-      "strict": true
-    },
-    {
       "name": "processon-design",
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/processon-design-plugin",
         "ref": "v0.3.0"
       },
-      "description": "Create and review editable ProcessOn diagrams, mind maps, and infographics.",
+      "displayName": "ProcessOn Design · Diagramming",
+      "description": "Editable ProcessOn diagrams with prompt construction and consistency review before and after generation.",
       "version": "0.3.0",
       "category": "Design Tools",
       "tags": [
@@ -189,13 +179,33 @@
       "strict": true
     },
     {
+      "name": "stitch-design",
+      "source": {
+        "source": "github",
+        "repo": "full-stack-plugins/stitch-design-plugin",
+        "ref": "v0.10.0"
+      },
+      "displayName": "Stitch Design · UI Generation",
+      "description": "Create and edit Google Stitch screens, design systems and frontend code, then hand off to React, Vue, uni-app and component libraries.",
+      "version": "0.10.0",
+      "category": "Design Tools",
+      "tags": [
+        "stitch",
+        "design",
+        "design-to-code"
+      ],
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/stitch-design-plugin@v0.10.0/assets/official-logo.png",
+      "strict": true
+    },
+    {
       "name": "ui-design",
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/ui-design-plugin",
         "ref": "v0.2.0"
       },
-      "description": "Use the ui-design-use entry skill for complete frontend design packages, editable prototypes, image assets and verified previews. ui-design is the plugin ID, not a skill name.",
+      "displayName": "UI Design · Frontend UI Design",
+      "description": "Complete frontend design packages from login to feature pages: navigation, page contracts, themes, previews and visual review.",
       "version": "0.2.0",
       "category": "Design Tools",
       "tags": [

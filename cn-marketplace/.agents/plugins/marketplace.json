@@ -1,0 +1,223 @@
+{
+  "name": "full-stack-plugins-cn",
+  "description": "Full Stack 插件市场（Gitee 镜像）：面向 Codex、ZCode 与 Kimi Code，覆盖 AI 设计、图表绘制、代码检查、语义审查、流程治理与服务器运维。",
+  "owner": {
+    "name": "PartMe.AI",
+    "url": "https://github.com/partme-ai"
+  },
+  "plugins": [
+    {
+      "name": "1panel",
+      "source": {
+        "source": "url",
+        "url": "https://gitee.com/full-stack-plugins/1panel-plugin.git",
+        "ref": "v0.2.0"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity",
+      "version": "0.2.0",
+      "description": "通过钉死版本的官方 MCP 检查与操作 1Panel；访问级别显式分级，凭据保持私有。",
+      "icon": "https://gitee.com/full-stack-plugins/1panel-plugin/raw/v0.2.0/assets/logo.png",
+      "interface": {
+        "displayName": "面板运维 · 1Panel",
+        "shortDescription": "应用、网站、证书、数据库与安全审计",
+        "logo": "https://gitee.com/full-stack-plugins/1panel-plugin/raw/v0.2.0/assets/logo.png"
+      }
+    },
+    {
+      "name": "bt-linux-panel",
+      "source": {
+        "source": "url",
+        "url": "https://gitee.com/full-stack-plugins/bt-linux-panel-plugin.git",
+        "ref": "v1.1.0"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity",
+      "version": "1.1.0",
+      "description": "通过 MCP 操作宝塔面板：服务管理、站点与数据库诊断、防火墙审计与入侵排查。",
+      "icon": "https://gitee.com/full-stack-plugins/bt-linux-panel-plugin/raw/v1.1.0/assets/official-logo.png",
+      "interface": {
+        "displayName": "服务器运维 · BaoTa Panel",
+        "shortDescription": "站点诊断、数据库、防火墙与入侵排查",
+        "logo": "https://gitee.com/full-stack-plugins/bt-linux-panel-plugin/raw/v1.1.0/assets/official-logo.png"
+      }
+    },
+    {
+      "name": "codegraph",
+      "source": {
+        "source": "url",
+        "url": "https://gitee.com/full-stack-plugins/codegraph-plugin.git",
+        "ref": "v0.3.0"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools",
+      "version": "0.3.0",
+      "description": "存在 .codegraph 时注入官方提示词，并把 21 条 CLI 命令暴露为斜杠命令；纯 Python 标准库。",
+      "icon": "https://gitee.com/full-stack-plugins/codegraph-plugin/raw/v0.3.0/assets/official-logo.png",
+      "interface": {
+        "displayName": "代码图谱检索 · CodeGraph",
+        "shortDescription": "符号、调用链与影响面查询，本地索引",
+        "logo": "https://gitee.com/full-stack-plugins/codegraph-plugin/raw/v0.3.0/assets/official-logo.png"
+      }
+    },
+    {
+      "name": "codeguard",
+      "source": {
+        "source": "url",
+        "url": "https://gitee.com/full-stack-plugins/codeguard-plugin.git",
+        "ref": "v0.21.0"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools",
+      "version": "0.21.0",
+      "description": "证据化 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析；结论区分通过、失败、无法验证与计划中。",
+      "icon": "https://gitee.com/full-stack-plugins/codeguard-plugin/raw/v0.21.0/assets/official-logo.png",
+      "interface": {
+        "displayName": "代码质量检查 · CodeGuard",
+        "shortDescription": "60+ 语言 lint、CVE 与受控修复，提交门禁",
+        "logo": "https://gitee.com/full-stack-plugins/codeguard-plugin/raw/v0.21.0/assets/official-logo.png"
+      }
+    },
+    {
+      "name": "codereview-plugin",
+      "source": {
+        "source": "url",
+        "url": "https://gitee.com/full-stack-plugins/codereview-plugin.git",
+        "ref": "v0.4.0"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools",
+      "version": "0.4.0",
+      "description": "经显式授权，对暂存提交做语义审查（OCR 委托或自配模型）；结论仅作建议，不替代静态检查。",
+      "icon": "https://gitee.com/full-stack-plugins/codereview-plugin/raw/v0.4.0/assets/official-logo.png",
+      "interface": {
+        "displayName": "提交语义审查 · CodeReview",
+        "shortDescription": "暂存提交的逻辑与安全审查，需显式授权",
+        "logo": "https://gitee.com/full-stack-plugins/codereview-plugin/raw/v0.4.0/assets/official-logo.png"
+      }
+    },
+    {
+      "name": "flowguard",
+      "source": {
+        "source": "url",
+        "url": "https://gitee.com/full-stack-plugins/flowguard-plugin.git",
+        "ref": "v0.5.0"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools",
+      "version": "0.5.0",
+      "description": "智能体 SDD 治理：识别 Spec Kit/OpenSpec/Superpowers 原生产物，绑定任务，校验证据新鲜度并执行提交/发布门禁。",
+      "icon": "https://gitee.com/full-stack-plugins/flowguard-plugin/raw/v0.5.0/assets/official-logo.png",
+      "interface": {
+        "displayName": "研发流程治理 · FlowGuard",
+        "shortDescription": "十阶段 SDD、证据新鲜度与发布裁决",
+        "logo": "https://gitee.com/full-stack-plugins/flowguard-plugin/raw/v0.5.0/assets/official-logo.png"
+      }
+    },
+    {
+      "name": "gitflow",
+      "source": {
+        "source": "url",
+        "url": "https://gitee.com/full-stack-plugins/gitflow-plugin.git",
+        "ref": "v0.3.0"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools",
+      "version": "0.3.0",
+      "description": "九项 Git 技能加确定性门禁：初始化、分支角色、提交策略、同步、发布回灌、恢复与审计。",
+      "icon": "https://gitee.com/full-stack-plugins/gitflow-plugin/raw/v0.3.0/assets/logo.png",
+      "interface": {
+        "displayName": "Git 分支治理 · GitFlow",
+        "shortDescription": "分支命名、创建、提交、同步与发布回灌",
+        "logo": "https://gitee.com/full-stack-plugins/gitflow-plugin/raw/v0.3.0/assets/logo.png"
+      }
+    },
+    {
+      "name": "processon-design",
+      "source": {
+        "source": "url",
+        "url": "https://gitee.com/full-stack-plugins/processon-design-plugin.git",
+        "ref": "v0.3.0"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Design Tools",
+      "version": "0.3.0",
+      "description": "可编辑的 ProcessOn 图表：生成前构造提示词，生成后做语义与一致性评审。",
+      "icon": "https://gitee.com/full-stack-plugins/processon-design-plugin/raw/v0.3.0/assets/official-logo.png",
+      "interface": {
+        "displayName": "图表绘制 · ProcessOn Design",
+        "shortDescription": "流程图、架构图、思维导图与信息图",
+        "logo": "https://gitee.com/full-stack-plugins/processon-design-plugin/raw/v0.3.0/assets/official-logo.png"
+      }
+    },
+    {
+      "name": "stitch-design",
+      "source": {
+        "source": "url",
+        "url": "https://gitee.com/full-stack-plugins/stitch-design-plugin.git",
+        "ref": "v0.10.0"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Design Tools",
+      "version": "0.10.0",
+      "description": "通过远程 Stitch MCP 创建与编辑页面、设计系统与前端代码，可落地 React、Vue、uni-app 与多种组件库。",
+      "icon": "https://gitee.com/full-stack-plugins/stitch-design-plugin/raw/v0.10.0/assets/official-logo.png",
+      "interface": {
+        "displayName": "界面生成 · Stitch Design",
+        "shortDescription": "页面与设计系统生成，多框架代码落地",
+        "logo": "https://gitee.com/full-stack-plugins/stitch-design-plugin/raw/v0.10.0/assets/official-logo.png"
+      }
+    },
+    {
+      "name": "ui-design",
+      "source": {
+        "source": "url",
+        "url": "https://gitee.com/full-stack-plugins/ui-design-plugin.git",
+        "ref": "v0.2.0"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Design Tools",
+      "version": "0.2.0",
+      "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览与视觉评审。",
+      "icon": "https://gitee.com/full-stack-plugins/ui-design-plugin/raw/v0.2.0/assets/logo.png",
+      "interface": {
+        "displayName": "前端界面设计 · UI Design",
+        "shortDescription": "功能契约、页面、主题、预览与视觉评审",
+        "logo": "https://gitee.com/full-stack-plugins/ui-design-plugin/raw/v0.2.0/assets/logo.png"
+      }
+    }
+  ],
+  "interface": {
+    "displayName": "Full Stack 插件（Gitee 镜像）"
+  }
+}
