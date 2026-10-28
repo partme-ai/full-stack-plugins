@@ -33,11 +33,11 @@
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/archguard-plugin",
-        "ref": "v0.1.0"
+        "ref": "v0.1.1"
       },
-      "displayName": "ArchGuard（架构边界防护）",
-      "description": "架构边界防护：提取模块依赖事实、校验架构契约并输出违规证据；CLI 未就绪时明确 DESIGN_ONLY。",
-      "version": "0.1.0",
+      "displayName": "ArchGuard (Architecture Boundary)",
+      "description": "Architecture boundary guard: extract module dependency facts, validate architecture contracts and emit violation evidence; design-only until the CLI is available.",
+      "version": "0.1.1",
       "category": "Developer Tools",
       "line": "full-stack",
       "componentTypes": [
@@ -49,7 +49,7 @@
         "boundary",
         "guard"
       ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.0/assets/logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.1/assets/logo.png",
       "strict": true
     },
     {
@@ -247,11 +247,11 @@
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/specguard-plugin",
-        "ref": "v0.1.0"
+        "ref": "v0.1.1"
       },
-      "displayName": "SpecGuard（需求规格防护）",
-      "description": "需求规格防护：校验规格基线、追踪关系与覆盖缺口；语义歧义交人工复核。",
-      "version": "0.1.0",
+      "displayName": "SpecGuard (Requirements Baseline)",
+      "description": "Requirements and acceptance baseline guard: validate traceability, approved baselines and coverage gaps; ambiguous intent goes to human review.",
+      "version": "0.1.1",
       "category": "Developer Tools",
       "line": "full-stack",
       "componentTypes": [
@@ -264,7 +264,7 @@
         "traceability",
         "guard"
       ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.0/assets/logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.1/assets/logo.png",
       "strict": true
     },
     {
@@ -296,11 +296,11 @@
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/testguard-plugin",
-        "ref": "v0.1.0"
+        "ref": "v0.1.1"
       },
-      "displayName": "TestGuard（验收测试防护）",
-      "description": "验收测试防护：冻结测试计划、归一化原生执行证据，识别删测、跳测与覆盖缺口。",
-      "version": "0.1.0",
+      "displayName": "TestGuard (Acceptance Test Evidence)",
+      "description": "Acceptance test guard: freeze the required test plan, normalize native execution evidence and detect missing, skipped or reduced tests.",
+      "version": "0.1.1",
       "category": "Developer Tools",
       "line": "full-stack",
       "componentTypes": [
@@ -313,7 +313,7 @@
         "evidence",
         "guard"
       ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.0/assets/logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.1/assets/logo.png",
       "strict": true
     },
     {

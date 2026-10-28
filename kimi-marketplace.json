@@ -11,8 +11,8 @@
     {
       "id": "archguard",
       "displayName": "ArchGuard (Architecture Boundary)",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.0/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/archguard-plugin/releases/tag/v0.1.0"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.1/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/archguard-plugin/releases/tag/v0.1.1"
     },
     {
       "id": "bt-linux-panel",
@@ -59,8 +59,8 @@
     {
       "id": "specguard",
       "displayName": "SpecGuard (Requirements Baseline)",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.0/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/specguard-plugin/releases/tag/v0.1.0"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.1/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/specguard-plugin/releases/tag/v0.1.1"
     },
     {
       "id": "stitch-design",
@@ -71,8 +71,8 @@
     {
       "id": "testguard",
       "displayName": "TestGuard (Acceptance Test Evidence)",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.0/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/testguard-plugin/releases/tag/v0.1.0"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.1/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/testguard-plugin/releases/tag/v0.1.1"
     },
     {
       "id": "ui-design",
