@@ -24,11 +24,11 @@
         "mcp"
       ],
       "version": "0.2.1",
-      "description": "把服务器面板接进对话：查站点、证书、数据库与安全审计，变更前先给影响和回退路径。",
+      "description": "通过钉死版本的官方 MCP 检查与操作 1Panel；访问级别显式分级，凭据保持私有。",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.1/assets/logo.png",
       "interface": {
         "displayName": "1Panel（面板运维）",
-        "shortDescription": "把服务器面板接进对话：查站点、证书、数据库与安全审计，变更前先给影响和回退路径。",
+        "shortDescription": "应用、网站、证书、数据库与安全审计",
         "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.1/assets/logo.png"
       }
     },
@@ -205,11 +205,11 @@
         "mcp"
       ],
       "version": "0.4.0",
-      "description": "分支、提交、合并、发布都有规则：先识别仓库工作流，再拦截错误流向，保留回退路径。",
+      "description": "Git 分支、变更范围、同步、发布回灌、恢复与合并候选防护；保留真实 Git 事实与回退路径。",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitguard-plugin@v0.4.0/assets/logo.png",
       "interface": {
         "displayName": "GitGuard（分支规范防护）",
-        "shortDescription": "分支、提交、合并、发布都有规则：先识别仓库工作流，再拦截错误流向，保留回退路径。",
+        "shortDescription": "分支命名、创建、提交、同步与发布回灌",
         "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitguard-plugin@v0.4.0/assets/logo.png"
       }
     },
@@ -333,11 +333,11 @@
         "mcp"
       ],
       "version": "0.2.1",
-      "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览和视觉评审。",
+      "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览与视觉评审。",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.1/assets/logo.png",
       "interface": {
         "displayName": "UI（前端界面设计）",
-        "shortDescription": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览和视觉评审。",
+        "shortDescription": "功能契约、页面、主题、预览与视觉评审",
         "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.1/assets/logo.png"
       }
     }

@@ -11,7 +11,7 @@
         "ref": "v0.2.1"
       },
       "displayName": "1Panel（面板运维）",
-      "description": "把服务器面板接进对话：查站点、证书、数据库与安全审计，变更前先给影响和回退路径。",
+      "description": "通过钉死版本的官方 MCP 检查与操作 1Panel；访问级别显式分级，凭据保持私有。",
       "version": "0.2.1",
       "category": "Productivity",
       "line": "full-stack",
@@ -199,7 +199,7 @@
         "ref": "v0.4.0"
       },
       "displayName": "GitGuard（分支规范防护）",
-      "description": "分支、提交、合并、发布都有规则：先识别仓库工作流，再拦截错误流向，保留回退路径。",
+      "description": "Git 分支、变更范围、同步、发布回灌、恢复与合并候选防护；保留真实 Git 事实与回退路径。",
       "version": "0.4.0",
       "category": "Developer Tools",
       "line": "full-stack",
@@ -324,7 +324,7 @@
         "ref": "v0.2.1"
       },
       "displayName": "UI（前端界面设计）",
-      "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览和视觉评审。",
+      "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览与视觉评审。",
       "version": "0.2.1",
       "category": "Design Tools",
       "line": "full-stack",
