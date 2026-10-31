@@ -40,7 +40,7 @@
       },
       "category": "Productivity",
       "version": "1.1.0",
-      "description": "通过 MCP 操作宝塔面板：服务管理、站点与数据库诊断、防火墙审计与入侵排查。",
+      "description": "宝塔面板的 AI 运维入口：站点 502、数据库连接、防火墙与入侵痕迹，一次排查给出证据。",
       "icon": "https://gitee.com/full-stack-plugins/bt-linux-panel-plugin/raw/v1.1.0/assets/official-logo.png",
       "interface": {
         "displayName": "服务器运维 · BaoTa Panel",
@@ -61,7 +61,7 @@
       },
       "category": "Developer Tools",
       "version": "0.3.0",
-      "description": "存在 .codegraph 时注入官方提示词，并把 21 条 CLI 命令暴露为斜杠命令；纯 Python 标准库。",
+      "description": "改代码前先问图：符号在哪、谁在调用、改动影响哪些模块，本地索引不出网。",
       "icon": "https://gitee.com/full-stack-plugins/codegraph-plugin/raw/v0.3.0/assets/official-logo.png",
       "interface": {
         "displayName": "代码图谱检索 · CodeGraph",
@@ -82,7 +82,7 @@
       },
       "category": "Developer Tools",
       "version": "0.21.0",
-      "description": "证据化 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析；结论区分通过、失败、无法验证与计划中。",
+      "description": "提交前跑真实门禁：60+ 语言 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析，结论可复核。",
       "icon": "https://gitee.com/full-stack-plugins/codeguard-plugin/raw/v0.21.0/assets/official-logo.png",
       "interface": {
         "displayName": "代码质量检查 · CodeGuard",
@@ -103,7 +103,7 @@
       },
       "category": "Developer Tools",
       "version": "0.4.0",
-      "description": "经显式授权，对暂存提交做语义审查（OCR 委托或自配模型）；结论仅作建议，不替代静态检查。",
+      "description": "提交前做一次语义审查：只读暂存内容，逐行指出逻辑和安全风险，需你显式授权。",
       "icon": "https://gitee.com/full-stack-plugins/codereview-plugin/raw/v0.4.0/assets/official-logo.png",
       "interface": {
         "displayName": "提交语义审查 · CodeReview",
@@ -124,7 +124,7 @@
       },
       "category": "Developer Tools",
       "version": "0.5.0",
-      "description": "智能体 SDD 治理：识别 Spec Kit/OpenSpec/Superpowers 原生产物，绑定任务，校验证据新鲜度并执行提交/发布门禁。",
+      "description": "把 Spec Kit/OpenSpec 接到十阶段流程：任务绑定、证据新鲜度和提交/发布门禁，不再靠聊天记录推进。",
       "icon": "https://gitee.com/full-stack-plugins/flowguard-plugin/raw/v0.5.0/assets/official-logo.png",
       "interface": {
         "displayName": "研发流程治理 · FlowGuard",
@@ -166,7 +166,7 @@
       },
       "category": "Design Tools",
       "version": "0.3.0",
-      "description": "可编辑的 ProcessOn 图表：生成前构造提示词，生成后做语义与一致性评审。",
+      "description": "把流程图、架构图和思维导图变成可编辑的 ProcessOn 文件，生成前定结构，生成后做一致性评审。",
       "icon": "https://gitee.com/full-stack-plugins/processon-design-plugin/raw/v0.3.0/assets/official-logo.png",
       "interface": {
         "displayName": "图表绘制 · ProcessOn Design",
@@ -187,7 +187,7 @@
       },
       "category": "Design Tools",
       "version": "0.10.0",
-      "description": "通过远程 Stitch MCP 创建与编辑页面、设计系统与前端代码，可落地 React、Vue、uni-app 与多种组件库。",
+      "description": "从一句需求生成可编辑页面和设计系统，直接落地 React、Vue、uni-app 代码。",
       "icon": "https://gitee.com/full-stack-plugins/stitch-design-plugin/raw/v0.10.0/assets/official-logo.png",
       "interface": {
         "displayName": "界面生成 · Stitch Design",
