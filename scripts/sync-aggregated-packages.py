@@ -29,6 +29,9 @@ def archived_package(plugin, destination):
                 relative = pathlib.PurePosixPath(member.name)
                 if relative.is_absolute() or ".." in relative.parts:
                     raise RuntimeError(f"{plugin['id']}: unsafe archive path {member.name}")
+                # 上游标签含系统缓存和构建输出，不属于可安装插件内容。
+                if (relative.parts and relative.parts[0] in {".mimosa", "dist"}) or "__pycache__" in relative.parts or relative.name == ".DS_Store" or relative.name.endswith(".pyc"):
+                    continue
                 target = destination.joinpath(*relative.parts)
                 if member.isdir():
                     target.mkdir(parents=True, exist_ok=True)
@@ -66,8 +69,14 @@ def check_equal(expected, actual, name):
     if left.keys() != right.keys():
         raise RuntimeError(f"{name}: aggregate file list differs from release tag")
     for relative in left:
-        if left[relative].read_bytes() != right[relative].read_bytes():
-            raise RuntimeError(f"{name}: aggregate differs at {relative}")
+        expected_bytes = left[relative].read_bytes()
+        actual_bytes = right[relative].read_bytes()
+        if expected_bytes == actual_bytes:
+            continue
+        # Windows checkout may translate text line endings; all other bytes stay exact.
+        if b"\0" not in expected_bytes and b"\0" not in actual_bytes and expected_bytes.replace(b"\r\n", b"\n") == actual_bytes.replace(b"\r\n", b"\n"):
+            continue
+        raise RuntimeError(f"{name}: aggregate differs at {relative} (expected {len(expected_bytes)} bytes, got {len(actual_bytes)} bytes)")
 
 
 def main():
