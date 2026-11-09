@@ -19,7 +19,7 @@
       },
       "category": "Productivity",
       "version": "0.2.0",
-      "description": "把服务器面板接进对话：查站点、证书、数据库与安全审计，变更前先给影响和回退路径。",
+      "description": "通过钉死版本的官方 MCP 检查与操作 1Panel；访问级别显式分级，凭据保持私有。",
       "icon": "https://gitee.com/full-stack-plugins/1panel-plugin/raw/v0.2.0/assets/logo.png",
       "interface": {
         "displayName": "面板运维 · 1Panel",
@@ -208,7 +208,7 @@
       },
       "category": "Design Tools",
       "version": "0.2.0",
-      "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览和视觉评审。",
+      "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览与视觉评审。",
       "icon": "https://gitee.com/full-stack-plugins/ui-design-plugin/raw/v0.2.0/assets/logo.png",
       "interface": {
         "displayName": "前端界面设计 · UI Design",
