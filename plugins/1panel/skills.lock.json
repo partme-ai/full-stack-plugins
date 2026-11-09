@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "package": "1panel-skills",
+      "repo": "https://github.com/full-stack-skills/1panel-skills.git",
+      "ref": "v0.1.1",
+      "skills": [
+        "1panel-apps",
+        "1panel-certificates",
+        "1panel-databases",
+        "1panel-security-audit",
+        "1panel-setup",
+        "1panel-system",
+        "1panel-use",
+        "1panel-websites"
+      ],
+      "dest": "skills/",
+      "sha": "b009fa51c35b41c16464163c49916fe9bcd21caf",
+      "sha256": {
+        "1panel-apps": "c88d6840dd6ab47ad1ab3bff69a339332d3b80d8ed7e5d83c5a57f35a64fd44a",
+        "1panel-certificates": "39a88bf025d7e7ef90b429cccbb76821fa0d034cf9e273a5e9d2891a1c9e2bf6",
+        "1panel-databases": "7caeac823ff0f4d1f6b737b8bb258012a2f13bce327a9d7f104ed0c23c6a360b",
+        "1panel-security-audit": "0a9380805359894f63daa06c4711a13f89f63b7c5d13c3306dfb4e1e73102ea7",
+        "1panel-setup": "b1a94e4f7c8bf49db28e12c6a7408368d3b5c80d796f3bd1affb32e0487b52fc",
+        "1panel-system": "28cc075330aaf439bad62e47d070225abd71174eac59226b456aecccb4b41215",
+        "1panel-use": "2f8e7eeb96ba8c3b74451e5f99faa325b7227f64acb83d097de58c68697cb8c4",
+        "1panel-websites": "2c8a63892191193a8c4fb304bde6d76a0dcc2d7ed8f606b206e3fcd28954ce7f"
+      }
+    }
+  ]
+}

@@ -9,9 +9,8 @@
     {
       "name": "1panel",
       "source": {
-        "source": "url",
-        "url": "https://github.com/full-stack-plugins/1panel-plugin.git",
-        "ref": "v0.2.1"
+        "source": "local",
+        "path": "./plugins/1panel"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -24,20 +23,19 @@
         "mcp"
       ],
       "version": "0.2.1",
-      "description": "通过钉死版本的官方 MCP 检查与操作 1Panel；访问级别显式分级，凭据保持私有。",
+      "description": "把服务器面板接进对话：查站点、证书、数据库与安全审计，变更前先给影响和回退路径。",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.1/assets/logo.png",
       "interface": {
         "displayName": "1Panel（面板运维）",
-        "shortDescription": "应用、网站、证书、数据库与安全审计",
+        "shortDescription": "把服务器面板接进对话：查站点、证书、数据库与安全审计，变更前先给影响和回退路径。",
         "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.1/assets/logo.png"
       }
     },
     {
       "name": "archguard",
       "source": {
-        "source": "url",
-        "url": "https://github.com/full-stack-plugins/archguard-plugin.git",
-        "ref": "v0.1.1"
+        "source": "local",
+        "path": "./plugins/archguard"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -60,9 +58,8 @@
     {
       "name": "bt-linux-panel",
       "source": {
-        "source": "url",
-        "url": "https://github.com/full-stack-plugins/bt-linux-panel-plugin.git",
-        "ref": "v1.1.1"
+        "source": "local",
+        "path": "./plugins/bt-linux-panel"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -86,9 +83,8 @@
     {
       "name": "codegraph",
       "source": {
-        "source": "url",
-        "url": "https://github.com/full-stack-plugins/codegraph-plugin.git",
-        "ref": "v0.3.1"
+        "source": "local",
+        "path": "./plugins/codegraph"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -112,9 +108,8 @@
     {
       "name": "codeguard",
       "source": {
-        "source": "url",
-        "url": "https://github.com/full-stack-plugins/codeguard-plugin.git",
-        "ref": "v0.21.2"
+        "source": "local",
+        "path": "./plugins/codeguard"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -138,9 +133,8 @@
     {
       "name": "codereview-plugin",
       "source": {
-        "source": "url",
-        "url": "https://github.com/full-stack-plugins/codereview-plugin.git",
-        "ref": "v0.4.2"
+        "source": "local",
+        "path": "./plugins/codereview-plugin"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -164,9 +158,8 @@
     {
       "name": "flowguard",
       "source": {
-        "source": "url",
-        "url": "https://github.com/full-stack-plugins/flowguard-plugin.git",
-        "ref": "v0.5.2"
+        "source": "local",
+        "path": "./plugins/flowguard"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -190,9 +183,8 @@
     {
       "name": "gitguard",
       "source": {
-        "source": "url",
-        "url": "https://github.com/full-stack-plugins/gitguard-plugin.git",
-        "ref": "v0.4.0"
+        "source": "local",
+        "path": "./plugins/gitguard"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -205,20 +197,19 @@
         "mcp"
       ],
       "version": "0.4.0",
-      "description": "Git 分支、变更范围、同步、发布回灌、恢复与合并候选防护；保留真实 Git 事实与回退路径。",
+      "description": "分支、提交、合并、发布都有规则：先识别仓库工作流，再拦截错误流向，保留回退路径。",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitguard-plugin@v0.4.0/assets/logo.png",
       "interface": {
         "displayName": "GitGuard（分支规范防护）",
-        "shortDescription": "分支命名、创建、提交、同步与发布回灌",
+        "shortDescription": "分支、提交、合并、发布都有规则：先识别仓库工作流，再拦截错误流向，保留回退路径。",
         "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitguard-plugin@v0.4.0/assets/logo.png"
       }
     },
     {
       "name": "processon-design",
       "source": {
-        "source": "url",
-        "url": "https://github.com/full-stack-plugins/processon-design-plugin.git",
-        "ref": "v0.3.1"
+        "source": "local",
+        "path": "./plugins/processon-design"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -242,9 +233,8 @@
     {
       "name": "specguard",
       "source": {
-        "source": "url",
-        "url": "https://github.com/full-stack-plugins/specguard-plugin.git",
-        "ref": "v0.1.1"
+        "source": "local",
+        "path": "./plugins/specguard"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -267,9 +257,8 @@
     {
       "name": "stitch-design",
       "source": {
-        "source": "url",
-        "url": "https://github.com/full-stack-plugins/stitch-design-plugin.git",
-        "ref": "v0.10.1"
+        "source": "local",
+        "path": "./plugins/stitch-design"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -293,9 +282,8 @@
     {
       "name": "testguard",
       "source": {
-        "source": "url",
-        "url": "https://github.com/full-stack-plugins/testguard-plugin.git",
-        "ref": "v0.1.1"
+        "source": "local",
+        "path": "./plugins/testguard"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -318,9 +306,8 @@
     {
       "name": "ui-design",
       "source": {
-        "source": "url",
-        "url": "https://github.com/full-stack-plugins/ui-design-plugin.git",
-        "ref": "v0.2.1"
+        "source": "local",
+        "path": "./plugins/ui-design"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -333,11 +320,11 @@
         "mcp"
       ],
       "version": "0.2.1",
-      "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览与视觉评审。",
+      "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览和视觉评审。",
       "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.1/assets/logo.png",
       "interface": {
         "displayName": "UI（前端界面设计）",
-        "shortDescription": "功能契约、页面、主题、预览与视觉评审",
+        "shortDescription": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览和视觉评审。",
         "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.1/assets/logo.png"
       }
     }

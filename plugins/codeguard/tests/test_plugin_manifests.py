@@ -1,0 +1,63 @@
+import json
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+MANIFESTS = (
+    ROOT / ".zcode-plugin" / "plugin.json",
+    ROOT / ".codex-plugin" / "plugin.json",
+    ROOT / "kimi.plugin.json",
+)
+
+
+class PluginManifestTest(unittest.TestCase):
+    def test_portable_mcp_config_discovers_the_existing_server(self):
+        config = json.loads((ROOT / "mcp.json").read_text(encoding="utf-8"))
+        self.assertEqual(
+            "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json", config["$schema"])
+        self.assertEqual({"$schema", "mcpServers"}, set(config))
+        server = config["mcpServers"]["codeguard"]
+        self.assertEqual("stdio", server["type"])
+        self.assertIn(server["command"], ("python", "python3"))
+        self.assertEqual("./", server["cwd"])
+        self.assertIn("--mcp", server["args"])
+        scripts = [arg for arg in server["args"] if arg.endswith(".py")]
+        self.assertEqual(1, len(scripts))
+        script = (ROOT / scripts[0]).resolve()
+        self.assertTrue(script.is_relative_to(ROOT.resolve()))
+        self.assertTrue(script.is_file())
+        self.assertEqual(ROOT / "scripts" / "run_check.py", script)
+        self.assertNotIn("PLUGIN_ROOT", server.get("env", {}))
+        self.assertNotIn("PLUGIN_DATA", server.get("env", {}))
+
+    def test_released_manifests_do_not_publish_placeholder_mcp_server(self):
+        self.assertFalse((ROOT / ".mcp.json").exists())
+        for manifest in MANIFESTS:
+            with self.subTest(manifest=manifest.name):
+                data = json.loads(manifest.read_text(encoding="utf-8"))
+                self.assertNotIn("mcpServers", data)
+
+    def test_zcode_uses_convention_based_hook_discovery_once(self):
+        data = json.loads(MANIFESTS[0].read_text(encoding="utf-8"))
+        self.assertNotIn("hooks", data)
+        self.assertTrue((ROOT / "hooks" / "hooks.json").is_file())
+
+    def test_each_released_manifest_points_to_the_lock_union_plus_local_skills(self):
+        lock = json.loads((ROOT / "skills.lock.json").read_text(encoding="utf-8"))
+        lock_union: set[str] = set()
+        for source in lock["sources"]:
+            lock_union.update(source.get("skills", []))
+        local = set(json.loads((ROOT / "plugin-local-skills.json").read_text(encoding="utf-8"))["skills"])
+        expected = lock_union | local
+        on_disk = {p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md")}
+        self.assertEqual(expected, on_disk,
+                         msg=f"skills lock union ≠ on-disk: "
+                             f"only_in_lock={expected - on_disk}, only_on_disk={on_disk - expected}")
+        for manifest in MANIFESTS:
+            with self.subTest(manifest=manifest.name):
+                data = json.loads(manifest.read_text(encoding="utf-8"))
+                self.assertIn(data["skills"], {"skills", "./skills/"})
+
+
+if __name__ == "__main__":
+    unittest.main()

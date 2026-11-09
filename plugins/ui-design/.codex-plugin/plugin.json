@@ -1,0 +1,43 @@
+{
+  "name": "ui-design",
+  "version": "0.2.1",
+  "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览与视觉评审。",
+  "author": {
+    "name": "Full Stack Skills / PartMe.AI"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "frontend",
+    "design",
+    "imagegen",
+    "agent-skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "UI（前端界面设计）",
+    "shortDescription": "功能契约、页面、主题、预览与视觉评审",
+    "longDescription": "Use the ui-design-use entry skill for complete frontend design packages, editable prototypes, image assets and verified previews. ui-design is the plugin ID, not a skill name.",
+    "developerName": "Full Stack Skills / PartMe.AI",
+    "category": "Creativity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use ui-design-use to produce the requested complete frontend functional design package, preserving existing page IDs and the requested output directory.",
+      "Use ui-design-use to continue the next frontend page using the approved baseline."
+    ],
+    "logo": "./assets/logo.png",
+    "logoDark": "./assets/logo.png",
+    "composerIcon": "./assets/logo.png",
+    "composerIconDark": "./assets/logo.png"
+  },
+  "displayName": "UI（前端界面设计）",
+  "displayName_i18n": {
+    "zh-CN": "UI（前端界面设计）"
+  },
+  "description_i18n": {
+    "zh-CN": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览与视觉评审。"
+  }
+}

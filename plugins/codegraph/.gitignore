@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*~
+
+# Plugin runtime artifacts (mirror codeguard convention)
+.codegraph/
+.code-review-graph/
+.worktrees/
+.artifacts/
+.mcp_server_audit/
+.mimosa/
+
+# Local build
+dist/
+build/
+*.egg-info/
+
+# Local node
+node_modules/

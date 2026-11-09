@@ -1,0 +1,59 @@
+name: 离线契约与回归
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  offline:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python: ['3.11', '3.13']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install pytest==8.3.4
+      - run: python -m pytest -q
+      - run: python scripts/validate_local.py
+      - run: python scripts/vendor/skill_vendor.py check --offline
+      - run: python -m compileall -q codereview_core scripts hooks
+      # 不安装 OCR，不配置模型密钥；CI 只做离线验证。
+
+  source-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python scripts/vendor/skill_vendor.py check
+
+  vendor-portability-windows:
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    env:
+      PYTHONUTF8: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Prepare isolated test temporary directory
+        shell: pwsh
+        run: |
+          $taskTmp = Join-Path $env:RUNNER_TEMP 'vendor-portability/tmp'
+          New-Item -ItemType Directory -Force -Path $taskTmp | Out-Null
+          "TEMP=$taskTmp" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          "TMP=$taskTmp" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+      - name: Verify Windows path ordering and LF checkout behavior
+        run: python -B -m unittest discover -s tests -p test_skill_vendor_portability.py -v
+      - name: Verify checkout bytes against locked skill digests
+        run: python -B scripts/vendor/skill_vendor.py check --offline
+      - name: Verify upstream pins and bytes with ordinary Git configuration
+        run: python -B scripts/vendor/skill_vendor.py check

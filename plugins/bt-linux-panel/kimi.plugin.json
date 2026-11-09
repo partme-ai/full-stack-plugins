@@ -1,0 +1,44 @@
+{
+  "name": "bt-linux-panel",
+  "version": "1.1.1",
+  "description": "通过 MCP 操作宝塔面板：服务管理、站点与数据库诊断、防火墙审计与入侵排查。",
+  "author": {
+    "name": "Full Stack Skills / PartMe.AI"
+  },
+  "homepage": "https://github.com/full-stack-plugins/bt-linux-panel-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "baota",
+    "bt-panel",
+    "linux-ops",
+    "mcp"
+  ],
+  "interface": {
+    "displayName": "BaoTa Panel（服务器运维）",
+    "shortDescription": "站点诊断、数据库、防火墙与入侵排查",
+    "longDescription": "Routes Kimi to operate Baota (BT) Linux panel 13.0 through the MCP protocol. Diagnoses sites/databases/services, audits security, manages Docker/SSL/cron/firewall, and drives 98 panel tools. The plugin ships no local MCP server — connect your Kimi client to a remote Baota MCP endpoint at port 8765 with Bearer Token auth.",
+    "developerName": "Full Stack Skills / PartMe.AI",
+    "websiteURL": "https://github.com/full-stack-plugins/bt-linux-panel-plugin"
+  },
+  "skills": "./skills/",
+  "commands": "./commands/",
+  "hooks": [
+    {
+      "event": "SessionStart",
+      "command": "python3 ./hooks/env_check.py",
+      "timeout": 30
+    },
+    {
+      "event": "UserPromptSubmit",
+      "command": "python3 ./hooks/check_bt_intent.py",
+      "timeout": 15
+    }
+  ],
+  "displayName_i18n": {
+    "zh-CN": "BaoTa Panel（服务器运维）"
+  },
+  "description_i18n": {
+    "zh-CN": "通过 MCP 操作宝塔面板：服务管理、站点与数据库诊断、防火墙审计与入侵排查。"
+  },
+  "displayName": "BaoTa Panel（服务器运维）"
+}

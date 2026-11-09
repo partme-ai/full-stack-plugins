@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "package": "design-skills",
+      "repo": "https://github.com/full-stack-skills/design-skills.git",
+      "ref": "v1.15.3",
+      "skills": [
+        "ui-design-continuity",
+        "ui-design-feature",
+        "ui-design-harness",
+        "ui-design-nav",
+        "ui-design-preview",
+        "ui-design-review",
+        "ui-design-spec",
+        "ui-design-theme",
+        "ui-design-to-image",
+        "ui-design-use",
+        "ui-design-visual"
+      ],
+      "dest": "skills/",
+      "sha": "5183e6b6ee92bc8f0f6bdbe594bd63d6c550d9a5",
+      "sha256": {
+        "ui-design-continuity": "52294370cbc38343c61239524dfcf6a2abff4eaacffb8ec3c9ab5c5f829c8e72",
+        "ui-design-feature": "2d6016132a2358432b67379583b771032e1fb4a2aaa61f2b6208f648a6761da1",
+        "ui-design-harness": "65869e947ac30395e00bae327dcf9a4e2db3dc46cdc7477da4fafee67d8d328a",
+        "ui-design-nav": "b3e73bb3b05283e55f7ce469cd17394a5e98282c1a60d32c45f6cf6ca657fdee",
+        "ui-design-preview": "aa717cd720186ca5de13d9b0c696232b3c67be390ec950d55fb0aa4b43e791e6",
+        "ui-design-review": "f92c25f0ad09cd0d13257b10a13204a291522d035da0f4b93500bcdfb82cd9fc",
+        "ui-design-spec": "a2c7249e1a439f8ff6c8bdcd9a9ef3d72004cb5f60229a5161589bf5f974beac",
+        "ui-design-theme": "153be2e21cdc0f444a66870e11ed2bac8c62dc00d9c4d4d584858ae616398edc",
+        "ui-design-to-image": "4ff6f0ae8c1d8355bdd293b29c828fb48218586d9871e6d7299dda828b129faa",
+        "ui-design-use": "2b0237da082e0415ca349432b5547d4da677aded492d9970e2409a461538c11a",
+        "ui-design-visual": "10eddd04c9a4987580f734eb487cbdda96d0c6a3438ce8ade81a4bf9515b9083"
+      }
+    }
+  ]
+}

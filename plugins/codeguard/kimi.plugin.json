@@ -1,0 +1,65 @@
+{
+  "name": "codeguard",
+  "version": "0.21.2",
+  "description": "证据化 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析；结论区分通过、失败、无法验证与计划中。",
+  "author": {
+    "name": "Full Stack Skills / PartMe.AI"
+  },
+  "homepage": "https://github.com/full-stack-plugins/codeguard-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "java",
+    "rust",
+    "typescript",
+    "python",
+    "javadoc",
+    "checkstyle",
+    "clippy",
+    "eslint",
+    "ruff",
+    "pre-commit"
+  ],
+  "interface": {
+    "displayName": "CodeGuard（代码质量防护）",
+    "shortDescription": "60+ 语言 lint、CVE 与受控修复，提交门禁",
+    "longDescription": "Evidence-backed code checks and Git content gates for AI assistants, with Maven/Gradle module impact analysis. Save hooks provide feedback; unverified checks are explicit. Java planning is read-only; executing project checks runs trusted build/test commands, not a security sandbox.",
+    "developerName": "Full Stack Skills / PartMe.AI",
+    "websiteURL": "https://github.com/full-stack-plugins/codeguard-plugin"
+  },
+  "skills": "./skills/",
+  "commands": "./commands/",
+  "hooks": [
+    {
+      "event": "SessionStart",
+      "command": "python3 ./hooks/env_check.py",
+      "timeout": 30
+    },
+    {
+      "event": "UserPromptSubmit",
+      "command": "python3 ./hooks/user_prompt_validator.py",
+      "timeout": 120
+    },
+    {
+      "event": "PreToolUse",
+      "command": "python3 ./hooks/pre_tool_git_guard.py",
+      "timeout": 120
+    },
+    {
+      "event": "PostToolUse",
+      "command": "python3 ./hooks/post_tool_lint.py",
+      "timeout": 180
+    },
+    {
+      "event": "Stop",
+      "command": "python3 ./hooks/stop_summary.py",
+      "timeout": 15
+    }
+  ],
+  "displayName_i18n": {
+    "zh-CN": "CodeGuard（代码质量防护）"
+  },
+  "description_i18n": {
+    "zh-CN": "证据化 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析；结论区分通过、失败、无法验证与计划中。"
+  },
+  "displayName": "CodeGuard（代码质量防护）"
+}

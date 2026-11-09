@@ -3,6 +3,36 @@
   "displayName": "Full Stack Plugins",
   "description": "Full Stack plugin marketplace for Codex, ZCode, and Kimi Code: AI design, diagramming, executable code checks, semantic review, workflow governance, and server operations.",
   "planningRepositories": [],
+  "candidatePlugins": [
+    {
+      "id": "alibaba-cloud-cli",
+      "displayName": "Alibaba Cloud CLI (Cloud Operations)",
+      "repository": "full-stack-plugins/alibaba-cloud-cli-plugin",
+      "localDirectory": "alibaba-cloud-cli-plugin",
+      "version": "0.1.0",
+      "status": "local_candidate",
+      "description": "Alibaba Cloud CLI workflows for credential setup, profile checks, and safe cloud resource operations.",
+      "shortDescription": "Inspect and manage Alibaba Cloud resources through the local CLI.",
+      "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills"
+      ],
+      "tags": [
+        "alibaba-cloud",
+        "aliyun",
+        "cli",
+        "cloud-operations"
+      ],
+      "localizations": {
+        "zh-CN": {
+          "displayName": "Alibaba Cloud CLI（阿里云运维）",
+          "description": "通过本机阿里云 CLI 配置凭证、检查 profile，并安全查询与管理云资源。",
+          "shortDescription": "通过本机 CLI 查询与管理阿里云资源。"
+        }
+      }
+    }
+  ],
   "plugins": [
     {
       "id": "1panel",
@@ -155,7 +185,8 @@
       "componentTypes": [
         "skills",
         "mcp"
-      ]
+      ],
+      "sourceCommit": "5c51cf3f4f754e118877da97aedd0811e0900724"
     },
     {
       "id": "codereview-plugin",

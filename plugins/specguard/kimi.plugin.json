@@ -1,0 +1,13 @@
+{
+  "name": "specguard",
+  "version": "0.1.1",
+  "description": "让需求、验收、设计、任务与测试义务保持可追踪。",
+  "displayName": "SpecGuard（需求规格防护）",
+  "displayName_i18n": {
+    "zh-CN": "SpecGuard（需求规格防护）"
+  },
+  "interface": {
+    "displayName": "SpecGuard（需求规格防护）",
+    "shortDescription": "校验规格基线、追踪关系与覆盖缺口；语义歧义交人工复核。"
+  }
+}

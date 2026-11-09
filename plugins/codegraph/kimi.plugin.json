@@ -1,0 +1,43 @@
+{
+  "name": "codegraph",
+  "version": "0.3.1",
+  "description": "存在 .codegraph 时注入官方提示词，并把 21 条 CLI 命令暴露为斜杠命令；纯 Python 标准库。",
+  "author": {
+    "name": "Full Stack Plugins",
+    "url": "https://github.com/full-stack-plugins"
+  },
+  "homepage": "https://github.com/full-stack-plugins/codegraph-plugin",
+  "repository": "https://github.com/full-stack-plugins/codegraph-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "code-intelligence",
+    "knowledge-graph",
+    "codegraph",
+    "mcp",
+    "code-search",
+    "claude-code",
+    "codex",
+    "kimi"
+  ],
+  "skills": "./skills/",
+  "commands": "./commands/",
+  "interface": {
+    "displayName": "CodeGraph（代码图谱检索）",
+    "shortDescription": "符号、调用链与影响面查询，本地索引",
+    "longDescription": "For AI coding agents. At session start, when a `.codegraph/` directory exists, this plugin writes the official CodeGraph prompt block (verbatim from upstream `instructions-template.ts`) to `<cwd>/.claude/CLAUDE.md` or `<cwd>/AGENTS.md` using atomic marker-fenced replacement, and injects the same block as SessionStart additionalContext. 21 of codegraph's 23 CLI commands are exposed as slash commands. Pure Python stdlib; no third-party runtime dependencies."
+  },
+  "hooks": [
+    {
+      "event": "SessionStart",
+      "command": "python -X utf8 ./hooks/inject_codegraph_prompt.py || python3 -X utf8 ./hooks/inject_codegraph_prompt.py || exit 0",
+      "timeout": 10
+    }
+  ],
+  "displayName_i18n": {
+    "zh-CN": "CodeGraph（代码图谱检索）"
+  },
+  "description_i18n": {
+    "zh-CN": "存在 .codegraph 时注入官方提示词，并把 21 条 CLI 命令暴露为斜杠命令；纯 Python 标准库。"
+  },
+  "displayName": "CodeGraph（代码图谱检索）"
+}

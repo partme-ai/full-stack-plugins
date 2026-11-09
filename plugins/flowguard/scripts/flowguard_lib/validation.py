@@ -1,0 +1,347 @@
+"""产物校验引擎（照 OpenSpec validation：ERROR/WARNING/INFO 三级 + 消息/修复单源）。"""
+import re
+from pathlib import Path
+
+from . import ids
+
+HINTS = {
+    "req_header": "requirement 头必须恰为 `### Requirement: <名称>`",
+    "scenario_header": "scenario 头必须恰为 `#### Scenario: <名称>`（三个 # 或列表形式会静默失败）",
+    "req_id": "requirement 正文首行须含反引号包裹的 REQ-ID，如 `<feature>/REQ-1`",
+    "shall": "requirement 正文须包含 SHALL 或 MUST（关键词应在正文而非标题）",
+    "scenario_count": "每条 requirement 至少 1 个 #### Scenario",
+    "coverage": "每条 REQ 至少被一条用例覆盖（追溯矩阵）",
+    "testfile": "用例须标注 `- 测试文件: <路径>`，且该文件已存在于仓库",
+    "conclusion": "每条发现项须有 `- 结论: fix|wontfix|deferred`",
+    "tier2": "引用的执行技能未安装",
+}
+
+
+def _issue(level, path, message, fix, line=None):
+    out = {"level": level, "path": path, "message": message, "fix": fix}
+    if line is not None:
+        out["line"] = line
+    return out
+
+
+def _mask_code_fences(lines):
+    """围栏内的行标记为不可见（照 OpenSpec code-fence 掩码）。"""
+    masked, inside = [], False
+    for ln in lines:
+        if ln.lstrip().startswith("```"):
+            inside = not inside
+            masked.append(True)
+            continue
+        masked.append(inside)
+    return masked
+
+
+def requirement_ids(text):
+    """抽取各 requirement 正文首行反引号内的 REQ-ID；含占位符的模板示例块不参与机械校验。"""
+    lines = text.splitlines()
+    masked = _mask_code_fences(lines)
+    found, current_req, placeholder = [], False, False
+    for ln, hide in zip(lines, masked):
+        if hide:
+            continue
+        if re.match(r"^### Requirement:", ln):
+            current_req, body_seen = True, False
+            placeholder = ("<" in ln) or ("{{" in ln)
+            continue
+        if current_req:
+            if re.match(r"^#### Scenario:", ln):
+                current_req = False
+                continue
+            if not body_seen and ln.strip():
+                body_seen = True
+                if "<" in ln or "{{" in ln:
+                    placeholder = True
+                m = re.search(r"`([^`]+)`", ln)
+                if m and ids.parse_req_id(m.group(1)) and not placeholder:
+                    found.append(m.group(1))
+    return found
+
+
+def validate_requirements(text, feature):
+    lines = text.splitlines()
+    masked = _mask_code_fences(lines)
+    issues = []
+    seen_names = {}
+    in_req, req_name, req_line, body_lines, scenario_count, placeholder = False, "", 0, [], 0, False
+
+    def flush():
+        nonlocal in_req, req_name, req_line, body_lines, scenario_count, placeholder
+        if not in_req:
+            return
+        if not placeholder:
+            body = "\n".join(body_lines)
+            if not re.search(r"\b(SHALL|MUST)\b", body):
+                issues.append(_issue("WARNING", "01-requirements.md",
+                                     f"requirement「{req_name}」正文缺 SHALL/MUST",
+                                     HINTS["shall"], line=req_line))
+            if scenario_count < 1:
+                issues.append(_issue("WARNING", "01-requirements.md",
+                                     f"requirement「{req_name}」无 Scenario",
+                                     HINTS["scenario_count"], line=req_line))
+        in_req = False
+        placeholder = False
+
+    for no, (ln, hide) in enumerate(zip(lines, masked), 1):
+        if hide:
+            continue
+        stripped = ln.strip()
+        m_req = re.match(r"^### Requirement: (.+?)\s*$", ln)
+        m_scn = re.match(r"^#### Scenario:", ln)
+        if m_req:
+            flush()
+            req_name = m_req.group(1).strip()
+            req_line = no
+            in_req, body_lines, scenario_count = True, [], 0
+            placeholder = ("<" in ln) or ("{{" in ln)
+            folded = ids.fold_name(req_name)
+            if folded in seen_names:
+                issues.append(_issue("WARNING", "01-requirements.md",
+                                     f"requirement 名与「{seen_names[folded]}」近似（typo?）",
+                                     HINTS["req_header"], line=no))
+            else:
+                seen_names[folded] = req_name
+            continue
+        if m_scn:
+            scenario_count += 1
+            continue
+        # stray 头：含 `Requirement:`/`Scenario:` 冒号标记但层级/形式不是规范头（裸词不误伤）
+        if re.match(r"^#{1,6}\s", ln) and re.search(r"(Requirement|Scenario):", ln) and not m_req and not m_scn:
+            issues.append(_issue("ERROR", "01-requirements.md",
+                                 f"疑似层级错误的 Requirement/Scenario 头: {stripped!r}",
+                                 HINTS["scenario_header"] if "Scenario" in ln else HINTS["req_header"], line=no))
+            continue
+        if re.match(r"^[-*]\s+#+\s", ln) and "Scenario" in ln:
+            issues.append(_issue("ERROR", "01-requirements.md",
+                                 f"Scenario 写成了列表项: {stripped!r}",
+                                 HINTS["scenario_header"], line=no))
+            continue
+        if in_req:
+            if "<" in ln or "{{" in ln:
+                placeholder = True
+            body_lines.append(ln)
+    flush()
+
+    # REQ-ID 校验（依赖抽取结果）
+    for rid in requirement_ids(text):
+        parsed = ids.parse_req_id(rid)
+        if parsed is None or parsed[0] != feature:
+            issues.append(_issue("ERROR", "01-requirements.md",
+                                 f"REQ-ID「{rid}」不属于功能 {feature}",
+                                 HINTS["req_id"]))
+    return issues
+
+
+def validate_testcases(text, req_ids, root):
+    """追溯矩阵：每条 REQ 被覆盖；每条用例的测试文件存在。
+
+    含 `<占位符>` 的块视为模板未填写示例，不参与机械检查。
+    """
+    lines = text.splitlines()
+    masked = _mask_code_fences(lines)
+    issues = []
+    covered, cur_req, cur_file, in_case = set(), None, None, False
+    placeholder = False
+
+    def flush_case():
+        nonlocal cur_req, cur_file, placeholder
+        if in_case and placeholder:
+            pass  # 模板示例块
+        else:
+            if cur_req:
+                covered.add(cur_req)
+            if cur_req and not cur_file:
+                issues.append(_issue("ERROR", "04-testcases.md",
+                                     f"用例（REQ {cur_req}）缺 `- 测试文件:` 标注",
+                                     HINTS["testfile"]))
+        cur_req, cur_file, placeholder = None, None, False
+
+    for ln, hide in zip(lines, masked):
+        if hide:
+            continue
+        if re.match(r"^### 用例", ln):
+            flush_case()
+            in_case, cur_req, cur_file = True, None, None
+            placeholder = ("<" in ln) or ("{{" in ln)
+            continue
+        if in_case and (ln.strip() == "---" or re.match(r"^#{2,4}\s", ln)):
+            flush_case()
+            in_case = False
+            continue
+        if in_case:
+            if "<" in ln or "{{" in ln:
+                placeholder = True
+            m_req = re.match(r"^-\s*REQ:\s*(\S+)", ln.strip())
+            m_file = re.match(r"^-\s*测试文件:\s*(\S+)", ln.strip())
+            if m_req:
+                cur_req = m_req.group(1)
+            elif m_file:
+                cur_file = m_file.group(1)
+                if "<" not in cur_file and "{{" not in cur_file and not (Path(root) / cur_file).exists():
+                    issues.append(_issue("ERROR", "04-testcases.md",
+                                         f"测试文件不存在: {cur_file}",
+                                         HINTS["testfile"]))
+    flush_case()
+
+    for rid in req_ids:
+        if rid not in covered:
+            issues.append(_issue("ERROR", "04-testcases.md",
+                                 f"需求未被用例覆盖: {rid}",
+                                 HINTS["coverage"]))
+    return issues
+
+
+def validate_review(text):
+    """每条发现项须有 `- 结论: fix|wontfix|deferred`。含 `<占位符>` 的块视为模板示例，跳过。"""
+    lines = text.splitlines()
+    masked = _mask_code_fences(lines)
+    issues = []
+    in_finding = False
+    concluded = False
+    placeholder = False
+
+    def flush():
+        nonlocal in_finding, concluded, placeholder
+        if in_finding and not concluded and not placeholder:
+            issues.append(_issue("ERROR", "08-review.md",
+                                 "发现项缺结论",
+                                 HINTS["conclusion"]))
+        in_finding = False
+        concluded = False
+        placeholder = False
+
+    for ln, hide in zip(lines, masked):
+        if hide:
+            continue
+        if re.match(r"^#{2,4}\s*发现", ln):
+            flush()
+            in_finding = True
+            placeholder = ("<" in ln) or ("{{" in ln)
+            continue
+        if in_finding and (ln.strip() == "---" or re.match(r"^#{2,4}\s", ln)):
+            flush()
+            continue
+        if in_finding:
+            if "<" in ln or "{{" in ln:
+                placeholder = True
+            if re.match(r"^-\s*结论:\s*(fix|wontfix|deferred)\s*$", ln.strip()):
+                concluded = True
+    flush()
+    return issues
+
+
+def known_task_ids(root):
+    """docs/features/ 下的 kebab 任务目录即已知功能清单。"""
+    base = Path(root) / "docs" / "features"
+    if not base.is_dir():
+        return []
+    return sorted(p.name for p in base.iterdir()
+                  if p.is_dir() and ids.is_kebab(p.name))
+
+
+def _section(text, start_re, end_re):
+    """截取 start_re 标题到 end_re 标题（不含）之间的正文。"""
+    out, active = [], False
+    for ln in text.splitlines():
+        if not active and re.match(start_re, ln):
+            active = True
+            continue
+        if active and re.match(end_re, ln):
+            break
+        if active:
+            out.append(ln)
+    return "\n".join(out)
+
+
+def validate_architecture(text):
+    """每条非占位 ADR 条目须带 `feature: <来源>` 与 `状态: proposed|accepted`（追加式格式契约）。
+
+    含 `<占位符>`/`{{...}}` 的条目视为模板示例，不参与机械校验。
+    """
+    lines = text.splitlines()
+    masked = _mask_code_fences(lines)
+    issues = []
+    for ln, hide in zip(lines, masked):
+        if hide or not re.match(r"^\s*-\s*ADR-", ln):
+            continue
+        if "<" in ln or "{{" in ln:
+            continue
+        if not re.search(r"feature:\s*\S+", ln):
+            issues.append(_issue("ERROR", "02-architecture.md",
+                                 f"ADR 条目缺 feature 来源标注: {ln.strip()!r}",
+                                 "追加式条目须带 `feature: <来源功能>`（禁止改写既有条目）"))
+        if not re.search(r"状态:\s*(proposed|accepted)", ln):
+            issues.append(_issue("ERROR", "02-architecture.md",
+                                 f"ADR 条目缺合法状态: {ln.strip()!r}",
+                                 "状态须为 proposed 或 accepted"))
+    return issues
+
+
+def validate_standards(text, modules):
+    """已填规范集（2. 规范集节出现非占位条目）须覆盖全部已注册模块的栈。
+
+    纯模板（规范集节全为占位示例）不参与机械校验；无栈模块（无法判定技术栈）跳过。
+    """
+    issues = []
+    body = _section(text, r"^##\s*2\.", r"^##\s*3\.")
+    headings = [ln.lower() for ln in body.splitlines()
+                if re.match(r"^###\s+", ln) and "<" not in ln and "{{" not in ln]
+    if not headings:
+        return issues
+    for name, mod in sorted((modules or {}).items()):
+        stack = (mod or {}).get("stack")
+        if not stack:
+            continue
+        tokens = {name.lower(), str(stack).lower()}
+        tokens.update(t for t in str(stack).lower().replace("_", "-").split("-") if len(t) >= 3)
+        if not any(tok in h for h in headings for tok in tokens):
+            issues.append(_issue("ERROR", "07-standards.md",
+                                 f"规范集未覆盖模块 {name}（技术栈 {stack}）",
+                                 "按模块栈补充 2.1 规范条目（覆盖所有已注册模块的栈）"))
+    return issues
+
+
+def validate_release(text, task_ids):
+    """发布内容表引用的功能须是已知 task-id；占位符行视为模板示例跳过。"""
+    issues = []
+    scope = _section(text, r"^##\s*3\.", r"^##\s*4\.")
+    known = set(task_ids)
+    for ln in scope.splitlines():
+        if "<" in ln or "{{" in ln:
+            continue
+        m = re.match(r"^\|\s*([^|]+?)\s*\|", ln)
+        if not m:
+            continue
+        cell = m.group(1).strip()
+        if not cell or set(cell) <= set(":- ") or cell.startswith("功能"):
+            continue
+        if cell not in known:
+            issues.append(_issue("ERROR", "10-release.md",
+                                 f"发布内容引用未知功能: {cell}",
+                                 "功能须是已存在的 docs/features/<task-id>"))
+    return issues
+
+
+def missing_tier2(refs, root=None):
+    """refs: (skill, pkg, install_cmd)；已安装判定见 _installed。缺失产出 WARNING。"""
+    out = []
+    for skill, _pkg, cmd in refs:
+        if not _installed(skill, root):
+            out.append(_issue("WARNING", "skills",
+                              f"执行技能未安装: {skill}",
+                              cmd))
+    return out
+
+
+def _installed(skill, root):
+    candidates = [
+        Path.home() / ".agents" / "skills" / skill / "SKILL.md",
+        Path.home() / ".zcode" / "skills" / skill / "SKILL.md",
+    ]
+    if root is not None:
+        candidates.append(Path(root) / ".agents" / "skills" / skill / "SKILL.md")
+    return any(p.exists() for p in candidates)
