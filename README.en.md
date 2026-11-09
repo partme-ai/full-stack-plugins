@@ -120,7 +120,7 @@ CodeReview v0.2.1 distributes 8 skills (2 upstream OCR, 5 independent `coderevie
 
 ### Local candidate: Alibaba Cloud CLI
 
-The `alibaba-cloud-cli-plugin` package lives in the sibling `full-stack-plugins-repositories/` directory. It supplies setup and CLI Skills adapted from the [ZCode Alibaba Cloud CLI plugin](https://github.com/zai-org/zcode-plugins/tree/0cc58d6/plugins/alibaba-cloud-cli), using the [Alibaba Cloud CLI](https://github.com/aliyun/aliyun-cli). Its `THIRD-PARTY-NOTICES.md` records provenance and licensing. The catalog marks it `local_candidate`; it is available for local package validation and is not yet included in the public host marketplace manifests because no independent release has been published.
+The `alibaba-cloud-cli-plugin` package lives in the sibling `full-stack-plugins-repositories/` directory. It supplies setup and CLI Skills adapted from the [ZCode Alibaba Cloud CLI plugin](https://github.com/zai-org/zcode-plugins/tree/0cc58d6/plugins/alibaba-cloud-cli), using the [Alibaba Cloud CLI](https://github.com/aliyun/aliyun-cli). Its `THIRD-PARTY-NOTICES.md` records provenance and licensing. The catalog marks it `local_candidate`; a feature branch exists in its independent repository, but no version Release has been published, so it is not yet included in the public host marketplace manifests.
 
 ---
 

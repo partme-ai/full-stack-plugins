@@ -122,7 +122,7 @@ CodeReview v0.2.1 分发 8 个技能（官方 OCR 2 个、独立 `codereview-ski
 
 阿里云 CLI 插件包位于相邻的 `full-stack-plugins-repositories/alibaba-cloud-cli-plugin/`，提供 `alibaba-cloud-cli-setup` 和 `alibaba-cloud-cli-use` 两个 Skill。工作流改写自 [ZCode 官方市场的同名插件](https://github.com/zai-org/zcode-plugins/tree/0cc58d6/plugins/alibaba-cloud-cli)；实际命令来自[阿里云 CLI](https://github.com/aliyun/aliyun-cli)。插件包内的 `THIRD-PARTY-NOTICES.md` 记录了作者、来源提交和许可。
 
-该条目在 `catalog.json` 中标为 `local_candidate`，可从本地目录安装验证，尚未发布独立仓库和版本 Release，因此不进入三端公网市场清单。本机 CLI 安装、云端身份与资源调用仍需分别验证。
+该条目在 `catalog.json` 中标为 `local_candidate`，可从本地目录安装验证。独立仓库已有 feature 分支，但尚未发布版本 Release，因此不进入三端公网市场清单。本机 CLI 安装、云端身份与资源调用仍需分别验证。
 
 ---
 
