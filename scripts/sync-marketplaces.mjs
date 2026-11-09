@@ -11,6 +11,7 @@ const workspace = path.resolve(root, "..", "full-stack-plugins-repositories");
 const catalog = JSON.parse(fs.readFileSync(path.join(root, "catalog.json"), "utf8"));
 const mode = process.argv.includes("--write") ? "write" : "check";
 const catalogOnly = process.argv.includes("--catalog-only");
+const sourceOnly = process.argv.includes("--source-only");
 const localeArg = process.argv.find((argument) => argument.startsWith("--locale="));
 const locale = localeArg ? localeArg.slice("--locale=".length) : "en";
 if (!["en", "zh-CN"].includes(locale)) throw new Error(`unsupported --locale=${locale}`);
@@ -222,6 +223,7 @@ for (const planningRepo of catalogOnly ? [] : (catalog.planningRepositories ?? [
 }
 
 for (const [file, value] of outputs) {
+  if (sourceOnly) continue;
   const expected = format(value);
   if (mode === "write") {
     fs.mkdirSync(path.dirname(file), { recursive: true });
