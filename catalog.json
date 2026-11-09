@@ -15,8 +15,15 @@
       "shortDescription": "Inspect and manage Alibaba Cloud resources through the local CLI.",
       "category": "Developer Tools",
       "line": "full-stack",
-      "componentTypes": ["skills"],
-      "tags": ["alibaba-cloud", "aliyun", "cli", "cloud-operations"],
+      "componentTypes": [
+        "skills"
+      ],
+      "tags": [
+        "alibaba-cloud",
+        "aliyun",
+        "cli",
+        "cloud-operations"
+      ],
       "localizations": {
         "zh-CN": {
           "displayName": "Alibaba Cloud CLI（阿里云运维）",
@@ -178,7 +185,8 @@
       "componentTypes": [
         "skills",
         "mcp"
-      ]
+      ],
+      "sourceCommit": "5c51cf3f4f754e118877da97aedd0811e0900724"
     },
     {
       "id": "codereview-plugin",

@@ -31,7 +31,6 @@ class CliContractTests(unittest.TestCase):
         subprocess.run(["git", *args], cwd=self.root, env=self.env,
                        capture_output=True, text=True, timeout=10, check=True)
 
-    @unittest.skip("init now writes codeguard.json")
     def test_init_only_prints_guidance_without_writing_project(self):
         completed = self.cli("init")
 

@@ -2,6 +2,7 @@
 """从独立插件仓的固定标签生成 Codex 聚合包，并核对内容。"""
 import argparse
 import json
+import os
 import pathlib
 import shutil
 import subprocess
@@ -10,14 +11,22 @@ import tempfile
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CATALOG = json.loads((ROOT / "catalog.json").read_text(encoding="utf-8"))
-WORKSPACE = ROOT.parent / "full-stack-plugins-repositories"
+WORKSPACE = pathlib.Path(os.environ.get("AGGREGATE_REPO_ROOT", ROOT.parent / "full-stack-plugins-repositories"))
 
 
-def archived_package(plugin, destination):
-    repository = WORKSPACE / plugin["localDirectory"]
+def archived_package(plugin, destination, repository_override=None):
+    repository = repository_override or WORKSPACE / plugin["localDirectory"]
     ref = f"v{plugin['version']}"
     if not repository.is_dir():
         raise RuntimeError(f"{plugin['id']}: missing checkout {repository}")
+    if plugin.get("sourceCommit"):
+        commit = subprocess.check_output(["git", "-C", str(repository), "rev-parse", f"{ref}^{{commit}}"], text=True).strip()
+        if commit != plugin["sourceCommit"]:
+            if repository_override is not None:
+                raise RuntimeError(f"{plugin['id']}: remote tag {ref} points to {commit}, expected {plugin['sourceCommit']}")
+            with tempfile.TemporaryDirectory(prefix=f"{plugin['id']}-release-") as remote:
+                subprocess.run(["git", "-c", "core.autocrlf=false", "-c", "advice.detachedHead=false", "clone", "--quiet", "--depth", "1", "--branch", ref, f"https://github.com/{plugin['repository']}.git", remote], check=True)
+                return archived_package(plugin, destination, pathlib.Path(remote))
     with tempfile.TemporaryFile() as archive:
         subprocess.run(["git", "-C", str(repository), "archive", "--format=tar", ref],
                        stdout=archive, check=True)
