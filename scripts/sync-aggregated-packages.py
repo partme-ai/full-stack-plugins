@@ -24,6 +24,8 @@ def archived_package(plugin, destination):
         archive.seek(0)
         with tarfile.open(fileobj=archive, mode="r:") as tar:
             for member in tar:
+                if pathlib.PurePosixPath(member.name).name == ".DS_Store":
+                    continue
                 relative = pathlib.PurePosixPath(member.name)
                 if relative.is_absolute() or ".." in relative.parts:
                     raise RuntimeError(f"{plugin['id']}: unsafe archive path {member.name}")
