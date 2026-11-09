@@ -118,6 +118,10 @@ GitFlow v0.1.5 distributes nine locked skills from `git-skills` with project pol
 
 CodeReview v0.2.1 distributes 8 skills (2 upstream OCR, 5 independent `codereview-skills`, and the plugin-local `codereview-harness`) and has passed offline tests. Real OCR model execution and installation/loading in Codex, ZCode, and Kimi are still **UNVERIFIED**. Its findings are advisory and do not replace CodeGuard checks or FlowGuard decisions.
 
+### Local candidate: Alibaba Cloud CLI
+
+The `alibaba-cloud-cli-plugin` package lives in the sibling `full-stack-plugins-repositories/` directory. It supplies setup and CLI Skills adapted from the [ZCode Alibaba Cloud CLI plugin](https://github.com/zai-org/zcode-plugins/tree/0cc58d6/plugins/alibaba-cloud-cli), using the [Alibaba Cloud CLI](https://github.com/aliyun/aliyun-cli). Its `THIRD-PARTY-NOTICES.md` records provenance and licensing. The catalog marks it `local_candidate`; it is available for local package validation and is not yet included in the public host marketplace manifests because no independent release has been published.
+
 ---
 
 ## Architecture

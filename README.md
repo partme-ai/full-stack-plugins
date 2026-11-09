@@ -118,6 +118,12 @@ GitFlow v0.1.5 分发独立 `git-skills` 的九技能快照，使用项目规则
 
 CodeReview v0.2.1 分发 8 个技能（官方 OCR 2 个、独立 `codereview-skills` 5 个、插件专属 `codereview-harness` 1 个），已通过离线测试；真实 OCR 模型调用和 Codex、ZCode、Kimi 安装加载仍为 **UNVERIFIED**。它的报告是建议，不替代 CodeGuard 检查或 FlowGuard 裁决。
 
+### 本地候选：阿里云 CLI
+
+阿里云 CLI 插件包位于相邻的 `full-stack-plugins-repositories/alibaba-cloud-cli-plugin/`，提供 `alibaba-cloud-cli-setup` 和 `alibaba-cloud-cli-use` 两个 Skill。工作流改写自 [ZCode 官方市场的同名插件](https://github.com/zai-org/zcode-plugins/tree/0cc58d6/plugins/alibaba-cloud-cli)；实际命令来自[阿里云 CLI](https://github.com/aliyun/aliyun-cli)。插件包内的 `THIRD-PARTY-NOTICES.md` 记录了作者、来源提交和许可。
+
+该条目在 `catalog.json` 中标为 `local_candidate`，可从本地目录安装验证，尚未发布独立仓库和版本 Release，因此不进入三端公网市场清单。本机 CLI 安装、云端身份与资源调用仍需分别验证。
+
 ---
 
 ## 架构
