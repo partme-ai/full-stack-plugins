@@ -1,0 +1,26 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "archguard",
+  "version": "0.1.1",
+  "description": "把模块依赖、分层与边界约束变成可执行门禁。",
+  "author": {
+    "name": "Full Stack Skills / PartMe.AI",
+    "url": "https://github.com/full-stack-plugins"
+  },
+  "homepage": "https://github.com/full-stack-plugins/archguard-plugin",
+  "repository": "https://github.com/full-stack-plugins/archguard-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "guard",
+    "agent-governance",
+    "sdd"
+  ],
+  "displayName": "ArchGuard（架构边界防护）",
+  "displayName_i18n": {
+    "zh-CN": "ArchGuard（架构边界防护）"
+  },
+  "description_i18n": {
+    "zh-CN": "把模块依赖、分层与边界约束变成可执行门禁。"
+  },
+  "skills": "./skills/"
+}

@@ -1,0 +1,53 @@
+{
+  "name": "bt-linux-panel",
+  "version": "1.1.1",
+  "description": "通过 MCP 操作宝塔面板：服务管理、站点与数据库诊断、防火墙审计与入侵排查。",
+  "author": {
+    "name": "Full Stack Skills / PartMe.AI",
+    "url": "https://github.com/partme-ai"
+  },
+  "homepage": "https://github.com/full-stack-plugins/bt-linux-panel-plugin",
+  "repository": "https://github.com/full-stack-plugins/bt-linux-panel-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "baota",
+    "bt-panel",
+    "linux-ops",
+    "mcp",
+    "server-administration"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "BaoTa Panel（服务器运维）",
+    "shortDescription": "宝塔面板的 AI 运维入口：站点 502、数据库连接、防火墙与入侵痕迹，一次排查给出证据。",
+    "longDescription": "Routes Codex to operate Baota (BT) Linux panel 13.0 through the MCP protocol. Diagnoses sites/databases/services, audits security, manages Docker, SSL, cron, and firewall. The plugin ships no local MCP server — connect your Codex/ZCode/Kimi client to a remote Baota MCP endpoint at port 8765 with Bearer Token auth.",
+    "developerName": "Full Stack Skills / PartMe.AI",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/full-stack-plugins/bt-linux-panel-plugin",
+    "privacyPolicyURL": "https://github.com/full-stack-plugins/bt-linux-panel-plugin/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/full-stack-plugins/bt-linux-panel-plugin/blob/main/TERMS.md",
+    "defaultPrompt": [
+      "Connect to my Baota panel and run a read-only health check",
+      "Diagnose why my Baota-hosted site is slow",
+      "Audit the Baota panel's security and list the top issues"
+    ],
+    "brandColor": "#1FA038",
+    "composerIcon": "./assets/official-logo.png",
+    "logo": "./assets/official-logo.png",
+    "logoDark": "./assets/official-logo.png",
+    "screenshots": [],
+    "composerIconDark": "./assets/official-logo.png"
+  },
+  "displayName": "BaoTa Panel（服务器运维）",
+  "displayName_i18n": {
+    "zh-CN": "BaoTa Panel（服务器运维）"
+  },
+  "description_i18n": {
+    "zh-CN": "通过 MCP 操作宝塔面板：服务管理、站点与数据库诊断、防火墙审计与入侵排查。"
+  }
+}

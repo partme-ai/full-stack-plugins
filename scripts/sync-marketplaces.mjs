@@ -10,6 +10,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const workspace = path.resolve(root, "..", "full-stack-plugins-repositories");
 const catalog = JSON.parse(fs.readFileSync(path.join(root, "catalog.json"), "utf8"));
 const mode = process.argv.includes("--write") ? "write" : "check";
+const catalogOnly = process.argv.includes("--catalog-only");
 const localeArg = process.argv.find((argument) => argument.startsWith("--locale="));
 const locale = localeArg ? localeArg.slice("--locale=".length) : "en";
 if (!["en", "zh-CN"].includes(locale)) throw new Error(`unsupported --locale=${locale}`);
@@ -38,11 +39,7 @@ const codex = {
   owner: { name: "PartMe.AI", url: "https://github.com/partme-ai" },
   plugins: catalog.plugins.map((plugin) => ({
     name: plugin.id,
-    source: {
-      source: "url",
-      url: `https://github.com/${plugin.repository}.git`,
-      ref: releaseRef(plugin)
-    },
+    source: { source: "local", path: `./plugins/${plugin.id}` },
     policy: { installation: "AVAILABLE", authentication: "ON_USE" },
     category: plugin.codexCategory ?? plugin.category,
     line: plugin.line,
@@ -205,7 +202,7 @@ const validateSkills = (plugin, repo) => {
   }
 };
 
-for (const planningRepo of catalog.planningRepositories ?? []) {
+for (const planningRepo of catalogOnly ? [] : (catalog.planningRepositories ?? [])) {
   const repo = path.join(workspace, planningRepo.localDirectory);
   if (!fs.existsSync(repo)) {
     errors.push(`${planningRepo.name}: missing planning repository ${repo}`);
@@ -234,7 +231,7 @@ for (const [file, value] of outputs) {
   }
 }
 
-for (let index = 0; index < catalog.plugins.length; index += 1) {
+for (let index = 0; index < (catalogOnly ? 0 : catalog.plugins.length); index += 1) {
   const plugin = catalog.plugins[index];
   const previous = catalog.plugins[index - 1];
   if (previous && previous.id.localeCompare(plugin.id, "en") > 0) {

@@ -1,0 +1,51 @@
+{
+  "name": "processon-design",
+  "version": "0.3.1",
+  "description": "可编辑的 ProcessOn 图表：生成前构造提示词，生成后做语义与一致性评审。",
+  "author": {
+    "name": "Full Stack Skills / PartMe.AI"
+  },
+  "homepage": "https://github.com/full-stack-plugins/processon-design-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "processon",
+    "diagram",
+    "mind-map"
+  ],
+  "interface": {
+    "displayName": "ProcessOn（图表绘制）",
+    "shortDescription": "流程图、架构图、思维导图与信息图",
+    "longDescription": "Operate ProcessOn from your coding agent to create professional flowcharts, swimlanes, UML, architecture and ER diagrams, mind maps, timelines, org charts, and structured infographics with a built-in quality review workflow.",
+    "developerName": "Full Stack Skills / PartMe.AI",
+    "websiteURL": "https://github.com/full-stack-plugins/processon-design-plugin"
+  },
+  "skills": "./skills/",
+  "commands": "./commands/",
+  "mcpServers": {
+    "processon": {
+      "command": "python3",
+      "args": [
+        "./scripts/processon_mcp_proxy.py"
+      ]
+    }
+  },
+  "hooks": [
+    {
+      "event": "SessionStart",
+      "command": "python3 ./hooks/env_check.py",
+      "timeout": 30
+    },
+    {
+      "event": "UserPromptSubmit",
+      "command": "python3 ./hooks/check_processon_intent.py",
+      "timeout": 15
+    }
+  ],
+  "displayName_i18n": {
+    "zh-CN": "ProcessOn（图表绘制）"
+  },
+  "description_i18n": {
+    "zh-CN": "可编辑的 ProcessOn 图表：生成前构造提示词，生成后做语义与一致性评审。"
+  },
+  "displayName": "ProcessOn（图表绘制）"
+}

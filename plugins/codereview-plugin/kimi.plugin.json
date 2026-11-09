@@ -1,0 +1,49 @@
+{
+  "name": "codereview-plugin",
+  "version": "0.4.2",
+  "description": "经显式授权，对暂存提交做语义审查（OCR 委托或自配模型）；结论仅作建议，不替代静态检查。",
+  "author": {
+    "name": "Full Stack Skills / PartMe.AI"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "CodeReview（代码变更审查）",
+    "shortDescription": "暂存提交的逻辑与安全审查，需显式授权"
+  },
+  "hooks": [
+    {
+      "event": "SessionStart",
+      "command": "python3 ./hooks/entry.py --host kimi",
+      "timeout": 10
+    },
+    {
+      "event": "UserPromptSubmit",
+      "command": "python3 ./hooks/entry.py --host kimi",
+      "timeout": 10
+    },
+    {
+      "event": "PreToolUse",
+      "matcher": "Bash|Shell|exec_command",
+      "command": "python3 ./hooks/entry.py --host kimi",
+      "timeout": 10
+    },
+    {
+      "event": "PostToolUse",
+      "matcher": "Bash|Shell|exec_command",
+      "command": "python3 ./hooks/entry.py --host kimi",
+      "timeout": 10
+    },
+    {
+      "event": "Stop",
+      "command": "python3 ./hooks/entry.py --host kimi",
+      "timeout": 10
+    }
+  ],
+  "displayName_i18n": {
+    "zh-CN": "CodeReview（代码变更审查）"
+  },
+  "description_i18n": {
+    "zh-CN": "经显式授权，对暂存提交做语义审查（OCR 委托或自配模型）；结论仅作建议，不替代静态检查。"
+  },
+  "displayName": "CodeReview（代码变更审查）"
+}

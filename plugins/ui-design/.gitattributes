@@ -1,0 +1,7 @@
+* text=auto
+*.md text eol=lf
+*.py text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+# Vendored exact snapshot bytes are intentionally not newline-converted.
+skills/** -text

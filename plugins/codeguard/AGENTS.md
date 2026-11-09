@@ -1,0 +1,65 @@
+# AGENTS.md — 代码规范守卫
+
+## 技能来源边界（强制）
+
+- `skills.lock.json` 中列出的技能以 `full-stack-skills/codeguard-skills` 为事实源；不得直接编辑插件内对应目录。
+- 更新受管技能时，先在外部技能仓完成修改、TRACE 评估和不可变 tag，再更新 lock ref，执行 `python3 scripts/vendor/skill_vendor.py update`。
+- 提交前必须执行 `python3 scripts/vendor/skill_vendor.py check --offline` 和在线 `check`。
+- 只有插件内部定制技能可以在本仓 `skills/` 直接维护，并且必须不出现在 `skills.lock.json` 中、必须显式登记到 `plugin-local-skills.json`；vendor 工具会保留这些目录并拒绝未声明目录。
+- Hooks、linters、commands、MCP 配置和可执行脚本仍由插件仓维护。
+
+## 版本升级要求（强制，AI 必须遵守）
+
+任何代码改动——无论大小——都必须 bump 版本并发布。PartMe.AI 插件市场
+靠版本号感知更新：版本号不动，用户永远看不到「可更新」提示。
+
+
+### 发版流程（每次改动完成后执行）
+
+```bash
+node scripts/bump-plugin.mjs codeguard patch   # 文档/注释/小修复
+node scripts/bump-plugin.mjs codeguard minor   # 新功能
+node scripts/bump-plugin.mjs codeguard major   # 破坏性变更
+```
+
+脚本自动完成：catalog.json 版本更新 + 全部 manifest 同步（codex 清单带
+当日 `+codex.日期` 后缀）+ 三平台市场清单重新生成与校验。之后按脚本
+提示提交并 push **两个仓库**（本仓 + plugins 市场仓）。
+
+### 市场仓版本同步（强制，漏做用户就看不到更新）
+
+插件仓 bump+push 只是第一步——**ZCode/Codex/Kimi 感知更新看的是市场仓清单**。
+每次发版必须同步更新市场仓的 catalog 版本并重新生成清单：
+
+cd <市场仓目录>  # 本仓: workspace-agent-skills/full-stack-plugins
+python3 - <<'EOF'
+import json
+d = json.load(open("catalog.json"))
+for p in d["plugins"]:
+    if p["id"] == "<插件id>": p["version"] = "<新版本号>"
+json.dump(d, open("catalog.json","w"), ensure_ascii=False, indent=2); open("catalog.json","a").write("
+")
+EOF
+node scripts/sync-marketplaces.mjs --write && node scripts/sync-marketplaces.mjs
+git add -A && git commit -m "release: <插件id> <版本>" && git push
+
+### 硬性禁令
+
+- **`.` 开头的目录与文件默认忽略**（检查/保存/发现/全量扫描面）：不扫描、不检查、不报告；
+  两个例外照常生效——入库安全检查照拦密钥模式（`.env`/`*.pem` 等），linter 配置发现
+  （`requiresConfig`/`linter_config_files`）照常匹配点文件
+- 禁止改代码不 bump 版本（「小版本也要发」）
+- 禁止手改 catalog.json 的 version 以外的生成产物、或手改三份市场清单——
+  它们只能由 `scripts/bump-plugin.mjs` 与 `plugins/scripts/sync-marketplaces.mjs` 生成
+- 版本号必须全链一致（catalog + 4 manifest），`sync-marketplaces` 校验会拦截不一致
+- 插件本体放本仓根目录；`plugins/` 市场仓只存元数据，绝不物理包含插件代码
+
+<!-- partme-agent-plugin-policy:v1 -->
+## Partme Agent Plugin Architecture Rules v1
+
+- 组织级架构规范（跨 `full-aigc-plugins` 与 `full-stack-plugins` 的唯一事实源）：[Partme Agent Plugin Architecture Rules v1](https://github.com/full-aigc-plugins/.github/blob/main/docs/standards/partme-agent-plugin-architecture-rules-v1.md)。
+- **Harness 可选**：默认直接使用 Skills + CLI/MCP；只有确有必要时才使用最多一个可发现的 `skills/*-harness/SKILL.md`，其中的 `scripts/harness.py` 同样可选。
+- 不重复开发宿主 Agent Runtime、原生 CLI/MCP 业务执行器、持久数据库或权威任务状态。正式功能必须具备可核验的 Agent → Skill/Command → Tool → Artifact 调用链。
+- 保留本仓库现有 OpenSpec、技能来源锁、安全门禁、版本发布及 CI 要求；静态检查不能替代真实宿主验收。
+- CI 复用组织级 [Partme Plugin Architecture 检查器](https://github.com/full-aigc-plugins/.github/blob/main/scripts/check_plugin_architecture.py)，不得复制独立实现。
+<!-- /partme-agent-plugin-policy:v1 -->

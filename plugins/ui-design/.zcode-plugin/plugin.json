@@ -1,0 +1,25 @@
+{
+  "name": "ui-design",
+  "version": "0.2.1",
+  "displayName": "UI（前端界面设计）",
+  "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览与视觉评审。",
+  "author": {
+    "name": "Full Stack Skills / PartMe.AI"
+  },
+  "homepage": "https://github.com/full-stack-plugins/ui-design-plugin",
+  "repository": "https://github.com/full-stack-plugins/ui-design-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "frontend",
+    "design",
+    "imagegen",
+    "agent-skills"
+  ],
+  "skills": "skills",
+  "displayName_i18n": {
+    "zh-CN": "UI（前端界面设计）"
+  },
+  "description_i18n": {
+    "zh-CN": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览与视觉评审。"
+  }
+}

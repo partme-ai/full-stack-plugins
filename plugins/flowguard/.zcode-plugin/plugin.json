@@ -1,0 +1,40 @@
+{
+  "name": "flowguard",
+  "displayName": "FlowGuard（研发流程防护）",
+  "displayName_i18n": {
+    "zh-CN": "FlowGuard（研发流程防护）",
+    "en": "FlowGuard"
+  },
+  "version": "0.5.2",
+  "description": "智能体 SDD 治理：识别 Spec Kit/OpenSpec/Superpowers 原生产物，绑定任务，校验证据新鲜度并执行提交/发布门禁。",
+  "description_i18n": {
+    "zh-CN": "智能体 SDD 治理：识别 Spec Kit/OpenSpec/Superpowers 原生产物，绑定任务，校验证据新鲜度并执行提交/发布门禁。"
+  },
+  "author": {
+    "name": "full-stack-plugins",
+    "url": "https://github.com/full-stack-plugins"
+  },
+  "homepage": "https://github.com/full-stack-plugins/flowguard-plugin",
+  "repository": "https://github.com/full-stack-plugins/flowguard-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "sdlc",
+    "sdd",
+    "agent-governance",
+    "requirements",
+    "testing",
+    "code-review",
+    "release",
+    "gate"
+  ],
+  "skills": "skills",
+  "commands": "commands",
+  "userConfig": {
+    "default_language": {
+      "type": "string",
+      "title": "默认语言",
+      "description": "产物模板语言（zh-CN/en）",
+      "default": "zh-CN"
+    }
+  }
+}
