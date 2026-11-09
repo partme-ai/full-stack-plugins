@@ -1,0 +1,26 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "testguard",
+  "version": "0.1.1",
+  "description": "验证必需行为是否真的被执行，而不是只看退出码。",
+  "author": {
+    "name": "Full Stack Skills / PartMe.AI",
+    "url": "https://github.com/full-stack-plugins"
+  },
+  "homepage": "https://github.com/full-stack-plugins/testguard-plugin",
+  "repository": "https://github.com/full-stack-plugins/testguard-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "guard",
+    "agent-governance",
+    "sdd"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "TestGuard（验收测试防护）",
+        "shortDescription": "验收测试不能只看退出码：冻结测试计划、核对原生执行证据，识别删测、跳测和覆盖缺口。"
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "codeguard",
+  "version": "0.21.2",
+  "description": "证据化 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析；结论区分通过、失败、无法验证与计划中。",
+  "author": {
+    "name": "Full Stack Skills / PartMe.AI",
+    "url": "https://github.com/partme-ai"
+  },
+  "homepage": "https://github.com/partme-ai/partme-codeguard-plugin",
+  "repository": "https://github.com/partme-ai/partme-codeguard-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "java",
+    "rust",
+    "typescript",
+    "python",
+    "javadoc",
+    "checkstyle",
+    "clippy",
+    "eslint",
+    "ruff",
+    "pre-commit"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "CodeGuard（代码质量防护）",
+        "shortDescription": "提交前跑真实门禁：60+ 语言 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析，结论可复核。",
+        "longDescription": "Evidence-backed code checks and Git content gates for AI assistants, with Maven/Gradle module impact analysis. Save hooks provide feedback; unverified checks are explicit. Java planning is read-only; executing project checks runs trusted build/test commands, not a security sandbox.",
+        "developerName": "Full Stack Skills / PartMe.AI",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "websiteURL": "https://github.com/full-stack-plugins/codeguard-plugin",
+        "privacyPolicyURL": "https://github.com/full-stack-plugins/codeguard-plugin/blob/main/PRIVACY.md",
+        "termsOfServiceURL": "https://github.com/full-stack-plugins/codeguard-plugin/blob/main/TERMS.md",
+        "defaultPrompt": [
+          "Run /check on the current project and fix what fails",
+          "Initialize codeguard on this repository with /init",
+          "Analyze Java module impact, then run the project's verification plan"
+        ],
+        "brandColor": "#2563EB",
+        "composerIcon": "./assets/official-logo.png",
+        "logo": "./assets/official-logo.png",
+        "logoDark": "./assets/official-logo.png",
+        "screenshots": [],
+        "composerIconDark": "./assets/official-logo.png"
+      }
+    },
+    "ai.nanoco.nanoclaw": {
+      "agentName": "CodeGuard"
+    }
+  },
+  "displayName": "CodeGuard（代码质量防护）",
+  "displayName_i18n": {
+    "zh-CN": "CodeGuard（代码质量防护）"
+  },
+  "description_i18n": {
+    "zh-CN": "证据化 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析；结论区分通过、失败、无法验证与计划中。"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "name": "codeguard",
+  "displayName": "CodeGuard（代码质量防护）",
+  "displayName_i18n": {
+    "en": "CodeGuard · Code Quality",
+    "zh-CN": "CodeGuard（代码质量防护）"
+  },
+  "version": "0.21.2",
+  "description": "证据化 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析；结论区分通过、失败、无法验证与计划中。",
+  "description_i18n": {
+    "en": "Evidence-backed lint, CVE scanning, guided fixes and Maven/Gradle impact analysis. Results distinguish pass, fail, unverified and planned.",
+    "zh-CN": "证据化 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析；结论区分通过、失败、无法验证与计划中。"
+  },
+  "author": {
+    "name": "Full Stack Skills / PartMe.AI",
+    "url": "https://github.com/partme-ai"
+  },
+  "homepage": "https://github.com/full-stack-plugins/codeguard-plugin",
+  "repository": "https://github.com/full-stack-plugins/codeguard-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "java",
+    "rust",
+    "typescript",
+    "python",
+    "javadoc",
+    "checkstyle",
+    "clippy",
+    "eslint",
+    "ruff",
+    "pre-commit"
+  ],
+  "skills": "skills",
+  "commands": "commands",
+  "userConfig": {
+    "enabled_languages": {
+      "type": "string",
+      "title": "启用的语言",
+      "description": "逗号分隔，支持 java/rust/typescript/python，留空 (auto) 自动检测项目语言",
+      "default": "auto"
+    },
+    "strict_mode": {
+      "type": "boolean",
+      "title": "严格模式",
+      "description": "保留兼容字段，当前 PostToolUse 恒 exit 0；确定违规仅由 Git PreToolUse 门禁拦截。",
+      "default": true
+    },
+    "auto_fix_on_save": {
+      "type": "boolean",
+      "title": "自动修复",
+      "description": "linter 失败时先尝试自动修复（spotless:apply / cargo fmt / eslint --fix / ruff --fix），再重跑 lint",
+      "default": true
+    },
+    "lint_timeout_seconds": {
+      "type": "number",
+      "title": "单次 linter 超时（秒）",
+      "description": "PostToolUse 钩子每次调 linter 的最长等待时间",
+      "default": 120
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "stitch-design",
+  "displayName": "Stitch（界面生成）",
+  "displayName_i18n": {
+    "zh-CN": "Stitch（界面生成）"
+  },
+  "version": "0.10.1",
+  "description": "通过远程 Stitch MCP 创建与编辑页面、设计系统与前端代码，可落地 React、Vue、uni-app 与多种组件库。",
+  "description_i18n": {
+    "zh-CN": "通过远程 Stitch MCP 创建与编辑页面、设计系统与前端代码，可落地 React、Vue、uni-app 与多种组件库。"
+  },
+  "author": {
+    "name": "Full Stack Skills / PartMe.AI",
+    "url": "https://github.com/full-stack-plugins/stitch-design-plugin"
+  },
+  "homepage": "https://github.com/full-stack-plugins/stitch-design-plugin",
+  "repository": "https://github.com/full-stack-plugins/stitch-design-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "stitch",
+    "design",
+    "mcp",
+    "design-to-code",
+    "ui-generation"
+  ],
+  "skills": "skills",
+  "commands": "commands",
+  "mcpServers": {
+    "stitch": {
+      "command": "python3",
+      "args": [
+        "${ZCODE_PLUGIN_ROOT}/scripts/stitch_mcp_proxy.py"
+      ]
+    }
+  }
+}

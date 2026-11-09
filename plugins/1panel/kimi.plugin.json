@@ -1,0 +1,53 @@
+{
+  "name": "1panel",
+  "version": "0.2.1",
+  "description": "通过钉死版本的官方 MCP 检查与操作 1Panel；访问级别显式分级，凭据保持私有。",
+  "author": {
+    "name": "Full Stack Skills / PartMe.AI"
+  },
+  "homepage": "https://github.com/full-stack-plugins/1panel-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "1panel",
+    "linux",
+    "mcp",
+    "operations"
+  ],
+  "interface": {
+    "displayName": "1Panel（面板运维）",
+    "shortDescription": "应用、网站、证书、数据库与安全审计",
+    "longDescription": "Inspect and operate 1Panel through the pinned official MCP with private configuration and explicit access levels.",
+    "developerName": "Full Stack Skills / PartMe.AI",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Run a read-only 1Panel health check",
+      "Inspect my websites and certificate status"
+    ]
+  },
+  "skills": "./skills/",
+  "mcpServers": {
+    "1panel": {
+      "command": "python",
+      "args": [
+        "-X",
+        "utf8",
+        "./scripts/panel_proxy.py",
+        "--data",
+        "${PLUGIN_DATA}"
+      ],
+      "cwd": "./"
+    }
+  },
+  "displayName_i18n": {
+    "zh-CN": "1Panel（面板运维）"
+  },
+  "description_i18n": {
+    "zh-CN": "通过钉死版本的官方 MCP 检查与操作 1Panel；访问级别显式分级，凭据保持私有。"
+  },
+  "displayName": "1Panel（面板运维）"
+}

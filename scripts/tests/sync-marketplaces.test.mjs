@@ -11,7 +11,7 @@ function fixture() {
   const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'market fixture '));
   const market = path.join(temporary, 'full-stack-plugins');
   const plugin = path.join(temporary, 'full-stack-plugins-repositories/ui-design-plugin');
-  const original = path.resolve(root, '../full-stack-plugins-repositories/ui-design-plugin');
+  const original = path.resolve(root, 'plugins/ui-design');
   for (const file of ['catalog.json', 'scripts/sync-marketplaces.mjs', '.agents/plugins/marketplace.json', 'marketplace.json', 'kimi-marketplace.json']) {
     const output = path.join(market, file);
     fs.mkdirSync(path.dirname(output), { recursive: true });
@@ -68,4 +68,14 @@ test('a mismatched plugin version blocks validation', () => {
     fs.writeFileSync(file, JSON.stringify(value));
     assert.throws(f.run, error => error.stderr.toString().includes('does not match'));
   } finally { fs.rmSync(f.temporary, { recursive: true }); }
+});
+
+test('local marketplace contains every complete published package', () => {
+  const catalog = JSON.parse(fs.readFileSync(path.join(root, 'catalog.json'), 'utf8'));
+  const distribution = JSON.parse(fs.readFileSync(path.join(root, 'dist/local-marketplace/marketplace.json'), 'utf8'));
+  for (const plugin of catalog.plugins) {
+    const entry = distribution.plugins.find(item => item.name === plugin.id);
+    assert.equal(entry.source, `./plugins/${plugin.id}`);
+    assert.ok(fs.existsSync(path.join(root, 'dist/local-marketplace/plugins', plugin.id, 'plugin.json')));
+  }
 });

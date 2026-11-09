@@ -1,2 +1,4 @@
 .DS_Store
 .mimosa/
+dist/
+__pycache__/

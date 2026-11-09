@@ -1,0 +1,55 @@
+{
+  "name": "flowguard",
+  "version": "0.5.2",
+  "interface": {
+    "displayName": "FlowGuard（研发流程防护）",
+    "shortDescription": "十阶段 SDD、证据新鲜度与发布裁决",
+    "category": "development"
+  },
+  "skills": "./skills/",
+  "sessionStart": {
+    "skill": "flowguard"
+  },
+  "commands": "./kimi-commands/",
+  "hooks": [
+    {
+      "event": "SessionStart",
+      "command": "python3 ./hooks/flowguard_status_summary.py",
+      "timeout": 30
+    },
+    {
+      "event": "UserPromptSubmit",
+      "command": "python3 ./hooks/flowguard_prompt_guard.py",
+      "timeout": 30
+    },
+    {
+      "event": "PreToolUse",
+      "command": "python3 ./hooks/flowguard_gate.py",
+      "timeout": 120
+    },
+    {
+      "event": "PostToolUse",
+      "command": "python3 ./hooks/flowguard_artifact_check.py",
+      "timeout": 60
+    },
+    {
+      "event": "PostToolUseFailure",
+      "matcher": "Shell",
+      "command": "python3 ./hooks/flowguard_artifact_check.py",
+      "timeout": 60
+    },
+    {
+      "event": "Stop",
+      "command": "python3 ./hooks/flowguard_stage_summary.py",
+      "timeout": 30
+    }
+  ],
+  "description": "智能体 SDD 治理：识别 Spec Kit/OpenSpec/Superpowers 原生产物，绑定任务，校验证据新鲜度并执行提交/发布门禁。",
+  "displayName_i18n": {
+    "zh-CN": "FlowGuard（研发流程防护）"
+  },
+  "description_i18n": {
+    "zh-CN": "智能体 SDD 治理：识别 Spec Kit/OpenSpec/Superpowers 原生产物，绑定任务，校验证据新鲜度并执行提交/发布门禁。"
+  },
+  "displayName": "FlowGuard（研发流程防护）"
+}

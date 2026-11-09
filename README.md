@@ -29,7 +29,7 @@
 
 本仓库与技能侧的 [Full Stack Skills](https://github.com/partme-ai/full-stack-skills) 对位：技能侧沉淀「怎么想」的领域知识（框架、架构、测试方法论），插件侧提供「能做到」的可执行能力（MCP 工具、门禁流水线、自动化运维）。两者按同一套领域划分共建同一个生态——Stitch 对应技能侧的 stitch-skills，ProcessOn 对应 processon-skills。
 
-> 本仓库只包含市场元数据（catalog 与三平台清单），不包含插件运行时代码。每个插件在各自独立仓库中维护，通过 `catalog.json` 单一事实源对齐 ID、名称、版本、分类与仓库地址。
+> 本仓库聚合已发布插件的固定标签完整目录，并生成本地市场分发目录。插件仍由各自独立仓库维护，`catalog.json` 对齐 ID、名称、版本、分类与仓库地址。Craft 候选包体积较大，继续从固定远程 Release 安装。
 
 ### 覆盖领域
 
@@ -67,6 +67,8 @@
 | **PartMe.AI** | [github.com/partme-ai](https://github.com/partme-ai) |
 
 ---
+
+聚合目录与本地市场的构建方式参考 [ZCode 官方插件仓的市场结构](https://github.com/zai-org/zcode-plugins)：市场清单使用相对 `./plugins/<id>` 来源，完整插件目录随本地分发目录复制。独立插件代码和历史来源见各包仓库；本仓只生成固定版本副本。
 
 ## 安装
 
@@ -118,11 +120,19 @@ GitFlow v0.1.5 分发独立 `git-skills` 的九技能快照，使用项目规则
 
 CodeReview v0.2.1 分发 8 个技能（官方 OCR 2 个、独立 `codereview-skills` 5 个、插件专属 `codereview-harness` 1 个），已通过离线测试；真实 OCR 模型调用和 Codex、ZCode、Kimi 安装加载仍为 **UNVERIFIED**。它的报告是建议，不替代 CodeGuard 检查或 FlowGuard 裁决。
 
+### 本地候选：阿里云 CLI
+
+阿里云 CLI 插件包位于相邻的 `full-stack-plugins-repositories/alibaba-cloud-cli-plugin/`，提供 `alibaba-cloud-cli-setup` 和 `alibaba-cloud-cli-use` 两个 Skill。工作流改写自 [ZCode 官方市场的同名插件](https://github.com/zai-org/zcode-plugins/tree/0cc58d6/plugins/alibaba-cloud-cli)；实际命令来自[阿里云 CLI](https://github.com/aliyun/aliyun-cli)。插件包内的 `THIRD-PARTY-NOTICES.md` 记录了作者、来源提交和许可。
+
+该条目在 `catalog.json` 中标为 `local_candidate`，可从本地目录安装验证。独立仓库已有 feature 分支，但尚未发布版本 Release，因此不进入三端公网市场清单。本机 CLI 安装、云端身份与资源调用仍需分别验证。
+
 ---
 
 ## 架构
 
 ### 市场如何工作
+
+`python3 scripts/sync-aggregated-packages.py --write` 从独立仓库版本标签重建 `plugins/`；`node scripts/build-local-marketplace.mjs` 构建 `dist/local-marketplace/`，将完整插件目录复制进去。默认不传 `--write` 时，聚合脚本只校验。Craft 候选仅保留远程市场源，不复制包内容。
 
 `catalog.json` 是唯一事实源。`scripts/sync-marketplaces.mjs` 从它生成三平台清单，并校验每个插件仓的 skills 目录（frontmatter、命名一致性）：
 

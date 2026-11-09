@@ -1,0 +1,35 @@
+{
+  "name": "ui-design",
+  "version": "0.2.0",
+  "description": "Use the ui-design-use entry skill for complete frontend design packages, editable prototypes, image assets and verified previews. ui-design is the plugin ID, not a skill name.",
+  "type": "module",
+  "main": "lib/index.js",
+  "icon": "./icon.png",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*": "./locale/*"
+  },
+  "files": [
+    "cordis.patch.yml",
+    "lib/index.js",
+    "icon.svg",
+    "icon.png",
+    "README.md",
+    "locale"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "frontend",
+    "design",
+    "imagegen",
+    "agent-skills"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "private": true
+}
