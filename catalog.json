@@ -1,6 +1,6 @@
 {
   "name": "full-stack-plugins",
-  "displayName": "Full Stack Plugins",
+  "displayName": "Full Stack Plugins（全栈开发工具）",
   "description": "Full Stack plugin marketplace for Codex, ZCode, and Kimi Code: AI design, diagramming, executable code checks, semantic review, workflow governance, and server operations.",
   "planningRepositories": [],
   "candidatePlugins": [
