@@ -5,8 +5,8 @@
     {
       "id": "1panel",
       "displayName": "1Panel（面板运维）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.2/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/1panel-plugin/releases/tag/v0.2.2"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.3/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/1panel-plugin/releases/tag/v0.2.3"
     },
     {
       "id": "archguard",
@@ -77,8 +77,8 @@
     {
       "id": "ui-design",
       "displayName": "UI（前端界面设计）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.2/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/ui-design-plugin/releases/tag/v0.2.2"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.3/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/ui-design-plugin/releases/tag/v0.2.3"
     }
   ]
 }

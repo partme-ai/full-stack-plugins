@@ -8,19 +8,19 @@
       "name": "1panel",
       "title": "1Panel（面板运维）",
       "description": "把服务器面板接进对话：查站点、证书、数据库与安全审计，变更前先给影响和回退路径。",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.2/assets/logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.3/assets/logo.png",
       "homepage": "https://github.com/full-stack-plugins/1panel-plugin",
       "repository": {
         "url": "https://github.com/full-stack-plugins/1panel-plugin"
       },
       "versions": [
         {
-          "version": "0.2.2",
-          "publishTimestamp": 1794389508,
+          "version": "0.2.3",
+          "publishTimestamp": 1794390792,
           "source": {
             "type": "git",
             "url": "https://github.com/full-stack-plugins/1panel-plugin",
-            "commit": "7da19c1aebadaeec8d6e93c2b06433c1bdb47d83"
+            "commit": "ad1e6e843a9d21622896b0340b1fed088db83859"
           }
         }
       ]
@@ -260,19 +260,19 @@
       "name": "ui-design",
       "title": "UI（前端界面设计）",
       "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览和视觉评审。",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.2/assets/logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.3/assets/logo.png",
       "homepage": "https://github.com/full-stack-plugins/ui-design-plugin",
       "repository": {
         "url": "https://github.com/full-stack-plugins/ui-design-plugin"
       },
       "versions": [
         {
-          "version": "0.2.2",
-          "publishTimestamp": 1794389546,
+          "version": "0.2.3",
+          "publishTimestamp": 1794390792,
           "source": {
             "type": "git",
             "url": "https://github.com/full-stack-plugins/ui-design-plugin",
-            "commit": "752698ba892df2068cb4adf0fbdd4de9b2c9631a"
+            "commit": "d33900d7fb913b257b9e5904a67e9bac996059ae"
           }
         }
       ]

@@ -8,11 +8,11 @@
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/1panel-plugin",
-        "ref": "v0.2.2"
+        "ref": "v0.2.3"
       },
       "displayName": "1Panel（面板运维）",
       "description": "把服务器面板接进对话：查站点、证书、数据库与安全审计，变更前先给影响和回退路径。",
-      "version": "0.2.2",
+      "version": "0.2.3",
       "category": "Productivity",
       "line": "full-stack",
       "componentTypes": [
@@ -25,7 +25,7 @@
         "mcp",
         "operations"
       ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.2/assets/logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.3/assets/logo.png",
       "strict": true
     },
     {
@@ -321,11 +321,11 @@
       "source": {
         "source": "github",
         "repo": "full-stack-plugins/ui-design-plugin",
-        "ref": "v0.2.2"
+        "ref": "v0.2.3"
       },
       "displayName": "UI（前端界面设计）",
       "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览和视觉评审。",
-      "version": "0.2.2",
+      "version": "0.2.3",
       "category": "Design Tools",
       "line": "full-stack",
       "componentTypes": [
@@ -338,7 +338,7 @@
         "imagegen",
         "agent-skills"
       ],
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.2/assets/logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.3/assets/logo.png",
       "strict": true
     }
   ]
