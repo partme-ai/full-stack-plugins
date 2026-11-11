@@ -33,7 +33,7 @@ for (const entry of entries) {
       repoDir = temporary
     }
     const pkg = JSON.parse(git(repoDir, 'show', `${ref}:package.json`))
-    if (pkg.version !== entry.version || pkg.dsh?.bundle?.patch !== './dsh/cordis.patch.yml') {
+    if (pkg.version !== entry.version || !['./cordis.patch.yml', './dsh/cordis.patch.yml'].includes(pkg.dsh?.bundle?.patch)) {
       throw new Error(`root DSH bundle/version mismatch at ${ref}`)
     }
     git(repoDir, 'cat-file', '-e', `${ref}:dsh/lib/index.js`)

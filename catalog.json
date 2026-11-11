@@ -288,7 +288,7 @@
       "displayName": "ProcessOn（图表绘制）",
       "repository": "full-stack-plugins/processon-design-plugin",
       "localDirectory": "processon-design-plugin",
-      "version": "0.3.2",
+      "version": "0.3.3",
       "description": "把流程图、架构图和思维导图变成可编辑的 ProcessOn 文件，生成前定结构，生成后做一致性评审。",
       "shortDescription": "把流程图、架构图和思维导图变成可编辑的 ProcessOn 文件，生成前定结构，生成后做一致性评审。",
       "category": "Design Tools",

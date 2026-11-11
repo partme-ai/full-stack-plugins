@@ -13,7 +13,7 @@
 
 > 把自然语言想法、源码上下文和业务流程转化为专业、精美、可审查且可继续编辑的 ProcessOn 图表。
 
-[![版本](https://img.shields.io/badge/version-0.3.1-blue)](https://github.com/full-stack-plugins/processon-design-plugin/releases/tag/v0.3.1)
+[![版本](https://img.shields.io/badge/version-0.3.3-blue)](https://github.com/full-stack-plugins/processon-design-plugin/releases/tag/v0.3.3)
 [![许可证](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
 
 [English](README.en.md) | [简体中文](README.md) · [快速开始](#快速开始) · [示例](#可复制示例) · [故障排查](#故障排查)
@@ -64,7 +64,7 @@
 |:---|:---|
 | 插件 ID | `processon-design` |
 | 显示名称 | ProcessOn |
-| 当前候选版本 | `0.3.1` |
+| 当前候选版本 | `0.3.3` |
 | 最近一次已安装包验收 | `0.1.0+codex.20260914224756` |
 | 已测试宿主 | Codex CLI `0.154.0-alpha.6.2` |
 | 插件清单 | `.codex-plugin/plugin.json` |
@@ -162,10 +162,10 @@ flowchart LR
 
 ### 从插件市场安装
 
-当前已发布市场版本固定在 `v0.3.1`。下列命令安装该历史版本；本轮 `main` 上的 CI 修复尚未发布到市场，不能把旧 tag 当作包含修复的版本：
+本次修复发布为 `v0.3.3`。从插件市场安装时使用该版本：
 
 ```bash
-codex plugin marketplace add full-stack-plugins/processon-design-plugin --ref v0.3.1
+codex plugin marketplace add full-stack-plugins/processon-design-plugin --ref v0.3.3
 codex plugin add processon-design@partme-ai-processon
 ```
 
@@ -176,7 +176,7 @@ Codex 官方支持的其他 marketplace 来源写法：
 codex plugin marketplace add full-stack-plugins/processon-design-plugin
 
 # 完整 Git URL，仅稀疏检出 marketplace 目录
-codex plugin marketplace add https://github.com/full-stack-plugins/processon-design-plugin.git --ref v0.3.1 --sparse .agents/plugins
+codex plugin marketplace add https://github.com/full-stack-plugins/processon-design-plugin.git --ref v0.3.3 --sparse .agents/plugins
 
 # 本地克隆，适合开发调试
 git clone https://github.com/full-stack-plugins/processon-design-plugin.git

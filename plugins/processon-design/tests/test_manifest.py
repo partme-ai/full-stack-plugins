@@ -7,6 +7,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ManifestContractTest(unittest.TestCase):
+    def test_dsh_bundle_mounts_from_repository_root(self):
+        package = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
+        self.assertEqual("./dsh/lib/index.js", package["main"])
+        self.assertEqual("./cordis.patch.yml", package["dsh"]["bundle"]["patch"])
+        patch = (ROOT / "cordis.patch.yml").read_text(encoding="utf-8")
+        self.assertIn("name: 'processon-design'", patch)
+        self.assertIn("name: '@deepseek-ai/dsh-mcp-client'", patch)
+
     def test_plugin_exposes_skills_and_processon_mcp(self):
         plugin = json.loads((ROOT / ".codex-plugin/plugin.json").read_text(encoding="utf-8"))
         mcp = json.loads((ROOT / ".mcp.json").read_text(encoding="utf-8"))
@@ -50,7 +58,7 @@ class ManifestContractTest(unittest.TestCase):
     def test_plugin_uses_official_processon_name_and_icons(self):
         plugin = json.loads((ROOT / ".codex-plugin/plugin.json").read_text(encoding="utf-8"))
         interface = plugin["interface"]
-        self.assertEqual("ProcessOn Design · Diagramming", interface["displayName"])
+        self.assertEqual("ProcessOn（图表绘制）", interface["displayName"])
         self.assertEqual("./assets/official-logo.png", interface["logo"])
         self.assertEqual("./assets/official-logo.png", interface["logoDark"])
         self.assertEqual("./assets/official-logo.png", interface["composerIcon"])

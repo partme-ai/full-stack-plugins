@@ -1,6 +1,6 @@
 {
   "name": "processon-design",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Create and review editable ProcessOn diagrams, mind maps, and infographics.",
   "type": "module",
   "main": "lib/index.js",
