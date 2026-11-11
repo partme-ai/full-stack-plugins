@@ -1,6 +1,6 @@
 {
   "name": "ui-design",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "displayName": "UI（前端界面设计）",
   "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览与视觉评审。",
   "author": {

@@ -105,7 +105,7 @@ codex plugin add 1panel@full-stack-plugins
 
 | 插件 | ID | 版本 | 定位 | 仓库 |
 |------|----|:----:|------|------|
-| [**1Panel**](https://github.com/full-stack-plugins/1panel-plugin) | `1panel` | 0.1.1 | Scoped 1Panel operations via official MCP | [1panel-plugin](https://github.com/full-stack-plugins/1panel-plugin) |
+| [**1Panel**](https://github.com/full-stack-plugins/1panel-plugin) | `1panel` | 0.2.3 | Scoped 1Panel operations via official MCP | [1panel-plugin](https://github.com/full-stack-plugins/1panel-plugin) |
 | [**BaoTa Linux Panel**](https://github.com/full-stack-plugins/bt-linux-panel-plugin) | `bt-linux-panel` | 1.0.6 | Operate Baota Linux panel via MCP | [bt-linux-panel-plugin](https://github.com/full-stack-plugins/bt-linux-panel-plugin) |
 | [**CodeGraph**](https://github.com/full-stack-plugins/codegraph-plugin) | `codegraph` | 0.1.6 | Discoverable codegraph — official prompt + all CLI commands | [codegraph-plugin](https://github.com/full-stack-plugins/codegraph-plugin) |
 | [**CodeGuard**](https://github.com/full-stack-plugins/codeguard-plugin) | `codeguard` | 0.18.3 | Trustworthy code checks and Java impact analysis | [codeguard-plugin](https://github.com/full-stack-plugins/codeguard-plugin) |
@@ -114,7 +114,7 @@ codex plugin add 1panel@full-stack-plugins
 | [**GitFlow**](https://github.com/full-stack-plugins/gitflow-plugin) | `gitflow` | 0.2.0 | 项目 Git 分支、提交、同步与发布规范治理 | [gitflow-plugin](https://github.com/full-stack-plugins/gitflow-plugin) |
 | [**Google Stitch Design**](https://github.com/full-stack-plugins/stitch-design-plugin) | `stitch-design` | 0.9.0 | Design and build with Google Stitch | [stitch-design-plugin](https://github.com/full-stack-plugins/stitch-design-plugin) |
 | [**ProcessOn Design**](https://github.com/full-stack-plugins/processon-design-plugin) | `processon-design` | 0.2.12 | Design polished, editable ProcessOn diagrams | [processon-design-plugin](https://github.com/full-stack-plugins/processon-design-plugin) |
-| [**UI Design**](https://github.com/full-stack-plugins/ui-design-plugin) | `ui-design` | 0.1.2 | Frontend design via the ui-design-use entry skill | [ui-design-plugin](https://github.com/full-stack-plugins/ui-design-plugin) |
+| [**UI Design**](https://github.com/full-stack-plugins/ui-design-plugin) | `ui-design` | 0.2.3 | Frontend design via the ui-design-use entry skill | [ui-design-plugin](https://github.com/full-stack-plugins/ui-design-plugin) |
 
 GitFlow v0.1.5 分发独立 `git-skills` 的九技能快照，使用项目规则与确定性 Git 门禁；附带 Git 官方标志衍生 logo。三端市场元数据已对齐，实际宿主安装加载仍未验证。
 
@@ -194,3 +194,13 @@ Made with ❤️ by PartMe.AI Team
 ## 技能源与新插件
 
 UI Design 的 11 个技能由 design-skills v1.15.1 维护；1Panel 的 8 个技能由 1panel-skills v0.1.1 维护。插件保存完整分发快照，通过版本 tag、commit 和内容摘要锁定来源，不在插件仓库直接维护技能。两个插件均为 v0.1.1。UI Design 普通设计无需 MCP；1Panel 使用前须配置官方 MCP 可执行文件和私有面板连接。
+
+## DeepSeek Harness 插件市场
+
+在 DSH 的「插件」中启用实验性的「自定义插件市场」，打开「发现」→「添加索引源」，填入：
+
+```text
+https://raw.githubusercontent.com/partme-ai/full-stack-plugins/main/dsh/index.json
+```
+
+DSH 不预置第三方索引源；索引按独立插件仓的不可变发布标签生成，Git 安装源指向仓库根目录，使技能及所需脚本随组合包一起安装。安装某个 CLI 插件后，按其 setup 技能配置本机 CLI 与授权。未发布的 `local_candidate` 不进入索引。参见 [DSH 官方插件市场说明](https://deepseek-harness.github.io/deepseek-harness/guide/plugin-market)。

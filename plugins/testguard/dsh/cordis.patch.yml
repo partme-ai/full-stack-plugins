@@ -1,0 +1,3 @@
+- insert:
+    - id: testguard-plugin
+      name: 'testguard'

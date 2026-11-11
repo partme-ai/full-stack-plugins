@@ -1,0 +1,3 @@
+- insert:
+    - id: archguard-plugin
+      name: 'archguard'

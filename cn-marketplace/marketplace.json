@@ -8,19 +8,48 @@
       "source": {
         "source": "url",
         "url": "https://gitee.com/full-stack-plugins/1panel-plugin.git",
-        "ref": "v0.2.0"
+        "ref": "v0.2.3"
       },
       "displayName": "1Panel（面板运维）",
       "description": "通过钉死版本的官方 MCP 检查与操作 1Panel；访问级别显式分级，凭据保持私有。",
-      "version": "0.2.0",
+      "version": "0.2.3",
       "category": "Productivity",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "1panel",
         "linux",
         "mcp",
         "operations"
       ],
-      "icon": "https://gitee.com/full-stack-plugins/1panel-plugin/raw/v0.2.0/assets/logo.png",
+      "icon": "https://gitee.com/full-stack-plugins/1panel-plugin/raw/v0.2.3/assets/logo.png",
+      "strict": true
+    },
+    {
+      "name": "archguard",
+      "source": {
+        "source": "url",
+        "url": "https://gitee.com/full-stack-plugins/archguard-plugin.git",
+        "ref": "v0.1.2"
+      },
+      "displayName": "ArchGuard（架构边界防护）",
+      "description": "给架构边界装上检查器：提取模块依赖、校验契约、列出违规证据，CLI 缺失时明确 DESIGN_ONLY。",
+      "version": "0.1.2",
+      "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills"
+      ],
+      "tags": [
+        "architecture",
+        "dependency",
+        "boundary",
+        "guard"
+      ],
+      "icon": "https://gitee.com/full-stack-plugins/archguard-plugin/raw/v0.1.2/assets/logo.png",
       "strict": true
     },
     {
@@ -28,19 +57,24 @@
       "source": {
         "source": "url",
         "url": "https://gitee.com/full-stack-plugins/bt-linux-panel-plugin.git",
-        "ref": "v1.1.0"
+        "ref": "v1.1.2"
       },
       "displayName": "BaoTa Panel（服务器运维）",
       "description": "宝塔面板的 AI 运维入口：站点 502、数据库连接、防火墙与入侵痕迹，一次排查给出证据。",
-      "version": "1.1.0",
+      "version": "1.1.2",
       "category": "Productivity",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "baota",
         "bt-panel",
         "linux-ops",
         "mcp"
       ],
-      "icon": "https://gitee.com/full-stack-plugins/bt-linux-panel-plugin/raw/v1.1.0/assets/official-logo.png",
+      "icon": "https://gitee.com/full-stack-plugins/bt-linux-panel-plugin/raw/v1.1.2/assets/official-logo.png",
       "strict": true
     },
     {
@@ -48,12 +82,17 @@
       "source": {
         "source": "url",
         "url": "https://gitee.com/full-stack-plugins/codegraph-plugin.git",
-        "ref": "v0.3.0"
+        "ref": "v0.3.2"
       },
       "displayName": "CodeGraph（代码图谱检索）",
       "description": "改代码前先问图：符号在哪、谁在调用、改动影响哪些模块，本地索引不出网。",
-      "version": "0.3.0",
+      "version": "0.3.2",
       "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "code-intelligence",
         "knowledge-graph",
@@ -61,7 +100,7 @@
         "mcp",
         "code-search"
       ],
-      "icon": "https://gitee.com/full-stack-plugins/codegraph-plugin/raw/v0.3.0/assets/official-logo.png",
+      "icon": "https://gitee.com/full-stack-plugins/codegraph-plugin/raw/v0.3.2/assets/official-logo.png",
       "strict": true
     },
     {
@@ -69,12 +108,17 @@
       "source": {
         "source": "url",
         "url": "https://gitee.com/full-stack-plugins/codeguard-plugin.git",
-        "ref": "v0.21.0"
+        "ref": "v0.21.3"
       },
       "displayName": "CodeGuard（代码质量防护）",
       "description": "提交前跑真实门禁：60+ 语言 lint、CVE 扫描、受控修复与 Maven/Gradle 影响分析，结论可复核。",
-      "version": "0.21.0",
+      "version": "0.21.3",
       "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "lint",
         "code-style",
@@ -88,7 +132,7 @@
         "ruff",
         "pre-commit"
       ],
-      "icon": "https://gitee.com/full-stack-plugins/codeguard-plugin/raw/v0.21.0/assets/official-logo.png",
+      "icon": "https://gitee.com/full-stack-plugins/codeguard-plugin/raw/v0.21.3/assets/official-logo.png",
       "strict": true
     },
     {
@@ -96,12 +140,17 @@
       "source": {
         "source": "url",
         "url": "https://gitee.com/full-stack-plugins/codereview-plugin.git",
-        "ref": "v0.4.0"
+        "ref": "v0.4.3"
       },
       "displayName": "CodeReview（代码变更审查）",
       "description": "提交前做一次语义审查：只读暂存内容，逐行指出逻辑和安全风险，需你显式授权。",
-      "version": "0.4.0",
+      "version": "0.4.3",
       "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "code-review",
         "semantic-review",
@@ -109,7 +158,7 @@
         "consent",
         "ocr"
       ],
-      "icon": "https://gitee.com/full-stack-plugins/codereview-plugin/raw/v0.4.0/assets/official-logo.png",
+      "icon": "https://gitee.com/full-stack-plugins/codereview-plugin/raw/v0.4.3/assets/official-logo.png",
       "strict": true
     },
     {
@@ -117,12 +166,17 @@
       "source": {
         "source": "url",
         "url": "https://gitee.com/full-stack-plugins/flowguard-plugin.git",
-        "ref": "v0.5.0"
+        "ref": "v0.5.3"
       },
       "displayName": "FlowGuard（研发流程防护）",
       "description": "把 Spec Kit/OpenSpec 接到十阶段流程：任务绑定、证据新鲜度和提交/发布门禁，不再靠聊天记录推进。",
-      "version": "0.5.0",
+      "version": "0.5.3",
       "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "sdlc",
         "sdd",
@@ -134,20 +188,25 @@
         "release",
         "gate"
       ],
-      "icon": "https://gitee.com/full-stack-plugins/flowguard-plugin/raw/v0.5.0/assets/official-logo.png",
+      "icon": "https://gitee.com/full-stack-plugins/flowguard-plugin/raw/v0.5.3/assets/official-logo.png",
       "strict": true
     },
     {
-      "name": "gitflow",
+      "name": "gitguard",
       "source": {
         "source": "url",
-        "url": "https://gitee.com/full-stack-plugins/gitflow-plugin.git",
-        "ref": "v0.3.0"
+        "url": "https://gitee.com/full-stack-plugins/gitguard-plugin.git",
+        "ref": "v0.4.1"
       },
-      "displayName": "Git 分支治理 · GitFlow",
-      "description": "九项 Git 技能加确定性门禁：初始化、分支角色、提交策略、同步、发布回灌、恢复与审计。",
-      "version": "0.3.0",
+      "displayName": "GitGuard（分支规范防护）",
+      "description": "Git 分支、变更范围、同步、发布回灌、恢复与合并候选防护；保留真实 Git 事实与回退路径。",
+      "version": "0.4.1",
       "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "git",
         "gitflow",
@@ -156,7 +215,7 @@
         "release",
         "governance"
       ],
-      "icon": "https://gitee.com/full-stack-plugins/gitflow-plugin/raw/v0.3.0/assets/logo.png",
+      "icon": "https://gitee.com/full-stack-plugins/gitguard-plugin/raw/v0.4.1/assets/logo.png",
       "strict": true
     },
     {
@@ -164,18 +223,48 @@
       "source": {
         "source": "url",
         "url": "https://gitee.com/full-stack-plugins/processon-design-plugin.git",
-        "ref": "v0.3.0"
+        "ref": "v0.3.2"
       },
       "displayName": "ProcessOn（图表绘制）",
       "description": "把流程图、架构图和思维导图变成可编辑的 ProcessOn 文件，生成前定结构，生成后做一致性评审。",
-      "version": "0.3.0",
+      "version": "0.3.2",
       "category": "Design Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "processon",
         "diagram",
         "mind-map"
       ],
-      "icon": "https://gitee.com/full-stack-plugins/processon-design-plugin/raw/v0.3.0/assets/official-logo.png",
+      "icon": "https://gitee.com/full-stack-plugins/processon-design-plugin/raw/v0.3.2/assets/official-logo.png",
+      "strict": true
+    },
+    {
+      "name": "specguard",
+      "source": {
+        "source": "url",
+        "url": "https://gitee.com/full-stack-plugins/specguard-plugin.git",
+        "ref": "v0.1.2"
+      },
+      "displayName": "SpecGuard（需求规格防护）",
+      "description": "需求、验收、设计和测试义务对齐：追踪每条需求的覆盖缺口，语义歧义交给人。",
+      "version": "0.1.2",
+      "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills"
+      ],
+      "tags": [
+        "spec",
+        "requirements",
+        "acceptance",
+        "traceability",
+        "guard"
+      ],
+      "icon": "https://gitee.com/full-stack-plugins/specguard-plugin/raw/v0.1.2/assets/logo.png",
       "strict": true
     },
     {
@@ -183,18 +272,48 @@
       "source": {
         "source": "url",
         "url": "https://gitee.com/full-stack-plugins/stitch-design-plugin.git",
-        "ref": "v0.10.0"
+        "ref": "v0.10.4"
       },
       "displayName": "Stitch（界面生成）",
       "description": "从一句需求生成可编辑页面和设计系统，直接落地 React、Vue、uni-app 代码。",
-      "version": "0.10.0",
+      "version": "0.10.4",
       "category": "Design Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "stitch",
         "design",
         "design-to-code"
       ],
-      "icon": "https://gitee.com/full-stack-plugins/stitch-design-plugin/raw/v0.10.0/assets/official-logo.png",
+      "icon": "https://gitee.com/full-stack-plugins/stitch-design-plugin/raw/v0.10.4/assets/official-logo.png",
+      "strict": true
+    },
+    {
+      "name": "testguard",
+      "source": {
+        "source": "url",
+        "url": "https://gitee.com/full-stack-plugins/testguard-plugin.git",
+        "ref": "v0.1.2"
+      },
+      "displayName": "TestGuard（验收测试防护）",
+      "description": "验收测试不能只看退出码：冻结测试计划、核对原生执行证据，识别删测、跳测和覆盖缺口。",
+      "version": "0.1.2",
+      "category": "Developer Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills"
+      ],
+      "tags": [
+        "testing",
+        "acceptance",
+        "coverage",
+        "evidence",
+        "guard"
+      ],
+      "icon": "https://gitee.com/full-stack-plugins/testguard-plugin/raw/v0.1.2/assets/logo.png",
       "strict": true
     },
     {
@@ -202,19 +321,24 @@
       "source": {
         "source": "url",
         "url": "https://gitee.com/full-stack-plugins/ui-design-plugin.git",
-        "ref": "v0.2.0"
+        "ref": "v0.2.3"
       },
       "displayName": "UI（前端界面设计）",
       "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览与视觉评审。",
-      "version": "0.2.0",
+      "version": "0.2.3",
       "category": "Design Tools",
+      "line": "full-stack",
+      "componentTypes": [
+        "skills",
+        "mcp"
+      ],
       "tags": [
         "frontend",
         "design",
         "imagegen",
         "agent-skills"
       ],
-      "icon": "https://gitee.com/full-stack-plugins/ui-design-plugin/raw/v0.2.0/assets/logo.png",
+      "icon": "https://gitee.com/full-stack-plugins/ui-design-plugin/raw/v0.2.3/assets/logo.png",
       "strict": true
     }
   ]

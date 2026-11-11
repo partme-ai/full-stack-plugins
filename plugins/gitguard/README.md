@@ -1,74 +1,77 @@
-# GitGuard（分支规范防护）
+# GitGuard
 
-> 分支、提交、同步、发布、Hook 与 CI 检查已实现。
+GitGuard checks branch names, commit permissions, merge direction and configured commit metadata against one local XML policy. Use ordinary Git after explicit initialization and integration review.
 
-**版本**：0.4.0 · **许可证**：Apache-2.0 · **技能**：9 个
+[简体中文](README.zh-CN.md) · [Usage and safety](docs/xml-native-guard.md) · [XML contract](openspec/changes/xml-native-guard/specs/xml-native-guard/spec.md)
 
-[English](README.en.md)
+## Skill entrypoint
 
-## 项目定位
+`gitguard-init` is the plugin-owned initialization skill. It uses the existing `gitguard init PROJECT --profile PROFILE [--apply]` CLI; init does not modify AGENTS.md. Generic `git-*` skills stay independently available from git-skills. Their frozen source is retained under `vendor/git-skills/`, outside the registered `skills/` directory. No nine-skill prefix mapping is used. See [scope and migration](docs/skill-namespace.md).
 
-GitGuard 是 Partme Guard 研发防护体系中的独立插件，命令前缀为 gitguard。它不依赖统一总命令，可独立安装、独立发版、独立执行。
 
-## CLI 命令
+## Start in an existing repository
 
-| 命令 | 类型 |
-| :--- | :--- |
-| install | 独立入口 |
-| uninstall | 独立入口 |
-| upgrade | 独立入口 |
-| version | 独立入口 |
-| doctor | 独立入口 |
-| status | 独立入口 |
-| discover | 独立入口 |
-| init | 独立入口 |
-| check | 独立入口 |
-| audit | 独立入口 |
-| policy | 独立入口 |
-| branch | 独立入口 |
-| sync | 独立入口 |
-| release | 独立入口 |
-| hooks | 独立入口 |
-| report | 独立入口 |
-| completion | 独立入口 |
+Use the plugin Python entrypoint explicitly for policy initialization and native hooks. The Rust project installer is a different executable, even when both commands are named `gitguard`.
 
-## 安装
+```bash
+python3 /absolute/gitguard-plugin/scripts/gitflow.py init . --profile github-flow       # preview; writes nothing
+python3 /absolute/gitguard-plugin/scripts/gitflow.py init . --profile github-flow --apply
+python3 /absolute/gitguard-plugin/scripts/gitflow.py hooks .                           # preview native hook installation
+python3 /absolute/gitguard-plugin/scripts/gitflow.py hooks . --apply                   # explicit installation in this repository
+python3 /absolute/gitguard-plugin/scripts/gitflow.py doctor .
+python3 /absolute/gitguard-plugin/scripts/gitflow.py status .
+python3 /absolute/gitguard-plugin/scripts/gitflow.py audit .
+git switch -c feature/example
+# edit and stage your files
+git commit -m "feat: add example"
+```
 
-~~~bash
-codex plugin marketplace add partme-ai/full-stack-plugins
-codex plugin add gitguard-plugin@full-stack-plugins
-~~~
+Choose a profile that matches the repository. The eight initialization templates are `centralized`, `classic-gitflow`, `git-maintainer`, `gitlab-environment`, `gitlab-release`, `github-flow`, `microsoft-release`, and `trunk-based`. They are templates, not runtime authorities. Noninteractive initialization requires `--profile`; a missing repository additionally requires `--initialize-git` to create Git metadata.
 
-## 快速开始
+Initialization selects a profile and writes `<git-common-dir>/gitflow.xml` only. It neither reads nor writes `AGENTS.md`, and guidance contents or file type are not initialization preconditions. Explicit legacy policy migration has the same XML-only responsibility. Linked worktrees share XML and are evaluated against their own Git state. A separate clone needs its own explicit initialization; Git does not transfer this metadata policy when cloning.
 
-~~~bash
-gitguard version
-gitguard doctor
-gitguard status
-~~~
+## Install host guidance separately
 
-## 当前状态
+The plugin launcher bootstrap, `/absolute/gitguard-plugin/bin/gitguard install --bin-dir /absolute/bin`, installs the launcher; it does not write AGENTS.md. To install project instructions and host configuration, invoke the separately built Rust executable explicitly:
 
-分支、提交、同步、发布、Hook 与 CI 检查已实现。
+```bash
+/absolute/rust-build/gitguard install --agents codex \
+  --project /absolute/project --gitflow-root /absolute/gitguard-plugin \
+  --python /absolute/python3
+```
 
-没有真实执行证据时，不报告 PASS；未实现能力报告 DESIGN_ONLY 或 UNVERIFIED。
+Use `--home /absolute/isolated-home` for disposable acceptance fixtures. Rust project installation alone owns its receipt-backed AGENTS block. Instructions reference XML without copying roles or rules; unknown, edited or broken owned entries are refused and preserved. Install and policy init can run in either order because they have separate responsibilities. Rust context exposes a reference schema and policy metadata, while explicit policy checks continue evaluating full rules. Neither installation nor initialization enables automatic enforcement (`automatic_enforcement` remains false).
 
-## 架构
+## What is enforced
 
-命令入口、生命周期、只读检查和证据边界见 product-docs/GitGuard/ 与 docs/。
+[Declared Agent hooks](hooks/hooks.json) use the Claude hook protocol; `PreToolUse` matches `Bash`. An explicit supported native merge is checked before execution against actual local refs. Ambiguous, dynamic or unsupported commands require review (`ask`/unverified). This does not establish interception of every terminal or IDE command. No Codex hook registration or login/trust change is included.
 
-## 边界
+Explicitly installed Git `commit-msg` and `pre-push` hooks add native checks. Existing custom hooks or hook managers are preserved rather than overwritten. `doctor` reports wiring and uncertainty; missing hooks produce an unverified result. Fast-forward merges, `--no-commit`, `--no-verify`, other Git libraries and host integrations have coverage limits. See [the detailed boundaries](docs/xml-native-guard.md#integration-boundaries).
 
-- 不合并为 Partme Guard 总命令。
-- 不替代其他 Guard 的专业判断。
-- 不自动提交、推送或修改用户代码。
+Public CI `check` remains unconfigured until a separately trusted XML distribution channel exists. PR-supplied XML and legacy JSON cannot approve the PR that supplies them. The internal range evaluation kernel is not a remote enforcement guarantee.
 
-## 验证
+## Existing installations
 
-~~~bash
-python3 -m pytest -q
-~~~
+Runtime loads XML only, without JSON fallback. To migrate a reviewed legacy definition or activation snapshot:
 
-## 许可证
+```bash
+python3 /absolute/gitguard-plugin/scripts/gitflow.py policy . --operation migrate       # preview
+python3 /absolute/gitguard-plugin/scripts/gitflow.py policy . --operation migrate --apply
+```
 
-Apache-2.0
+Migration preserves legacy files, validates organization references and locked rules, and flattens resolved rules into XML. Existing XML prevents migration from replacing it. `branch`, `sync`, `release`, `recovery` and older activation entrypoints remain compatibility interfaces; new onboarding uses normal Git. The Rust adapter delegates policy loading to the same Python implementation; runtime context exposes metadata references while policy checks consume the complete policy. The registered `skills/` contains the plugin-owned gitguard-init; generic upstream snapshots are retained under unregistered `vendor/git-skills/`.
+
+## Development verification
+
+Python 3.11+ standard library is the runtime dependency. Run local checks from the checkout:
+
+```bash
+python3 tests/run_isolated.py
+python3 scripts/validate_package.py
+```
+
+These checks and isolated repository fixtures do not establish actual host installation acceptance, production readiness, or current macOS/Windows validation. No real repository hook installation, remote CI run, push or release is implied by this documentation.
+
+The [XML design](openspec/changes/xml-native-guard/design.md) and [current usage guide](docs/xml-native-guard.md) supersede conflicting JSON-runtime instructions in older `docs/` and `product-docs/` material.
+
+License: [Apache-2.0](LICENSE).

@@ -1,6 +1,6 @@
 {
   "name": "specguard",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "让需求、验收、设计、任务与测试义务保持可追踪。",
   "displayName": "SpecGuard（需求规格防护）",
   "displayName_i18n": {
