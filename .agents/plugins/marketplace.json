@@ -22,13 +22,13 @@
         "skills",
         "mcp"
       ],
-      "version": "0.2.2",
+      "version": "0.2.3",
       "description": "把服务器面板接进对话：查站点、证书、数据库与安全审计，变更前先给影响和回退路径。",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.2/assets/logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.3/assets/logo.png",
       "interface": {
         "displayName": "1Panel（面板运维）",
         "shortDescription": "把服务器面板接进对话：查站点、证书、数据库与安全审计，变更前先给影响和回退路径。",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.2/assets/logo.png"
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.3/assets/logo.png"
       }
     },
     {
@@ -319,13 +319,13 @@
         "skills",
         "mcp"
       ],
-      "version": "0.2.2",
+      "version": "0.2.3",
       "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览和视觉评审。",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.2/assets/logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.3/assets/logo.png",
       "interface": {
         "displayName": "UI（前端界面设计）",
         "shortDescription": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览和视觉评审。",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.2/assets/logo.png"
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.3/assets/logo.png"
       }
     }
   ],

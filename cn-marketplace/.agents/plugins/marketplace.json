@@ -11,7 +11,7 @@
       "source": {
         "source": "url",
         "url": "https://gitee.com/full-stack-plugins/1panel-plugin.git",
-        "ref": "v0.2.2"
+        "ref": "v0.2.3"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -23,13 +23,13 @@
         "skills",
         "mcp"
       ],
-      "version": "0.2.2",
+      "version": "0.2.3",
       "description": "通过钉死版本的官方 MCP 检查与操作 1Panel；访问级别显式分级，凭据保持私有。",
-      "icon": "https://gitee.com/full-stack-plugins/1panel-plugin/raw/v0.2.2/assets/logo.png",
+      "icon": "https://gitee.com/full-stack-plugins/1panel-plugin/raw/v0.2.3/assets/logo.png",
       "interface": {
         "displayName": "1Panel（面板运维）",
         "shortDescription": "应用、网站、证书、数据库与安全审计",
-        "logo": "https://gitee.com/full-stack-plugins/1panel-plugin/raw/v0.2.2/assets/logo.png"
+        "logo": "https://gitee.com/full-stack-plugins/1panel-plugin/raw/v0.2.3/assets/logo.png"
       }
     },
     {
@@ -320,7 +320,7 @@
       "source": {
         "source": "url",
         "url": "https://gitee.com/full-stack-plugins/ui-design-plugin.git",
-        "ref": "v0.2.2"
+        "ref": "v0.2.3"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -332,13 +332,13 @@
         "skills",
         "mcp"
       ],
-      "version": "0.2.2",
+      "version": "0.2.3",
       "description": "从登录到功能页的完整设计包：导航、页面契约、主题、可运行预览与视觉评审。",
-      "icon": "https://gitee.com/full-stack-plugins/ui-design-plugin/raw/v0.2.2/assets/logo.png",
+      "icon": "https://gitee.com/full-stack-plugins/ui-design-plugin/raw/v0.2.3/assets/logo.png",
       "interface": {
         "displayName": "UI（前端界面设计）",
         "shortDescription": "功能契约、页面、主题、预览与视觉评审",
-        "logo": "https://gitee.com/full-stack-plugins/ui-design-plugin/raw/v0.2.2/assets/logo.png"
+        "logo": "https://gitee.com/full-stack-plugins/ui-design-plugin/raw/v0.2.3/assets/logo.png"
       }
     }
   ],
