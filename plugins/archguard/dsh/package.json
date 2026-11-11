@@ -1,6 +1,6 @@
 {
   "name": "archguard",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "把模块依赖、分层与边界约束变成可执行门禁。",
   "type": "module",
   "main": "lib/index.js",

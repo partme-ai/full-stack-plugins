@@ -29,19 +29,19 @@
       "name": "archguard",
       "title": "ArchGuard（架构边界防护）",
       "description": "给架构边界装上检查器：提取模块依赖、校验契约、列出违规证据，CLI 缺失时明确 DESIGN_ONLY。",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.2/assets/logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.3/assets/logo.png",
       "homepage": "https://github.com/full-stack-plugins/archguard-plugin",
       "repository": {
         "url": "https://github.com/full-stack-plugins/archguard-plugin"
       },
       "versions": [
         {
-          "version": "0.1.2",
-          "publishTimestamp": 1794389512,
+          "version": "0.1.3",
+          "publishTimestamp": 1794398750,
           "source": {
             "type": "git",
             "url": "https://github.com/full-stack-plugins/archguard-plugin",
-            "commit": "dceec1fd5acaa5a4ce90665aed79111c9494cd47"
+            "commit": "9b165162622876c6c255e5705ef3d52d0c13632f"
           }
         }
       ]
@@ -113,19 +113,19 @@
       "name": "codereview",
       "title": "CodeReview（代码变更审查）",
       "description": "提交前做一次语义审查：只读暂存内容，逐行指出逻辑和安全风险，需你显式授权。",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@v0.4.3/assets/official-logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@v0.4.4/assets/official-logo.png",
       "homepage": "https://github.com/full-stack-plugins/codereview-plugin",
       "repository": {
         "url": "https://github.com/full-stack-plugins/codereview-plugin"
       },
       "versions": [
         {
-          "version": "0.4.3",
-          "publishTimestamp": 1794389048,
+          "version": "0.4.4",
+          "publishTimestamp": 1794398738,
           "source": {
             "type": "git",
             "url": "https://github.com/full-stack-plugins/codereview-plugin",
-            "commit": "981a8476a66d5d7ab36f9dccb80100f364c35efb"
+            "commit": "e1bac83bc13cab8d9c6ad8e24a393aa5241a7041"
           }
         }
       ]
@@ -197,19 +197,19 @@
       "name": "specguard",
       "title": "SpecGuard（需求规格防护）",
       "description": "需求、验收、设计和测试义务对齐：追踪每条需求的覆盖缺口，语义歧义交给人。",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.2/assets/logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.3/assets/logo.png",
       "homepage": "https://github.com/full-stack-plugins/specguard-plugin",
       "repository": {
         "url": "https://github.com/full-stack-plugins/specguard-plugin"
       },
       "versions": [
         {
-          "version": "0.1.2",
-          "publishTimestamp": 1794389533,
+          "version": "0.1.3",
+          "publishTimestamp": 1794398750,
           "source": {
             "type": "git",
             "url": "https://github.com/full-stack-plugins/specguard-plugin",
-            "commit": "26e8748e9d80e63c526f98a91964bb2d144b62e2"
+            "commit": "fb5875dac5fd11492ce4a4083e14489fe4498be0"
           }
         }
       ]
@@ -239,19 +239,19 @@
       "name": "testguard",
       "title": "TestGuard（验收测试防护）",
       "description": "验收测试不能只看退出码：冻结测试计划、核对原生执行证据，识别删测、跳测和覆盖缺口。",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.2/assets/logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.3/assets/logo.png",
       "homepage": "https://github.com/full-stack-plugins/testguard-plugin",
       "repository": {
         "url": "https://github.com/full-stack-plugins/testguard-plugin"
       },
       "versions": [
         {
-          "version": "0.1.2",
-          "publishTimestamp": 1794389542,
+          "version": "0.1.3",
+          "publishTimestamp": 1794398750,
           "source": {
             "type": "git",
             "url": "https://github.com/full-stack-plugins/testguard-plugin",
-            "commit": "0f578b2e4da860ffcb29aa36a34d6642e8bfa3c9"
+            "commit": "015d00e62d73dbb75170fd30dbf33893720bb159"
           }
         }
       ]

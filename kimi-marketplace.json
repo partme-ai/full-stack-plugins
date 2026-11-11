@@ -11,8 +11,8 @@
     {
       "id": "archguard",
       "displayName": "ArchGuard（架构边界防护）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.2/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/archguard-plugin/releases/tag/v0.1.2"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.3/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/archguard-plugin/releases/tag/v0.1.3"
     },
     {
       "id": "bt-linux-panel",
@@ -35,8 +35,8 @@
     {
       "id": "codereview-plugin",
       "displayName": "CodeReview（代码变更审查）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@v0.4.3/assets/official-logo.png",
-      "source": "https://github.com/full-stack-plugins/codereview-plugin/releases/tag/v0.4.3"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@v0.4.4/assets/official-logo.png",
+      "source": "https://github.com/full-stack-plugins/codereview-plugin/releases/tag/v0.4.4"
     },
     {
       "id": "flowguard",
@@ -59,8 +59,8 @@
     {
       "id": "specguard",
       "displayName": "SpecGuard（需求规格防护）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.2/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/specguard-plugin/releases/tag/v0.1.2"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.3/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/specguard-plugin/releases/tag/v0.1.3"
     },
     {
       "id": "stitch-design",
@@ -71,8 +71,8 @@
     {
       "id": "testguard",
       "displayName": "TestGuard（验收测试防护）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.2/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/testguard-plugin/releases/tag/v0.1.2"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.3/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/testguard-plugin/releases/tag/v0.1.3"
     },
     {
       "id": "ui-design",

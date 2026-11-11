@@ -1,7 +1,7 @@
 {
   "name": "specguard",
   "description": "让需求、验收、设计、任务与测试义务保持可追踪。",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "type": "module",
   "main": "./dsh/lib/index.js",
