@@ -46,13 +46,13 @@
       "componentTypes": [
         "skills"
       ],
-      "version": "0.1.2",
+      "version": "0.1.3",
       "description": "给架构边界装上检查器：提取模块依赖、校验契约、列出违规证据，CLI 缺失时明确 DESIGN_ONLY。",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.2/assets/logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.3/assets/logo.png",
       "interface": {
         "displayName": "ArchGuard（架构边界防护）",
         "shortDescription": "给架构边界装上检查器：提取模块依赖、校验契约、列出违规证据，CLI 缺失时明确 DESIGN_ONLY。",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.2/assets/logo.png"
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.3/assets/logo.png"
       }
     },
     {
@@ -146,13 +146,13 @@
         "skills",
         "mcp"
       ],
-      "version": "0.4.3",
+      "version": "0.4.4",
       "description": "提交前做一次语义审查：只读暂存内容，逐行指出逻辑和安全风险，需你显式授权。",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@v0.4.3/assets/official-logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@v0.4.4/assets/official-logo.png",
       "interface": {
         "displayName": "CodeReview（代码变更审查）",
         "shortDescription": "提交前做一次语义审查：只读暂存内容，逐行指出逻辑和安全风险，需你显式授权。",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@v0.4.3/assets/official-logo.png"
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@v0.4.4/assets/official-logo.png"
       }
     },
     {
@@ -245,13 +245,13 @@
       "componentTypes": [
         "skills"
       ],
-      "version": "0.1.2",
+      "version": "0.1.3",
       "description": "需求、验收、设计和测试义务对齐：追踪每条需求的覆盖缺口，语义歧义交给人。",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.2/assets/logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.3/assets/logo.png",
       "interface": {
         "displayName": "SpecGuard（需求规格防护）",
         "shortDescription": "需求、验收、设计和测试义务对齐：追踪每条需求的覆盖缺口，语义歧义交给人。",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.2/assets/logo.png"
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.3/assets/logo.png"
       }
     },
     {
@@ -294,13 +294,13 @@
       "componentTypes": [
         "skills"
       ],
-      "version": "0.1.2",
+      "version": "0.1.3",
       "description": "验收测试不能只看退出码：冻结测试计划、核对原生执行证据，识别删测、跳测和覆盖缺口。",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.2/assets/logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.3/assets/logo.png",
       "interface": {
         "displayName": "TestGuard（验收测试防护）",
         "shortDescription": "验收测试不能只看退出码：冻结测试计划、核对原生执行证据，识别删测、跳测和覆盖缺口。",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.2/assets/logo.png"
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.3/assets/logo.png"
       }
     },
     {
