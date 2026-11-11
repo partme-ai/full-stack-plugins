@@ -13,7 +13,7 @@ This plugin belongs to **Full-stack development**.
 
 > Turn natural-language ideas, source context, and business workflows into polished ProcessOn diagrams that remain reviewable and editable.
 
-[![Version](https://img.shields.io/badge/version-0.3.1-blue)](https://github.com/full-stack-plugins/processon-design-plugin/releases/tag/v0.3.1)
+[![Version](https://img.shields.io/badge/version-0.3.3-blue)](https://github.com/full-stack-plugins/processon-design-plugin/releases/tag/v0.3.3)
 [![License](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
 
 [English](README.en.md) | [简体中文](README.md) · [Quick start](#quick-start) · [Examples](#copyable-examples) · [Troubleshooting](#troubleshooting)
@@ -64,7 +64,7 @@ Natural-language request / approved source material
 |:---|:---|
 | Plugin ID | `processon-design` |
 | Display name | ProcessOn |
-| Current candidate | `0.3.1` |
+| Current candidate | `0.3.3` |
 | Last installed package acceptance | `0.1.0+codex.20260914224756` |
 | Host tested | Codex CLI `0.154.0-alpha.6.2` |
 | Manifest | `.codex-plugin/plugin.json` |
@@ -162,10 +162,10 @@ These are repository-local copies of outputs from the recorded live acceptance r
 
 ### From the plugin marketplace
 
-The published marketplace release is pinned to `v0.3.1`. The commands below install that earlier release; the CI fixes on `main` have not been published to the marketplace, so the old tag does not contain them:
+This fix is published as `v0.3.3`. Use this version when installing from the marketplace:
 
 ```bash
-codex plugin marketplace add full-stack-plugins/processon-design-plugin --ref v0.3.1
+codex plugin marketplace add full-stack-plugins/processon-design-plugin --ref v0.3.3
 codex plugin add processon-design@partme-ai-processon
 ```
 
@@ -176,7 +176,7 @@ Alternative marketplace sources supported by Codex:
 codex plugin marketplace add full-stack-plugins/processon-design-plugin
 
 # Full Git URL with a sparse checkout of the marketplace catalog
-codex plugin marketplace add https://github.com/full-stack-plugins/processon-design-plugin.git --ref v0.3.1 --sparse .agents/plugins
+codex plugin marketplace add https://github.com/full-stack-plugins/processon-design-plugin.git --ref v0.3.3 --sparse .agents/plugins
 
 # Local clone for development
 git clone https://github.com/full-stack-plugins/processon-design-plugin.git

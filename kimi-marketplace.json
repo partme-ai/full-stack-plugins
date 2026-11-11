@@ -53,8 +53,8 @@
     {
       "id": "processon-design",
       "displayName": "ProcessOn（图表绘制）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.3.2/assets/official-logo.png",
-      "source": "https://github.com/full-stack-plugins/processon-design-plugin/releases/tag/v0.3.2"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.3.3/assets/official-logo.png",
+      "source": "https://github.com/full-stack-plugins/processon-design-plugin/releases/tag/v0.3.3"
     },
     {
       "id": "specguard",

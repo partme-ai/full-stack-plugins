@@ -176,19 +176,19 @@
       "name": "processon-design",
       "title": "ProcessOn（图表绘制）",
       "description": "把流程图、架构图和思维导图变成可编辑的 ProcessOn 文件，生成前定结构，生成后做一致性评审。",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.3.2/assets/official-logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.3.3/assets/official-logo.png",
       "homepage": "https://github.com/full-stack-plugins/processon-design-plugin",
       "repository": {
         "url": "https://github.com/full-stack-plugins/processon-design-plugin"
       },
       "versions": [
         {
-          "version": "0.3.2",
-          "publishTimestamp": 1794389529,
+          "version": "0.3.3",
+          "publishTimestamp": 1794393084,
           "source": {
             "type": "git",
             "url": "https://github.com/full-stack-plugins/processon-design-plugin",
-            "commit": "5822622961cd9a96eaabef87bfc02a165f63daae"
+            "commit": "ff2285961fad7d53fdfc9d9a43c8d0ca8013b68c"
           }
         }
       ]
