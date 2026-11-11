@@ -1,0 +1,14 @@
+{
+  "name": "testguard",
+  "description": "验证必需行为是否真的被执行，而不是只看退出码。",
+  "version": "0.1.2",
+  "private": true,
+  "type": "module",
+  "main": "./dsh/lib/index.js",
+  "dsh": {
+    "bundle": {
+      "patch": "./dsh/cordis.patch.yml"
+    }
+  },
+  "icon": "./dsh/icon.png"
+}

@@ -9,20 +9,20 @@
       "source": {
         "source": "url",
         "url": "https://github.com/full-stack-plugins/processon-design-plugin.git",
-        "ref": "v0.3.1"
+        "ref": "v0.3.2"
       },
       "policy": {
         "installation": "AVAILABLE",
         "authentication": "ON_USE"
       },
       "category": "Creativity",
-      "version": "0.3.1",
+      "version": "0.3.2",
       "description": "可编辑的 ProcessOn 图表：生成前构造提示词，生成后做语义与一致性评审。",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.3.1/assets/official-logo.png",
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.3.2/assets/official-logo.png",
       "interface": {
         "displayName": "ProcessOn（图表绘制）",
         "shortDescription": "流程图、架构图、思维导图与信息图",
-        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.3.1/assets/official-logo.png"
+        "logo": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.3.2/assets/official-logo.png"
       },
       "line": "full-stack",
       "componentTypes": [

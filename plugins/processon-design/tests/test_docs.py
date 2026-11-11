@@ -65,7 +65,7 @@ class DocumentationTest(unittest.TestCase):
             self.assertIn(heading, text)
 
     def test_readmes_document_local_setup_and_advanced_override(self):
-        for name in ("README.md", "README.zh-CN.md"):
+        for name in ("README.md", "README.en.md"):
             text = (ROOT / name).read_text(encoding="utf-8")
             self.assertNotIn("PROCESSON_MCP_AUTHORIZATION", text)
             self.assertIn("PROCESSON_MCP_TOKEN", text)
@@ -130,8 +130,8 @@ class DocumentationTest(unittest.TestCase):
             "安全与隐私",
             "故障排查",
         )
-        english = (ROOT / "README.md").read_text(encoding="utf-8")
-        chinese = (ROOT / "README.zh-CN.md").read_text(encoding="utf-8")
+        english = (ROOT / "README.en.md").read_text(encoding="utf-8")
+        chinese = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn("assets/processon-hero.png", "\n".join(english.splitlines()[:12]))
         self.assertIn("assets/processon-hero.png", "\n".join(chinese.splitlines()[:12]))
         self.assertIn("assets/processon-plugin-detail.png", "\n".join(english.splitlines()[:30]))
@@ -146,10 +146,10 @@ class DocumentationTest(unittest.TestCase):
         commands = (
             f"codex plugin marketplace add full-stack-plugins/processon-design-plugin --ref v{version}",
             f"codex plugin marketplace add https://github.com/full-stack-plugins/processon-design-plugin.git --ref v{version} --sparse .agents/plugins",
-            "codex plugin marketplace add ./partme-processon-plugin",
+            "codex plugin marketplace add ./processon-design-plugin",
             "codex plugin add processon-design@partme-ai-processon",
         )
-        for name in ("README.md", "README.zh-CN.md"):
+        for name in ("README.md", "README.en.md"):
             text = (ROOT / name).read_text(encoding="utf-8")
             for command in commands:
                 self.assertIn(command, text)
@@ -162,7 +162,7 @@ class DocumentationTest(unittest.TestCase):
         )
         for asset in gallery_assets:
             self.assertTrue((ROOT / "assets" / asset).is_file())
-        for name in ("README.md", "README.zh-CN.md"):
+        for name in ("README.md", "README.en.md"):
             text = (ROOT / name).read_text(encoding="utf-8")
             self.assertIn("<img", text)
             self.assertGreaterEqual(text.count("<img"), 3)
@@ -172,7 +172,7 @@ class DocumentationTest(unittest.TestCase):
                 self.assertIn(f'src="assets/{asset}"', text)
 
     def test_readmes_distinguish_official_mcp_example_from_installed_stdio_proxy(self):
-        for name in ("README.md", "README.zh-CN.md"):
+        for name in ("README.md", "README.en.md"):
             text = (ROOT / name).read_text(encoding="utf-8")
             self.assertIn('"smart-mcp"', text)
             self.assertIn('"Authorization": "Bearer YOUR_MCP_TOKEN"', text)
@@ -182,8 +182,8 @@ class DocumentationTest(unittest.TestCase):
             self.assertIn("HTTP 202", text)
 
     def test_readmes_keep_the_same_three_step_first_use_order(self):
-        english = (ROOT / "README.md").read_text(encoding="utf-8")
-        chinese = (ROOT / "README.zh-CN.md").read_text(encoding="utf-8")
+        english = (ROOT / "README.en.md").read_text(encoding="utf-8")
+        chinese = (ROOT / "README.md").read_text(encoding="utf-8")
         english_steps = [
             english.index("Open the ProcessOn user center"),
             english.index("Paste and save the Token"),

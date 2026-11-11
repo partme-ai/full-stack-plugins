@@ -32,7 +32,7 @@ class ManifestContractTest(unittest.TestCase):
         )
 
         self.assertEqual("partme-ai-processon", marketplace["name"])
-        self.assertEqual("ProcessOn Design", marketplace["interface"]["displayName"])
+        self.assertEqual("ProcessOn（图表绘制）", marketplace["interface"]["displayName"])
         self.assertEqual(1, len(marketplace["plugins"]))
         entry = marketplace["plugins"][0]
         self.assertEqual("processon-design", entry["name"])
@@ -50,10 +50,10 @@ class ManifestContractTest(unittest.TestCase):
     def test_plugin_uses_official_processon_name_and_icons(self):
         plugin = json.loads((ROOT / ".codex-plugin/plugin.json").read_text(encoding="utf-8"))
         interface = plugin["interface"]
-        self.assertEqual("ProcessOn Design", interface["displayName"])
+        self.assertEqual("ProcessOn Design · Diagramming", interface["displayName"])
         self.assertEqual("./assets/official-logo.png", interface["logo"])
         self.assertEqual("./assets/official-logo.png", interface["logoDark"])
-        self.assertEqual("./assets/composer-icon.png", interface["composerIcon"])
+        self.assertEqual("./assets/official-logo.png", interface["composerIcon"])
         self.assertEqual(
             ["./assets/processon-hero.png"],
             interface["screenshots"],

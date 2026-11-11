@@ -1,6 +1,6 @@
 {
   "name": "processon-design",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "可编辑的 ProcessOn 图表：生成前构造提示词，生成后做语义与一致性评审。",
   "author": {
     "name": "Full Stack Skills / PartMe.AI"

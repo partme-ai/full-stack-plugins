@@ -40,7 +40,7 @@ REQUIRED_FILES = (
     "scripts/processon_mcp_proxy.py",
     "scripts/processon_setup.py",
     "README.md",
-    "README.zh-CN.md",
+    "README.en.md",
     "docs/ProcessOn-Documentation-Index.zh_CN.md",
     "docs/ProcessOn-Design-Plugin-Architecture.md",
     "docs/ProcessOn-Design-Plugin-Architecture.zh_CN.md",

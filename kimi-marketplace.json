@@ -5,80 +5,80 @@
     {
       "id": "1panel",
       "displayName": "1Panel（面板运维）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.1/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/1panel-plugin/releases/tag/v0.2.1"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/1panel-plugin@v0.2.2/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/1panel-plugin/releases/tag/v0.2.2"
     },
     {
       "id": "archguard",
       "displayName": "ArchGuard（架构边界防护）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.1/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/archguard-plugin/releases/tag/v0.1.1"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/archguard-plugin@v0.1.2/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/archguard-plugin/releases/tag/v0.1.2"
     },
     {
       "id": "bt-linux-panel",
       "displayName": "BaoTa Panel（服务器运维）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/bt-linux-panel-plugin@v1.1.1/assets/official-logo.png",
-      "source": "https://github.com/full-stack-plugins/bt-linux-panel-plugin/releases/tag/v1.1.1"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/bt-linux-panel-plugin@v1.1.2/assets/official-logo.png",
+      "source": "https://github.com/full-stack-plugins/bt-linux-panel-plugin/releases/tag/v1.1.2"
     },
     {
       "id": "codegraph",
       "displayName": "CodeGraph（代码图谱检索）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.3.1/assets/official-logo.png",
-      "source": "https://github.com/full-stack-plugins/codegraph-plugin/releases/tag/v0.3.1"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codegraph-plugin@v0.3.2/assets/official-logo.png",
+      "source": "https://github.com/full-stack-plugins/codegraph-plugin/releases/tag/v0.3.2"
     },
     {
       "id": "codeguard",
       "displayName": "CodeGuard（代码质量防护）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@v0.21.2/assets/official-logo.png",
-      "source": "https://github.com/full-stack-plugins/codeguard-plugin/releases/tag/v0.21.2"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codeguard-plugin@v0.21.3/assets/official-logo.png",
+      "source": "https://github.com/full-stack-plugins/codeguard-plugin/releases/tag/v0.21.3"
     },
     {
       "id": "codereview-plugin",
       "displayName": "CodeReview（代码变更审查）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@v0.4.2/assets/official-logo.png",
-      "source": "https://github.com/full-stack-plugins/codereview-plugin/releases/tag/v0.4.2"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/codereview-plugin@v0.4.3/assets/official-logo.png",
+      "source": "https://github.com/full-stack-plugins/codereview-plugin/releases/tag/v0.4.3"
     },
     {
       "id": "flowguard",
       "displayName": "FlowGuard（研发流程防护）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/flowguard-plugin@v0.5.2/assets/official-logo.png",
-      "source": "https://github.com/full-stack-plugins/flowguard-plugin/releases/tag/v0.5.2"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/flowguard-plugin@v0.5.3/assets/official-logo.png",
+      "source": "https://github.com/full-stack-plugins/flowguard-plugin/releases/tag/v0.5.3"
     },
     {
       "id": "gitguard",
       "displayName": "GitGuard（分支规范防护）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitguard-plugin@v0.4.0/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/gitguard-plugin/releases/tag/v0.4.0"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/gitguard-plugin@v0.4.1/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/gitguard-plugin/releases/tag/v0.4.1"
     },
     {
       "id": "processon-design",
       "displayName": "ProcessOn（图表绘制）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.3.1/assets/official-logo.png",
-      "source": "https://github.com/full-stack-plugins/processon-design-plugin/releases/tag/v0.3.1"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/processon-design-plugin@v0.3.2/assets/official-logo.png",
+      "source": "https://github.com/full-stack-plugins/processon-design-plugin/releases/tag/v0.3.2"
     },
     {
       "id": "specguard",
       "displayName": "SpecGuard（需求规格防护）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.1/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/specguard-plugin/releases/tag/v0.1.1"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/specguard-plugin@v0.1.2/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/specguard-plugin/releases/tag/v0.1.2"
     },
     {
       "id": "stitch-design",
       "displayName": "Stitch（界面生成）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/stitch-design-plugin@v0.10.1/assets/official-logo.png",
-      "source": "https://github.com/full-stack-plugins/stitch-design-plugin/releases/tag/v0.10.1"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/stitch-design-plugin@v0.10.4/assets/official-logo.png",
+      "source": "https://github.com/full-stack-plugins/stitch-design-plugin/releases/tag/v0.10.4"
     },
     {
       "id": "testguard",
       "displayName": "TestGuard（验收测试防护）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.1/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/testguard-plugin/releases/tag/v0.1.1"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/testguard-plugin@v0.1.2/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/testguard-plugin/releases/tag/v0.1.2"
     },
     {
       "id": "ui-design",
       "displayName": "UI（前端界面设计）",
-      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.1/assets/logo.png",
-      "source": "https://github.com/full-stack-plugins/ui-design-plugin/releases/tag/v0.2.1"
+      "icon": "https://cdn.jsdelivr.net/gh/full-stack-plugins/ui-design-plugin@v0.2.2/assets/logo.png",
+      "source": "https://github.com/full-stack-plugins/ui-design-plugin/releases/tag/v0.2.2"
     }
   ]
 }

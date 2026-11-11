@@ -1,6 +1,6 @@
 {
   "name": "archguard",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "把模块依赖、分层与边界约束变成可执行门禁。",
   "displayName": "ArchGuard（架构边界防护）",
   "displayName_i18n": {

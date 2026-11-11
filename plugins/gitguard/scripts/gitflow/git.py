@@ -4,6 +4,7 @@ from pathlib import Path
 import subprocess
 import selectors
 import signal
+import sys
 import time
 
 VERSION = '0.4.0'
@@ -32,6 +33,12 @@ def run(path, *args, check=True, timeout=20):
             if key.startswith(('GIT_CONFIG_KEY_', 'GIT_CONFIG_VALUE_')):
                 env.pop(key)
     env['LC_ALL'] = 'C'
+    if sys.platform == 'win32':
+        from .windows_process import run_windows
+        p = run_windows(['git', '-C', str(path), *args], env, timeout)
+        if check and p.returncode:
+            raise FlowError('git_command_failed', 'Git 操作未完成，请检查仓库、身份、冲突或远端权限。')
+        return p
     proc = None
     try:
         proc = subprocess.Popen(['git', '-C', str(path), *args], env=env,
@@ -56,6 +63,8 @@ def run(path, *args, check=True, timeout=20):
                             raise FlowError('git_output_limit', 'Git 输出超过预算，不采用截断结果。')
         code = proc.wait(timeout=max(0.01, deadline-time.monotonic()))
         p = subprocess.CompletedProcess(proc.args, code, bytes(buffers[0]), bytes(buffers[1]))
+    except KeyboardInterrupt as exc:
+        raise FlowError('git_cancelled', 'Git 操作已取消；实际写入结果未知，必须复核状态。') from exc
     except FileNotFoundError as exc:
         raise FlowError('git_unavailable', 'Git 命令不可用，请先恢复已有工具。') from exc
     except subprocess.TimeoutExpired as exc:
@@ -64,14 +73,31 @@ def run(path, *args, check=True, timeout=20):
         raise FlowError('git_io_error', 'Git 进程无法启动或读取。') from exc
     finally:
         if proc is not None:
-            if proc.poll() is None:
+            # A completed Git leader can leave descendants holding the pipes.
+            # Always retire the session we created, including on cancellation.
+            cleanup_failed = False
+            try:
+                os.killpg(proc.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+            except OSError:
+                cleanup_failed = True
+                # Best effort only: killing the leader cannot prove tree cleanup.
                 try:
-                    os.killpg(proc.pid, signal.SIGKILL)
-                except ProcessLookupError:
+                    proc.kill()
+                except OSError:
                     pass
-                proc.wait()
-            proc.stdout.close()
-            proc.stderr.close()
+            try:
+                proc.wait(timeout=1)
+            except (OSError, subprocess.TimeoutExpired):
+                cleanup_failed = True
+            for stream in (proc.stdout, proc.stderr):
+                try:
+                    stream.close()
+                except OSError:
+                    cleanup_failed = True
+            if cleanup_failed:
+                raise FlowError('git_cleanup_failed', 'Git 进程树清理未确认；结果未知，必须复核进程与仓库状态。')
     if check and p.returncode:
         raise FlowError('git_command_failed', 'Git 操作未完成，请检查仓库、身份、冲突或远端权限。')
     return p
@@ -110,8 +136,12 @@ def is_git_project(path):
     return False
 
 
-def discover(path):
-    """发现父仓、linked worktree、空历史及操作状态；不会写入。"""
+def discover(path, *, inspect_worktree=True):
+    """Discover metadata, optionally inspecting the worktree through Git status.
+
+    Metadata-only results have unknown cleanliness and cannot authorize writes
+    that require a clean index/worktree. Ordinary callers retain full inspection.
+    """
     requested = Path(path).expanduser().resolve()
     if not requested.is_dir():
         raise FlowError('path_not_directory', '项目路径必须是已存在目录。')
@@ -123,6 +153,7 @@ def discover(path):
         if any((parent / '.git').exists() for parent in (requested, *requested.parents)) or b'not a git repository' not in p.stderr:
             raise FlowError('repository_unreadable', 'Git 状态无法可靠读取；不能把损坏、权限或信任失败视为无 Git。')
         return report('discover', git_state='absent', root=str(requested), branch=None,
+                      dirty=None, dirty_entries=None, worktree_status='not_inspected',
                       next_actions=[{'action': 'ask_git_initialization',
                                      'question': '当前项目未受 Git 管理。是否初始化 Git 并采用约定工作流，或暂不启用？'}])
     root = Path(p.stdout.decode().strip()).resolve()
@@ -135,20 +166,26 @@ def discover(path):
     ref_oids = {line.split(' ',1)[0][11:]:line.split(' ',1)[1] for line in lines}
     refs = list(ref_oids)
     remotes = text(root, 'remote').splitlines()
-    status = run(root, 'status', '--porcelain=v1', '-z').stdout
-    entries = [x for x in status.split(b'\0') if x]
+    entries = None
+    if inspect_worktree:
+        status = run(root, 'status', '--porcelain=v1', '-z').stdout
+        entries = [x for x in status.split(b'\0') if x]
     states = [name for name in ('MERGE_HEAD', 'rebase-merge', 'rebase-apply', 'CHERRY_PICK_HEAD',
                               'REVERT_HEAD', 'BISECT_LOG') if (git_dir / name).exists()]
     return report('discover', git_state='unborn' if head is None else 'repository',
                   root=str(root), git_dir=str(git_dir), common_dir=str(common),
                   branch=branch, head=head, branches=refs, ref_oids=ref_oids, remotes=remotes,
-                  dirty=bool(entries), dirty_entries=len(entries), operation_states=states,
+                  dirty=bool(entries) if inspect_worktree else None,
+                  dirty_entries=len(entries) if inspect_worktree else None,
+                  worktree_status='inspected' if inspect_worktree else 'not_inspected',
+                  operation_states=states,
                   shallow=text(root, 'rev-parse', '--is-shallow-repository') == 'true',
                   remote_observation='local_tracking_only')
 
 
-def require_repo(path):
-    facts = discover(path)
+def require_repo(path, *, inspect_worktree=True):
+    """Require repository metadata; omitted inspection cannot prove cleanliness."""
+    facts = discover(path, inspect_worktree=inspect_worktree)
     if facts['git_state'] == 'absent':
         raise FlowError('git_absent', '当前项目未受 Git 管理；先确认是否初始化。')
     return facts

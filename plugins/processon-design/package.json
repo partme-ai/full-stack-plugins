@@ -1,13 +1,14 @@
 {
-  "name": "processon-design-plugin",
-  "version": "0.3.0",
+  "name": "processon-design",
+  "version": "0.3.2",
   "private": true,
   "type": "module",
   "main": "./dsh/lib/index.js",
   "dsh": {
     "bundle": {
-      "patch": "./cordis.patch.yml"
+      "patch": "./dsh/cordis.patch.yml"
     }
   },
-  "icon": "./dsh/icon.png"
+  "icon": "./dsh/icon.png",
+  "description": "Create and review editable ProcessOn diagrams, mind maps, and infographics."
 }

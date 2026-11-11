@@ -1,6 +1,7 @@
 """显式变更、逐步日志与可恢复的 Git 操作。"""
 import re
 import uuid
+from pathlib import Path
 from .git import FlowError, discover, oid, reason, report, require_repo, run, text, valid_branch
 from .policy import load, role_for
 from .service import gate
@@ -30,7 +31,7 @@ def available(path, name, root):
     for line in text(path, 'worktree', 'list', '--porcelain').splitlines():
         if line.startswith('worktree '):
             worktree = line[9:]
-        elif line == 'branch refs/heads/' + name and worktree != root:
+        elif line == 'branch refs/heads/' + name and (worktree is None or Path(worktree).resolve() != Path(root).resolve()):
             raise FlowError('branch_worktree_occupied', '此分支已在另一工作树检出。')
 
 
@@ -107,7 +108,7 @@ def execute(facts, action, commands, apply=False, update=None):
         except (FlowError, OSError) as exc:
             if not isinstance(exc, FlowError):
                 exc = FlowError('journal_io_error', '操作或记录写入中断，必须复核当前状态。')
-            entry['status']='unknown' if exc.code in ('git_timeout','journal_io_error','git_output_limit') else 'incomplete'
+            entry['status']='unknown' if exc.code in ('git_timeout','git_cancelled','git_cleanup_failed','journal_io_error','git_output_limit') else 'incomplete'
             entry['error']=reason(exc.code,exc.message)
             result['decision']='unverified';result['reasons']=[entry['error']]
             result['next_actions']=[{'action':'recovery.diagnose','operation_id':entry['id']}]
