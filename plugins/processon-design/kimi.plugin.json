@@ -1,7 +1,7 @@
 {
   "name": "processon-design",
-  "version": "0.3.2",
-  "description": "可编辑的 ProcessOn 图表：生成前构造提示词，生成后做语义与一致性评审。",
+  "version": "0.3.3",
+  "description": "把流程图、架构图和思维导图变成可编辑的 ProcessOn 文件，生成前定结构，生成后做一致性评审。",
   "author": {
     "name": "Full Stack Skills / PartMe.AI"
   },
@@ -14,7 +14,7 @@
   ],
   "interface": {
     "displayName": "ProcessOn（图表绘制）",
-    "shortDescription": "流程图、架构图、思维导图与信息图",
+    "shortDescription": "把流程图、架构图和思维导图变成可编辑的 ProcessOn 文件，生成前定结构，生成后做一致性评审。",
     "longDescription": "Operate ProcessOn from your coding agent to create professional flowcharts, swimlanes, UML, architecture and ER diagrams, mind maps, timelines, org charts, and structured infographics with a built-in quality review workflow.",
     "developerName": "Full Stack Skills / PartMe.AI",
     "websiteURL": "https://github.com/full-stack-plugins/processon-design-plugin"
