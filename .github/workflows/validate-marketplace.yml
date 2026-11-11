@@ -17,6 +17,7 @@ jobs:
       - run: python scripts/sync-aggregated-packages.py
       - run: node scripts/build-local-marketplace.mjs
       - run: node scripts/sync-marketplaces.mjs --catalog-only
+      - run: node scripts/validate-dsh-index.mjs
       - run: node scripts/sync-marketplaces.mjs --remote --locale=zh-CN --source-only --plugin=ui-design --plugin=1panel --plugin=gitguard
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

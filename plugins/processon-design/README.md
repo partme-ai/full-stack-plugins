@@ -1,160 +1,492 @@
-# ProcessOn（图表绘制）
+# ProcessOn Design
 
-> 流程图、架构图、思维导图与信息图
+## 插件市场导航
 
-**版本**：0.3.0 · **许可证**：Apache-2.0 · **技能**：8 个
+本插件所属分类：**全栈开发**。
 
-[English](README.en.md) · [安装](#安装) · [快速开始](#快速开始) · [项目结构](#项目结构)
+| 分类 | 插件市场入口 | 用途 |
+| --- | --- | --- |
+| 全栈开发 | [Full Stack Plugins](https://github.com/partme-ai/full-stack-plugins) | 架构与 UI 设计、代码理解、质量检查、代码审查、流程治理与服务器运维 |
+| AIGC 内容创作 | [Full AIGC Plugins](https://github.com/partme-ai/full-aigc-plugins) | 图像、视频、音频、音乐、3D 与多模态内容创作 |
+
+![ProcessOn Design——让想法成为可编辑图表](assets/processon-hero.png)
+
+> 把自然语言想法、源码上下文和业务流程转化为专业、精美、可审查且可继续编辑的 ProcessOn 图表。
+
+[![版本](https://img.shields.io/badge/version-0.3.1-blue)](https://github.com/full-stack-plugins/processon-design-plugin/releases/tag/v0.3.1)
+[![许可证](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
+
+[English](README.en.md) | [简体中文](README.md) · [快速开始](#快速开始) · [示例](#可复制示例) · [故障排查](#故障排查)
+
+## Codex 宿主示例
+
+![Codex 中的 ProcessOn 插件详情，包括快捷提示、MCP 服务器和七个 Skill](assets/processon-plugin-detail.png)
+
+在 Codex 中，安装后的插件会展示三个可运行提示、一个 ProcessOn MCP 服务器和七个专用 Skill。ZCode 与 Kimi 通过各自宿主清单加载同一公开插件身份。
 
 ## 项目定位
 
-可编辑的 ProcessOn 图表：生成前构造提示词，生成后做语义与一致性评审。
+`processon-design` 是面向多种编码智能体宿主的 ProcessOn 集成。它把无密钥的本地 stdio 代理、ProcessOn 官方远程 MCP 与七个专用 Agent Skills 组合起来：配置访问、识别图形类型、建立结构模型、增强 Prompt、选择当前最佳工具，并在交付前审查真实结果。
 
-本插件属于研发工具线，面向需要在真实仓库或真实服务上完成操作、并保留可核验结果的用户。
+### 适合谁
+
+- 创建流程图、时序图、架构图、UML 和 ER 模型的工程师与架构师。
+- 需要沉淀业务流程、职责、时间轴、SWOT 和 PEST 的产品、运营和业务团队。
+- 希望把结构化资料转换为思维导图和汇报信息图的研究者与内容作者。
+- 关注认证、重试、安全和验证边界的插件维护者。
+
+### 支持边界
+
+插件根据用户授权的内容创建新图表和可复用 DSL。它不管理 ProcessOn 账户，不静默上传本地文件，不修改未指定的已有文档，也不会把实时 MCP 未暴露的浏览器 SDK 方法描述成可用工具。
 
 ## 一眼看懂
 
 ```text
-仓库 / 服务 / 配置 / 请求
-        │
-        ▼
-ProcessOn（图表绘制） 技能（检查 → 计划 → 执行 → 核验）
-        │
-        ├── MCP 服务
-        └── 固定 CLI / API
-        │
-        ▼
-变更结果 + 证据 + 回退路径
+自然语言需求 / 已授权的源材料
+                  │
+                  ▼
+┌──────────────────────────────────────────────────────┐
+│ ProcessOn Design                                     │
+│  1. 路由：专业图 / 思维导图 / 信息图                 │
+│  2. 建模：节点、层级、关系、约束                     │
+│  3. Prompt：布局、规范、配色、可读性                 │
+│  4. 生成：ProcessOn MCP                              │
+│  5. 审查：正确性、视觉层级、可编辑性                 │
+└──────────────────────────────────────────────────────┘
+                  │
+                  ▼
+     可编辑 ProcessOn 源文件 / 图片 URL / 可复用 DSL
 ```
 
-## 能力与边界
+## 状态与版本
 
-| 能力 | 说明 | 边界 |
-|---|---|---|
-| 检查 | 读取当前状态与配置 | 不修改未授权目标 |
-| 计划 | 说明将执行的步骤与影响 | 高风险操作需明确确认 |
-| 执行 | 通过 MCP 或固定工具完成操作 | 不绕过权限与审计 |
-| 核验 | 回读结果、日志与状态 | 命令成功不等于目标达成 |
-| 恢复 | 保留回退路径与证据 | 不确定时不自动重放 |
+| 项目属性 | 已验证值 |
+|:---|:---|
+| 插件 ID | `processon-design` |
+| 显示名称 | ProcessOn |
+| 当前候选版本 | `0.3.1` |
+| 最近一次已安装包验收 | `0.1.0+codex.20260914224756` |
+| 已测试宿主 | Codex CLI `0.154.0-alpha.6.2` |
+| 插件清单 | `.codex-plugin/plugin.json` |
+| MCP 配置 | `.mcp.json` |
+| MCP 传输 | 本地 stdio → Streamable HTTP |
+| 协商协议 | `2025-06-18` |
+| 许可证 | Apache-2.0 |
 
 ## 架构与核心流程
 
-```text
-宿主 / Agent
-   │  调用技能
-   ▼
-skills/processon-design-*  ──►  MCP 服务 / 固定 CLI
-                              │
-                              ▼
-                     目标系统 / 仓库
-                              │
-                              ▼
-                     回读、核验、报告
+```mermaid
+flowchart LR
+    U["用户需求"] --> R["路由 Skill"]
+    R --> A{"凭证就绪?"}
+    A -->|否| L["本地三步设置"]
+    L --> A
+    A -->|是| D["专业图"]
+    R --> M["思维导图"]
+    R --> I["信息图"]
+    D --> P["Prompt 架构"]
+    M --> P
+    I --> P
+    P --> T{"实时 tools/list"}
+    T -->|优先| C["generate_chart"]
+    T -->|回退| G["generate_diagram"]
+    T -->|DSL| S["generate_diagram_dsl"]
+    C --> Q["质量审查"]
+    G --> Q
+    S --> Q
+    Q --> O["可编辑源文件 / 图片 / DSL"]
 ```
 
-原则：
+### Skill 职责
 
-1. 先只读检查，再计划，再执行。
-2. 明确目标、范围、凭据和回退方式。
-3. 执行后回读真实现场，不只看退出码。
-4. 不确定时停止并报告，不自动重试有副作用的操作。
+| Skill | 职责 |
+|:---|:---|
+| `processon-setup` | 首次设置、本地 Token 轮换与安全认证恢复 |
+| `processon-use` | 公共路由、工具选择、认证边界、有界恢复 |
+| `processon-diagram` | 流程、泳道、时序、架构、ER、UML、组织、时间轴、SWOT/PEST 建模 |
+| `processon-mindmap` | 知识层级、WBS、鱼骨、逻辑图、时间轴、树形表格建模 |
+| `processon-infographic` | 对比、循环、环形、矩阵、阶梯、金字塔、射线和网格布局 |
+| `processon-prompt` | 六段式 ProcessOn Prompt：意图、内容、关系、布局、视觉系统、约束 |
+| `processon-review` | 语义、关系、视觉、可读性、一致性和可编辑性审查 |
 
-## 兼容性
+技能本体从 [full-stack-skills/processon-skills](https://github.com/full-stack-skills/processon-skills)（单一事实源）逐字 vendor，由 `skills.lock.json` 钉住来源仓库、ref、commit 与逐技能摘要。刷新请运行 `python3 scripts/vendor/skill_vendor.py update`；切勿直接编辑 `skills/`。
 
-| 项目 | 状态 |
-|---|---|
-| 宿主 | 支持 MCP 的宿主 |
-| 运行时 | 以插件清单与实际安装环境为准 |
-| 平台 | 以发行说明与目标系统为准 |
+### 组件职责
+
+| 组件 | 负责 | 不负责 |
+|---|---|---|
+| `scripts/processon_mcp_proxy.py` | 已安装的 stdio 入口点 | 凭据存储 |
+| `processon_harness/mcp_proxy.py` | JSON-RPC 帧、Streamable HTTP 传输、会话处理与错误分类 | 凭据持久化 |
+| `processon_harness/secrets.py` | Token 规范化、查找优先级、受限的原子存储 | 传输 |
+| `scripts/processon_setup.py` | 回环设置页、隐藏终端设置与状态检查 | 图表生成 |
+| `assets/setup/` | 通过回环提供的三步页面资源 | 业务逻辑 |
+| `skills/`（7 个） | 路由、建模、Prompt 构造、审查与设置指令 | 运行时强制 |
+
+## 能力矩阵
+
+| 能力 | 输入 | 输出 | 证据/状态 |
+|:---|:---|:---|:---|
+| 专业图表 | 自然语言或已核验的源码事实 | `generate_chart` 可用时返回可编辑 ProcessOn 源文件，否则返回图片 | ✅ 在线实测 |
+| 思维导图 | 文本、文档结构、计划或知识层级 | 结构化 ProcessOn 脑图 | ✅ Skill 与契约验证 |
+| 信息图 | 精炼分类、指标、对比或循环内容 | 适合汇报的视觉图 | ✅ 在线实测 |
+| 图表 DSL | 自然语言结构要求 | ProcessOn DSL 或 Mermaid 兼容文本 | ✅ Codex 端到端实测 |
+| 质量审查 | 原始意图与可访问产物 | `PASS`、`REVISE_ONCE` 或诚实的限制说明 | ✅ 自动测试 |
+| 已有文档修改 | 指定 ProcessOn 已有文件 | — | ❌ 当前 MCP 未暴露 |
+
+2026-09-13 实时服务发现 `generate_chart`、`generate_diagram`、`generate_diagram_dsl`。公开页面列出后两者。路由优先用 `generate_chart` 获取可编辑源文件 URL，不可用时回退到页面公开工具。
+
+### 真实效果一览
+
+<table>
+  <tr>
+    <td width="33%"><img src="assets/processon-gallery-architecture.png" alt="ProcessOn 生成的 Agent Harness 架构图"></td>
+    <td width="33%"><img src="assets/processon-gallery-workflow.png" alt="ProcessOn 生成的 AI delivery 工作流"></td>
+    <td width="33%"><img src="assets/processon-gallery-infographic.png" alt="ProcessOn 生成的 AI delivery 就绪度信息图"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Agent Harness 架构</strong><br>可编辑源文件</td>
+    <td align="center"><strong>AI delivery 工作流</strong><br>3494×1180 泳道图</td>
+    <td align="center"><strong>生产就绪信息图</strong><br>可用于汇报</td>
+  </tr>
+</table>
+
+以上均为已记录真实在线验收产物的仓库本地副本，不是示意图；源图与远程产物生命周期仍由 ProcessOn 管理。
 
 ## 安装
 
+### 前置条件
+
+- `PATH` 上有 Python 3 与 `python3`。
+- 一个 ProcessOn 账号，以及来自 <https://smart.processon.com/user> 的 Token。
+- 不需要 API Key 文件、不需要 npm 依赖、也不需要任何外部服务账号。
+
+### 从插件市场安装
+
+当前已发布市场版本固定在 `v0.3.1`。下列命令安装该历史版本；本轮 `main` 上的 CI 修复尚未发布到市场，不能把旧 tag 当作包含修复的版本：
+
 ```bash
-codex plugin marketplace add partme-ai/full-stack-plugins
-codex plugin add processon-design@full-stack-plugins
+codex plugin marketplace add full-stack-plugins/processon-design-plugin --ref v0.3.1
+codex plugin add processon-design@partme-ai-processon
 ```
 
-安装后重启宿主，先做只读检查。
+Codex 官方支持的其他 marketplace 来源写法：
+
+```bash
+# GitHub 简写，使用仓库默认分支
+codex plugin marketplace add full-stack-plugins/processon-design-plugin
+
+# 完整 Git URL，仅稀疏检出 marketplace 目录
+codex plugin marketplace add https://github.com/full-stack-plugins/processon-design-plugin.git --ref v0.3.1 --sparse .agents/plugins
+
+# 本地克隆，适合开发调试
+git clone https://github.com/full-stack-plugins/processon-design-plugin.git
+codex plugin marketplace add ./processon-design-plugin
+```
+
+验证安装：
+
+```bash
+codex plugin list
+```
+
+预期条目：
+
+```text
+processon-design@partme-ai-processon  installed, enabled
+```
+
+安装或升级后请新建 Codex 任务，使新的 Skills 和 MCP 工具进入上下文。
+
+以后刷新 Git marketplace：
+
+```bash
+codex plugin marketplace upgrade partme-ai-processon
+codex plugin add processon-design@partme-ai-processon
+```
+
+### 国内镜像（AtomGit）
+
+如果 GitHub 访问缓慢或不可达，可改用 AtomGit 镜像安装。命令完全一致，只把市场地址换成镜像：
+
+```bash
+codex plugin marketplace add https://atomgit.com/partme-ai/partme-processon-plugin.git --ref main
+codex plugin add processon-design@partme-ai-processon
+```
+
+如需一步安装 partme-ai 全部插件目录：
+
+```bash
+codex plugin marketplace add https://atomgit.com/partme-ai/plugins.git
+codex plugin add processon-design@partme-ai-processon
+```
+
+注意事项：
+
+- AtomGit 源与 GitHub 源共用市场名，后添加的会覆盖先添加的。切回官方源执行
+  `codex plugin marketplace add https://github.com/partme-ai/plugins.git`。
+- ZCode 与 Kimi 用户可先将镜像仓库克隆到本地，再在各平台的 marketplace 配置中登记本地目录。
 
 ## 快速开始
 
-1. 确认目标、环境、权限和影响范围。
-2. 只读检查现状，记录基线。
-3. 执行一次有界变更。
-4. 回读目标状态、日志和关键指标。
-5. 保存证据；失败时按回退路径恢复。
+### 1. 完成一次本地设置
 
-## 配置
+提出任意 ProcessOn 制图需求。凭证缺失，或刷新一次后仍被拒绝时，本地 MCP 代理会自动打开设置页；10 分钟冷却机制避免连续弹窗。按顺序完成三步：
 
-按插件文档配置 MCP 地址、认证方式和目标环境。不要把令牌、密码或私钥写入仓库。
+1. **打开 ProcessOn 用户中心**：访问 <https://smart.processon.com/user>，创建或复制 Token。
+2. **粘贴并保存 Token**：只在本地密码框输入，页面不会回显已保存内容。
+3. **回到 Codex**：重试原来的制图需求；只有当前 MCP 进程仍未重新加载凭证时才需要重开 Codex。
 
-## 扩展契约
+Token 保存在仓库和版本化插件缓存之外：
 
-新增技能时应使用 `processon-design-` 前缀，声明触发条件、权限边界和失败处理，通过 MCP 或固定工具执行，并在变更后回读核验。
+| 平台 | 当前用户默认路径 |
+|:---|:---|
+| macOS/Linux | `$XDG_CONFIG_HOME/processon/credentials.json`，未设置时为 `~/.config/processon/credentials.json` |
+| Windows | `%APPDATA%\processon\credentials.json` |
 
-## 重试、幂等与恢复
+Unix 下目录权限固定为 `0700`、文件权限固定为 `0600`。插件升级会保留这份用户级配置。
 
-- 失败后先检查目标当前状态。
-- 不自动重放已产生副作用的操作。
-- 重试前确认幂等条件与回退路径。
-- 保留命令、日志和结果证据。
-
-## 数据与状态
-
-- 凭据只从安全配置读取。
-- 变更前后的状态分别记录。
-- 不把生产数据复制到不受控目录。
-
-## 安全
-
-- 遵循最小权限原则。
-- 高风险操作必须明确确认。
-- 发现凭据泄露先轮换，再清理痕迹。
-- 不绕过审计、权限或分支保护。
-
-## 可观测性与运行
-
-记录命令、目标、时间、结果和关键指标；交付前回读一次真实状态。
-
-## 开发与验证
+如果浏览器没有自动打开，可在已安装插件根目录手动打开；`check` 只检查状态，不输出 Token：
 
 ```bash
-node --test
-python3 -m pytest
+python3 scripts/processon_setup.py ui
+python3 scripts/processon_setup.py check
 ```
 
-## 打包与发布
+#### ProcessOn 官方通用 MCP Client 示例
 
-版本与清单、市场、tag 一致；发布后重新安装并做一次只读检查。
+ProcessOn 文档为支持内联 HTTP 请求头的 MCP Client 提供以下配置。只应在已排除 Git 跟踪的用户级私有配置中替换 `YOUR_MCP_TOKEN`：
 
-## 升级与迁移
+```json
+{
+  "mcpServers": {
+    "smart-mcp": {
+      "type": "http",
+      "url": "https://smart-hd.processon.com/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_MCP_TOKEN"
+      }
+    }
+  }
+}
+```
 
-升级前备份配置与状态；确认兼容性；迁移后重新核验连接和权限。
+#### 已安装 Codex 插件配置
+
+已提交的 `.mcp.json` 不含凭证或远程请求头，只启动已安装的本地代理：
+
+```json
+{
+  "mcpServers": {
+    "processon": {
+      "type": "stdio",
+      "command": "python3",
+      "args": ["scripts/processon_mcp_proxy.py"],
+      "cwd": "."
+    }
+  }
+}
+```
+
+代理读取当前用户凭证，只添加一次 `Bearer ` 前缀，并且只转发到 `https://smart-hd.processon.com/mcp`。不要把官方通用内联 Token 示例与已安装插件配置混用。
+
+#### 高级自动化覆盖
+
+CI 等受控进程可以通过 `PROCESSON_MCP_TOKEN` 提供原始 Token。这不是普通桌面用户的默认设置方式，值必须来自秘密管理器，不能进入源码或日志：
+
+```bash
+PROCESSON_MCP_TOKEN="raw-token-from-secret-manager" codex
+```
+
+### 2. 生成第一张图
+
+```text
+使用 ProcessOn 生成一张分层 Agent Harness 架构图。
+展示编排、记忆、工具、Guardrails、评测、可观测性、
+信任边界、数据流和回滚路径，并保持可编辑。
+```
+
+预期结果：Codex 加载 ProcessOn 路由 Skill，选择图形类型，调用官方 MCP，审查可访问产物，并根据工具返回可编辑源文件链接、图片 URL 或 DSL。
+
+## 可复制示例
+
+### 架构图
+
+```text
+生成生产级 Agent Harness 分层系统架构块图。使用五个清晰层级、
+大号标签、显式信任边界、控制流、数据流和回滚路径。
+禁止使用 UML 类表和目录树。
+```
+
+### 跨职能泳道图
+
+```text
+生成产品、AI 工程、后端、测试、运维五泳道的 AI 功能交付流程。
+包含评测失败、上线审批、部署、监控、事故回滚和持续改进。
+```
+
+### 时序图
+
+```text
+生成 Agent 请求经过 API Gateway、Planner、Guardrails、RAG、
+Model Gateway、Tool Sandbox 和 Trace Store 的时序图。
+展示超时、重试、拒绝请求和最终响应映射。
+```
+
+### ER 图
+
+```text
+为租户、智能体、会话、工具调用、Trace 和评测结果创建 ER 图。
+标出主键、外键、基数和可选关系，不要在节点中堆积无关字段。
+```
+
+### 思维导图
+
+```text
+把这份技术方案整理为向右展开的 ProcessOn 思维导图。
+保留权威标题层级、合并重复观点，并把每个叶子节点压缩成一句话。
+```
+
+### 信息图
+
+```text
+创建标题为“Agent 生产就绪度”的克制四象限信息图，包含质量、安全、
+可靠性、运维。每个象限使用一个图标和四个短指标，留白充足、对比清晰。
+```
+
+## 已验证成果
+
+以下产物来自真实的 Codex 验收运行：
+
+| 验收场景 | 日期 | 实际结果 | 结论 |
+|:---|:---|:---|:---:|
+| Agent Harness 架构 | 2026-09-13 | [分层、可编辑 ProcessOn 图](https://v5hd.processon.com/chart_image/diss/file/full/img?imgId=6aa64844664bfd17d5fdde00&from=po_tool_ai_dissfile) | PASS |
+| AI 交付泳道图 | 2026-09-13 | [3494×1180 渲染图](https://ai-smart.ks3-cn-beijing.ksyuncs.com/gallery/fb800c51-82e5-419c-8b50-c4ca0f47c5c5.png) | PASS |
+| 生产就绪信息图 | 2026-09-13 | [536×488 渲染图](https://ai-smart.ks3-cn-beijing.ksyuncs.com/gallery/eb01e089-c7b3-4c1d-a3a2-a83323a75964.png) | PASS |
+| Codex → ProcessOn DSL（stdio 前） | 2026-09-13 | `graph TD; A([Start]) --> B[Validate]; B --> C([End])` | PASS |
+| Codex → ProcessOn DSL（stdio 路径） | 2026-09-14 | `arch-data-platform` 定义，751 字符，三层架构（客户端 / 服务 / 数据） | PASS |
+
+这些链接用于证明当时的真实验收；后续可用性由 ProcessOn 管理。自动化测试验证插件包和契约，不等同于承诺外部图片永久存在。少量 `generate_diagram_dsl` 调用会返回"成功但内容为空"——代理会原样透传，用户既无产物也无错误提示；该现象已在 `artifacts/acceptance/acceptance-summary.json` 的 `emptyPayloadFinding` 中记录，此处**有意不**映射为错误，因为改响应契约属于产品决定。
+
+## 认证、重试与失败语义
+
+| 条件 | 行为 |
+|:---|:---|
+| 缺少凭证 | 返回 `PROCESSON_SETUP_REQUIRED` 并进入本地设置流程 |
+| HTTP 401 或 `token is Invalid` | 重新读取本地凭证一次；仍失败则返回 `PROCESSON_AUTH_REQUIRED` |
+| HTTP 202 空通知响应 | 视为初始化成功，不输出 JSON-RPC 消息 |
+| 生成超时、连接失败、408 或 5xx | 返回 `UNKNOWN_WRITE_RESULT`，绝不自动重放 |
+| 407/429 限流 | 返回安全的上游错误，禁止无界重试 |
+| 空产物或 URL 不可访问 | 保留可用结果，最多允许一次审查后修正 |
+| 明显视觉缺陷 | 返回 `REVISE_ONCE` 和具体修正规则，禁止无限循环 |
+
+ProcessOn 文档声明每个 Token 每分钟最多 600 次请求，并支持至 MCP `2025-06-18`。
+
+## 安全与隐私
+
+- 认证保存在当前用户受限配置中；`.mcp.json` 只包含本地 stdio 命令。
+- 本地代理只为 ProcessOn 官方端点添加 Authorization 请求头；`PROCESSON_MCP_TOKEN` 仅用于高级进程覆盖。
+- 图表 Prompt 和用户明确授权的远程附件引用会发送给 ProcessOn。
+- 本地文件不会被静默上传。
+- 工具输出按不可信内容处理，不能扩大指令或权限。
+- 仓库测试与发布验收会扫描源码及可达 Git 历史中的真实 Bearer 凭证。
+- 日志与错误不得暴露 Authorization 请求头、Token 或敏感查询参数。
+
+参阅 [PRIVACY.md](PRIVACY.md)、[TERMS.md](TERMS.md) 和 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 ## 故障排查
 
-| 现象 | 检查 |
-|---|---|
-| 连接失败 | 地址、网络、认证 |
-| 权限不足 | 账号角色与令牌范围 |
-| 操作无效果 | 回读目标状态与日志 |
-| 结果不确定 | 停止重试，先核对现场 |
+| 现象 | 优先检查 | 处理方式 |
+|:---|:---|:---|
+| 插件列表中不存在 | marketplace 和插件选择器 | 重新执行两条安装命令，并新建 Codex 任务 |
+| MCP 工具缺失 | `.mcp.json`、设置状态、新任务边界 | 运行 `processon_setup.py check`，确认插件启用后重新打开 Codex |
+| `token is Invalid` | Token 来源和状态 | 打开 `processon_setup.py ui`，保存活跃 Token 后重新打开 Codex |
+| 工具调用要求批准 | Codex approval policy | 批准 MCP 调用或使用已授权的执行 profile |
+| 返回图片 URL 不可访问 | 上游对象生命周期 | 优先使用 `generate_chart`，或请求一次审查后重新生成 |
+| 架构图变成类表 | 图形类型描述 | 指定“架构块图”，并明确禁止 UML 类表 |
+| 遭遇限流 | 请求频率 | 等待并有界退避，禁止并行启动重绘循环 |
 
 ## 项目结构
 
 ```text
-processon-design-plugin/
-├── .zcode-plugin/      # ZCode 清单
-├── .codex-plugin/      # Codex 清单
-├── skills/             # 8 个技能
-├── docs/               # 架构与验证记录
-└── assets/             # 图标与静态资源
+partme-processon-plugin/
+├── .codex-plugin/plugin.json        # 插件身份和 UI 元数据
+├── .mcp.json                        # 无密钥的本地 stdio 入口
+├── .agents/plugins/marketplace.json # marketplace 条目
+├── assets/                          # 官方 Logo 派生图和 README 宣传图
+├── processon_harness/               # 凭证提供器与 MCP 代理
+├── skills/                          # 七个 ProcessOn 工作流，vendor 自 full-stack-skills/processon-skills
+├── skills.lock.json                 # 钉住 vendor 快照：来源仓库、ref、commit、逐技能摘要
+├── scripts/                         # 设置、代理、资产、分发验证、vendor 工具和冒烟测试
+├── tests/                           # 清单、Skill、文档、安全和 MCP 测试
+└── docs/                            # 文档索引、架构与技术方案
 ```
+
+### 官方打包规范自检
+
+| OpenAI 打包要求 | 本项目实现 |
+|:---|:---|
+| 稳定插件身份 | `processon-design` |
+| 根目录 Skills | `skills/` 中包含七个专用 Skill |
+| 根目录视觉资产 | `assets/` 中包含官方字标、composer 图标和宣传截图 |
+| Marketplace 目录 | `.agents/plugins/marketplace.json`，Git source 固定到不可变的 `v<version>` 发布标签 |
+| OpenAI 展示元数据 | `.codex-plugin/plugin.json` 兼容清单 |
+| MCP 运行时 | 无密钥 `.mcp.json` 启动本地 stdio 凭证代理 |
+
+[OpenAI 官方插件打包文档](https://developers.openai.com/plugins/build/plugins)明确说明 `.codex-plugin/plugin.json` 仍作为兼容 fallback 受到支持。本项目有意保留该结构，因为本地 stdio 凭证代理不属于公开提交要求的远程 HTTPS MCP 路径。
+
+## 开发与验证
+
+首次创建项目级验证环境：
+
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install PyYAML==6.0.3
+```
+
+执行完整本地门禁：
+
+```bash
+.venv/bin/python -m unittest discover -s tests -p 'test_*.py' -v
+.venv/bin/python scripts/validate_distribution.py
+.venv/bin/python <plugin-creator>/scripts/validate_plugin.py .
+git diff --check
+```
+
+前两条命令属于仓库自身。最后一条插件校验器来自本机 Codex 开发工具，请把 `<plugin-creator>` 替换为你本机的实际路径。
+
+## 兼容性
+
+| 插件版本 | 宿主 | 运行环境 | 传输 | 状态 |
+|---|---|---|---|---|
+| 历史 `0.1.0+codex.<cachebuster>` 证据 | Codex CLI（实测于 `0.154.0-alpha.6.2`）或 ChatGPT 桌面应用 | `PATH` 上的 Python 3 | 本地 stdio 代理转发到 Streamable HTTP | 本地已验证，含一次经授权的真实生成；不是当前版本的新运行期证明 |
+| 历史 `0.1.0` 上游示例 | 任何支持内联请求头的 MCP Client | — | 直接 HTTPS 并内联 `Authorization` 头 | 上游文档示例，不是当前插件配置 |
+
+协商协议为 `2025-06-18`。ProcessOn 文档声明每个 Token 每分钟最多 600 次请求，端点为 `https://smart-hd.processon.com/mcp`。
+
+## 数据与状态
+
+| 数据 | 位置 | 生命周期 | 是否含秘密 |
+|---|---|---|---|
+| 凭证文件 | `~/.config/processon/credentials.json`，或 `%APPDATA%\processon\credentials.json` | 直到你轮换或删除 | 是：原始 Token；目录权限 `0700`，文件权限 `0600` |
+| 设置页资源 | 包内的 `assets/setup/` | 随插件版本化 | 否 |
+| 上游会话 ID | 代理进程内存中 | 进程生命周期 | 否 |
+| 生成的图表 | ProcessOn 自身服务 | 由 ProcessOn 持有 | 否 |
+
+插件不保留运行台账：每次生成都是一次经由代理的无状态请求-响应。
+
+## 文档导航
+- [ProcessOn AI、DSL 与 MCP 文档索引](docs/ProcessOn-Documentation-Index.zh_CN.md)
+- [Architecture](docs/ProcessOn-Design-Plugin-Architecture.md) · [架构中文版](docs/ProcessOn-Design-Plugin-Architecture.zh_CN.md)
+- [Technical solution](docs/ProcessOn-Design-Plugin-Technical-Solution.md) · [技术方案中文版](docs/ProcessOn-Design-Plugin-Technical-Solution.zh_CN.md)
+- [已批准设计](docs/superpowers/specs/2026-09-12-processon-design-plugin-design.md)
+- [已完成实施计划](docs/superpowers/plans/2026-09-12-processon-design-plugin.md)
+- [本地凭证设置设计](docs/superpowers/specs/2026-09-14-processon-local-credential-setup-design.md)
+- [本地凭证设置实施计划](docs/superpowers/plans/2026-09-14-processon-local-credential-setup.md)
 
 ## 贡献与支持
 
-提交问题时附上插件版本、宿主、目标环境、命令、日志和预期结果。不要附凭据或生产数据。
+功能问题请提交到 <https://github.com/full-stack-plugins/processon-design-plugin/issues>。提交变更前，请说明你验证所用的 Codex 宿主版本、是否改动 MCP 工具契约或凭据处理，以及由哪些测试覆盖。涉及安全的敏感问题请私下报告，不要创建公开 Issue。
 
-## 许可证
+## 许可证与支持
 
-Apache-2.0，见 [LICENSE](LICENSE)。
+项目使用 [Apache-2.0](LICENSE)。问题反馈：<https://github.com/full-stack-plugins/processon-design-plugin/issues>。涉及安全的敏感问题应私下联系仓库维护者，不要创建公开 Issue。

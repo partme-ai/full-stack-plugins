@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "archguard",
+    "description": "把模块依赖、分层与边界约束变成可执行门禁。"
+  }
+}

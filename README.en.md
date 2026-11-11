@@ -188,3 +188,13 @@ Made with ❤️ by PartMe.AI Team
 ## Skill sources and new plugins
 
 UI Design distributes 11 skills from design-skills v1.15.1; 1Panel distributes 8 from 1panel-skills v0.1.1. Skills are maintained in source repositories and vendored as complete tag/commit/digest-pinned snapshots. Both plugins are v0.1.1. Ordinary UI Design needs no MCP; 1Panel requires an official executable and private panel connection configuration.
+
+## DeepSeek Harness plugin index
+
+Enable the experimental Custom plugin indexes bundle in DSH Plugins, then add this HTTPS index source in Discover:
+
+```text
+https://raw.githubusercontent.com/partme-ai/full-stack-plugins/main/dsh/index.json
+```
+
+DSH has no built-in third-party index sources. This index pins immutable release commits from independent plugin repositories and installs each bundle from the repository root so skills and scripts are included. A local CLI and its authorization remain separate setup steps. Unpublished `local_candidate` entries stay out of the index. See the [official DSH plugin market guide](https://deepseek-harness.github.io/deepseek-harness/guide/plugin-market).

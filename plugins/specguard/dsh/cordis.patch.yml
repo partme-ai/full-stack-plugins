@@ -1,0 +1,3 @@
+- insert:
+    - id: specguard-plugin
+      name: 'specguard'

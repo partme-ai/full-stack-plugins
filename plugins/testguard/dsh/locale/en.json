@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "testguard",
+    "description": "验证必需行为是否真的被执行，而不是只看退出码。"
+  }
+}

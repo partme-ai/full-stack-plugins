@@ -4,9 +4,10 @@ import os
 from pathlib import Path
 import shlex
 import shutil
+import sys
 
 from .git import FlowError, run, text
-from .storage import atomic_json, read_json, safe_dir
+from .storage import atomic_json, read_json, safe_dir, _redirected
 
 
 def state_dir(facts):
@@ -30,13 +31,13 @@ def state_dir(facts):
         root = Path(facts['root'])
         if Path(facts['git_dir']) != common:
             for candidate in roots:
-                if candidate.is_dir() and text(candidate, 'rev-parse', '--show-toplevel', check=False) == str(candidate):
+                if candidate.is_dir() and Path(text(candidate, 'rev-parse', '--show-toplevel', check=False)).resolve() == candidate.resolve():
                     root = candidate
                     break
     if not root.is_dir():
         raise FlowError('state_anchor_missing', '共享状态所在工作树不可用，不能另建空状态。')
     actual = text(root, 'rev-parse', '--path-format=absolute', '--git-common-dir')
-    if Path(actual).resolve() != common or text(root, 'rev-parse', '--show-toplevel') != str(root):
+    if Path(actual).resolve() != common or Path(text(root, 'rev-parse', '--show-toplevel')).resolve() != root.resolve():
         raise FlowError('state_anchor_invalid', '共享状态锚点的仓库身份已变化。')
     return safe_dir(root, '.gitflow/state')
 
@@ -51,18 +52,18 @@ def state_file(facts, name, reading=True):
     """新文件优先，读取兼容旧文件；写入始终指向 .gitflow/state。"""
     directory = state_dir(facts)
     target = (safe_dir(directory, 'worktrees/' + worktree_id(facts)) if name == 'journal.json' else directory) / name
-    if target.is_symlink():
+    if _redirected(target):
         raise FlowError('state_symlink', '状态文件不能是符号链接。')
     if reading and not target.exists():
         base = facts['git_dir'] if name == 'journal.json' else facts['common_dir']
         legacy = safe_dir(base, 'gitflow') / name
-        if legacy.exists() or legacy.is_symlink():
+        if legacy.exists() or _redirected(legacy):
             return legacy
     return target
 
 
 def wrapper(runtime, kind):
-    return '#!/bin/sh\nexec python3 ' + shlex.quote(str(runtime / 'scripts/gitflow.py')) + ' native --kind ' + kind + ' -- "$@"\n'
+    return '#!/bin/sh\nexec ' + shlex.quote(sys.executable) + ' ' + shlex.quote(str(runtime / 'scripts/gitflow.py')) + ' native --kind ' + kind + ' -- "$@"\n'
 
 
 def migration_plan(facts, directory):
@@ -72,7 +73,7 @@ def migration_plan(facts, directory):
     worktrees = safe_dir(common, 'worktrees')
     if worktrees.exists():
         for child in sorted(worktrees.iterdir()):
-            if child.is_symlink():
+            if _redirected(child):
                 raise FlowError('state_symlink', '工作树管理目录不能是符号链接。')
             if child.is_dir():
                 locations.append((child, worktree_id({**facts, 'git_dir': str(child)})))
@@ -84,7 +85,7 @@ def migration_plan(facts, directory):
         if not old.is_dir():
             raise FlowError('state_file_invalid', '旧状态目录不是目录。')
         for item in old.rglob('*'):
-            if item.is_symlink() or not (item.is_file() or item.is_dir()):
+            if _redirected(item) or not (item.is_file() or item.is_dir()):
                 raise FlowError('state_symlink', '旧状态含链接或非普通文件，拒绝自动迁移。')
         backup = safe_dir(directory, 'legacy/' + identity)
         if backup.exists():
@@ -95,7 +96,7 @@ def migration_plan(facts, directory):
                 continue
             target = (safe_dir(directory, 'worktrees/' + identity) if name == 'journal.json' else directory) / name
             data = read_json(source)
-            if target.exists() or target.is_symlink():
+            if target.exists() or _redirected(target):
                 if read_json(target) != data:
                     raise FlowError('state_migration_conflict', '新旧状态不一致，保留双方数据，需复核后迁移。')
             copies.append((target, data))
@@ -107,10 +108,11 @@ def migration_plan(facts, directory):
             raise FlowError('state_migration_conflict', '新旧原生运行时同时存在，请先复核。')
         for kind in ('commit-msg', 'pre-push'):
             hook = safe_dir(common, 'hooks') / kind
-            if hook.is_symlink():
+            if _redirected(hook):
                 raise FlowError('hooks_existing', '原生 Hook 是链接，不能自动迁移。')
             if hook.exists():
-                if hook.read_text() != wrapper(old_runtime, kind):
+                legacy_wrapper='#!/bin/sh\nexec python3 ' + shlex.quote(str(old_runtime / 'scripts/gitflow.py')) + ' native --kind ' + kind + ' -- \"$@\"\n'
+                if hook.read_text() not in (wrapper(old_runtime, kind),legacy_wrapper):
                     raise FlowError('hooks_existing', '旧原生 Hook 已被编辑；保留文件，需先由现有管理器迁移。')
                 hooks.append((hook, kind))
     return moves, copies, hooks
@@ -121,7 +123,7 @@ def prepare(facts, directory, plan):
     moves, copies, hooks = plan
     common = Path(facts['common_dir'])
     exclude = safe_dir(common, 'info') / 'exclude'
-    if exclude.is_symlink():
+    if _redirected(exclude):
         raise FlowError('state_symlink', 'Git exclude 是链接，不能自动追加状态排除。')
     content = exclude.read_text() if exclude.exists() else ''
     if '/.gitflow/state/' not in content.splitlines():
@@ -139,4 +141,42 @@ def prepare(facts, directory, plan):
             hook.write_text(wrapper(runtime, kind))
     for old, backup in moves:
         backup.parent.mkdir(parents=True, exist_ok=True)
-        shutil.move(str(old), str(backup))
+        _move_legacy_directory(old, backup)
+
+
+def _move_legacy_directory(old, backup):
+    """Preserve the held lock object; never unlock to make a directory move pass."""
+    try:
+        if sys.platform == 'win32':
+            _move_legacy_contents(old, backup)
+        else:
+            shutil.move(str(old), str(backup))
+    except OSError as exc:
+        # Partial migration is intentionally not auto-resumed: migration_plan
+        # rejects an existing backup while old state remains. Preserve both.
+        raise FlowError('state_migration_incomplete',
+                        '状态迁移未完成；保留旧目录与备份，复核双方内容后再继续，不能自动覆盖重试。') from exc
+
+
+def _move_legacy_contents(old, backup):
+    """Windows cannot move a directory containing the open locked file.
+
+    Move children individually, with state.lock last. Its handle and byte lock
+    remain alive throughout; the primary new-layout lock is also still held.
+    """
+    old, backup = Path(old), Path(backup)
+    if _redirected(old) or _redirected(backup):
+        raise FlowError('state_symlink', '迁移目录不能通过重解析点访问。')
+    if old.stat().st_dev != backup.parent.stat().st_dev:
+        # Copy/delete would create a different lock object, breaking exclusion.
+        raise OSError('cross-volume migration cannot preserve the locked file identity')
+    entries = sorted(old.iterdir(), key=lambda path: (path.name == 'state.lock', path.name))
+    backup.mkdir()  # Existing/partial backups are never merged or overwritten.
+    for entry in entries:
+        if _redirected(entry):
+            raise FlowError('state_symlink', '迁移发现重解析点，保留双方数据。')
+        destination = backup / entry.name
+        if destination.exists() or _redirected(destination):
+            raise FileExistsError('migration destination already exists')
+        entry.rename(destination)
+    old.rmdir()
